@@ -1,0 +1,1534 @@
+{
+  "versao_dataset": "1.0",
+  "data_analise": "2026-10-14",
+  "portal": "M360",
+  "escopo": "13 alertas selecionados do ramo SUSPEITO; títulos e métricas exibidas, sem corpo integral das matérias ou histórico completo.",
+  "casos": [
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  70.5%  Consenso BAIXO → SUSPEITO  VEJA.msg",
+      "sha256_arquivo_fonte": "d382e88f5dc8f37d7da4eb61e4d40c78403a90f29cac4fe818f7183c6c40ed1d",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 70.5,
+        "gap_top1_top2_pontos_percentuais_exibido": 11.0,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Jogos de hoje, terça-feira, 13 de outubro: onde assistir futebol ao vivo e horários",
+        "fonte": "VEJA",
+        "url": "https://veja.abril.com.br/esporte/jogos-de-hoje-terca-feira-13-de-outubro-onde-assistir-futebol-ao-vivo-e-horarios/",
+        "tokens_semanticos": [
+          "terca",
+          "feira",
+          "outubro",
+          "futebol"
+        ],
+        "tokens_fracos_ignorados": [
+          "jogos",
+          "onde",
+          "assistir",
+          "vivo",
+          "horarios"
+        ],
+        "host": "veja.abril.com.br"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Jogos de hoje, segunda-feira, 12 de outubro: onde assistir futebol ao vivo e horários",
+          "categoria": "extracaoFutebol",
+          "origem": "veja.abril.com.br",
+          "score_percentual_exibido": 70.5,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "feira",
+            "outubro",
+            "futebol"
+          ],
+          "data_campo_legado": "2026-10-12 09:01:33",
+          "post_id": "/esporte/jogos-de-hoje-segunda-feira-12-de-outubro-onde-assistir-futebol-ao-vivo-e-horarios/",
+          "jaccard_exibido": 0.6,
+          "dice_exibido": 0.75,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Jogos de futebol hoje (10/10): veja horários e onde assistir ao vivo",
+          "categoria": "extracaoFutebol",
+          "origem": "correio24horas.com.br",
+          "score_percentual_exibido": 59.5,
+          "tokens_comuns": 1,
+          "lista_tokens_comuns": [
+            "futebol"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Jogos de futebol hoje (09/10): veja horários e onde assistir ao vivo",
+          "categoria": "extracaoFutebol",
+          "origem": "correio24horas.com.br",
+          "score_percentual_exibido": 59.5,
+          "tokens_comuns": 1,
+          "lista_tokens_comuns": [
+            "futebol"
+          ]
+        }
+      ],
+      "caso_id": "M360-A01",
+      "analise_provisoria": {
+        "relacao_com_top1": "EDICAO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Agenda de 13 de outubro comparada à edição de 12 de outubro. A data é parte da identidade editorial.",
+        "evidencia_e_limite": "Datas dos títulos são diferentes; os tokens retêm feira/outubro/futebol e descartam os dias numéricos.",
+        "acao_de_analise_sugerida": "DESCARTAR_PAR_COMO_EVIDENCIA_DE_DUPLICADO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 70.5,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 59.5,
+            "tokens_comuns_recalculados": 1
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 59.5,
+            "tokens_comuns_recalculados": 1
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  65%  Consenso BAIXO → SUSPEITO  LANCE!.msg",
+      "sha256_arquivo_fonte": "7a96aa1a7483684a9740fb8ff94f84b7250a8e188889e0245523cf3f5604c75c",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 65.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 9.0,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Jogos de hoje: quem joga no futebol e onde assistir ao vivo – terça-feira (13)",
+        "fonte": "LANCE!",
+        "url": "https://www.lance.com.br/onde-assistir/jogos-de-hoje-quem-joga-no-futebol-e-onde-assistir-ao-vivo-terca-feira-13-10-2026.html",
+        "tokens_semanticos": [
+          "quem",
+          "joga",
+          "futebol",
+          "terca",
+          "feira"
+        ],
+        "tokens_fracos_ignorados": [
+          "jogos",
+          "onde",
+          "assistir",
+          "vivo"
+        ],
+        "host": "www.lance.com.br"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Jogos de hoje no futebol: quem joga e onde assistir ao vivo – domingo (11)",
+          "categoria": "extracaoFutebol",
+          "origem": "lance.com.br",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "quem",
+            "joga",
+            "futebol"
+          ],
+          "data_campo_legado": "2026-10-12 09:03:58",
+          "post_id": "/onde-assistir/jogos-de-hoje-quem-joga-no-futebol-e-onde-assistir-ao-vivo-domingo-11-10-2026.html",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Jogos de futebol hoje (10/10): veja horários e onde assistir ao vivo",
+          "categoria": "extracaoFutebol",
+          "origem": "correio24horas.com.br",
+          "score_percentual_exibido": 56.0,
+          "tokens_comuns": 1,
+          "lista_tokens_comuns": [
+            "futebol"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Jogos de futebol hoje (09/10): veja horários e onde assistir ao vivo",
+          "categoria": "extracaoFutebol",
+          "origem": "correio24horas.com.br",
+          "score_percentual_exibido": 56.0,
+          "tokens_comuns": 1,
+          "lista_tokens_comuns": [
+            "futebol"
+          ]
+        }
+      ],
+      "caso_id": "M360-A02",
+      "analise_provisoria": {
+        "relacao_com_top1": "EDICAO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Agenda de terça-feira (13) comparada à de domingo (11).",
+        "evidencia_e_limite": "O campo Data do legado registra 12/10, mas o título se refere ao dia 11; não usar esse campo como data do evento sem conhecer sua semântica.",
+        "acao_de_analise_sugerida": "DESCARTAR_PAR_COMO_EVIDENCIA_DE_DUPLICADO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 56,
+            "tokens_comuns_recalculados": 1
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 56,
+            "tokens_comuns_recalculados": 1
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  58.46%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "893eac2ef54fb1f544fc874939055fc8dc0217ec00dfc8e0fdce7b22d6d5ea55",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 58.46,
+        "gap_top1_top2_pontos_percentuais_exibido": 15.61,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo tem 3 desfalques e 2 dúvidas para enfrentar o Estudiantes, pela Libertadores",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/flamengo-tem-3-desfalques-e-2-duvidas-para-enfrentar-o-estudiantes-pela-libertadores/",
+        "tokens_semanticos": [
+          "flamengo",
+          "desfalques",
+          "duvidas",
+          "enfrentar",
+          "estudiantes",
+          "libertadores"
+        ],
+        "tokens_fracos_ignorados": [],
+        "host": "colunadofla.com"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Libertadores e Brasileirão: veja a programação do Flamengo para enfrentar Estudiantes e Bahia",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 58.46,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "enfrentar",
+            "estudiantes",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-12 17:01:48",
+          "post_id": "/2026/10/libertadores-e-brasileirao-veja-a-programacao-do-flamengo-para-enfrentar-estudiantes-e-bahia/",
+          "jaccard_exibido": 0.4444,
+          "dice_exibido": 0.6154,
+          "cobertura_titulo_menor_exibida": 0.6667
+        },
+        {
+          "posicao": 2,
+          "titulo": "Após confrontos nacionais, Flamengo projeta semifinal da Libertadores contra o Estudiantes",
+          "categoria": "scraperFutebol",
+          "origem": "instagram.com",
+          "score_percentual_exibido": 42.85,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes",
+            "libertadores"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Flamengo treina com elenco completo no Rio e viaja para enfrentar o Estudiantes",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 41.04,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "enfrentar",
+            "estudiantes"
+          ]
+        }
+      ],
+      "caso_id": "M360-A03",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Desfalques e dúvidas para enfrentar Estudiantes versus programação envolvendo Estudiantes e Bahia.",
+        "evidencia_e_limite": "O tema compartilhado não reproduz os fatos quantitativos 3 desfalques e 2 dúvidas; não é possível deduzir a identidade da partida somente pelos nomes.",
+        "acao_de_analise_sugerida": "BUSCAR_MATCH_DE_FACETA_COMPATIVEL",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 58.46,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 42.85,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 41.04,
+            "tokens_comuns_recalculados": 3
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  75.16%  Consenso MODERADO → SUSPEITO  ge.msg",
+      "sha256_arquivo_fonte": "4864dd4dbc18cd2ebeb742b31a583771e0d7b176e7a8e54b6cc0b7fa90c78bb3",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "MODERADO",
+        "motivo": "CONSENSO_SEMANTICO_MODERADO",
+        "score_top1_percentual_exibido": 75.16,
+        "gap_top1_top2_pontos_percentuais_exibido": 14.3,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Ao vivo: Fluminense x Palmeiras | Semifinal | Taça Conmebol Libertadores",
+        "fonte": "ge",
+        "url": "https://ge.globo.com/rj/futebol/libertadores/jogo/14-10-2026/fluminense-palmeiras.ghtml",
+        "tokens_semanticos": [
+          "fluminense",
+          "palmeiras",
+          "semifinal",
+          "taca",
+          "conmebol",
+          "libertadores"
+        ],
+        "tokens_fracos_ignorados": [
+          "vivo"
+        ],
+        "host": "ge.globo.com"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Conmebol define arbitragem de Fluminense x Palmeiras pela semifinal da Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "lance.com.br",
+          "score_percentual_exibido": 75.16,
+          "tokens_comuns": 5,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "palmeiras",
+            "semifinal",
+            "conmebol",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-11 10:01:32",
+          "post_id": "/futebol-nacional/conmebol-define-arbitragem-de-fluminense-x-palmeiras-pela-semifinal-da-libertadores.html",
+          "jaccard_exibido": 0.625,
+          "dice_exibido": 0.7692,
+          "cobertura_titulo_menor_exibida": 0.8333
+        },
+        {
+          "posicao": 2,
+          "titulo": "Fluminense x Palmeiras: onde assistir ao vivo e escalações pela Copa Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "noataque.com.br",
+          "score_percentual_exibido": 60.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "palmeiras",
+            "libertadores"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Palmeiras anuncia venda de ingressos para duelo com o Fluminense pela semifinal da Libertadores; confira",
+          "categoria": "extracaoFutebol",
+          "origem": "gazetaesportiva.com",
+          "score_percentual_exibido": 55.81,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "palmeiras",
+            "semifinal",
+            "libertadores"
+          ]
+        }
+      ],
+      "caso_id": "M360-A04",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Cobertura ao vivo versus definição de arbitragem.",
+        "evidencia_e_limite": "Cinco tokens comuns e 75,16% refletem entidades/competição/fase; TOP2 aborda transmissão e escalações, sem demonstrar equivalência à cobertura ao vivo.",
+        "acao_de_analise_sugerida": "BUSCAR_MATCH_DE_FACETA_COMPATIVEL",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "MODERADO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 75.16,
+            "tokens_comuns_recalculados": 5
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 60.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 55.81,
+            "tokens_comuns_recalculados": 4
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  67%  Consenso MODERADO → SUSPEITO  Exame.msg",
+      "sha256_arquivo_fonte": "32679044034fe49102cfd9d0baa3a26a5cfd81c98b7799c34d451ffa150bfd44",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "MODERADO",
+        "motivo": "CONSENSO_SEMANTICO_MODERADO",
+        "score_top1_percentual_exibido": 67.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 2.0,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Fluminense x Palmeiras: onde assistir, horário e tudo sobre a semifinal da Libertadores",
+        "fonte": "Exame",
+        "url": "https://exame.com/esporte/fluminense-x-palmeiras-onde-assistir-horario-e-tudo-sobre-a-semifinal-da-libertadores/",
+        "tokens_semanticos": [
+          "fluminense",
+          "palmeiras",
+          "tudo",
+          "semifinal",
+          "libertadores"
+        ],
+        "tokens_fracos_ignorados": [
+          "onde",
+          "assistir",
+          "horario"
+        ],
+        "host": "exame.com"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Conmebol define arbitragem de Fluminense x Palmeiras pela semifinal da Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "lance.com.br",
+          "score_percentual_exibido": 67.0,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "palmeiras",
+            "semifinal",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-11 10:01:32",
+          "post_id": "/futebol-nacional/conmebol-define-arbitragem-de-fluminense-x-palmeiras-pela-semifinal-da-libertadores.html",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Fluminense x Palmeiras: onde assistir ao vivo e escalações pela Copa Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "noataque.com.br",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "palmeiras",
+            "libertadores"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Palmeiras anuncia venda de ingressos para duelo com o Fluminense pela semifinal da Libertadores; confira",
+          "categoria": "extracaoFutebol",
+          "origem": "gazetaesportiva.com",
+          "score_percentual_exibido": 63.79,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "palmeiras",
+            "semifinal",
+            "libertadores"
+          ]
+        }
+      ],
+      "caso_id": "M360-A05",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Guia de transmissão e informações da semifinal versus arbitragem.",
+        "evidencia_e_limite": "TOP2, a 65%, trata de onde assistir e escalações e merece revisão como possível mesma notícia. Confirmar data, edição e abrangência.",
+        "acao_de_analise_sugerida": "REVISAR_TOP2_E_EDICAO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "MODERADO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 67,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 63.79,
+            "tokens_comuns_recalculados": 4
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  71.43%  Consenso MODERADO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "ddcfab42d73df80336d2fa15cf4cbac3ff6177f48ec7bae14c73777b205c8f88",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "MODERADO",
+        "motivo": "CONSENSO_SEMANTICO_MODERADO",
+        "score_top1_percentual_exibido": 71.43,
+        "gap_top1_top2_pontos_percentuais_exibido": 12.97,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo e Palmeiras somam 99,8% de chances de título do Brasileirão",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/flamengo-e-palmeiras-somam-998-de-chances-de-titulo-do-brasileirao/",
+        "tokens_semanticos": [
+          "flamengo",
+          "palmeiras",
+          "somam",
+          "chances",
+          "titulo",
+          "brasileirao"
+        ],
+        "tokens_fracos_ignorados": [],
+        "host": "colunadofla.com"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Palmeiras aumenta chances de título do Brasileirão após vitória e tropeço do Flamengo",
+          "categoria": "scraperFutebol",
+          "origem": "gazetaesportiva.com",
+          "score_percentual_exibido": 71.43,
+          "tokens_comuns": 5,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "palmeiras",
+            "chances",
+            "titulo",
+            "brasileirao"
+          ],
+          "data_campo_legado": "2026-10-09 11:02:34",
+          "post_id": "/campeonatos/brasileiro-serie-a/palmeiras-aumenta-chances-titulo-flamengo-brasileirao/",
+          "jaccard_exibido": 0.5556,
+          "dice_exibido": 0.7143,
+          "cobertura_titulo_menor_exibida": 0.8333
+        },
+        {
+          "posicao": 2,
+          "titulo": "Flamengo ou Palmeiras? UFMG aponta chances de título da Série A após a 30ª rodada",
+          "categoria": "extracaoFutebol",
+          "origem": "itatiaia.com.br",
+          "score_percentual_exibido": 58.46,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "palmeiras",
+            "chances",
+            "titulo"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Santos x Flamengo: onde assistir ao vivo e escalações do jogo do Brasileirão",
+          "categoria": "scraperFutebol",
+          "origem": "espn.com.br",
+          "score_percentual_exibido": 48.57,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "brasileirao"
+          ]
+        }
+      ],
+      "caso_id": "M360-A06",
+      "analise_provisoria": {
+        "relacao_com_top1": "INDETERMINADO",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Pode ser atualização estatística ou recorte da mesma apuração; os títulos não resolvem.",
+        "evidencia_e_limite": "99,8% somados para Flamengo e Palmeiras não são a mesma medida que aumento de chances do Palmeiras. TOP1 tem campo Data de 09/10 e TOP2 menciona a 30ª rodada; confirmar base temporal, fonte, valores e escopo.",
+        "acao_de_analise_sugerida": "REVISAR_BASE_TEMPORAL_E_MEDIDA",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "MODERADO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 71.43,
+            "tokens_comuns_recalculados": 5
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 58.46,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 48.57,
+            "tokens_comuns_recalculados": 2
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  67%  Consenso MODERADO → SUSPEITO  tmc.com.br.msg",
+      "sha256_arquivo_fonte": "f499358ce97e960b19c0fe96bf36ff01614707e0ea7f964e03cf783200be5563",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "MODERADO",
+        "motivo": "CONSENSO_SEMANTICO_MODERADO",
+        "score_top1_percentual_exibido": 67.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 2.0,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Fluminense x Palmeiras: onde assistir ao vivo e horário | CONMEBOL Libertadores 2026",
+        "fonte": "tmc.com.br",
+        "url": "https://tmc.com.br/esporte/fluminense-x-palmeiras-onde-assistir-libertadores-da-america-2026/",
+        "tokens_semanticos": [
+          "fluminense",
+          "palmeiras",
+          "conmebol",
+          "libertadores",
+          "2026"
+        ],
+        "tokens_fracos_ignorados": [
+          "onde",
+          "assistir",
+          "vivo",
+          "horario"
+        ],
+        "host": "tmc.com.br"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Conmebol define arbitragem de Fluminense x Palmeiras pela semifinal da Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "lance.com.br",
+          "score_percentual_exibido": 67.0,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "palmeiras",
+            "conmebol",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-11 10:01:32",
+          "post_id": "/futebol-nacional/conmebol-define-arbitragem-de-fluminense-x-palmeiras-pela-semifinal-da-libertadores.html",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Fluminense x Palmeiras: onde assistir ao vivo e escalações pela Copa Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "noataque.com.br",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "palmeiras",
+            "libertadores"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "TV Palmeiras transmitirá todos os jogos das Palestrinas na CONMEBOL Libertadores Feminina",
+          "categoria": "extracaoFutebol",
+          "origem": "palmeiras.com.br",
+          "score_percentual_exibido": 49.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "palmeiras",
+            "conmebol",
+            "libertadores"
+          ]
+        }
+      ],
+      "caso_id": "M360-A07",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Guia de transmissão versus arbitragem.",
+        "evidencia_e_limite": "TOP2, a 65%, é mais compatível com a faceta do candidato. TOP3 trata de Libertadores Feminina; a compatibilidade de categoria não está demonstrada.",
+        "acao_de_analise_sugerida": "REVISAR_TOP2_E_EDICAO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "MODERADO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 67,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 49,
+            "tokens_comuns_recalculados": 3
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  63.57%  Consenso BAIXO → SUSPEITO  flamengorj.com.br.msg",
+      "sha256_arquivo_fonte": "719ca0f9de53562196048d5024d4eccbf40be0554f78e203ddf779edb0305dd2",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 63.57,
+        "gap_top1_top2_pontos_percentuais_exibido": 13.8,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Rossi admite pressão no Flamengo e projeta Libertadores contra Estudiantes",
+        "fonte": "flamengorj.com.br",
+        "url": "https://www.flamengorj.com.br/noticia/rossi-pressao-flamengo-libertadores",
+        "tokens_semanticos": [
+          "rossi",
+          "admite",
+          "pressao",
+          "flamengo",
+          "projeta",
+          "libertadores",
+          "contra",
+          "estudiantes"
+        ],
+        "tokens_fracos_ignorados": [],
+        "host": "www.flamengorj.com.br"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Após confrontos nacionais, Flamengo projeta semifinal da Libertadores contra o Estudiantes",
+          "categoria": "scraperFutebol",
+          "origem": "instagram.com",
+          "score_percentual_exibido": 63.57,
+          "tokens_comuns": 5,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "projeta",
+            "libertadores",
+            "contra",
+            "estudiantes"
+          ],
+          "data_campo_legado": "2026-10-08 17:03:42",
+          "post_id": "/p/DePV1tER8PF/",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 0.7143
+        },
+        {
+          "posicao": 2,
+          "titulo": "Com 5 desfalques, veja lista de relacionados do Flamengo para jogo contra o Estudiantes, pela Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 49.77,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "libertadores",
+            "contra",
+            "estudiantes"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "RUMO À LA PLATA! Assista ao embarque do Flamengo para o jogo contra o Estudiantes, pela Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 45.0,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "libertadores",
+            "contra",
+            "estudiantes"
+          ]
+        }
+      ],
+      "caso_id": "M360-A08",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Declaração de Rossi sobre pressão versus projeção coletiva de semifinal.",
+        "evidencia_e_limite": "Rossi/admite/pressão não aparecem na evidência compartilhada. O conteúdo poderia esclarecer se existe uma declaração comum, mas isso não está no alerta.",
+        "acao_de_analise_sugerida": "BUSCAR_EVIDENCIA_DA_DECLARACAO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 63.57,
+            "tokens_comuns_recalculados": 5
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 49.77,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 45,
+            "tokens_comuns_recalculados": 4
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  66.67%  Consenso BAIXO → SUSPEITO  flamengorj.com.br.msg",
+      "sha256_arquivo_fonte": "67b6495e9ed4fc826a09b39ec2d8b44f4d16bf75bff030d4c956e7254a6c9a1c",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 66.67,
+        "gap_top1_top2_pontos_percentuais_exibido": 16.9,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo tem 69% de chances de título do Brasileirão, aponta levantamento da UFMG",
+        "fonte": "flamengorj.com.br",
+        "url": "https://www.flamengorj.com.br/noticia/flamengo-69-porcento-chances-titulo-ufmg",
+        "tokens_semanticos": [
+          "flamengo",
+          "chances",
+          "titulo",
+          "brasileirao",
+          "aponta",
+          "levantamento",
+          "ufmg"
+        ],
+        "tokens_fracos_ignorados": [],
+        "host": "www.flamengorj.com.br"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Flamengo ou Palmeiras? UFMG aponta chances de título da Série A após a 30ª rodada",
+          "categoria": "extracaoFutebol",
+          "origem": "itatiaia.com.br",
+          "score_percentual_exibido": 66.67,
+          "tokens_comuns": 5,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "chances",
+            "titulo",
+            "aponta",
+            "ufmg"
+          ],
+          "data_campo_legado": "2026-10-13 13:04:59",
+          "post_id": "/esportes/futebol/futebol-nacional/brasileirao-serie-a/flamengo-ou-palmeiras-ufmg-aponta-chances-de-titulo-da-serie-a-apos-a-30a-rodada/",
+          "jaccard_exibido": 0.5556,
+          "dice_exibido": 0.7143,
+          "cobertura_titulo_menor_exibida": 0.7143
+        },
+        {
+          "posicao": 2,
+          "titulo": "Palmeiras aumenta chances de título do Brasileirão após vitória e tropeço do Flamengo",
+          "categoria": "scraperFutebol",
+          "origem": "gazetaesportiva.com",
+          "score_percentual_exibido": 49.77,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "chances",
+            "titulo",
+            "brasileirao"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Santos x Flamengo: onde assistir ao vivo e escalações do jogo do Brasileirão",
+          "categoria": "scraperFutebol",
+          "origem": "espn.com.br",
+          "score_percentual_exibido": 46.17,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "brasileirao"
+          ]
+        }
+      ],
+      "caso_id": "M360-A09",
+      "analise_provisoria": {
+        "relacao_com_top1": "INDETERMINADO",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Possível mesma apuração da UFMG com recorte no Flamengo ou atualização estatística.",
+        "evidencia_e_limite": "UFMG e chances de título aproximam os fatos mesmo com consenso BAIXO. O percentual 69% desaparece dos tokens; confirmar a mesma rodada, modelo e divulgação.",
+        "acao_de_analise_sugerida": "REVISAR_POSSIVEL_MESMA_APURACAO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 66.67,
+            "tokens_comuns_recalculados": 5
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 49.77,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 46.17,
+            "tokens_comuns_recalculados": 2
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  75%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "2b318c25694200be489504e0c5e24f0075f7584c91b66fe7f044fbba012c19cd",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 75.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 4.14,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Saiba onde assistir ao jogo do Flamengo x Estudiantes, pela Libertadores",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/saiba-onde-assistir-ao-jogo-do-flamengo-x-estudiantes-pela-libertadores-2/",
+        "tokens_semanticos": [
+          "flamengo",
+          "estudiantes",
+          "libertadores"
+        ],
+        "tokens_fracos_ignorados": [
+          "onde",
+          "assistir",
+          "jogo"
+        ],
+        "host": "colunadofla.com"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Libertadores: Flamengo viaja hoje para a Argetina para duelo com Estudiantes",
+          "categoria": "extracaoFutebol",
+          "origem": "oalagoano.com.br",
+          "score_percentual_exibido": 75.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-13 15:09:13",
+          "post_id": "/noticias/2026/10/13/22071-libertadores-flamengo-viaja-hoje-para-a-argetina-para-duelo-com-estudiantes",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 1.0
+        },
+        {
+          "posicao": 2,
+          "titulo": "Com 5 desfalques, veja lista de relacionados do Flamengo para jogo contra o Estudiantes, pela Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 70.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes",
+            "libertadores"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Libertadores e Brasileirão: veja a programação do Flamengo para enfrentar Estudiantes e Bahia",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 70.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes",
+            "libertadores"
+          ]
+        }
+      ],
+      "caso_id": "M360-A10",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Transmissão versus viagem; os outros matches tratam de relacionados e programação.",
+        "evidencia_e_limite": "Cobertura 1,0 usa só três tokens genéricos do evento. O sufixo -2 da URL é uma pista de slug, sem provar duplicação ou novidade. Não concluir novidade olhando apenas o TOP3.",
+        "acao_de_analise_sugerida": "BUSCAR_MATCH_DE_TRANSMISSAO_NO_HISTORICO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 75,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 70.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 70.86,
+            "tokens_comuns_recalculados": 3
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  70.5%  Consenso BAIXO → SUSPEITO  ge.msg",
+      "sha256_arquivo_fonte": "115ce99beca75e5f0f2c20bd4236484e9eba1ff733a342d03669e7e3dd91fbde",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 70.5,
+        "gap_top1_top2_pontos_percentuais_exibido": 25.5,
+        "fontes_distintas_top3": 1,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": false,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Ao vivo: Mirassol x Internacional | Rodada 31 | Campeonato Brasileiro",
+        "fonte": "ge",
+        "url": "https://ge.globo.com/sp/tem-esporte/futebol/brasileirao-serie-a/jogo/16-10-2026/mirassol-internacional.ghtml",
+        "tokens_semanticos": [
+          "mirassol",
+          "internacional",
+          "campeonato",
+          "brasileiro"
+        ],
+        "tokens_fracos_ignorados": [
+          "vivo",
+          "rodada"
+        ],
+        "host": "ge.globo.com"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Ao vivo: Grêmio x Internacional | Rodada 30 | Campeonato Brasileiro",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 70.5,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "internacional",
+            "campeonato",
+            "brasileiro"
+          ],
+          "data_campo_legado": "2026-10-10 20:04:25",
+          "post_id": "/rs/futebol/brasileirao-serie-a/jogo/11-10-2026/gremio-internacional.ghtml",
+          "jaccard_exibido": 0.6,
+          "dice_exibido": 0.75,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Ao vivo: Chapecoense x Athletico-PR | Rodada 30 | Campeonato Brasileiro",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 45.0,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Ao vivo: Flamengo x Fluminense | Rodada 30 | Campeonato Brasileiro",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 45.0,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro"
+          ]
+        }
+      ],
+      "caso_id": "M360-A11",
+      "analise_provisoria": {
+        "relacao_com_top1": "EVENTO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Mirassol x Internacional, rodada 31, versus Grêmio x Internacional, rodada 30.",
+        "evidencia_e_limite": "Adversário, rodada e datas dos caminhos de jogo diferem.",
+        "acao_de_analise_sugerida": "DESCARTAR_PAR_COMO_EVIDENCIA_DE_DUPLICADO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 70.5,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 45,
+            "tokens_comuns_recalculados": 2
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 45,
+            "tokens_comuns_recalculados": 2
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  67%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "f416791657216db6b630ca54f0d57541c680e0c7acc9b2fc9210ad76e9a0715b",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 67.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 15.0,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Oitavas de final: onde assistir ao jogo do Flamengo x Criciúma hoje, pela Copa do Brasil Sub-20?",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/oitavas-de-final-onde-assistir-ao-jogo-do-flamengo-x-criciuma-hoje-pela-copa-do-brasil-sub-20/",
+        "tokens_semanticos": [
+          "oitavas",
+          "final",
+          "flamengo",
+          "criciuma",
+          "copa",
+          "brasil",
+          "sub"
+        ],
+        "tokens_fracos_ignorados": [
+          "onde",
+          "assistir",
+          "jogo"
+        ],
+        "host": "colunadofla.com"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Saiba onde assistir ao jogo do Flamengo x Vasco hoje, pela Copa do Brasil Sub-20",
+          "categoria": "scraperFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 67.0,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "copa",
+            "brasil",
+            "sub"
+          ],
+          "data_campo_legado": "2026-10-08 14:48:19",
+          "post_id": "/2026/10/saiba-onde-assistir-ao-jogo-do-flamengo-x-vasco-hoje-pela-copa-do-brasil-sub-20/",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Flamengo 2 x 2 Vasco | Copa do Brasil Sub-20: melhores momentos",
+          "categoria": "scraperFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 52.0,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "copa",
+            "brasil",
+            "sub"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Freguês até na base! Flamengo vence Vasco nos pênaltis e elimina o rival na Copa do Brasil Sub-20",
+          "categoria": "scraperFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 44.76,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "copa",
+            "brasil",
+            "sub"
+          ]
+        }
+      ],
+      "caso_id": "M360-A12",
+      "analise_provisoria": {
+        "relacao_com_top1": "EVENTO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Flamengo x Criciúma versus Flamengo x Vasco na Copa do Brasil Sub-20.",
+        "evidencia_e_limite": "O adversário é diferente. A tokenização também descarta 20 e retém sub, empobrecendo a categoria.",
+        "acao_de_analise_sugerida": "DESCARTAR_PAR_COMO_EVIDENCIA_DE_DUPLICADO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 67,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 52,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 44.76,
+            "tokens_comuns_recalculados": 4
+          }
+        ]
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  70.96%  Consenso BAIXO → SUSPEITO  ge.msg",
+      "sha256_arquivo_fonte": "ee6bd8d6c67f8b2153a28064e770936a9852790f3bf6440bf8b513c3a07862ed",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 70.96,
+        "gap_top1_top2_pontos_percentuais_exibido": 16.1,
+        "fontes_distintas_top3": 1,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": false,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Ao vivo: Londrina x Cuiabá | Rodada 34 | Campeonato Brasileiro Série B",
+        "fonte": "ge",
+        "url": "https://ge.globo.com/pr/futebol/brasileirao-serie-b/jogo/20-10-2026/londrina-cuiaba.ghtml",
+        "tokens_semanticos": [
+          "londrina",
+          "cuiaba",
+          "campeonato",
+          "brasileiro",
+          "serie"
+        ],
+        "tokens_fracos_ignorados": [
+          "vivo",
+          "rodada"
+        ],
+        "host": "ge.globo.com"
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Ao vivo: Athletic Club x Londrina | Rodada 33 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 70.96,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "londrina",
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ],
+          "data_campo_legado": "2026-10-13 20:04:27",
+          "post_id": "/mg/zona-da-mata-centro-oeste/futebol/brasileirao-serie-b/jogo/13-10-2026/athletic-club-londrina.ghtml",
+          "jaccard_exibido": 0.5714,
+          "dice_exibido": 0.7273,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Ao vivo: Ceará x Juventude | Rodada 34 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 54.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Ao vivo: Criciúma x América-MG | Rodada 33 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 54.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        }
+      ],
+      "caso_id": "M360-A13",
+      "analise_provisoria": {
+        "relacao_com_top1": "EVENTO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Londrina x Cuiabá, rodada 34, versus Athletic Club x Londrina, rodada 33.",
+        "evidencia_e_limite": "Mudam o conjunto de participantes e a rodada. B e os números desaparecem dos tokens, preservando apenas serie/campeonato/brasileiro.",
+        "acao_de_analise_sugerida": "DESCARTAR_PAR_COMO_EVIDENCIA_DE_DUPLICADO",
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 70.96,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 54.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 54.86,
+            "tokens_comuns_recalculados": 3
+          }
+        ]
+      }
+    }
+  ],
+  "metodo": {
+    "base_evidencia": "Títulos, URLs e telemetria exibidos nos alertas; sem leitura do corpo integral das matérias e sem consulta ao banco.",
+    "rotulos": "Hipóteses analíticas do assistente por par candidato/TOP1, não decisões do Core nem ground truth.",
+    "validacao_humana_realizada": false,
+    "estado": "OBSERVACIONAL",
+    "recomendacoes_aplicadas": false,
+    "privacidade": "Sem cabeçalhos de e-mail, remetentes, destinatários, chaves de deduplicação ou IDs operacionais do banco. Originais .msg mantidos fora do Git."
+  },
+  "baseline": {
+    "workflow": "workflows/m360-deduplicacao-semantica.json",
+    "commit": "9a32c93d3ddbe5cfcd40474f7e1daa6c5c3f6566",
+    "sha256": "be08807d21c7ca533f093b905e18ea6646ef793bd61de67bc40f06b16a2fd1d3"
+  },
+  "resumo": {
+    "alertas": 13,
+    "pares_exibidos": 39,
+    "candidatos_com_url_distinta": 13,
+    "status_oficial_suspeito": 13,
+    "consenso_baixo": 9,
+    "consenso_moderado": 4,
+    "consenso_forte": 0,
+    "multifonte_sim_exibido": 11,
+    "grupos_analiticos_top1": {
+      "evento_ou_edicao_diferente": 5,
+      "contexto_comum_faceta_diferente": 6,
+      "indeterminado_estatisticas": 2
+    },
+    "scores_reproduzidos": 39,
+    "decisoes_reproduzidas": 13,
+    "diferenca_maxima_percentual_exibida": 0.0,
+    "limitacao_reproducao": "Somente os 3 comparáveis exibidos por candidato. Não valida recuperação/ordenação no histórico completo, conteúdo das matérias, SPs, banco ou envio de e-mail."
+  }
+}

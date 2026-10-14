@@ -13,6 +13,10 @@ Este repositório registra artefatos de referência recebidos para a funcionalid
 
 As duas procedures de storage são separadas da deduplicação editorial. As definições de `SP_DEDUPLICA_EDITORIAL` e `SP_DEDUPLICA_EDITORIAL_FINALIZA` não foram fornecidas; os workflows contêm apenas chamadas a elas. Por isso, as versões dessas SPs e o filtro de fontes internas do PEL não podem ser confirmados neste repositório.
 
+## Análises editoriais
+
+- [13 alertas M360: evidências e proposta de evolução do Core Semântico (14/10/2026)](docs/analises/2026-10-14-m360-alertas.md), com [dataset dos casos e métricas](docs/analises/2026-10-14-m360-alertas-casos.json). As classificações analíticas são provisórias e não foram aplicadas ao fluxo.
+
 ## Preparação para controle de versão público
 
 As cópias dos exports preservam nodes, parâmetros, conexões e código JavaScript. Antes de adicioná-las ao Git, foram removidas as referências a IDs de credenciais n8n e os dados fixados em `pinData`; `active` foi definido como `false` para impedir ativação involuntária após importação. As credenciais devem ser configuradas na instância de destino.
