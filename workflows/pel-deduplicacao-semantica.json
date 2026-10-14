@@ -1,0 +1,630 @@
+{
+  "name": "SUB | Deduplicação e Semântica - PEL [ Core Editorial ]",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "wyGVvxzdQ1nFBVL8",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/wyGVvxzdQ1nFBVL8",
+          "cachedResultName": "SUB | WEB Extrator Detalhes PEL v0.3 [ Core Editorial ]"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Título": "={{ $json.candidato.titulo }}",
+            "Link": "={{ $json.candidato.link }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Título",
+              "displayName": "Título",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "Link",
+              "displayName": "Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        192,
+        688
+      ],
+      "id": "8b2d6995-7df8-46d9-b52d-d752a9f6de53",
+      "name": "Chamar Publicar Editorial"
+    },
+    {
+      "parameters": {
+        "content": "## GESTÃO EDITORIAL DE TITULOS: \n- Core Deduplicação e Semântica Editorial",
+        "height": 912,
+        "width": 1456,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -432,
+        -32
+      ],
+      "typeVersion": 1,
+      "id": "05cb0193-08d8-4c8e-baf8-a72759525f2d",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "8abf58b1-f860-491f-8c3c-abb7d1082928",
+                    "leftValue": "={{ $json.resultado }}",
+                    "rightValue": "ALREADY_PROCESSING",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ALREADY"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.resultado }}",
+                    "rightValue": "EXACT_DUPLICATE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f5af2032-6dfa-44e5-80bc-4d30a9bb8e4d"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "EXATO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "3199b6da-3df2-46eb-8463-2c74a196830f",
+                    "leftValue": "={{ $json.resultado }}",
+                    "rightValue": "CHECK_SIMILARITY",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "CHECK"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        496,
+        32
+      ],
+      "id": "c51db776-da14-4bda-af5b-eef924cd6eb1",
+      "name": "SWITCH | Resultado"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.duplicidade_editorial.status }}",
+                    "rightValue": "DUPLICADO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "b3982208-dfac-420f-bf81-7c1ba9ccbff8"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "DUPLICADO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "8214fb32-67d9-461a-90f5-706f8fd07097",
+                    "leftValue": "={{ $json.duplicidade_editorial.status }}",
+                    "rightValue": "SUSPEITO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "SUSPEITO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "a7713901-d84c-43b9-afb4-aaffb5e4c326",
+                    "leftValue": "={{ $json.duplicidade_editorial.status }}",
+                    "rightValue": "NOVO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NOVO"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -176,
+        448
+      ],
+      "id": "5b409f29-7a09-4150-8272-c9cba237cf54",
+      "name": "SWITCH | Similaridade Editorial"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL SP_DEDUPLICA_EDITORIAL_FINALIZA(\n    {{ $('Similaridade Editorial v0.4.0').item.json.registro_id }},\n    'PUBLICADO',\n    'Publicação concluída com sucesso no Core Editorial',\n    '{{ $execution.id }}'\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        480,
+        688
+      ],
+      "id": "e678fd39-a7fe-44d0-98a1-190c50d244cd",
+      "name": "SP DEDUPLICA EDITORIAL FINALIZA"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL SP_DEDUPLICA_EDITORIAL(\n    'PEL',\n    '{{ $json.titulo.replace(/'/g, \"''\") }}',\n    'extracao-WEB',\n    '{{ $json.link.replace(/'/g, \"''\") }}',\n    '{{ \"/\" + $json.link.split(\"://\")[1].split(\"/\").slice(1).join(\"/\").replace(/^\\/+|\\/+$/g, \"\") + \"/\" }}',\n    7,\n    '{{ $execution.id }}'\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -128,
+        48
+      ],
+      "id": "f86e0055-6826-4530-b424-f86ea9fcef46",
+      "name": "SP DEDUPLICA EDITORIAL",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL SP_DEDUPLICA_EDITORIAL_FINALIZA(\n    {{ $('Similaridade Editorial v0.4.0').item.json.registro_id }},\n    'DUPLICADO',\n    '{{ \n      \"Score: \" \n      + $('Similaridade Editorial v0.4.0').item.json.duplicidade_editorial.percentual\n      + \"% | Match: \"\n      + ($('Similaridade Editorial v0.4.0').item.json.duplicidade_editorial.melhor_match?.titulo || \"\")\n    }}',\n    '{{ $execution.id }}'\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        192,
+        272
+      ],
+      "id": "4fcb1c4b-f864-4261-9fc3-bab46d7a3cef",
+      "name": "SP | Finaliza DUPLICADO"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL SP_DEDUPLICA_EDITORIAL_FINALIZA(\n    {{ $('Similaridade Editorial v0.4.0').item.json.registro_id }},\n    'SUSPEITO',\n    'Similaridade editorial intermediária detectada; encaminhado para auditoria',\n    '{{ $execution.id }}'\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        192,
+        464
+      ],
+      "id": "e7fa7eb9-0700-4029-b328-470bba391165",
+      "name": "SP | Finaliza SUSPEITO"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        96
+      ],
+      "id": "ed3811a2-1f17-46a9-be4a-d21d2b90d494",
+      "name": "Start Dedup"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: {\n      concluido: true,\n      workflow: 'SUB | Semântica e Deduplicação | Core Editorial'\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1056,
+        272
+      ],
+      "id": "1d74a7a3-2f0c-4016-a883-ec3a4981d9b9",
+      "name": "Retorno Final"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "WA_titulos_divulgacao",
+          "mode": "list",
+          "cachedResultName": "WA_titulos_divulgacao"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "txt_Titulo",
+              "value": "={{ $('Similaridade Editorial v0.4.0').item.json.candidato.titulo }}"
+            },
+            {
+              "column": "ind_PostID",
+              "value": "={{ $('Similaridade Editorial v0.4.0').item.json.candidato.link.extractUrlPath() }}"
+            },
+            {
+              "column": "txt_Categoria",
+              "value": "=extrator-{{ $('Chamar Publicar Editorial').item.json.yoast_head_json.schema['@graph'][0].articleSection[0] }}"
+            },
+            {
+              "column": "dsc_URL_origem",
+              "value": "={{ $('Similaridade Editorial v0.4.0').item.json.candidato.link.extractDomain() }}"
+            },
+            {
+              "column": "dth_Executado",
+              "value": "={{ $now.setLocale('pt-BR').format('yyyy-MM-dd HH:mm:ss') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        720,
+        688
+      ],
+      "id": "912ca824-b61d-481e-b3e4-baa7316b1804",
+      "name": "Inserir Titulo BD PEL",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n// CODE | Normaliza Deduplica Editorial v0.2.2\n// Modo: Run Once for All Items\n// Core Editorial | PEL\n//\n// Objetivo:\n// - Normalizar o retorno da SP_DEDUPLICA_EDITORIAL\n// - Separar CONTROL e COMPARABLE\n// - Preservar o candidato ORIGINAL recebido pelo subfluxo\n// - Preservar source_host_comparavel para análise cross-source\n// - Preencher candidato.fonte usando source_host como fallback\n// - Tornar o subfluxo independente do workflow pai\n//\n// IMPORTANTE:\n// - NÃO referencia Loop\n// - NÃO referencia nodes do workflow pai\n// - A fonte oficial do candidato continua sendo o node \"Start Dedup\"\n// - Quando Start Dedup não informar fonte, utiliza o host\n//   normalizado retornado pela SP\n// ============================================================\n\n\n// ============================================================\n// 1. CANDIDATO ORIGINAL RECEBIDO PELO SUBFLUXO\n// ============================================================\n\nlet candidatoOriginal = {};\n\ntry {\n\n  candidatoOriginal =\n    $('Start Dedup').first().json ?? {};\n\n} catch (error) {\n\n  candidatoOriginal = {};\n}\n\n\n// ============================================================\n// 2. VALIDAÇÃO DO CONTRATO DE ENTRADA\n// ============================================================\n\nconst tituloOriginal = String(\n  candidatoOriginal.titulo ??\n  candidatoOriginal.title ??\n  ''\n).trim();\n\n\nconst linkOriginal = String(\n  candidatoOriginal.link ??\n  candidatoOriginal.url ??\n  ''\n).trim();\n\n\nif (!tituloOriginal) {\n\n  throw new Error(\n    'Normaliza Deduplica Editorial v0.2.2: ' +\n    'o subfluxo não recebeu o título do candidato em Start Dedup.'\n  );\n}\n\n\nif (!linkOriginal) {\n\n  throw new Error(\n    'Normaliza Deduplica Editorial v0.2.2: ' +\n    'o subfluxo não recebeu o link do candidato em Start Dedup.'\n  );\n}\n\n\n// ============================================================\n// 3. FUNÇÃO RECURSIVA PARA EXTRAIR ROWS FUNCIONAIS\n//\n// O node MySQL pode retornar diferentes estruturas:\n//\n// [\n//   [\n//     { CONTROL },\n//     { COMPARABLE },\n//     { COMPARABLE }\n//   ],\n//   {\n//     fieldCount,\n//     affectedRows,\n//     ...\n//   }\n// ]\n//\n// Também podem existir wrappers intermediários.\n//\n// Consideramos row funcional somente quando existe row_type.\n// ============================================================\n\nfunction coletarRows(valor, destino) {\n\n  if (valor == null) {\n    return;\n  }\n\n\n  // ----------------------------------------------------------\n// ARRAY\n// ----------------------------------------------------------\n\n  if (Array.isArray(valor)) {\n\n    for (const item of valor) {\n      coletarRows(item, destino);\n    }\n\n    return;\n  }\n\n\n  // ----------------------------------------------------------\n// TIPOS PRIMITIVOS\n// ----------------------------------------------------------\n\n  if (typeof valor !== 'object') {\n    return;\n  }\n\n\n  // ----------------------------------------------------------\n// ROW FUNCIONAL\n// ----------------------------------------------------------\n\n  if (valor.row_type) {\n\n    destino.push(valor);\n\n    return;\n  }\n\n\n  // ----------------------------------------------------------\n// OBJETOS / WRAPPERS INTERMEDIÁRIOS\n// ----------------------------------------------------------\n\n  for (const chave of Object.keys(valor)) {\n\n    const interno = valor[chave];\n\n    if (\n      Array.isArray(interno) ||\n      (\n        interno &&\n        typeof interno === 'object'\n      )\n    ) {\n\n      coletarRows(\n        interno,\n        destino\n      );\n    }\n  }\n}\n\n\n// ============================================================\n// 4. RECUPERA TODAS AS LINHAS FUNCIONAIS DA SP\n// ============================================================\n\nconst inputItems =\n  $input.all();\n\n\nconst rows = [];\n\n\nfor (const item of inputItems) {\n\n  coletarRows(\n    item.json,\n    rows\n  );\n}\n\n\n// ============================================================\n// 5. VALIDA RESULT SET\n// ============================================================\n\nif (rows.length === 0) {\n\n  throw new Error(\n    'Normaliza Deduplica Editorial v0.2.2: ' +\n    'nenhum result set funcional com row_type foi retornado ' +\n    'pela SP_DEDUPLICA_EDITORIAL.'\n  );\n}\n\n\n// ============================================================\n// 6. LOCALIZA LINHA CONTROL\n// ============================================================\n\nconst controle =\n  rows.find(\n    row =>\n      String(\n        row.row_type ??\n        ''\n      ).toUpperCase()\n      === 'CONTROL'\n  );\n\n\nif (!controle) {\n\n  throw new Error(\n    'Normaliza Deduplica Editorial v0.2.2: ' +\n    'linha CONTROL não encontrada.'\n  );\n}\n\n\n// ============================================================\n// 7. LOCALIZA LINHAS COMPARABLE\n// ============================================================\n\nconst linhasComparaveis =\n  rows.filter(\n    row =>\n      String(\n        row.row_type ??\n        ''\n      ).toUpperCase()\n      === 'COMPARABLE'\n  );\n\n\n// ============================================================\n// 8. NORMALIZA COMPARÁVEIS\n//\n// Evolução v0.2.2:\n// - mantém contrato anterior\n// - adiciona source_host proveniente de\n//   source_host_comparavel\n// - prepara base para Similaridade Editorial cross-source\n// ============================================================\n\nconst comparaveis =\n  linhasComparaveis\n\n    .map(row => ({\n\n      legacy_id:\n        row.legacy_id != null\n          ? Number(row.legacy_id)\n          : null,\n\n      titulo:\n        row.titulo_comparavel != null\n          ? String(\n              row.titulo_comparavel\n            ).trim()\n          : null,\n\n      categoria:\n        row.categoria_comparavel != null\n          ? String(\n              row.categoria_comparavel\n            ).trim()\n          : null,\n\n      data:\n        row.data_comparavel ??\n        null,\n\n      post_id:\n        row.post_id_comparavel != null\n          ? String(\n              row.post_id_comparavel\n            ).trim()\n          : null,\n\n      source_host:\n        row.source_host_comparavel != null\n          ? String(\n              row.source_host_comparavel\n            )\n              .trim()\n              .toLowerCase()\n          : null\n\n    }))\n\n    .filter(\n      row =>\n        row.titulo &&\n        String(\n          row.titulo\n        ).trim() !== ''\n    );\n\n\n// ============================================================\n// 9. NORMALIZA SOURCE_HOST DO CANDIDATO\n// ============================================================\n\nconst sourceHostControle =\n  controle.source_host != null\n    ? String(\n        controle.source_host\n      )\n        .trim()\n        .toLowerCase()\n    : null;\n\n\n// ============================================================\n// 10. NORMALIZA FONTE DO CANDIDATO\n//\n// Prioridade:\n//\n// 1. candidatoOriginal.fonte\n// 2. candidatoOriginal.source\n// 3. source_host retornado pela SP\n//\n// Dessa forma, candidato.fonte não fica vazio quando a\n// origem puder ser determinada pela URL do candidato.\n// ============================================================\n\nconst fonteCandidato =\n  String(\n    candidatoOriginal.fonte ??\n    candidatoOriginal.source ??\n    sourceHostControle ??\n    ''\n  ).trim() || null;\n\n\n// ============================================================\n// 11. CANDIDATO NORMALIZADO\n// ============================================================\n\nconst candidato = {\n\n  position:\n    candidatoOriginal.position ??\n    null,\n\n  titulo:\n    tituloOriginal,\n\n  link:\n    linkOriginal,\n\n  fonte:\n    fonteCandidato,\n\n  autores:\n    Array.isArray(\n      candidatoOriginal.autores\n    )\n      ? candidatoOriginal.autores\n      : [],\n\n  data:\n    candidatoOriginal.data ??\n    null,\n\n  iso_date:\n    candidatoOriginal.iso_date ??\n    candidatoOriginal.isoDate ??\n    null,\n\n  thumbnail:\n    candidatoOriginal.thumbnail ??\n    null,\n\n  thumbnail_small:\n    candidatoOriginal.thumbnail_small ??\n    candidatoOriginal.thumbnailSmall ??\n    null,\n\n  termos_encontrados:\n    Array.isArray(\n      candidatoOriginal.termos_encontrados\n    )\n      ? candidatoOriginal.termos_encontrados\n      : [],\n\n  score_tematico:\n    candidatoOriginal.score_tematico ??\n    null,\n\n  idade_horas:\n    candidatoOriginal.idade_horas ??\n    null,\n\n  // ----------------------------------------------------------\n  // Usa o POST_ID normalizado retornado pela SP\n  // como referência oficial.\n  // ----------------------------------------------------------\n\n  post_id:\n    controle.post_id ??\n    candidatoOriginal.post_id ??\n    null\n};\n\n\n// ============================================================\n// 12. NORMALIZA CAMPOS NUMÉRICOS / OPERACIONAIS\n// ============================================================\n\nconst registroId =\n  controle.registro_id != null\n    ? Number(\n        controle.registro_id\n      )\n    : null;\n\n\nconst legacyId =\n  controle.legacy_id != null\n    ? Number(\n        controle.legacy_id\n      )\n    : null;\n\n\nconst duplicateExact =\n  Number(\n    controle.duplicate_exact ??\n    0\n  );\n\n\nconst janelaDias =\n  controle.janela_dias != null\n    ? Number(\n        controle.janela_dias\n      )\n    : 7;\n\n\n// ============================================================\n// 13. SAÍDA NORMALIZADA\n// ============================================================\n\nreturn [\n  {\n    json: {\n\n      // --------------------------------------------------------\n      // Resultado funcional da SP\n      // --------------------------------------------------------\n\n      resultado:\n        controle.resultado ??\n        null,\n\n      duplicate_exact:\n        duplicateExact,\n\n\n      // --------------------------------------------------------\n      // Controle operacional\n      // --------------------------------------------------------\n\n      registro_id:\n        registroId,\n\n      legacy_id:\n        legacyId,\n\n      titulo_referencia:\n        controle.titulo_referencia ??\n        null,\n\n      portal:\n        controle.portal ??\n        null,\n\n      source_host:\n        sourceHostControle,\n\n      post_id:\n        controle.post_id ??\n        null,\n\n      chave_dedup:\n        controle.chave_dedup ??\n        null,\n\n      status_registro:\n        controle.status_registro ??\n        null,\n\n      janela_dias:\n        janelaDias,\n\n\n      // --------------------------------------------------------\n      // Candidato original preservado e enriquecido\n      // --------------------------------------------------------\n\n      candidato,\n\n\n      // --------------------------------------------------------\n      // Base semântica cross-source\n      // --------------------------------------------------------\n\n      total_comparaveis:\n        comparaveis.length,\n\n      comparaveis\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        48
+      ],
+      "id": "633ab02e-2eb6-4ae3-a560-01fe3a9800a1",
+      "name": "Normaliza Deduplica Editorial v0.2.2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n// CODE | Similaridade Editorial v0.4.0\n// Modo: Run Once for All Items\n// Core Editorial | PEL\n//\n// Objetivo:\n// - Comparar o candidato atual contra o histórico recente\n//   CROSS-SOURCE recebido da SP_DEDUPLICA_EDITORIAL\n// - Consumir contrato do Normaliza Deduplica Editorial v0.2.2\n// - Utilizar Start Dedup como fonte oficial do candidato\n// - Remover termos editoriais de baixa discriminação\n// - Calcular Jaccard + Dice + Cobertura do título menor\n// - Classificar NOVO / SUSPEITO / DUPLICADO\n// - Preservar a origem REAL de cada comparável\n// - Entregar TOP 3 para auditoria\n//\n// IMPORTANTE:\n// - NÃO depende de nodes do workflow pai\n// - NÃO referencia Loop\n// - Similaridade é CROSS-SOURCE\n// ============================================================\n\n\n// ============================================================\n// 1. ENTRADA NORMALIZADA\n// ============================================================\n\nconst entrada =\n  $input.first()?.json ?? {};\n\n\n// ============================================================\n// 2. CANDIDATO ORIGINAL DO SUBFLUXO\n// ============================================================\n\nlet candidatoStart = {};\n\ntry {\n\n  candidatoStart =\n    $('Start Dedup').first().json ?? {};\n\n} catch (error) {\n\n  candidatoStart = {};\n}\n\n\n// ============================================================\n// 3. CANDIDATO RECEBIDO DO NORMALIZA\n// ============================================================\n\nconst candidatoEntrada =\n  (\n    entrada.candidato &&\n    typeof entrada.candidato === 'object'\n  )\n    ? entrada.candidato\n    : {};\n\n\n// ============================================================\n// 4. VALIDA VALOR\n// ============================================================\n\nfunction temValor(valor) {\n\n  if (\n    valor === null ||\n    valor === undefined\n  ) {\n    return false;\n  }\n\n  if (\n    typeof valor === 'string' &&\n    valor.trim() === ''\n  ) {\n    return false;\n  }\n\n  return true;\n}\n\n\n// ============================================================\n// 5. MESCLA CANDIDATO\n//\n// Prioridade:\n// 1. Start Dedup\n// 2. dados válidos normalizados pelo node anterior\n//\n// O Normaliza v0.2.2 já enriquece:\n// candidato.fonte\n// candidato.post_id\n// ============================================================\n\nconst candidatoEntradaValido =\n  Object.fromEntries(\n    Object.entries(\n      candidatoEntrada\n    )\n      .filter(\n        ([_, valor]) =>\n          temValor(valor)\n      )\n  );\n\n\nconst candidato = {\n  ...candidatoStart,\n  ...candidatoEntradaValido\n};\n\n\n// ============================================================\n// 6. BASE DE COMPARAÇÃO\n// ============================================================\n\nconst comparaveis =\n  Array.isArray(\n    entrada.comparaveis\n  )\n    ? entrada.comparaveis\n    : [];\n\n\n// ============================================================\n// 7. CONFIGURAÇÃO\n// ============================================================\n\nconst CONFIG = {\n\n  versao:\n    '0.4.0',\n\n  modo:\n    'PRODUCAO',\n\n  limites: {\n\n    duplicado:\n      0.78,\n\n    suspeito:\n      0.58,\n\n    minTokensDuplicado:\n      4,\n\n    minTokensSuspeito:\n      3\n\n  },\n\n  topMatches:\n    3\n\n};\n\n\n// ============================================================\n// 8. TÍTULO DO CANDIDATO\n// ============================================================\n\nconst tituloCandidato =\n  String(\n    candidato.titulo ??\n    candidato.title ??\n    ''\n  ).trim();\n\n\nif (!tituloCandidato) {\n\n  throw new Error(\n    'Similaridade Editorial v0.4.0: ' +\n    'título do candidato não encontrado.'\n  );\n}\n\n\n// ============================================================\n// 9. STOPWORDS GERAIS\n// ============================================================\n\nconst STOPWORDS = new Set([\n\n  // Artigos\n  'a',\n  'as',\n  'o',\n  'os',\n  'um',\n  'uma',\n  'uns',\n  'umas',\n\n  // Preposições / contrações\n  'de',\n  'da',\n  'das',\n  'do',\n  'dos',\n\n  'em',\n  'na',\n  'nas',\n  'no',\n  'nos',\n\n  'por',\n  'para',\n  'pra',\n  'pro',\n  'pros',\n\n  'pela',\n  'pelas',\n  'pelo',\n  'pelos',\n\n  'com',\n  'sem',\n  'sob',\n  'sobre',\n  'entre',\n  'ate',\n  'desde',\n  'apos',\n\n  // Conjunções\n  'e',\n  'ou',\n  'mas',\n  'que',\n  'se',\n  'como',\n  'porque',\n  'quando',\n  'enquanto',\n\n  // Pronomes\n  'ele',\n  'ela',\n  'eles',\n  'elas',\n\n  'isso',\n  'isto',\n\n  'esse',\n  'essa',\n  'esses',\n  'essas',\n\n  'este',\n  'esta',\n  'estes',\n  'estas',\n\n  // Verbos auxiliares / genéricos\n  'ser',\n  'estar',\n  'ter',\n\n  'foi',\n  'sao',\n  'sera',\n  'sendo',\n\n  'tem',\n  'teve',\n  'vai',\n  'pode',\n\n  // Termos jornalísticos genéricos\n  'veja',\n  'saiba',\n  'confira',\n  'entenda',\n\n  'hoje',\n  'agora',\n\n  'novo',\n  'nova',\n  'novos',\n  'novas'\n\n]);\n\n\n// ============================================================\n// 10. TERMOS EDITORIAIS FRACOS\n//\n// São palavras que aparecem repetidamente em títulos\n// jornalísticos e podem inflar artificialmente similaridade.\n//\n// Elas NÃO entram no score semântico.\n//\n// Permanecem disponíveis em auditoria.\n// ============================================================\n\nconst TERMOS_EDITORIAIS_FRACOS = new Set([\n\n  'onde',\n  'assistir',\n  'vivo',\n\n  'horario',\n  'horarios',\n\n  'transmissao',\n  'transmissoes',\n\n  'escalacao',\n  'escalacoes',\n\n  'provavel',\n  'provaveis',\n\n  'jogo',\n  'jogos',\n\n  'partida',\n  'partidas',\n\n  'confronto',\n  'confrontos',\n\n  'rodada',\n\n  'canal',\n  'canais',\n\n  'tv',\n\n  'online'\n\n]);\n\n\n// ============================================================\n// 11. NORMALIZAÇÃO DE TEXTO\n// ============================================================\n\nfunction normalizarTexto(valor) {\n\n  return String(\n    valor ?? ''\n  )\n\n    .normalize('NFD')\n\n    .replace(\n      /[\\u0300-\\u036f]/g,\n      ''\n    )\n\n    .toLowerCase()\n\n    .replace(\n      /[“”\"'´`’‘]/g,\n      ' '\n    )\n\n    .replace(\n      /[^a-z0-9\\s-]/g,\n      ' '\n    )\n\n    .replace(\n      /-/g,\n      ' '\n    )\n\n    .replace(\n      /\\s+/g,\n      ' '\n    )\n\n    .trim();\n}\n\n\n// ============================================================\n// 12. TOKENIZAÇÃO BRUTA\n// ============================================================\n\nfunction tokenizarBruto(texto) {\n\n  const normalizado =\n    normalizarTexto(texto);\n\n  if (!normalizado) {\n    return [];\n  }\n\n  return normalizado\n\n    .split(' ')\n\n    .map(\n      token =>\n        token.trim()\n    )\n\n    .filter(Boolean);\n}\n\n\n// ============================================================\n// 13. TOKENIZAÇÃO SEMÂNTICA\n// ============================================================\n\nfunction tokenizarSemantico(texto) {\n\n  const tokens =\n    tokenizarBruto(texto);\n\n\n  const filtrados =\n    tokens.filter(\n      token => {\n\n        if (token.length < 3) {\n          return false;\n        }\n\n        if (\n          STOPWORDS.has(token)\n        ) {\n          return false;\n        }\n\n        if (\n          TERMOS_EDITORIAIS_FRACOS.has(token)\n        ) {\n          return false;\n        }\n\n        return true;\n      }\n    );\n\n\n  return [\n    ...new Set(\n      filtrados\n    )\n  ];\n}\n\n\n// ============================================================\n// 14. AUDITORIA DE TERMOS EDITORIAIS FRACOS\n// ============================================================\n\nfunction obterTokensEditoriaisFracos(texto) {\n\n  const tokens =\n    tokenizarBruto(texto);\n\n\n  return [\n    ...new Set(\n      tokens.filter(\n        token =>\n          TERMOS_EDITORIAIS_FRACOS.has(\n            token\n          )\n      )\n    )\n  ];\n}\n\n\n// ============================================================\n// 15. INTERSEÇÃO\n// ============================================================\n\nfunction intersecao(\n  arrayA,\n  arrayB\n) {\n\n  const setB =\n    new Set(arrayB);\n\n\n  return [\n    ...new Set(\n      arrayA.filter(\n        token =>\n          setB.has(token)\n      )\n    )\n  ];\n}\n\n\n// ============================================================\n// 16. JACCARD\n// ============================================================\n\nfunction calcularJaccard(\n  tokensA,\n  tokensB\n) {\n\n  const setA =\n    new Set(tokensA);\n\n  const setB =\n    new Set(tokensB);\n\n\n  const uniao =\n    new Set([\n      ...setA,\n      ...setB\n    ]);\n\n\n  if (uniao.size === 0) {\n    return 0;\n  }\n\n\n  let comuns = 0;\n\n\n  for (const token of setA) {\n\n    if (\n      setB.has(token)\n    ) {\n      comuns++;\n    }\n  }\n\n\n  return (\n    comuns /\n    uniao.size\n  );\n}\n\n\n// ============================================================\n// 17. DICE\n// ============================================================\n\nfunction calcularDice(\n  tokensA,\n  tokensB\n) {\n\n  if (\n    tokensA.length === 0 ||\n    tokensB.length === 0\n  ) {\n    return 0;\n  }\n\n\n  const comuns =\n    intersecao(\n      tokensA,\n      tokensB\n    ).length;\n\n\n  return (\n    (2 * comuns) /\n    (\n      tokensA.length +\n      tokensB.length\n    )\n  );\n}\n\n\n// ============================================================\n// 18. COBERTURA DO TÍTULO MENOR\n// ============================================================\n\nfunction calcularCoberturaMenor(\n  tokensA,\n  tokensB\n) {\n\n  if (\n    tokensA.length === 0 ||\n    tokensB.length === 0\n  ) {\n    return 0;\n  }\n\n\n  const comuns =\n    intersecao(\n      tokensA,\n      tokensB\n    ).length;\n\n\n  const menorQuantidade =\n    Math.min(\n      tokensA.length,\n      tokensB.length\n    );\n\n\n  if (\n    menorQuantidade === 0\n  ) {\n    return 0;\n  }\n\n\n  return (\n    comuns /\n    menorQuantidade\n  );\n}\n\n\n// ============================================================\n// 19. ARREDONDAMENTO\n// ============================================================\n\nfunction round4(valor) {\n\n  return Number(\n    Number(\n      valor ?? 0\n    ).toFixed(4)\n  );\n}\n\n\nfunction percentual(valor) {\n\n  return Number(\n    (\n      Number(\n        valor ?? 0\n      ) * 100\n    ).toFixed(2)\n  );\n}\n\n\n// ============================================================\n// 20. TOKENS DO CANDIDATO\n// ============================================================\n\nconst tokensCandidato =\n  tokenizarSemantico(\n    tituloCandidato\n  );\n\n\nconst tokensFracosCandidato =\n  obterTokensEditoriaisFracos(\n    tituloCandidato\n  );\n\n\n// ============================================================\n// 21. VALIDA TOKENS DO CANDIDATO\n// ============================================================\n\nif (\n  tokensCandidato.length === 0\n) {\n\n  return [\n    {\n      json: {\n\n        ...entrada,\n\n        candidato,\n\n        duplicidade_editorial: {\n\n          modo:\n            CONFIG.modo,\n\n          versao:\n            CONFIG.versao,\n\n          status:\n            'ERRO',\n\n          evidencia:\n            'CANDIDATO_SEM_TOKENS',\n\n          motivo:\n            'Título do candidato não gerou tokens semânticos válidos.',\n\n          score_composto:\n            0,\n\n          percentual:\n            0,\n\n          gap_top2:\n            0,\n\n          percentual_gap_top2:\n            0,\n\n          limites: {\n\n            duplicado:\n              CONFIG.limites.duplicado,\n\n            suspeito:\n              CONFIG.limites.suspeito,\n\n            min_tokens_duplicado:\n              CONFIG.limites.minTokensDuplicado,\n\n            min_tokens_suspeito:\n              CONFIG.limites.minTokensSuspeito\n          },\n\n          candidato: {\n\n            titulo:\n              tituloCandidato,\n\n            tokens:\n              [],\n\n            quantidade_tokens:\n              0,\n\n            tokens_editoriais_fracos_ignorados:\n              tokensFracosCandidato\n          },\n\n          comparados:\n            0,\n\n          melhor_match:\n            null,\n\n          top_matches:\n            []\n        }\n      }\n    }\n  ];\n}\n\n\n// ============================================================\n// 22. COMPARAÇÃO\n// ============================================================\n\nconst resultados = [];\n\n\nfor (\n  const registro\n  of comparaveis\n) {\n\n  if (\n    !registro ||\n    typeof registro !== 'object'\n  ) {\n    continue;\n  }\n\n\n  const tituloBanco =\n    String(\n      registro.titulo ??\n      ''\n    ).trim();\n\n\n  if (!tituloBanco) {\n    continue;\n  }\n\n\n  const tokensBanco =\n    tokenizarSemantico(\n      tituloBanco\n    );\n\n\n  if (\n    tokensBanco.length === 0\n  ) {\n    continue;\n  }\n\n\n  const tokensComuns =\n    intersecao(\n      tokensCandidato,\n      tokensBanco\n    );\n\n\n  const jaccard =\n    calcularJaccard(\n      tokensCandidato,\n      tokensBanco\n    );\n\n\n  const dice =\n    calcularDice(\n      tokensCandidato,\n      tokensBanco\n    );\n\n\n  const coberturaMenor =\n    calcularCoberturaMenor(\n      tokensCandidato,\n      tokensBanco\n    );\n\n\n  // ----------------------------------------------------------\n  // SCORE COMPOSTO\n  //\n  // 30% Jaccard\n  // 30% Dice\n  // 40% cobertura do título menor\n  // ----------------------------------------------------------\n\n  const scoreComposto =\n      (0.30 * jaccard)\n    + (0.30 * dice)\n    + (0.40 * coberturaMenor);\n\n\n  resultados.push({\n\n    id:\n      registro.legacy_id ??\n      registro.id ??\n      null,\n\n    titulo:\n      tituloBanco,\n\n    categoria:\n      registro.categoria ??\n      null,\n\n    data:\n      registro.data ??\n      null,\n\n    // --------------------------------------------------------\n    // v0.4.0:\n    // origem REAL do registro comparado.\n    //\n    // NÃO usar entrada.source_host.\n    // --------------------------------------------------------\n\n    origem:\n      registro.source_host ??\n      null,\n\n    post_id:\n      registro.post_id ??\n      null,\n\n    metricas: {\n\n      jaccard:\n        round4(\n          jaccard\n        ),\n\n      dice:\n        round4(\n          dice\n        ),\n\n      cobertura_titulo_menor:\n        round4(\n          coberturaMenor\n        ),\n\n      tokens_comuns:\n        tokensComuns.length,\n\n      lista_tokens_comuns:\n        tokensComuns,\n\n      tokens_candidato:\n        tokensCandidato.length,\n\n      tokens_banco:\n        tokensBanco.length,\n\n      score_composto:\n        round4(\n          scoreComposto\n        ),\n\n      percentual:\n        percentual(\n          scoreComposto\n        )\n    },\n\n    auditoria: {\n\n      tokens_semanticos_banco:\n        tokensBanco,\n\n      tokens_editoriais_fracos_banco:\n        obterTokensEditoriaisFracos(\n          tituloBanco\n        )\n    }\n  });\n}\n\n\n// ============================================================\n// 23. ORDENAÇÃO\n// ============================================================\n\nresultados.sort(\n  (a, b) => {\n\n    const scoreA =\n      Number(\n        a.metricas\n          ?.score_composto ??\n        0\n      );\n\n    const scoreB =\n      Number(\n        b.metricas\n          ?.score_composto ??\n        0\n      );\n\n\n    return (\n      scoreB -\n      scoreA\n    );\n  }\n);\n\n\n// ============================================================\n// 24. TOP MATCHES\n// ============================================================\n\nconst topMatches =\n  resultados.slice(\n    0,\n    CONFIG.topMatches\n  );\n\n\nconst melhorMatch =\n  topMatches[0] ??\n  null;\n\n\nconst segundoMatch =\n  topMatches[1] ??\n  null;\n\n\n// ============================================================\n// 25. MÉTRICAS PRINCIPAIS\n// ============================================================\n\nconst scoreMelhor =\n  Number(\n    melhorMatch\n      ?.metricas\n      ?.score_composto ??\n    0\n  );\n\n\nconst tokensComunsMelhor =\n  Number(\n    melhorMatch\n      ?.metricas\n      ?.tokens_comuns ??\n    0\n  );\n\n\nconst scoreSegundo =\n  Number(\n    segundoMatch\n      ?.metricas\n      ?.score_composto ??\n    0\n  );\n\n\nconst gapTop2 =\n  Math.max(\n    0,\n    scoreMelhor -\n    scoreSegundo\n  );\n\n\n// ============================================================\n// 26. CLASSIFICAÇÃO\n// ============================================================\n\nlet status =\n  'NOVO';\n\n\nlet evidencia =\n  'SEM_MATCH_RELEVANTE';\n\n\nif (\n  scoreMelhor >=\n    CONFIG.limites.duplicado\n  &&\n  tokensComunsMelhor >=\n    CONFIG.limites.minTokensDuplicado\n) {\n\n  status =\n    'DUPLICADO';\n\n  evidencia =\n    'MATCH_FORTE';\n\n}\n\nelse if (\n  scoreMelhor >=\n    CONFIG.limites.suspeito\n  &&\n  tokensComunsMelhor >=\n    CONFIG.limites.minTokensSuspeito\n) {\n\n  status =\n    'SUSPEITO';\n\n  evidencia =\n    'MATCH_SUSPEITO';\n\n}\n\nelse if (\n  scoreMelhor > 0\n) {\n\n  status =\n    'NOVO';\n\n  evidencia =\n    'MATCH_FRACO';\n\n}\n\n\nif (\n  resultados.length === 0\n) {\n\n  status =\n    'NOVO';\n\n  evidencia =\n    'SEM_MATCH_RELEVANTE';\n\n}\n\n\n// ============================================================\n// 27. CANDIDATO PARA SAÍDA\n// ============================================================\n\nconst candidatoSaida = {\n\n  position:\n    candidato.position ??\n    null,\n\n  titulo:\n    tituloCandidato,\n\n  link:\n    String(\n      candidato.link ??\n      candidato.url ??\n      ''\n    ).trim() || null,\n\n  fonte:\n    candidato.fonte ??\n    candidato.source ??\n    entrada.source_host ??\n    null,\n\n  autores:\n    Array.isArray(\n      candidato.autores\n    )\n      ? candidato.autores\n      : [],\n\n  data:\n    candidato.data ??\n    null,\n\n  iso_date:\n    candidato.iso_date ??\n    candidato.isoDate ??\n    null,\n\n  thumbnail:\n    candidato.thumbnail ??\n    null,\n\n  thumbnail_small:\n    candidato.thumbnail_small ??\n    candidato.thumbnailSmall ??\n    null,\n\n  termos_encontrados:\n    Array.isArray(\n      candidato.termos_encontrados\n    )\n      ? candidato.termos_encontrados\n      : [],\n\n  score_tematico:\n    candidato.score_tematico ??\n    null,\n\n  idade_horas:\n    candidato.idade_horas ??\n    null,\n\n  post_id:\n    entrada.post_id ??\n    candidato.post_id ??\n    null\n};\n\n\n// ============================================================\n// 28. SAÍDA\n// ============================================================\n\nreturn [\n  {\n    json: {\n\n      ...entrada,\n\n      // --------------------------------------------------------\n      // Candidato preservado\n      // --------------------------------------------------------\n\n      candidato:\n        candidatoSaida,\n\n\n      // --------------------------------------------------------\n      // Resultado da análise semântica\n      // --------------------------------------------------------\n\n      duplicidade_editorial: {\n\n        modo:\n          CONFIG.modo,\n\n        versao:\n          CONFIG.versao,\n\n        status,\n\n        evidencia,\n\n        score_composto:\n          round4(\n            scoreMelhor\n          ),\n\n        percentual:\n          percentual(\n            scoreMelhor\n          ),\n\n        gap_top2:\n          round4(\n            gapTop2\n          ),\n\n        percentual_gap_top2:\n          percentual(\n            gapTop2\n          ),\n\n        limites: {\n\n          duplicado:\n            CONFIG.limites.duplicado,\n\n          suspeito:\n            CONFIG.limites.suspeito,\n\n          min_tokens_duplicado:\n            CONFIG.limites.minTokensDuplicado,\n\n          min_tokens_suspeito:\n            CONFIG.limites.minTokensSuspeito\n        },\n\n\n        candidato: {\n\n          titulo:\n            tituloCandidato,\n\n          tokens:\n            tokensCandidato,\n\n          quantidade_tokens:\n            tokensCandidato.length,\n\n          tokens_editoriais_fracos_ignorados:\n            tokensFracosCandidato\n        },\n\n\n        comparados:\n          resultados.length,\n\n\n        melhor_match:\n          melhorMatch,\n\n\n        top_matches:\n          topMatches\n      }\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -384,
+        464
+      ],
+      "id": "996d0ab0-1873-4b58-9632-7bd1df66c40a",
+      "name": "Similaridade Editorial v0.4.0"
+    },
+    {
+      "parameters": {
+        "sendTo": "contato@energialimpa.live",
+        "subject": "={{\n  (() => {\n    const r = $('Consenso Editorial v0.1.0').first().json;\n    const d = r.duplicidade_editorial ?? {};\n    const ce = r.consenso_editorial ?? {};\n    const fonte = r.candidato?.fonte ?? r.source_host ?? 'fonte-desconhecida';\n\n    return (\n      '[CORE Editorial] - PEL ' +\n      d.status +\n      ' | ' +\n      d.percentual +\n      '% | Consenso ' +\n      ce.nivel +\n      ' → ' +\n      ce.status_sugerido +\n      ' | ' +\n      fonte\n    );\n  })()\n}}",
+        "message": "={{\n(() => {\n\n  const r =\n    $('Consenso Editorial v0.1.0').first().json ?? {};\n\n  const d =\n    r.duplicidade_editorial ?? {};\n\n  const ce =\n    r.consenso_editorial ?? {};\n\n  const c =\n    r.candidato ?? {};\n\n  const m =\n    d.melhor_match ?? {};\n\n  const metricas =\n    m.metricas ?? {};\n\n  const top =\n    Array.isArray(d.top_matches)\n      ? d.top_matches\n      : [];\n\n  const limites =\n    d.limites ?? {};\n\n  const sinais =\n    ce.sinais ?? {};\n\n  const consenso =\n    ce.consenso ?? {};\n\n\n  // ==========================================================\n  // HELPERS\n  // ==========================================================\n\n  const esc = (value) =>\n    String(value ?? '')\n      .replace(/&/g, '&amp;')\n      .replace(/</g, '&lt;')\n      .replace(/>/g, '&gt;')\n      .replace(/\"/g, '&quot;')\n      .replace(/'/g, '&#039;');\n\n\n  const valor = (value, fallback = '-') =>\n    value === null ||\n    value === undefined ||\n    value === ''\n      ? fallback\n      : esc(value);\n\n\n  const simNao = (value) =>\n    value\n      ? 'SIM'\n      : 'NÃO';\n\n\n  const listaTokens =\n    Array.isArray(metricas.lista_tokens_comuns)\n      ? metricas.lista_tokens_comuns.join(', ')\n      : '-';\n\n\n  const tokensCandidato =\n    Array.isArray(d.candidato?.tokens)\n      ? d.candidato.tokens.join(', ')\n      : '-';\n\n\n  const tokensFracos =\n    Array.isArray(\n      d.candidato?.tokens_editoriais_fracos_ignorados\n    )\n      ? (\n          d.candidato.tokens_editoriais_fracos_ignorados.length\n            ? d.candidato.tokens_editoriais_fracos_ignorados.join(', ')\n            : 'Nenhum'\n        )\n      : 'Nenhum';\n\n\n  const fontesTop3 =\n    Array.isArray(\n      consenso.fontes_distintas_top3\n    )\n      ? consenso.fontes_distintas_top3.join(', ')\n      : '-';\n\n\n  // ==========================================================\n  // TOP 3\n  // ==========================================================\n\n  const topHtml =\n    top.length\n      ? top.map((match, index) => {\n\n          const mm =\n            match.metricas ?? {};\n\n          const tokens =\n            Array.isArray(mm.lista_tokens_comuns)\n              ? mm.lista_tokens_comuns.join(', ')\n              : '-';\n\n          return `\n            <tr>\n\n              <td style=\"\n                padding:8px;\n                border:1px solid #ddd;\n                text-align:center;\n              \">\n                ${index + 1}\n              </td>\n\n              <td style=\"\n                padding:8px;\n                border:1px solid #ddd;\n              \">\n\n                <strong>\n                  ${valor(match.titulo)}\n                </strong>\n\n                <br>\n\n                <small>\n                  ID: ${valor(match.id)}\n                  |\n                  Categoria: ${valor(match.categoria)}\n                </small>\n\n              </td>\n\n              <td style=\"\n                padding:8px;\n                border:1px solid #ddd;\n              \">\n                ${valor(match.origem)}\n              </td>\n\n              <td style=\"\n                padding:8px;\n                border:1px solid #ddd;\n                text-align:center;\n              \">\n\n                <strong>\n                  ${valor(mm.percentual, 0)}%\n                </strong>\n\n              </td>\n\n              <td style=\"\n                padding:8px;\n                border:1px solid #ddd;\n                text-align:center;\n              \">\n                ${valor(mm.tokens_comuns, 0)}\n              </td>\n\n              <td style=\"\n                padding:8px;\n                border:1px solid #ddd;\n              \">\n                ${esc(tokens)}\n              </td>\n\n            </tr>\n          `;\n\n        }).join('')\n      : `\n          <tr>\n            <td\n              colspan=\"6\"\n              style=\"\n                padding:10px;\n                border:1px solid #ddd;\n              \"\n            >\n              Nenhum match disponível.\n            </td>\n          </tr>\n        `;\n\n\n  // ==========================================================\n  // SAÍDA HTML\n  // ==========================================================\n\n  return `\n\n<div style=\"\n  font-family:Arial,Helvetica,sans-serif;\n  color:#222;\n  line-height:1.5;\n  max-width:1000px;\n  margin:0 auto;\n\">\n\n  <!-- ====================================================== -->\n  <!-- CABEÇALHO -->\n  <!-- ====================================================== -->\n\n  <h2 style=\"\n    margin-bottom:5px;\n  \">\n    Alerta de Similaridade Editorial\n  </h2>\n\n  <p style=\"\n    margin-top:0;\n    color:#666;\n  \">\n    CORE Editorial — PEL\n  </p>\n\n\n  <!-- ====================================================== -->\n  <!-- RESUMO DA DECISÃO -->\n  <!-- ====================================================== -->\n\n  <div style=\"\n    border:1px solid #d9d9d9;\n    padding:15px;\n    margin:20px 0;\n    background:#f8f8f8;\n  \">\n\n    <h3 style=\"\n      margin-top:0;\n      margin-bottom:12px;\n    \">\n      Resumo da Decisão\n    </h3>\n\n    <table style=\"\n      border-collapse:collapse;\n      width:100%;\n    \">\n\n      <tr>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n          width:240px;\n        \">\n          <strong>Status oficial do Core</strong>\n        </td>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>\n            ${valor(d.status)}\n          </strong>\n        </td>\n\n      </tr>\n\n\n      <tr>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>Status sugerido pelo consenso</strong>\n        </td>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>\n            ${valor(ce.status_sugerido)}\n          </strong>\n        </td>\n\n      </tr>\n\n\n      <tr>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>Nível de consenso</strong>\n        </td>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          ${valor(ce.nivel)}\n        </td>\n\n      </tr>\n\n\n      <tr>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>Motivo</strong>\n        </td>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          ${valor(ce.motivo)}\n        </td>\n\n      </tr>\n\n\n      <tr>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>Similaridade TOP 1</strong>\n        </td>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>\n            ${valor(d.percentual, 0)}%\n          </strong>\n        </td>\n\n      </tr>\n\n\n      <tr>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>Gap TOP 1 × TOP 2</strong>\n        </td>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          ${valor(\n            consenso.percentual_gap_top1_top2 ??\n            d.percentual_gap_top2,\n            0\n          )}%\n        </td>\n\n      </tr>\n\n\n      <tr>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>Fontes distintas no TOP 3</strong>\n        </td>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          ${valor(\n            consenso.total_fontes_distintas_top3,\n            0\n          )}\n        </td>\n\n      </tr>\n\n\n      <tr>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          <strong>Aplicação automática</strong>\n        </td>\n\n        <td style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          ${\n            ce.aplicado_automaticamente\n              ? 'SIM'\n              : 'NÃO'\n          }\n        </td>\n\n      </tr>\n\n    </table>\n\n\n    <p style=\"\n      margin-bottom:0;\n      margin-top:12px;\n    \">\n\n      <strong>Leitura analítica:</strong><br>\n\n      ${valor(ce.resumo)}\n\n    </p>\n\n  </div>\n\n\n  <!-- ====================================================== -->\n  <!-- CANDIDATO -->\n  <!-- ====================================================== -->\n\n  <h3>\n    Candidato atual\n  </h3>\n\n  <table style=\"\n    border-collapse:collapse;\n    width:100%;\n  \">\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        width:240px;\n      \">\n        <strong>Título</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(c.titulo)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Fonte</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(\n          c.fonte ??\n          r.source_host\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>URL</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        word-break:break-all;\n      \">\n\n        ${\n          c.link\n            ? `\n              <a href=\"${esc(c.link)}\">\n                ${esc(c.link)}\n              </a>\n            `\n            : '-'\n        }\n\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Post ID</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(\n          c.post_id ??\n          r.post_id\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Registro operacional</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(r.registro_id)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Chave dedup</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        word-break:break-all;\n      \">\n        ${valor(r.chave_dedup)}\n      </td>\n\n    </tr>\n\n  </table>\n\n\n  <!-- ====================================================== -->\n  <!-- ANÁLISE DO CONSENSO -->\n  <!-- ====================================================== -->\n\n  <h3>\n    Análise de Consenso Editorial\n  </h3>\n\n  <table style=\"\n    border-collapse:collapse;\n    width:100%;\n  \">\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        width:240px;\n      \">\n        <strong>Consenso multifonte</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${simNao(consenso.multifonte)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>TOP 1 e TOP 2 com fontes distintas</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${simNao(\n          consenso.fontes_top1_top2_distintas\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Fontes distintas TOP 3</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${esc(fontesTop3)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Dois matches acima de 70%</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${simNao(\n          sinais.dois_matches_acima_70\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>5+ tokens comuns no TOP 1</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${simNao(\n          sinais.cinco_tokens_top1\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Cobertura TOP 1 acima de 80%</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${simNao(\n          sinais.cobertura_top1_acima_80\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Gap TOP 1 × TOP 2 baixo</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${simNao(\n          sinais.gap_top1_top2_baixo\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>TOP 3 ainda relevante</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${simNao(\n          sinais.top3_ainda_relevante\n        )}\n      </td>\n\n    </tr>\n\n  </table>\n\n\n  <!-- ====================================================== -->\n  <!-- MELHOR MATCH -->\n  <!-- ====================================================== -->\n\n  <h3>\n    Melhor ocorrência encontrada\n  </h3>\n\n  <table style=\"\n    border-collapse:collapse;\n    width:100%;\n  \">\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        width:240px;\n      \">\n        <strong>ID legado</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(m.id)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Título</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(m.titulo)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Categoria</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(m.categoria)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Data</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(m.data)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Origem</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(m.origem)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Post ID</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        word-break:break-all;\n      \">\n        ${valor(m.post_id)}\n      </td>\n\n    </tr>\n\n  </table>\n\n\n  <!-- ====================================================== -->\n  <!-- MÉTRICAS -->\n  <!-- ====================================================== -->\n\n  <h3>\n    Métricas do melhor match\n  </h3>\n\n  <table style=\"\n    border-collapse:collapse;\n    width:100%;\n  \">\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        width:240px;\n      \">\n        <strong>Jaccard</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(metricas.jaccard, 0)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Dice</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(metricas.dice, 0)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Cobertura título menor</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(\n          metricas.cobertura_titulo_menor,\n          0\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Score composto</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n\n        ${valor(\n          metricas.score_composto,\n          0\n        )}\n\n        (${valor(\n          metricas.percentual,\n          0\n        )}%)\n\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Tokens comuns</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${valor(\n          metricas.tokens_comuns,\n          0\n        )}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Lista de tokens comuns</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${esc(listaTokens)}\n      </td>\n\n    </tr>\n\n  </table>\n\n\n  <!-- ====================================================== -->\n  <!-- TOKENS -->\n  <!-- ====================================================== -->\n\n  <h3>\n    Tokens do candidato\n  </h3>\n\n  <table style=\"\n    border-collapse:collapse;\n    width:100%;\n  \">\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        width:240px;\n      \">\n        <strong>Tokens semânticos</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${esc(tokensCandidato)}\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>Tokens fracos ignorados</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        ${esc(tokensFracos)}\n      </td>\n\n    </tr>\n\n  </table>\n\n\n  <!-- ====================================================== -->\n  <!-- THRESHOLDS -->\n  <!-- ====================================================== -->\n\n  <h3>\n    Thresholds utilizados\n  </h3>\n\n  <table style=\"\n    border-collapse:collapse;\n    width:100%;\n  \">\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n        width:240px;\n      \">\n        <strong>DUPLICADO</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n\n        ${valor(\n          limites.duplicado\n        )}\n\n        (\n          ${Number(\n            limites.duplicado ?? 0\n          ) * 100}%\n        )\n\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        mínimo\n        ${valor(\n          limites.min_tokens_duplicado\n        )}\n        tokens\n      </td>\n\n    </tr>\n\n\n    <tr>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        <strong>SUSPEITO</strong>\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n\n        ${valor(\n          limites.suspeito\n        )}\n\n        (\n          ${Number(\n            limites.suspeito ?? 0\n          ) * 100}%\n        )\n\n      </td>\n\n      <td style=\"\n        padding:8px;\n        border:1px solid #ddd;\n      \">\n        mínimo\n        ${valor(\n          limites.min_tokens_suspeito\n        )}\n        tokens\n      </td>\n\n    </tr>\n\n  </table>\n\n\n  <!-- ====================================================== -->\n  <!-- TOP 3 -->\n  <!-- ====================================================== -->\n\n  <h3>\n    TOP 3 Matches\n  </h3>\n\n  <table style=\"\n    border-collapse:collapse;\n    width:100%;\n    font-size:13px;\n  \">\n\n    <thead>\n\n      <tr style=\"\n        background:#f5f5f5;\n      \">\n\n        <th style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          #\n        </th>\n\n        <th style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          Título\n        </th>\n\n        <th style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          Origem\n        </th>\n\n        <th style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          Score\n        </th>\n\n        <th style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          Tokens\n        </th>\n\n        <th style=\"\n          padding:8px;\n          border:1px solid #ddd;\n        \">\n          Tokens comuns\n        </th>\n\n      </tr>\n\n    </thead>\n\n    <tbody>\n      ${topHtml}\n    </tbody>\n\n  </table>\n\n\n  <!-- ====================================================== -->\n  <!-- RODAPÉ -->\n  <!-- ====================================================== -->\n\n  <hr style=\"\n    margin-top:25px;\n    border:0;\n    border-top:1px solid #ddd;\n  \">\n\n\n  <p style=\"\n    font-size:12px;\n    color:#666;\n  \">\n\n    CORE Editorial\n    —\n    Similaridade Editorial v${valor(d.versao)}\n    —\n    Consenso Editorial v${valor(ce.versao)}\n    —\n    Modo ${valor(d.modo)}\n    —\n    Portal ${valor(r.portal)}\n\n  </p>\n\n</div>\n\n`;\n\n})()\n}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        464
+      ],
+      "id": "dc117508-4d48-4dab-b479-e4724c8e3d17",
+      "name": "Alerta! SUSPEITO",
+      "webhookId": "f4def819-b5d7-4241-810f-7f5f9d573d79",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n// CODE | Consenso Editorial v0.1.0\n// Modo: Run Once for All Items\n//\n// Objetivo:\n// - Gerar insumos analíticos para alertas de SUSPEITO\n// - NÃO alterar a decisão funcional do Core\n// - NÃO alterar roteamento\n// - Avaliar convergência entre TOP matches\n// - Identificar consenso multifonte\n//\n// Fonte oficial:\n// $('Similaridade Editorial v0.4.0').first().json\n//\n// Fase atual:\n// HOMOLOGAÇÃO ANALÍTICA\n// ============================================================\n\n\n// ============================================================\n// 1. RECUPERA RESULTADO DA SIMILARIDADE\n// ============================================================\n\nlet origem = {};\n\ntry {\n\n  origem =\n    $('Similaridade Editorial v0.4.0')\n      .first()\n      .json ?? {};\n\n} catch (error) {\n\n  throw new Error(\n    'Consenso Editorial v0.1.0: ' +\n    'não foi possível recuperar a saída de ' +\n    'Similaridade Editorial v0.4.0.'\n  );\n}\n\n\n// ============================================================\n// 2. CONTRATOS\n// ============================================================\n\nconst duplicidade =\n  origem.duplicidade_editorial &&\n  typeof origem.duplicidade_editorial === 'object'\n    ? origem.duplicidade_editorial\n    : {};\n\nconst topMatches =\n  Array.isArray(duplicidade.top_matches)\n    ? duplicidade.top_matches\n    : [];\n\n\n// ============================================================\n// 3. CONFIGURAÇÃO ANALÍTICA\n//\n// IMPORTANTE:\n// Esta configuração NÃO decide o fluxo.\n// Apenas gera hipótese/sugestão para auditoria.\n// ============================================================\n\nconst CONFIG = {\n\n  versao:\n    '0.1.0',\n\n  modo:\n    'HOMOLOGACAO_ANALITICA',\n\n  // Regra de consenso forte\n  consensoForte: {\n\n    scoreTop1Min:\n      0.70,\n\n    scoreTop2Min:\n      0.70,\n\n    tokensTop1Min:\n      5,\n\n    coberturaTop1Min:\n      0.80,\n\n    exigirFontesDistintas:\n      true\n\n  },\n\n  // Regra de consenso moderado\n  consensoModerado: {\n\n    scoreTop1Min:\n      0.62,\n\n    scoreTop2Min:\n      0.55,\n\n    tokensTop1Min:\n      4,\n\n    coberturaTop1Min:\n      0.65\n\n  }\n\n};\n\n\n// ============================================================\n// 4. HELPERS\n// ============================================================\n\nfunction numero(valor, fallback = 0) {\n\n  const n =\n    Number(valor);\n\n  return Number.isFinite(n)\n    ? n\n    : fallback;\n}\n\n\nfunction percentual(valor) {\n\n  return Number(\n    (\n      numero(valor) * 100\n    ).toFixed(2)\n  );\n}\n\n\nfunction getScore(match) {\n\n  return numero(\n    match?.metricas?.score_composto\n  );\n}\n\n\nfunction getPercentual(match) {\n\n  const p =\n    match?.metricas?.percentual;\n\n  if (\n    p !== null &&\n    p !== undefined &&\n    Number.isFinite(Number(p))\n  ) {\n\n    return Number(p);\n  }\n\n  return percentual(\n    getScore(match)\n  );\n}\n\n\nfunction getTokensComuns(match) {\n\n  return numero(\n    match?.metricas?.tokens_comuns\n  );\n}\n\n\nfunction getCobertura(match) {\n\n  return numero(\n    match\n      ?.metricas\n      ?.cobertura_titulo_menor\n  );\n}\n\n\nfunction getOrigem(match) {\n\n  return String(\n    match?.origem ??\n    ''\n  )\n    .trim()\n    .toLowerCase() || null;\n}\n\n\n// ============================================================\n// 5. TOP 1 / TOP 2 / TOP 3\n// ============================================================\n\nconst top1 =\n  topMatches[0] ?? null;\n\nconst top2 =\n  topMatches[1] ?? null;\n\nconst top3 =\n  topMatches[2] ?? null;\n\n\n// ============================================================\n// 6. MÉTRICAS DERIVADAS\n// ============================================================\n\nconst scoreTop1 =\n  getScore(top1);\n\nconst scoreTop2 =\n  getScore(top2);\n\nconst scoreTop3 =\n  getScore(top3);\n\n\nconst percentualTop1 =\n  getPercentual(top1);\n\nconst percentualTop2 =\n  getPercentual(top2);\n\nconst percentualTop3 =\n  getPercentual(top3);\n\n\nconst tokensTop1 =\n  getTokensComuns(top1);\n\nconst tokensTop2 =\n  getTokensComuns(top2);\n\nconst tokensTop3 =\n  getTokensComuns(top3);\n\n\nconst coberturaTop1 =\n  getCobertura(top1);\n\nconst coberturaTop2 =\n  getCobertura(top2);\n\nconst coberturaTop3 =\n  getCobertura(top3);\n\n\nconst origemTop1 =\n  getOrigem(top1);\n\nconst origemTop2 =\n  getOrigem(top2);\n\nconst origemTop3 =\n  getOrigem(top3);\n\n\n// ============================================================\n// 7. DIVERSIDADE DE FONTES\n// ============================================================\n\nconst fontesTop3 =\n  [\n    origemTop1,\n    origemTop2,\n    origemTop3\n  ]\n    .filter(Boolean);\n\n\nconst fontesDistintas =\n  [\n    ...new Set(\n      fontesTop3\n    )\n  ];\n\n\nconst totalFontesDistintas =\n  fontesDistintas.length;\n\n\nconst top1Top2FontesDistintas =\n  Boolean(\n    origemTop1 &&\n    origemTop2 &&\n    origemTop1 !== origemTop2\n  );\n\n\n// ============================================================\n// 8. GAP TOP1 x TOP2\n// ============================================================\n\nconst gapTop1Top2 =\n  Math.max(\n    0,\n    scoreTop1 - scoreTop2\n  );\n\n\nconst percentualGapTop1Top2 =\n  Number(\n    (\n      gapTop1Top2 * 100\n    ).toFixed(2)\n  );\n\n\n// ============================================================\n// 9. REGRA DE CONSENSO FORTE\n// ============================================================\n\nconst regraForte =\n  (\n    scoreTop1 >=\n      CONFIG.consensoForte.scoreTop1Min\n  )\n  &&\n  (\n    scoreTop2 >=\n      CONFIG.consensoForte.scoreTop2Min\n  )\n  &&\n  (\n    tokensTop1 >=\n      CONFIG.consensoForte.tokensTop1Min\n  )\n  &&\n  (\n    coberturaTop1 >=\n      CONFIG.consensoForte.coberturaTop1Min\n  )\n  &&\n  (\n    !CONFIG.consensoForte.exigirFontesDistintas\n    ||\n    top1Top2FontesDistintas\n  );\n\n\n// ============================================================\n// 10. REGRA DE CONSENSO MODERADO\n// ============================================================\n\nconst regraModerada =\n  (\n    scoreTop1 >=\n      CONFIG.consensoModerado.scoreTop1Min\n  )\n  &&\n  (\n    scoreTop2 >=\n      CONFIG.consensoModerado.scoreTop2Min\n  )\n  &&\n  (\n    tokensTop1 >=\n      CONFIG.consensoModerado.tokensTop1Min\n  )\n  &&\n  (\n    coberturaTop1 >=\n      CONFIG.consensoModerado.coberturaTop1Min\n  );\n\n\n// ============================================================\n// 11. CLASSIFICAÇÃO ANALÍTICA\n//\n// IMPORTANTE:\n// Isso NÃO substitui:\n// duplicidade_editorial.status\n// ============================================================\n\nlet nivelConsenso =\n  'BAIXO';\n\nlet statusSugerido =\n  'SUSPEITO';\n\nlet motivo =\n  'SEM_CONSENSO_FORTE';\n\n\nif (regraForte) {\n\n  nivelConsenso =\n    'FORTE';\n\n  statusSugerido =\n    'DUPLICADO';\n\n  motivo =\n    'CONSENSO_MULTIFONTE_FORTE';\n\n} else if (regraModerada) {\n\n  nivelConsenso =\n    'MODERADO';\n\n  statusSugerido =\n    'SUSPEITO';\n\n  motivo =\n    'CONSENSO_SEMANTICO_MODERADO';\n\n}\n\n\n// ============================================================\n// 12. SINAIS ANALÍTICOS\n// ============================================================\n\nconst sinais = {\n\n  dois_matches_acima_70:\n    (\n      scoreTop1 >= 0.70 &&\n      scoreTop2 >= 0.70\n    ),\n\n  cinco_tokens_top1:\n    tokensTop1 >= 5,\n\n  cobertura_top1_acima_80:\n    coberturaTop1 >= 0.80,\n\n  fontes_top1_top2_distintas:\n    top1Top2FontesDistintas,\n\n  tres_fontes_distintas_top3:\n    totalFontesDistintas >= 3,\n\n  gap_top1_top2_baixo:\n    gapTop1Top2 <= 0.05,\n\n  top3_ainda_relevante:\n    scoreTop3 >= 0.55\n\n};\n\n\n// ============================================================\n// 13. RESUMO TEXTUAL\n// ============================================================\n\nlet resumo =\n  'Similaridade relevante, mas sem consenso multifonte forte.';\n\n\nif (\n  nivelConsenso === 'FORTE'\n) {\n\n  resumo =\n    'Há forte convergência semântica entre múltiplas fontes. ' +\n    'O caso é forte candidato a duplicidade editorial real.';\n\n} else if (\n  nivelConsenso === 'MODERADO'\n) {\n\n  resumo =\n    'Há convergência semântica moderada entre os melhores matches. ' +\n    'Recomenda-se revisão editorial.';\n\n}\n\n\n// ============================================================\n// 14. SAÍDA\n//\n// Mantemos TODO o JSON da Similaridade.\n// Apenas adicionamos consenso_editorial.\n// ============================================================\n\nreturn [\n  {\n    json: {\n\n      ...origem,\n\n      consenso_editorial: {\n\n        versao:\n          CONFIG.versao,\n\n        modo:\n          CONFIG.modo,\n\n        aplicado_automaticamente:\n          false,\n\n        altera_status_core:\n          false,\n\n        status_original:\n          duplicidade.status ?? null,\n\n        status_sugerido:\n          statusSugerido,\n\n        nivel:\n          nivelConsenso,\n\n        motivo,\n\n        resumo,\n\n\n        // ------------------------------------------------------\n        // TOP 1\n        // ------------------------------------------------------\n\n        top1: {\n\n          id:\n            top1?.id ?? null,\n\n          titulo:\n            top1?.titulo ?? null,\n\n          origem:\n            origemTop1,\n\n          score:\n            scoreTop1,\n\n          percentual:\n            percentualTop1,\n\n          tokens_comuns:\n            tokensTop1,\n\n          cobertura:\n            coberturaTop1,\n\n          cobertura_percentual:\n            percentual(\n              coberturaTop1\n            )\n\n        },\n\n\n        // ------------------------------------------------------\n        // TOP 2\n        // ------------------------------------------------------\n\n        top2: {\n\n          id:\n            top2?.id ?? null,\n\n          titulo:\n            top2?.titulo ?? null,\n\n          origem:\n            origemTop2,\n\n          score:\n            scoreTop2,\n\n          percentual:\n            percentualTop2,\n\n          tokens_comuns:\n            tokensTop2,\n\n          cobertura:\n            coberturaTop2,\n\n          cobertura_percentual:\n            percentual(\n              coberturaTop2\n            )\n\n        },\n\n\n        // ------------------------------------------------------\n        // TOP 3\n        // ------------------------------------------------------\n\n        top3: {\n\n          id:\n            top3?.id ?? null,\n\n          titulo:\n            top3?.titulo ?? null,\n\n          origem:\n            origemTop3,\n\n          score:\n            scoreTop3,\n\n          percentual:\n            percentualTop3,\n\n          tokens_comuns:\n            tokensTop3,\n\n          cobertura:\n            coberturaTop3,\n\n          cobertura_percentual:\n            percentual(\n              coberturaTop3\n            )\n\n        },\n\n\n        // ------------------------------------------------------\n        // CONSENSO\n        // ------------------------------------------------------\n\n        consenso: {\n\n          multifonte:\n            totalFontesDistintas >= 2,\n\n          fontes_top1_top2_distintas:\n            top1Top2FontesDistintas,\n\n          total_fontes_distintas_top3:\n            totalFontesDistintas,\n\n          fontes_distintas_top3:\n            fontesDistintas,\n\n          gap_top1_top2:\n            Number(\n              gapTop1Top2.toFixed(4)\n            ),\n\n          percentual_gap_top1_top2:\n            percentualGapTop1Top2\n\n        },\n\n\n        // ------------------------------------------------------\n        // SINAIS\n        // ------------------------------------------------------\n\n        sinais,\n\n\n        // ------------------------------------------------------\n        // REGRAS AUDITADAS\n        // ------------------------------------------------------\n\n        regras: {\n\n          consenso_forte: {\n\n            atingido:\n              regraForte,\n\n            score_top1_min:\n              CONFIG.consensoForte.scoreTop1Min,\n\n            score_top2_min:\n              CONFIG.consensoForte.scoreTop2Min,\n\n            tokens_top1_min:\n              CONFIG.consensoForte.tokensTop1Min,\n\n            cobertura_top1_min:\n              CONFIG.consensoForte.coberturaTop1Min,\n\n            exigir_fontes_distintas:\n              CONFIG.consensoForte.exigirFontesDistintas\n\n          },\n\n          consenso_moderado: {\n\n            atingido:\n              regraModerada,\n\n            score_top1_min:\n              CONFIG.consensoModerado.scoreTop1Min,\n\n            score_top2_min:\n              CONFIG.consensoModerado.scoreTop2Min,\n\n            tokens_top1_min:\n              CONFIG.consensoModerado.tokensTop1Min,\n\n            cobertura_top1_min:\n              CONFIG.consensoModerado.coberturaTop1Min\n\n          }\n\n        }\n\n      }\n\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        464
+      ],
+      "id": "6aa3b4fa-930c-4b2e-9e90-42d743f1b436",
+      "name": "Consenso Editorial v0.1.0"
+    }
+  ],
+  "connections": {
+    "Chamar Publicar Editorial": {
+      "main": [
+        [
+          {
+            "node": "SP DEDUPLICA EDITORIAL FINALIZA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SWITCH | Resultado": {
+      "main": [
+        [
+          {
+            "node": "Retorno Final",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Retorno Final",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Similaridade Editorial v0.4.0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SWITCH | Similaridade Editorial": {
+      "main": [
+        [
+          {
+            "node": "SP | Finaliza DUPLICADO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "SP | Finaliza SUSPEITO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Chamar Publicar Editorial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SP DEDUPLICA EDITORIAL FINALIZA": {
+      "main": [
+        [
+          {
+            "node": "Inserir Titulo BD PEL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SP DEDUPLICA EDITORIAL": {
+      "main": [
+        [
+          {
+            "node": "Normaliza Deduplica Editorial v0.2.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SP | Finaliza SUSPEITO": {
+      "main": [
+        [
+          {
+            "node": "Consenso Editorial v0.1.0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Dedup": {
+      "main": [
+        [
+          {
+            "node": "SP DEDUPLICA EDITORIAL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SP | Finaliza DUPLICADO": {
+      "main": [
+        [
+          {
+            "node": "Retorno Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inserir Titulo BD PEL": {
+      "main": [
+        [
+          {
+            "node": "Retorno Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normaliza Deduplica Editorial v0.2.2": {
+      "main": [
+        [
+          {
+            "node": "SWITCH | Resultado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Similaridade Editorial v0.4.0": {
+      "main": [
+        [
+          {
+            "node": "SWITCH | Similaridade Editorial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Alerta! SUSPEITO": {
+      "main": [
+        [
+          {
+            "node": "Retorno Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consenso Editorial v0.1.0": {
+      "main": [
+        [
+          {
+            "node": "Alerta! SUSPEITO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "53716869-36b6-42df-8139-2855c837be53",
+  "meta": {
+    "instanceId": "9f769af33e9c8cdfc44e726022a0e6b9f585fd6f2577f3c000a6028827d25ddd"
+  },
+  "nodeGroups": [],
+  "id": "Rp6oR7dkxQpRf14L",
+  "tags": []
+}
