@@ -16,6 +16,8 @@ As duas procedures de storage são separadas da deduplicação editorial. As def
 ## Análises editoriais
 
 - [13 alertas M360: evidências e proposta de evolução do Core Semântico (14/10/2026)](docs/analises/2026-10-14-m360-alertas.md), com [dataset dos casos e métricas](docs/analises/2026-10-14-m360-alertas-casos.json). As classificações analíticas são provisórias e não foram aplicadas ao fluxo.
+- [16 novos alertas M360: contrastes e atualização da base de evidências (16/10/2026)](docs/analises/2026-10-16-m360-alertas.md), com [dataset do segundo lote](docs/analises/2026-10-16-m360-alertas-casos.json).
+- [Índice acumulado de evidências M360](docs/telemetria/m360-indice.json): 29 candidatos e 87 pares exibidos nos dois lotes. O catálogo está no Git; nenhuma recomendação analítica foi aplicada ao n8n ou ao MySQL.
 
 ## Preparação para controle de versão público
 
