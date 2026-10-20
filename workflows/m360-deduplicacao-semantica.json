@@ -52,18 +52,18 @@
         688
       ],
       "id": "14e0376a-34dc-4c79-a63f-458abb6bb483",
-      "name": "Chamar Publicar Editorial"
+      "name": "Chamar Extrator Editorial"
     },
     {
       "parameters": {
         "content": "## GESTÃO EDITORIAL DE TITULOS:  Similaridade Editorial",
         "height": 912,
-        "width": 1456,
+        "width": 1504,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -432,
+        -480,
         -48
       ],
       "typeVersion": 1,
@@ -297,7 +297,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return [\n  {\n    json: {\n      concluido: true,\n      workflow: 'SUB | Semântica e Deduplicação | Core Editorial'\n    }\n  }\n];"
+        "jsCode": "return [\n  {\n    json: {\n      concluido: true,\n      resultado: $input.first().json.resultado,\n      workflow: 'SUB | Semântica e Deduplicação | Core Editorial'\n\n    }\n  }\n];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -443,7 +443,7 @@
     }
   ],
   "connections": {
-    "Chamar Publicar Editorial": {
+    "Chamar Extrator Editorial": {
       "main": [
         [
           {
@@ -497,7 +497,7 @@
         ],
         [
           {
-            "node": "Chamar Publicar Editorial",
+            "node": "Chamar Extrator Editorial",
             "type": "main",
             "index": 0
           }
