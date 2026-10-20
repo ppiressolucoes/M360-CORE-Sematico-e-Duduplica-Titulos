@@ -1,0 +1,2911 @@
+{
+  "versao_dataset": "1.0",
+  "data_analise": "2026-10-20",
+  "portal": "M360",
+  "escopo": "22 alertas recebidos do ramo SUSPEITO; títulos e métricas exibidas, sem corpo integral das matérias ou histórico completo.",
+  "casos": [
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  60.86%  Consenso BAIXO → SUSPEITO  tmc.com.br.msg",
+      "sha256_arquivo_fonte": "fcb190d10d7ba2f870a2b60f7aeebdc9164eefea72aad2c152a8b31b21c36eff",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 60.86,
+        "gap_top1_top2_pontos_percentuais_exibido": 9.25,
+        "fontes_distintas_top3": 1,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": false,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Mirassol x Internacional: onde assistir ao vivo e horário | Campeonato Brasileiro Série A 2026",
+        "fonte": "tmc.com.br",
+        "url": "https://tmc.com.br/esporte/mirassol-x-internacional-onde-assistir-brasileiro-serie-a-2026/",
+        "host": "tmc.com.br",
+        "tokens_semanticos": [
+          "mirassol",
+          "internacional",
+          "campeonato",
+          "brasileiro",
+          "serie",
+          "2026"
+        ],
+        "tokens_fracos_ignorados": [
+          "onde",
+          "assistir",
+          "vivo",
+          "horario"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Ao vivo: Grêmio x Internacional | Rodada 30 | Campeonato Brasileiro",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 60.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "internacional",
+            "campeonato",
+            "brasileiro"
+          ],
+          "data_campo_legado": "2026-10-10 20:04:25",
+          "post_id": "/rs/futebol/brasileirao-serie-a/jogo/11-10-2026/gremio-internacional.ghtml",
+          "jaccard_exibido": 0.4286,
+          "dice_exibido": 0.6,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Ao vivo: Ceará x Juventude | Rodada 34 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 51.61,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Ao vivo: Criciúma x América-MG | Rodada 33 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 51.61,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        }
+      ],
+      "caso_id": "M360-C01",
+      "analise_provisoria": {
+        "relacao_com_top1": "EVENTO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Serviço para Mirassol x Internacional versus cobertura de Grêmio x Internacional.",
+        "evidencia_e_limite": "Há apenas um participante comum no TOP1. TOP2/TOP3 são outros jogos e citam Série B, enquanto o candidato cita Série A.",
+        "dados_para_confirmacao": [
+          "partida e data do serviço",
+          "outros comparáveis da partida correta"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 60.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 51.61,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 51.61,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  61.14%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "67669acacfc21de9774e11d733ea33b488029d80bcfc1c1c0fe734b799e808b2",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 61.14,
+        "gap_top1_top2_pontos_percentuais_exibido": 3.56,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "O resultado que o Flamengo precisa contra o Estudiantes, no Maracanã, para chegar à final da Libertadores",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/o-resultado-que-o-flamengo-precisa-contra-o-estudiantes-no-maracana-para-chegar-a-final-da-libertadores",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "resultado",
+          "flamengo",
+          "precisa",
+          "contra",
+          "estudiantes",
+          "maracana",
+          "chegar",
+          "final",
+          "libertadores"
+        ],
+        "tokens_fracos_ignorados": []
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Flamengo pode chegar à 2ª final de Libertadores seguida",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 61.14,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "chegar",
+            "final",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-14 12:04:14",
+          "post_id": "/2026/10/flamengo-pode-chegar-a-2a-final-de-libertadores-seguida/",
+          "jaccard_exibido": 0.4,
+          "dice_exibido": 0.5714,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Estudiantes x Flamengo: onde assistir e escalações do jogo",
+          "categoria": "extracaoFutebol",
+          "origem": "spacemoney.com.br",
+          "score_percentual_exibido": 57.58,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Libertadores: técnico do Estudiantes ignora volta no Maracanã e foca só na ida contra o Flamengo",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 48.73,
+          "tokens_comuns": 5,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "contra",
+            "estudiantes",
+            "maracana",
+            "libertadores"
+          ]
+        }
+      ],
+      "caso_id": "M360-C02",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Cenários de classificação no Maracanã versus chance de chegar a uma segunda final seguida.",
+        "evidencia_e_limite": "As perguntas editoriais são diferentes; TOP3 fala de foco na ida, enquanto o candidato trata de resultado necessário no Maracanã.",
+        "dados_para_confirmacao": [
+          "partida/ida-volta",
+          "resultado e regras de classificação",
+          "escopo integral das matérias"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 61.14,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 57.58,
+            "tokens_comuns_recalculados": 2
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 48.73,
+            "tokens_comuns_recalculados": 5
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  59.46%  Consenso BAIXO → SUSPEITO  Gazeta Esportiva.msg",
+      "sha256_arquivo_fonte": "8e97f15e83e326dffe0db2cd73ac0be067947cddccb07289d066ec84b6e202ea",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 59.46,
+        "gap_top1_top2_pontos_percentuais_exibido": 40.15,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Técnico do Manchester City, Maresca minimiza chance de recorde na Premier League",
+        "fonte": "Gazeta Esportiva",
+        "url": "https://www.gazetaesportiva.com/times/manchester-city/tecnico-do-manchester-city-maresca-minimiza-chance-de-recorde-na-premier-league/?amp",
+        "host": "www.gazetaesportiva.com",
+        "tokens_semanticos": [
+          "tecnico",
+          "manchester",
+          "city",
+          "maresca",
+          "minimiza",
+          "chance",
+          "recorde",
+          "premier",
+          "league"
+        ],
+        "tokens_fracos_ignorados": []
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Manchester City está mais unido após veredicto da Premier League, diz técnico Maresca",
+          "categoria": "extracaoFutebol",
+          "origem": "www1.folha.uol.com.br",
+          "score_percentual_exibido": 59.46,
+          "tokens_comuns": 6,
+          "lista_tokens_comuns": [
+            "tecnico",
+            "manchester",
+            "city",
+            "maresca",
+            "premier",
+            "league"
+          ],
+          "data_campo_legado": "2026-10-16 23:02:30",
+          "post_id": "/esporte/2026/10/manchester-city-esta-mais-unido-apos-veredicto-da-premier-league-diz-tecnico-maresca.shtml",
+          "jaccard_exibido": 0.4615,
+          "dice_exibido": 0.6316,
+          "cobertura_titulo_menor_exibida": 0.6667
+        },
+        {
+          "posicao": 2,
+          "titulo": "Flamengo cai no grupo de Manchester City e Boca Juniors em torneio de Messi",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 19.31,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "manchester",
+            "city"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Futuro de Erling Haaland no Manchester City segue incerto enquanto Arsenal e Real Madrid preparam investida surpreendente por sua contratação",
+          "categoria": "extracaoFutebol",
+          "origem": "goal.com",
+          "score_percentual_exibido": 16.62,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "manchester",
+            "city"
+          ]
+        }
+      ],
+      "caso_id": "M360-C03",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Declaração sobre chance de recorde versus união do grupo após um veredicto.",
+        "evidencia_e_limite": "Os seis tokens comuns identificam clube, treinador e competição, sem demonstrar a mesma declaração ou assunto.",
+        "dados_para_confirmacao": [
+          "entrevista e declarações originais",
+          "tema e data da apuração"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 59.46,
+            "tokens_comuns_recalculados": 6
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 19.31,
+            "tokens_comuns_recalculados": 2
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 16.62,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  70.96%  Consenso BAIXO → SUSPEITO  tmc.com.br.msg",
+      "sha256_arquivo_fonte": "60cce203056abdbed117e89858960087cd7bf43415bd72085aaa48c452923876",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 70.96,
+        "gap_top1_top2_pontos_percentuais_exibido": 19.35,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "São Paulo x Vasco: onde assistir ao vivo e horário | Campeonato Brasileiro Série A 2026",
+        "fonte": "tmc.com.br",
+        "url": "https://tmc.com.br/esporte/sao-paulo-x-vasco-onde-assistir-brasileiro-serie-a-2026/",
+        "host": "tmc.com.br",
+        "tokens_semanticos": [
+          "paulo",
+          "vasco",
+          "campeonato",
+          "brasileiro",
+          "serie",
+          "2026"
+        ],
+        "tokens_fracos_ignorados": [
+          "onde",
+          "assistir",
+          "vivo",
+          "horario"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Vasco x Remo: horário e onde assistir ao Campeonato Brasileiro Série A",
+          "categoria": "extracaoFutebol",
+          "origem": "cnnbrasil.com.br",
+          "score_percentual_exibido": 70.96,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "vasco",
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ],
+          "data_campo_legado": "2026-10-10 13:01:08",
+          "post_id": "/esportes/brasileirao/vasco-x-remo-horario-e-onde-assistir-ao-campeonato-brasileiro-serie-a/",
+          "jaccard_exibido": 0.5714,
+          "dice_exibido": 0.7273,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Ao vivo: Ceará x Juventude | Rodada 34 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 51.61,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Ao vivo: Criciúma x América-MG | Rodada 33 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 51.61,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        }
+      ],
+      "caso_id": "M360-C04",
+      "analise_provisoria": {
+        "relacao_com_top1": "EVENTO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "São Paulo x Vasco versus Vasco x Remo.",
+        "evidencia_e_limite": "Um clube comum e a mesma competição não resolvem a troca de adversário. São Paulo aparece reduzido a paulo na tokenização.",
+        "dados_para_confirmacao": [
+          "partida e data",
+          "entidades compostas preservadas"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 70.96,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 51.61,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 51.61,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  65.15%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "e1b4b5d9e7eb7190ffbe1b01284a4a35fad54325cc21ae6d67a3e028e695aeb5",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 65.15,
+        "gap_top1_top2_pontos_percentuais_exibido": 30.99,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Leonardo Jardim define time titular para jogo do Flamengo x Bahia em treino deste sábado",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/leonardo-jardim-define-time-titular-para-jogo-do-flamengo-x-bahia-em-treino-deste-sabado",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "leonardo",
+          "jardim",
+          "define",
+          "time",
+          "titular",
+          "flamengo",
+          "bahia",
+          "treino",
+          "deste",
+          "sabado"
+        ],
+        "tokens_fracos_ignorados": [
+          "jogo"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Leonardo Jardim define time titular para jogo do Flamengo x Estudiantes em treino desta quarta",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 65.15,
+          "tokens_comuns": 7,
+          "lista_tokens_comuns": [
+            "leonardo",
+            "jardim",
+            "define",
+            "time",
+            "titular",
+            "flamengo",
+            "treino"
+          ],
+          "data_campo_legado": "2026-10-14 09:02:21",
+          "post_id": "/2026/10/leonardo-jardim-define-time-titular-para-jogo-do-flamengo-x-estudiantes-em-treino-desta-quarta-2/",
+          "jaccard_exibido": 0.5385,
+          "dice_exibido": 0.7,
+          "cobertura_titulo_menor_exibida": 0.7
+        },
+        {
+          "posicao": 2,
+          "titulo": "Leonardo Jardim critica arbitragem após Flamengo empatar com Estudiantes",
+          "categoria": "extracaoFutebol",
+          "origem": "flamengorj.com.br",
+          "score_percentual_exibido": 34.16,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "leonardo",
+            "jardim",
+            "flamengo"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "O plano de Leonardo Jardim para manter o Flamengo invicto na Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 34.16,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "leonardo",
+            "jardim",
+            "flamengo"
+          ]
+        }
+      ],
+      "caso_id": "M360-C05",
+      "analise_provisoria": {
+        "relacao_com_top1": "EVENTO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Jardim define o time contra o Bahia no sábado versus contra Estudiantes na quarta.",
+        "evidencia_e_limite": "Mesmo treinador e ação com sete tokens comuns, mas adversário e referência temporal diferentes.",
+        "dados_para_confirmacao": [
+          "identidade da partida",
+          "data de referência do treino"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 65.15,
+            "tokens_comuns_recalculados": 7
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 34.16,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 34.16,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  70.86%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "d82886504bfdd8a0bd66df02239f1715e482d4e0325d70aa90890239c8b29986",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 70.86,
+        "gap_top1_top2_pontos_percentuais_exibido": 5.86,
+        "fontes_distintas_top3": 1,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": false,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Saiba onde assistir ao jogo do Flamengo x Bahia, pelo Brasileirão",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/saiba-onde-assistir-ao-jogo-do-flamengo-x-bahia-pelo-brasileirao-4",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "flamengo",
+          "bahia",
+          "brasileirao"
+        ],
+        "tokens_fracos_ignorados": [
+          "onde",
+          "assistir",
+          "jogo"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Libertadores e Brasileirão: veja a programação do Flamengo para enfrentar Estudiantes e Bahia",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 70.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "brasileirao"
+          ],
+          "data_campo_legado": "2026-10-12 17:01:48",
+          "post_id": "/2026/10/libertadores-e-brasileirao-veja-a-programacao-do-flamengo-para-enfrentar-estudiantes-e-bahia/",
+          "jaccard_exibido": 0.4286,
+          "dice_exibido": 0.6,
+          "cobertura_titulo_menor_exibida": 1.0
+        },
+        {
+          "posicao": 2,
+          "titulo": "Foco no Brasileirão: Flamengo embarca para Salvador neste sábado para enfrentar o Bahia",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "brasileirao"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "“Jogo mais pesado do campeonato”: Rogério Ceni projeta Bahia x Flamengo pelo Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "brasileirao"
+          ]
+        }
+      ],
+      "caso_id": "M360-C06",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Onde assistir Flamengo x Bahia versus programação para Estudiantes e Bahia.",
+        "evidencia_e_limite": "Candidato reduzido a três tokens do contexto; TOP2 é viagem e TOP3 é projeção de Ceni.",
+        "dados_para_confirmacao": [
+          "matches de transmissão da partida",
+          "edição e dados de serviço"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 70.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  61.67%  Consenso BAIXO → SUSPEITO  Meio News.msg",
+      "sha256_arquivo_fonte": "b408e4e142c48a1b90bef41a48e5117e8d4762f693e537b2c73e1f7c4ed22930",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 61.67,
+        "gap_top1_top2_pontos_percentuais_exibido": 3.21,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Bellingham encaminha renovação com o Real Madrid até 2031",
+        "fonte": "Meio News",
+        "url": "https://www.meionews.com/esportes/ole/bellingham-encaminha-renovacao-com-o-real-madrid-ate-2031-578381",
+        "host": "www.meionews.com",
+        "tokens_semanticos": [
+          "bellingham",
+          "encaminha",
+          "renovacao",
+          "real",
+          "madrid",
+          "2031"
+        ],
+        "tokens_fracos_ignorados": []
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Real Madrid encaminha renovação de Courtois até 2028",
+          "categoria": "extracaoFutebol",
+          "origem": "placar.com.br",
+          "score_percentual_exibido": 61.67,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "encaminha",
+            "renovacao",
+            "real",
+            "madrid"
+          ],
+          "data_campo_legado": "2026-10-12 18:02:34",
+          "post_id": "/mercado-da-bola/real-madrid-encaminha-renovacao-de-courtois-ate-2028/",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 0.6667
+        },
+        {
+          "posicao": 2,
+          "titulo": "Real Madrid e Bellingham acertam renovação de contrato; veja detalhes",
+          "categoria": "extracaoFutebol",
+          "origem": "band.com.br",
+          "score_percentual_exibido": 58.46,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "bellingham",
+            "renovacao",
+            "real",
+            "madrid"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "“Não sabia que ele era tão bom”: Mourinho elogia Wesley após virada do Real Madrid",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 24.39,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "real",
+            "madrid"
+          ]
+        }
+      ],
+      "caso_id": "M360-C07",
+      "analise_provisoria": {
+        "relacao_com_top1": "ENTIDADE_CRITICA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Renovação de Bellingham até 2031 versus renovação de Courtois até 2028.",
+        "evidencia_e_limite": "Clube e ação são comuns, mas jogador e término contratual diferem. TOP2 trata de Bellingham; encaminhar e acertar podem marcar estágios diferentes.",
+        "dados_para_confirmacao": [
+          "jogador e vigência do contrato",
+          "cronologia da negociação",
+          "se houve acordo concluído ou apenas avanço"
+        ],
+        "posicao_prioritaria_para_revisao": 2,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 61.67,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 58.46,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 24.39,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  60.86%  Consenso BAIXO → SUSPEITO  Diário do Nordeste.msg",
+      "sha256_arquivo_fonte": "9e46a4c881d7b81fac29b77506e4a03705de748c7545e025ca312c3b63d53b28",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 60.86,
+        "gap_top1_top2_pontos_percentuais_exibido": 3.25,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Bahia x Flamengo na Série A do Brasileirão: veja onde assistir, horário e escalações",
+        "fonte": "Diário do Nordeste",
+        "url": "https://diariodonordeste.verdesmares.com.br/jogada/bahia-x-flamengo-na-serie-a-do-brasileirao-veja-onde-assistir-horario-e-escalacoes-1.3799171",
+        "host": "diariodonordeste.verdesmares.com.br",
+        "tokens_semanticos": [
+          "bahia",
+          "flamengo",
+          "serie",
+          "brasileirao"
+        ],
+        "tokens_fracos_ignorados": [
+          "onde",
+          "assistir",
+          "horario",
+          "escalacoes"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Brasileirão: Bahia ganha reforço para jogo contra o Flamengo",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 60.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "bahia",
+            "flamengo",
+            "brasileirao"
+          ],
+          "data_campo_legado": "2026-10-17 17:53:04",
+          "post_id": "/2026/10/brasileirao-bahia-ganha-reforco-para-jogo-contra-o-flamengo",
+          "jaccard_exibido": 0.4286,
+          "dice_exibido": 0.6,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Libertadores e Brasileirão: veja a programação do Flamengo para enfrentar Estudiantes e Bahia",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 57.61,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "bahia",
+            "flamengo",
+            "brasileirao"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Bahia x Flamengo Palpite – Onde assistir e escalações (18/10)",
+          "categoria": "extracaoFutebol",
+          "origem": "trivela.com.br",
+          "score_percentual_exibido": 55.81,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "bahia",
+            "flamengo"
+          ]
+        }
+      ],
+      "caso_id": "M360-C08",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Serviço de transmissão/escalações versus reforço do Bahia.",
+        "evidencia_e_limite": "TOP3 tem transmissão/escalações e palpite, mais próximo em faceta, mas ainda exige conferir edição e escopo.",
+        "dados_para_confirmacao": [
+          "mesma partida e edição",
+          "serviço e escopo do TOP3"
+        ],
+        "posicao_prioritaria_para_revisao": 3,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 60.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 57.61,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 55.81,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  76%  Consenso BAIXO → SUSPEITO  ge.msg",
+      "sha256_arquivo_fonte": "6e684658ff7f87023ff1d8a1ad1f58b49bdfa849cf9a13c6c1cec3dee7ea56c3",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 76.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 21.14,
+        "fontes_distintas_top3": 1,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": false,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Ao vivo: São Bernardo x Criciúma | Rodada 34 | Campeonato Brasileiro Série B",
+        "fonte": "ge",
+        "url": "https://ge.globo.com/sc/futebol/brasileirao-serie-b/jogo/18-10-2026/sao-bernardo-criciuma.ghtml",
+        "host": "ge.globo.com",
+        "tokens_semanticos": [
+          "bernardo",
+          "criciuma",
+          "campeonato",
+          "brasileiro",
+          "serie"
+        ],
+        "tokens_fracos_ignorados": [
+          "vivo",
+          "rodada"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Ao vivo: Criciúma x América-MG | Rodada 33 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 76.0,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "criciuma",
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ],
+          "data_campo_legado": "2026-10-11 20:04:41",
+          "post_id": "/sc/futebol/brasileirao-serie-b/jogo/12-10-2026/criciuma-america-mg.ghtml",
+          "jaccard_exibido": 0.6667,
+          "dice_exibido": 0.8,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Ao vivo: CRB x Botafogo-SP | Rodada 34 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 54.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Ao vivo: Ceará x Juventude | Rodada 34 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 54.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        }
+      ],
+      "caso_id": "M360-C09",
+      "analise_provisoria": {
+        "relacao_com_top1": "EVENTO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "São Bernardo x Criciúma, rodada 34, versus Criciúma x América-MG, rodada 33.",
+        "evidencia_e_limite": "Muda o adversário e a rodada. A tokenização perde São, a letra B e os números da rodada.",
+        "dados_para_confirmacao": [
+          "partida e data",
+          "nomes completos e divisão"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 76,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 54.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 54.86,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  80.5%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "c3fef20d031dbb2d51514fcbfa71bb7b408f917a8c2781d76ec05a354dcf6e8e",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 80.5,
+        "gap_top1_top2_pontos_percentuais_exibido": 5.5,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "As prováveis escalações de Flamengo e Bahia para jogo do Brasileirão hoje",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/as-provaveis-escalacoes-de-flamengo-e-bahia-para-jogo-do-brasileirao-hoje",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "flamengo",
+          "bahia",
+          "brasileirao"
+        ],
+        "tokens_fracos_ignorados": [
+          "provaveis",
+          "escalacoes",
+          "jogo"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Jogo ao vivo, escalações e desfalques: saiba tudo sobre Bahia x Flamengo pelo Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 80.5,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "brasileirao"
+          ],
+          "data_campo_legado": "2026-10-18 11:23:10",
+          "post_id": "/2026/10/jogo-ao-vivo-escalacoes-e-desfalques-saiba-tudo-sobre-bahia-x-flamengo-pelo-brasileirao",
+          "jaccard_exibido": 0.6,
+          "dice_exibido": 0.75,
+          "cobertura_titulo_menor_exibida": 1.0
+        },
+        {
+          "posicao": 2,
+          "titulo": "Brasileirão: Bahia ganha reforço para jogo contra o Flamengo",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 75.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "brasileirao"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Bahia x Flamengo: retrospecto, arbitragem e outras informações sobre a partida pelo Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "flamengo.com.br",
+          "score_percentual_exibido": 70.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "brasileirao"
+          ]
+        }
+      ],
+      "caso_id": "M360-C10",
+      "analise_provisoria": {
+        "relacao_com_top1": "ESCOPO_SOBREPOSTO",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Prováveis escalações versus hub ao vivo/escalações/desfalques.",
+        "evidencia_e_limite": "Score 80,5% com três tokens comuns. O hub pode conter a mesma projeção ou informação complementar; faltam listas e momento de publicação.",
+        "dados_para_confirmacao": [
+          "listas prováveis nos dois conteúdos",
+          "escopo do hub",
+          "mesma partida e atualização"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 80.5,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 75,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 70.86,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": true,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  65%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "dbd64c8ced975e4dd97c3b0190dbc81ee210485c61a0fd5af25fdae93cd211d7",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 65.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 7.42,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo de olho: Estudiantes enfrenta San Lorenzo antes de decisão da Libertadores; veja horário e onde assistir",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/flamengo-de-olho-estudiantes-enfrenta-san-lorenzo-antes-de-decisao-da-libertadores-veja-horario-e-onde-assistir",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "flamengo",
+          "olho",
+          "estudiantes",
+          "enfrenta",
+          "san",
+          "lorenzo",
+          "antes",
+          "decisao",
+          "libertadores"
+        ],
+        "tokens_fracos_ignorados": [
+          "horario",
+          "onde",
+          "assistir"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Estudiantes x Flamengo pela Libertadores: onde assistir ao vivo, horário e escalação",
+          "categoria": "extracaoFutebol",
+          "origem": "estadao.com.br",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-17 10:05:05",
+          "post_id": "/em-alta/esportes/futebol/estudiantes-x-flamengo-libertadores-onde-assistir-ao-vivo-horario-escalacao-npres/",
+          "jaccard_exibido": 0.3333,
+          "dice_exibido": 0.5,
+          "cobertura_titulo_menor_exibida": 1.0
+        },
+        {
+          "posicao": 2,
+          "titulo": "Estudiantes x Flamengo: onde assistir e escalações do jogo",
+          "categoria": "extracaoFutebol",
+          "origem": "spacemoney.com.br",
+          "score_percentual_exibido": 57.58,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Com 4 do Flamengo e 2 do Estudiantes, Libertadores divulga seleção da rodada",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 45.04,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes",
+            "libertadores"
+          ]
+        }
+      ],
+      "caso_id": "M360-C11",
+      "analise_provisoria": {
+        "relacao_com_top1": "EVENTO_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Estudiantes enfrenta San Lorenzo, observado pelo Flamengo, versus Estudiantes x Flamengo.",
+        "evidencia_e_limite": "Flamengo e Libertadores são contexto secundário do candidato; o confronto principal é Estudiantes x San Lorenzo.",
+        "dados_para_confirmacao": [
+          "participantes da ação principal",
+          "partida do serviço de transmissão"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 57.58,
+            "tokens_comuns_recalculados": 2
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 45.04,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  67.61%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "176ac3edd30365d0428b70c33b704f3b6bcfb31cdedbe4d4b5f51421591da01e",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 67.61,
+        "gap_top1_top2_pontos_percentuais_exibido": 38.28,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo luta até o fim, mas perde para o Bauru por um ponto na estreia do NBB",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/flamengo-luta-ate-o-fim-mas-perde-para-o-bauru-por-um-ponto-na-estreia-do-nbb",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "flamengo",
+          "luta",
+          "fim",
+          "perde",
+          "bauru",
+          "ponto",
+          "estreia",
+          "nbb"
+        ],
+        "tokens_fracos_ignorados": []
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Saiba horário e onde assistir à estreia do Flamengo no NBB hoje",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 67.61,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estreia",
+            "nbb"
+          ],
+          "data_campo_legado": "2026-10-18 10:48:38",
+          "post_id": "/2026/10/saiba-horario-e-onde-assistir-a-estreia-do-flamengo-no-nbb-hoje",
+          "jaccard_exibido": 0.375,
+          "dice_exibido": 0.5455,
+          "cobertura_titulo_menor_exibida": 1.0
+        },
+        {
+          "posicao": 2,
+          "titulo": "Estudiantes x Flamengo: onde assistir e escalações do jogo",
+          "categoria": "extracaoFutebol",
+          "origem": "spacemoney.com.br",
+          "score_percentual_exibido": 29.33,
+          "tokens_comuns": 1,
+          "lista_tokens_comuns": [
+            "flamengo"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Que horas é o jogo do Flamengo hoje?",
+          "categoria": "extracaoFutebol",
+          "origem": "gauchazh.clicrbs.com.br",
+          "score_percentual_exibido": 29.33,
+          "tokens_comuns": 1,
+          "lista_tokens_comuns": [
+            "flamengo"
+          ]
+        }
+      ],
+      "caso_id": "M360-C12",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Resultado contra Bauru na estreia do NBB versus serviço de horário da estreia.",
+        "evidencia_e_limite": "Resultado e prévia de transmissão são fases factuais diferentes. O TOP1 não informa adversário; outros títulos genéricos não comprovam compatibilidade de modalidade.",
+        "dados_para_confirmacao": [
+          "modalidade e partida da estreia",
+          "data e fase factual",
+          "placar e resultado"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 67.61,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 29.33,
+            "tokens_comuns_recalculados": 1
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 29.33,
+            "tokens_comuns_recalculados": 1
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  70.96%  Consenso MODERADO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "c37114f18e1ee757f5245721425dc76fe997999cff891229080332e277ae73f2",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "MODERADO",
+        "motivo": "CONSENSO_SEMANTICO_MODERADO",
+        "score_top1_percentual_exibido": 70.96,
+        "gap_top1_top2_pontos_percentuais_exibido": 9.29,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo tem 5 desfalques e 7 pendurados para jogo contra o Bahia, pelo Brasileirão",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/flamengo-tem-5-desfalques-e-7-pendurados-para-jogo-contra-o-bahia-pelo-brasileirao",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "flamengo",
+          "desfalques",
+          "pendurados",
+          "contra",
+          "bahia",
+          "brasileirao"
+        ],
+        "tokens_fracos_ignorados": [
+          "jogo"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Jogo ao vivo, escalações e desfalques: saiba tudo sobre Bahia x Flamengo pelo Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 70.96,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "desfalques",
+            "bahia",
+            "brasileirao"
+          ],
+          "data_campo_legado": "2026-10-18 11:23:10",
+          "post_id": "/2026/10/jogo-ao-vivo-escalacoes-e-desfalques-saiba-tudo-sobre-bahia-x-flamengo-pelo-brasileirao",
+          "jaccard_exibido": 0.5714,
+          "dice_exibido": 0.7273,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Brasileirão: Bahia ganha reforço para jogo contra o Flamengo",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 61.67,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "contra",
+            "bahia",
+            "brasileirao"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Bahia x Flamengo Palpite – Onde assistir e escalações (18/10)",
+          "categoria": "extracaoFutebol",
+          "origem": "trivela.com.br",
+          "score_percentual_exibido": 48.57,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia"
+          ]
+        }
+      ],
+      "caso_id": "M360-C13",
+      "analise_provisoria": {
+        "relacao_com_top1": "ESCOPO_SOBREPOSTO",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Cinco desfalques e sete pendurados versus hub com ao vivo/escalações/desfalques.",
+        "evidencia_e_limite": "A pauta estreita pode estar incorporada ao hub. Quantidades desaparecem dos tokens; TOP2 é reforço do Bahia, outra equipe enfocada.",
+        "dados_para_confirmacao": [
+          "listas de ausentes e pendurados",
+          "situação individual e momento da informação",
+          "abrangência do hub"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "MODERADO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 70.96,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 61.67,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 48.57,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  61.67%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "944ba66e04dad8ab2d96fb4264160079589b11177aa87d230028511fde68d4e7",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 61.67,
+        "gap_top1_top2_pontos_percentuais_exibido": 10.06,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "SAIU! Flamengo divulga escalação para jogo contra o Bahia, pelo Brasileirão",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/saiu-flamengo-divulga-escalacao-para-jogo-contra-o-bahia-pelo-brasileirao-2",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "saiu",
+          "flamengo",
+          "divulga",
+          "contra",
+          "bahia",
+          "brasileirao"
+        ],
+        "tokens_fracos_ignorados": [
+          "escalacao",
+          "jogo"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Brasileirão: Bahia ganha reforço para jogo contra o Flamengo",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 61.67,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "contra",
+            "bahia",
+            "brasileirao"
+          ],
+          "data_campo_legado": "2026-10-17 17:53:04",
+          "post_id": "/2026/10/brasileirao-bahia-ganha-reforco-para-jogo-contra-o-flamengo",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 0.6667
+        },
+        {
+          "posicao": 2,
+          "titulo": "Jogo ao vivo, escalações e desfalques: saiba tudo sobre Bahia x Flamengo pelo Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 51.61,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "brasileirao"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Bahia x Flamengo Palpite – Onde assistir e escalações (18/10)",
+          "categoria": "extracaoFutebol",
+          "origem": "trivela.com.br",
+          "score_percentual_exibido": 48.57,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia"
+          ]
+        }
+      ],
+      "caso_id": "M360-C14",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Flamengo divulga escalação versus Bahia ganha reforço.",
+        "evidencia_e_limite": "Mudam equipe enfocada, ação e estado. Não confundir anúncio oficial com projeção ou disponibilidade do adversário.",
+        "dados_para_confirmacao": [
+          "equipe e lista oficial",
+          "estado provável versus confirmado",
+          "outros matches do anúncio"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 61.67,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 51.61,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 48.57,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  70.96%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "9ba17dd0faa4ab44e3a7caf1a2b17f3cff3403057e9408380f94238134f11dd0",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 70.96,
+        "gap_top1_top2_pontos_percentuais_exibido": 16.1,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Bahia define escalação para jogo contra o Flamengo, pelo Brasileirão",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/bahia-define-escalacao-para-jogo-contra-o-flamengo-pelo-brasileirao-3",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "bahia",
+          "define",
+          "contra",
+          "flamengo",
+          "brasileirao"
+        ],
+        "tokens_fracos_ignorados": [
+          "escalacao",
+          "jogo"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Brasileirão: Bahia ganha reforço para jogo contra o Flamengo",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 70.96,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "bahia",
+            "contra",
+            "flamengo",
+            "brasileirao"
+          ],
+          "data_campo_legado": "2026-10-17 17:53:04",
+          "post_id": "/2026/10/brasileirao-bahia-ganha-reforco-para-jogo-contra-o-flamengo",
+          "jaccard_exibido": 0.5714,
+          "dice_exibido": 0.7273,
+          "cobertura_titulo_menor_exibida": 0.8
+        },
+        {
+          "posicao": 2,
+          "titulo": "Jogo ao vivo, escalações e desfalques: saiba tudo sobre Bahia x Flamengo pelo Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 54.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "bahia",
+            "flamengo",
+            "brasileirao"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Bahia x Flamengo Palpite – Onde assistir e escalações (18/10)",
+          "categoria": "extracaoFutebol",
+          "origem": "trivela.com.br",
+          "score_percentual_exibido": 51.67,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "bahia",
+            "flamengo"
+          ]
+        }
+      ],
+      "caso_id": "M360-C15",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Bahia define escalação versus Bahia ganha reforço.",
+        "evidencia_e_limite": "Mesma equipe e contexto não demonstram o mesmo fato; seleção do time e disponibilidade de um reforço exigem informação específica.",
+        "dados_para_confirmacao": [
+          "lista e estado da escalação",
+          "identidade e situação do reforço",
+          "referência temporal"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 70.96,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 54.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 51.67,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  74.79%  Consenso BAIXO → SUSPEITO  flamengo.com.br.msg",
+      "sha256_arquivo_fonte": "48394ae3ea13788bc91a72134d036fd18d17da3de1a678a6edb0cbb56e23d2cb",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 74.79,
+        "gap_top1_top2_pontos_percentuais_exibido": 25.79,
+        "fontes_distintas_top3": 2,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo vence o Bahia por 3 a 0 na Fonte Nova e segue na liderança do Brasileirão",
+        "fonte": "flamengo.com.br",
+        "url": "https://www.flamengo.com.br/noticias/futebol/flamengo-vence-o-bahia-por-3-a-0-na-fonte-nova-e-segue-na-lideranca-do-brasileirao",
+        "host": "www.flamengo.com.br",
+        "tokens_semanticos": [
+          "flamengo",
+          "vence",
+          "bahia",
+          "fonte",
+          "segue",
+          "lideranca",
+          "brasileirao"
+        ],
+        "tokens_fracos_ignorados": []
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Segue o líder! Flamengo atropela Bahia na Fonte Nova e mantém liderança do Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 74.79,
+          "tokens_comuns": 6,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "fonte",
+            "segue",
+            "lideranca",
+            "brasileirao"
+          ],
+          "data_campo_legado": "2026-10-18 20:42:50",
+          "post_id": "/2026/10/segue-o-lider-flamengo-atropela-bahia-na-fonte-nova-e-mantem-lideranca-do-brasileirao",
+          "jaccard_exibido": 0.6,
+          "dice_exibido": 0.75,
+          "cobertura_titulo_menor_exibida": 0.8571
+        },
+        {
+          "posicao": 2,
+          "titulo": "Brasileirão Série A hoje (18/10): jogos, horários, onde assistir e Flamengo em busca da liderança",
+          "categoria": "extracaoFutebol",
+          "origem": "aloalobahia.com",
+          "score_percentual_exibido": 49.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "lideranca",
+            "brasileirao"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Jogo ao vivo, escalações e desfalques: saiba tudo sobre Bahia x Flamengo pelo Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 49.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "bahia",
+            "brasileirao"
+          ]
+        }
+      ],
+      "caso_id": "M360-C16",
+      "analise_provisoria": {
+        "relacao_com_top1": "POSSIVEL_MESMA_NOTICIA",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Vitória do Flamengo sobre o Bahia na Fonte Nova mantendo liderança versus relato de goleada e manutenção da liderança.",
+        "evidencia_e_limite": "Forte hipótese de paráfrase com seis tokens comuns e 74,79%. O TOP2 fraco não afasta a hipótese. O placar só está explícito no candidato.",
+        "dados_para_confirmacao": [
+          "mesma partida e data",
+          "placar e informação de liderança",
+          "conteúdo e apuração"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 74.79,
+            "tokens_comuns_recalculados": 6
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 49,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 49,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  65%  Consenso BAIXO → SUSPEITO  RoyNews.msg",
+      "sha256_arquivo_fonte": "847691245c47bee34644f383a7ef7d71187615372d904a1005603ad7d5cef54d",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 65.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 0.0,
+        "fontes_distintas_top3": 1,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": false,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Classificação do Campeonato Brasileiro Série A",
+        "fonte": "RoyNews",
+        "url": "https://roynews.com.br/noticia/12657/classificacao-do-campeonato-brasileiro-serie-a",
+        "host": "roynews.com.br",
+        "tokens_semanticos": [
+          "classificacao",
+          "campeonato",
+          "brasileiro",
+          "serie"
+        ],
+        "tokens_fracos_ignorados": []
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Ao vivo: Goiás x Náutico | Rodada 34 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ],
+          "data_campo_legado": "2026-10-18 20:06:25",
+          "post_id": "/go/futebol/brasileirao-serie-b/jogo/19-10-2026/goias-nautico.ghtml",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Ao vivo: CRB x Botafogo-SP | Rodada 34 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Ao vivo: Ceará x Juventude | Rodada 34 | Campeonato Brasileiro Série B",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "campeonato",
+            "brasileiro",
+            "serie"
+          ]
+        }
+      ],
+      "caso_id": "M360-C17",
+      "analise_provisoria": {
+        "relacao_com_top1": "COMPETICAO_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Classificação da Série A versus páginas ao vivo da Série B.",
+        "evidencia_e_limite": "Os três scores são 65% com três tokens comuns. O filtro apaga A/B; tipo de conteúdo e divisão são diferentes.",
+        "dados_para_confirmacao": [
+          "divisão da competição",
+          "tipo classificação versus cobertura de partida",
+          "data/edição da tabela"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  62.85%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
+      "sha256_arquivo_fonte": "bbe7caff2f679b8ba3ed98dcbdd81f9eb1aefe9006433eed4f3271b19523283c",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 62.85,
+        "gap_top1_top2_pontos_percentuais_exibido": 6.85,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo terá 4 treinos antes de decidir vaga na final da Libertadores contra o Estudiantes",
+        "fonte": "colunadofla.com",
+        "url": "https://colunadofla.com/2026/10/flamengo-tera-4-treinos-antes-de-decidir-vaga-na-final-da-libertadores-contra-o-estudiantes",
+        "host": "colunadofla.com",
+        "tokens_semanticos": [
+          "flamengo",
+          "tera",
+          "treinos",
+          "antes",
+          "decidir",
+          "vaga",
+          "final",
+          "libertadores",
+          "contra",
+          "estudiantes"
+        ],
+        "tokens_fracos_ignorados": []
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Estudiantes x Flamengo pela Libertadores: onde assistir ao vivo, horário e escalação",
+          "categoria": "extracaoFutebol",
+          "origem": "estadao.com.br",
+          "score_percentual_exibido": 62.85,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "libertadores",
+            "estudiantes"
+          ],
+          "data_campo_legado": "2026-10-17 10:05:05",
+          "post_id": "/em-alta/esportes/futebol/estudiantes-x-flamengo-libertadores-onde-assistir-ao-vivo-horario-escalacao-npres/",
+          "jaccard_exibido": 0.3,
+          "dice_exibido": 0.4615,
+          "cobertura_titulo_menor_exibida": 1.0
+        },
+        {
+          "posicao": 2,
+          "titulo": "Estudiantes x Flamengo: onde assistir e escalações do jogo",
+          "categoria": "extracaoFutebol",
+          "origem": "spacemoney.com.br",
+          "score_percentual_exibido": 56.0,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Flamengo cria pouco, empata com Estudiantes e deixa vaga na final da Libertadores para decidir no Maracanã",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 53.14,
+          "tokens_comuns": 6,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "decidir",
+            "vaga",
+            "final",
+            "libertadores",
+            "estudiantes"
+          ]
+        }
+      ],
+      "caso_id": "M360-C18",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Quatro treinos antes da decisão versus serviço de transmissão.",
+        "evidencia_e_limite": "Agenda de preparação é outra pauta. TOP3 descreve empate anterior e decisão futura, sem demonstrar repetição da agenda.",
+        "dados_para_confirmacao": [
+          "partida e referência temporal",
+          "cronograma e quantidade de treinos",
+          "outros matches da preparação"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 62.85,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 56,
+            "tokens_comuns_recalculados": 2
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 53.14,
+            "tokens_comuns_recalculados": 6
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  60.86%  Consenso BAIXO → SUSPEITO  ge.msg",
+      "sha256_arquivo_fonte": "d9c2f16f9f03330589a7da3d0b519619e8a313302a9b67607f776417f04f1673",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 60.86,
+        "gap_top1_top2_pontos_percentuais_exibido": 5.05,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Ao vivo: Palmeiras x Fluminense | Semifinal | Taça Conmebol Libertadores",
+        "fonte": "ge",
+        "url": "https://ge.globo.com/sp/futebol/libertadores/jogo/21-10-2026/palmeiras-fluminense.ghtml",
+        "host": "ge.globo.com",
+        "tokens_semanticos": [
+          "palmeiras",
+          "fluminense",
+          "semifinal",
+          "taca",
+          "conmebol",
+          "libertadores"
+        ],
+        "tokens_fracos_ignorados": [
+          "vivo"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Fluminense x Palmeiras: onde assistir ao vivo e escalações pela Copa Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "noataque.com.br",
+          "score_percentual_exibido": 60.86,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "palmeiras",
+            "fluminense",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-13 10:03:14",
+          "post_id": "/futebol/libertadores-da-america/time/fluminense/noticia/2026/10/13/fluminense-x-palmeiras-onde-assistir-ao-vivo-e-escalacoes-pela-copa-libertadores/",
+          "jaccard_exibido": 0.4286,
+          "dice_exibido": 0.6,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Palmeiras anuncia venda de ingressos para duelo com o Fluminense pela semifinal da Libertadores; confira",
+          "categoria": "extracaoFutebol",
+          "origem": "gazetaesportiva.com",
+          "score_percentual_exibido": 55.81,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "palmeiras",
+            "fluminense",
+            "semifinal",
+            "libertadores"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Análise: Fluminense se salva de goleada e vai sob pressão para semifinal da Libertadores",
+          "categoria": "extracaoFutebol",
+          "origem": "ge.globo.com",
+          "score_percentual_exibido": 42.85,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "fluminense",
+            "semifinal",
+            "libertadores"
+          ]
+        }
+      ],
+      "caso_id": "M360-C19",
+      "analise_provisoria": {
+        "relacao_com_top1": "IDENTIDADE_TEMPORAL_NAO_CONFIRMADA",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Cobertura Palmeiras x Fluminense versus guia de transmissão Fluminense x Palmeiras.",
+        "evidencia_e_limite": "Não unir as partidas só pelos clubes: o URL do candidato cita 21/10; A04 do primeiro lote cita 14/10. A data da partida do TOP1 não está estabelecida pelo título.",
+        "dados_para_confirmacao": [
+          "data e etapa/ida-volta dos dois conteúdos",
+          "tipo de cobertura",
+          "data do evento separada de publicação/coleta"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 60.86,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 55.81,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 42.85,
+            "tokens_comuns_recalculados": 3
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  75%  Consenso BAIXO → SUSPEITO  Rádio Itatiaia.msg",
+      "sha256_arquivo_fonte": "0e864d596f3f2004b29d67467234c78f34c417e8e811a8949176e7e2e03062c2",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 75.0,
+        "gap_top1_top2_pontos_percentuais_exibido": 4.04,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Flamengo x Estudiantes: Conmebol divulga os uniformes do jogo da Libertadores",
+        "fonte": "Rádio Itatiaia",
+        "url": "https://www.itatiaia.com.br/esportes/futebol/futebol-nacional/futebol-carioca/flamengo/flamengo-x-estudiantes-conmebol-divulga-os-uniformes-do-jogo-da-libertadores/",
+        "host": "www.itatiaia.com.br",
+        "tokens_semanticos": [
+          "flamengo",
+          "estudiantes",
+          "conmebol",
+          "divulga",
+          "uniformes",
+          "libertadores"
+        ],
+        "tokens_fracos_ignorados": [
+          "jogo"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Estudiantes x Flamengo pela Libertadores: onde assistir ao vivo, horário e escalação",
+          "categoria": "extracaoFutebol",
+          "origem": "estadao.com.br",
+          "score_percentual_exibido": 75.0,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes",
+            "libertadores"
+          ],
+          "data_campo_legado": "2026-10-17 10:05:05",
+          "post_id": "/em-alta/esportes/futebol/estudiantes-x-flamengo-libertadores-onde-assistir-ao-vivo-horario-escalacao-npres/",
+          "jaccard_exibido": 0.5,
+          "dice_exibido": 0.6667,
+          "cobertura_titulo_menor_exibida": 1.0
+        },
+        {
+          "posicao": 2,
+          "titulo": "Com 4 do Flamengo e 2 do Estudiantes, Libertadores divulga seleção da rodada",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 70.96,
+          "tokens_comuns": 4,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes",
+            "divulga",
+            "libertadores"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Estudiantes x Flamengo: onde assistir e escalações do jogo",
+          "categoria": "extracaoFutebol",
+          "origem": "spacemoney.com.br",
+          "score_percentual_exibido": 65.0,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "flamengo",
+            "estudiantes"
+          ]
+        }
+      ],
+      "caso_id": "M360-C20",
+      "analise_provisoria": {
+        "relacao_com_top1": "CONTEXTO_COMUM_FACETA_DIFERENTE",
+        "confianca_na_hipotese": "ALTA",
+        "hipotese": "Conmebol divulga uniformes versus onde assistir/escalação.",
+        "evidencia_e_limite": "Uniformes são objeto diferente de transmissão. No TOP2, divulga seleção da rodada é outra ação informacional apesar de compartilhar o verbo.",
+        "dados_para_confirmacao": [
+          "objeto do anúncio",
+          "mesma partida",
+          "outros matches de uniformes"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 75,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 70.96,
+            "tokens_comuns_recalculados": 4
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 65,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  70.5%  Consenso BAIXO → SUSPEITO  ND Mais.msg",
+      "sha256_arquivo_fonte": "d9c28453ce755e36824db0c7313fde62eb756ba6ce0513df8a91ddf30002cb00",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 70.5,
+        "gap_top1_top2_pontos_percentuais_exibido": 14.69,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Tabela do Brasileirão Série A: veja a classificação após a rodada",
+        "fonte": "ND Mais",
+        "url": "https://ndmais.com.br/video/tabela-do-brasileirao-serie-a-veja-a-classificacao-apos-a-rodada/",
+        "host": "ndmais.com.br",
+        "tokens_semanticos": [
+          "tabela",
+          "brasileirao",
+          "serie",
+          "classificacao"
+        ],
+        "tokens_fracos_ignorados": [
+          "rodada"
+        ]
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Confira os resultados e a classificação do Brasileirão Série A após a 31ª rodada",
+          "categoria": "extracaoFutebol",
+          "origem": "ohoje.com",
+          "score_percentual_exibido": 70.5,
+          "tokens_comuns": 3,
+          "lista_tokens_comuns": [
+            "brasileirao",
+            "serie",
+            "classificacao"
+          ],
+          "data_campo_legado": "2026-10-19 13:01:20",
+          "post_id": "/2026/10/19/confira-os-resultados-e-a-classificacao-do-brasileirao-serie-a-apos-a-31a-rodada/",
+          "jaccard_exibido": 0.6,
+          "dice_exibido": 0.75,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Confira os jogos em destaque na 31ª rodada da Série A do Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "flashscore.com.br",
+          "score_percentual_exibido": 55.81,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "brasileirao",
+            "serie"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Athletico-PR x Palmeiras na Série A do Brasileirão: veja onde assistir, horário e escalações",
+          "categoria": "extracaoFutebol",
+          "origem": "diariodonordeste.verdesmares.com.br",
+          "score_percentual_exibido": 45.0,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "brasileirao",
+            "serie"
+          ]
+        }
+      ],
+      "caso_id": "M360-C21",
+      "analise_provisoria": {
+        "relacao_com_top1": "IDENTIDADE_TEMPORAL_NAO_CONFIRMADA",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Tabela após a rodada sem identificar qual versus classificação após a 31ª rodada.",
+        "evidencia_e_limite": "Possível mesma edição ou atualização recorrente. O URL do candidato indica vídeo; a data-base e o tipo de ativo precisam ser conferidos.",
+        "dados_para_confirmacao": [
+          "rodada/data-base da tabela",
+          "versão e atualização do conteúdo",
+          "política de vídeo e texto"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 70.5,
+            "tokens_comuns_recalculados": 3
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 55.81,
+            "tokens_comuns_recalculados": 2
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 45,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": false
+        }
+      }
+    },
+    {
+      "arquivo_fonte": "CORE Editorial M360 - SUSPEITO  60.86%  Consenso BAIXO → SUSPEITO  GZH.msg",
+      "sha256_arquivo_fonte": "d8dde7837f77cebfccf5df11f2388f18f77b7212bfdfc6892493abb7f68a352d",
+      "observado": {
+        "status_oficial": "SUSPEITO",
+        "status_sugerido_consenso": "SUSPEITO",
+        "nivel_consenso": "BAIXO",
+        "motivo": "SEM_CONSENSO_FORTE",
+        "score_top1_percentual_exibido": 60.86,
+        "gap_top1_top2_pontos_percentuais_exibido": 21.58,
+        "fontes_distintas_top3": 3,
+        "aplicado_automaticamente": false,
+        "multifonte_exibido": true,
+        "modo_exibido": "HOMOLOGACAO",
+        "similaridade_versao": "0.4.0",
+        "consenso_versao": "0.1.0"
+      },
+      "candidato": {
+        "titulo": "Grêmio refaz cálculos no Brasileirão e cogita \"abrir mão\" da Copa do Brasil para tentar permanecer na Série A",
+        "fonte": "GZH",
+        "url": "https://gauchazh.clicrbs.com.br/esportes/gremio/noticia/2026/10/gremio-refaz-calculos-no-brasileirao-e-cogita-abrir-mao-da-copa-do-brasil-para-tentar-permanecer-na-serie-a-cmvffplat005k014wlb5mjq6j.html",
+        "host": "gauchazh.clicrbs.com.br",
+        "tokens_semanticos": [
+          "gremio",
+          "refaz",
+          "calculos",
+          "brasileirao",
+          "cogita",
+          "abrir",
+          "mao",
+          "copa",
+          "brasil",
+          "tentar",
+          "permanecer",
+          "serie"
+        ],
+        "tokens_fracos_ignorados": []
+      },
+      "top_matches": [
+        {
+          "posicao": 1,
+          "titulo": "Grêmio pode abrir mão da Copa do Brasil para focar no Flamengo pelo Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "colunadofla.com",
+          "score_percentual_exibido": 60.86,
+          "tokens_comuns": 6,
+          "lista_tokens_comuns": [
+            "gremio",
+            "brasileirao",
+            "abrir",
+            "mao",
+            "copa",
+            "brasil"
+          ],
+          "data_campo_legado": "2026-10-19 18:54:13",
+          "post_id": "/2026/10/gremio-pode-abrir-mao-da-copa-do-brasil-para-focar-no-flamengo-pelo-brasileirao",
+          "jaccard_exibido": 0.4286,
+          "dice_exibido": 0.6,
+          "cobertura_titulo_menor_exibida": 0.75
+        },
+        {
+          "posicao": 2,
+          "titulo": "Confira os jogos em destaque na 31ª rodada da Série A do Brasileirão",
+          "categoria": "extracaoFutebol",
+          "origem": "flashscore.com.br",
+          "score_percentual_exibido": 39.28,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "brasileirao",
+            "serie"
+          ]
+        },
+        {
+          "posicao": 3,
+          "titulo": "Confira os resultados e a classificação do Brasileirão Série A após a 31ª rodada",
+          "categoria": "extracaoFutebol",
+          "origem": "ohoje.com",
+          "score_percentual_exibido": 31.79,
+          "tokens_comuns": 2,
+          "lista_tokens_comuns": [
+            "brasileirao",
+            "serie"
+          ]
+        }
+      ],
+      "caso_id": "M360-C22",
+      "analise_provisoria": {
+        "relacao_com_top1": "POSSIVEL_MESMA_NOTICIA",
+        "confianca_na_hipotese": "MEDIA",
+        "hipotese": "Grêmio cogita abrir mão da Copa do Brasil para permanecer na Série A versus pode abrir mão para focar no Flamengo.",
+        "evidencia_e_limite": "Pode ser a mesma discussão estratégica com recorte distinto ou evolução. Os dois títulos mantêm modalidade de possibilidade, não decisão consumada.",
+        "dados_para_confirmacao": [
+          "declaração e fonte da apuração",
+          "referência temporal",
+          "se existe fato novo ou decisão confirmada"
+        ],
+        "posicao_prioritaria_para_revisao": 1,
+        "rotulo_humano": null,
+        "validado_por_humano": false,
+        "aplicado_automaticamente": false
+      },
+      "sobreposicao_com_base_anterior": {
+        "mesmo_sha256_arquivo": [],
+        "mesma_url_exata": [],
+        "mesmo_titulo_exato": []
+      },
+      "validacao_regras_existentes": {
+        "status_recalculado": "SUSPEITO",
+        "nivel_consenso_recalculado": "BAIXO",
+        "status_sugerido_recalculado": "SUSPEITO",
+        "pares": [
+          {
+            "posicao_exibida": 1,
+            "score_percentual_recalculado": 60.86,
+            "tokens_comuns_recalculados": 6
+          },
+          {
+            "posicao_exibida": 2,
+            "score_percentual_recalculado": 39.28,
+            "tokens_comuns_recalculados": 2
+          },
+          {
+            "posicao_exibida": 3,
+            "score_percentual_recalculado": 31.79,
+            "tokens_comuns_recalculados": 2
+          }
+        ],
+        "criterios_top1_duplicado": {
+          "score_minimo_atingido": false,
+          "minimo_quatro_tokens_atingido": true
+        }
+      }
+    }
+  ],
+  "metodo": {
+    "base_evidencia": "Títulos, URLs, post_id do TOP1 e telemetria exibida nos e-mails. Sem conteúdo integral ou consulta à produção.",
+    "origem_declarada_pelo_usuario": "Alertas de produção.",
+    "ambiente_origem_verificado": false,
+    "modo_preservado_do_rodape": "HOMOLOGACAO",
+    "rotulos": "Hipóteses analíticas do assistente por par candidato/TOP1, com outros comparáveis indicados para revisão. Não são ground truth.",
+    "validacao_humana_realizada": false,
+    "estado": "OBSERVACIONAL",
+    "recomendacoes_aplicadas": false,
+    "privacidade": "Sem cabeçalhos de e-mail, remetentes/destinatários, chaves de deduplicação ou IDs operacionais. Originais .msg fora do Git.",
+    "deduplicacao_entre_lotes": "Comparação de SHA-256 do anexo, URL exata e título exato contra 29 candidatos anteriores; nenhuma igualdade. Não comprova independência editorial."
+  },
+  "baseline": {
+    "workflow": "workflows/m360-deduplicacao-semantica.json",
+    "commit": "9a32c93d3ddbe5cfcd40474f7e1daa6c5c3f6566",
+    "commit_checkout_analisado": "2e86455a8c303fb74836831f9c7902cd0f41f1bc",
+    "sha256": "be08807d21c7ca533f093b905e18ea6646ef793bd61de67bc40f06b16a2fd1d3"
+  },
+  "relacoes_entre_casos": [
+    {
+      "tipo": "FASES_DE_ESCALACAO_A_CONFERIR",
+      "casos": [
+        "M360-C10",
+        "M360-C13",
+        "M360-C14",
+        "M360-C15"
+      ],
+      "observacao": "Prováveis escalações, disponibilidade/pendurados e anúncio de escalações de Flamengo e Bahia. Preservar equipe, lista, tempo e estado; não fundir automaticamente."
+    },
+    {
+      "tipo": "DATAS_DISTINTAS_NOS_URLS_DE_PARTIDA",
+      "casos": [
+        "M360-A04",
+        "M360-C19"
+      ],
+      "observacao": "URLs do ge citam 14/10 e 21/10 para o mesmo par de clubes em ordens diferentes. Datas são pistas explícitas de identidade do evento; inversão de ordem sozinha não é prova."
+    },
+    {
+      "tipo": "COLISAO_DE_TRES_TOKENS_DE_EVENTO",
+      "casos": [
+        "M360-C06",
+        "M360-C10"
+      ],
+      "observacao": "Os dois candidatos têm o mesmo conjunto flamengo/bahia/brasileirao, embora anunciem transmissão e prováveis escalações. Os pools TOP3 são diferentes; scores entre casos não são um experimento controlado."
+    }
+  ],
+  "resumo": {
+    "alertas": 22,
+    "pares_exibidos": 66,
+    "candidatos_com_url_distinta": 22,
+    "status_oficial_suspeito": 22,
+    "consenso_baixo": 21,
+    "consenso_moderado": 1,
+    "consenso_forte": 0,
+    "multifonte_sim_exibido": 18,
+    "scores_top1_acima_ou_iguais_78": 1,
+    "scores_acima_78_sem_minimo_quatro_tokens": 1,
+    "scores_reproduzidos": 66,
+    "decisoes_reproduzidas": 22,
+    "diferenca_maxima_percentual_exibida": 0,
+    "grupos_analiticos_top1": {
+      "EVENTO_DIFERENTE": 5,
+      "CONTEXTO_COMUM_FACETA_DIFERENTE": 9,
+      "ENTIDADE_CRITICA_DIFERENTE": 1,
+      "ESCOPO_SOBREPOSTO": 2,
+      "POSSIVEL_MESMA_NOTICIA": 2,
+      "COMPETICAO_FACETA_DIFERENTE": 1,
+      "IDENTIDADE_TEMPORAL_NAO_CONFIRMADA": 2
+    },
+    "limitacao_reproducao": "Somente os três comparáveis exibidos. Não valida consulta e ranking no histórico completo, SPs, banco, conteúdo integral ou envio de e-mails."
+  }
+}
