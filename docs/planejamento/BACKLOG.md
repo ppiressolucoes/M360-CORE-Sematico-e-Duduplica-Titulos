@@ -26,7 +26,7 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 
 | História | Estado | Registro | Pendências para conclusão |
 | --- | --- | --- | --- |
-| S20-01 — Congelar o baseline | EM ANDAMENTO | [Baseline e contratos observados](../sprints/S20-01-BASELINE.md) | Definições das SPs editoriais; export e contrato de saída do Extrator Editorial; snapshots completos de entrada/saída |
+| S20-01 — Congelar o baseline | EM ANDAMENTO | [Baseline e contratos observados](../sprints/S20-01-BASELINE.md) | Definições das SPs editoriais; saída real do Extrator; exports dos subfluxos dependentes; snapshots completos dos ramos |
 
 ## Agora — referência e contratos
 

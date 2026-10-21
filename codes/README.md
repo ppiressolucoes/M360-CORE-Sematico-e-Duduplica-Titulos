@@ -12,6 +12,7 @@ Os códigos usam objetos e helpers fornecidos pelo n8n, como `$input`, `$json`, 
 | M360 | `Similaridade Editorial v0.4.0` | `m360/similaridade-editorial-v0.4.0.js` |
 | M360 | `Consenso Editorial v0.1.0` | `m360/consenso-editorial-v0.1.0.js` |
 | M360 | `Retorno Final` | `m360/retorno-final.js` |
+| Extrator M360 | `GERA SLUG` | `m360-extrator/gera-slug.js` |
 | PEL | `Normaliza Deduplica Editorial v0.2.2` | `pel/normaliza-deduplica-editorial-v0.2.2.js` |
 | PEL | `Similaridade Editorial v0.4.0` | `pel/similaridade-editorial-v0.4.0.js` |
 | PEL | `Consenso Editorial v0.1.0` | `pel/consenso-editorial-v0.1.0.js` |
@@ -27,4 +28,4 @@ Quando um Code node mudar no n8n:
 4. comparar o arquivo extraído com o campo do JSON;
 5. atualizar backlog e histórico na mesma entrega.
 
-Os oito arquivos atuais foram extraídos sem alteração lógica dos exports versionados em 20/10/2026.
+Os arquivos atuais foram extraídos sem alteração lógica dos exports versionados. Oito Code nodes vieram dos fluxos de deduplicação M360/PEL em 20/10/2026; o `GERA SLUG` veio do Extrator M360 v0.3 em 21/10/2026.

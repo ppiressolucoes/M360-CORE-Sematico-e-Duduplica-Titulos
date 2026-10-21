@@ -1,0 +1,1068 @@
+{
+  "name": "SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "e6739f79-7f29-4575-8fc4-e5ca13a78e32",
+              "leftValue": "={{ $('Chamar Reescrever v0.2').item.json.imagem_url }}\n",
+              "rightValue": "null",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -960,
+        960
+      ],
+      "id": "8870933e-01d5-4201-9df1-4fd248dedcc1",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "crop",
+        "width": 1200,
+        "height": 800,
+        "options": {
+          "fileName": "={{ $binary.data.fileName }}",
+          "format": "jpeg"
+        }
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        272,
+        912
+      ],
+      "id": "bc50ed69-58a8-4743-8658-da487769cbe8",
+      "name": "Edit Crop IMG"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "wp_postmeta",
+          "mode": "name"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "post_id",
+              "value": "={{ $('Publicar WP Draft').item.json.id }}"
+            },
+            {
+              "column": "meta_key",
+              "value": "_yoast_wpseo_focuskw"
+            },
+            {
+              "column": "meta_value",
+              "value": "={{ $('Publicar WP Draft').item.json.title.raw }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        272,
+        672
+      ],
+      "id": "66f1eb0e-c548-4adf-972f-ac2095e13912",
+      "name": "Add YOAST Focus KW"
+    },
+    {
+      "parameters": {
+        "jsCode": "const titulo = $('Chamar Reescrever v0.2').first().json.titulo || '';\n\n// remove acentos\nconst slug = titulo\n  .normalize('NFD')\n  .replace(/[\\u0300-\\u036f]/g, '')\n\n// substitui tudo que não for letra/número por hífen\n  .replace(/[^a-zA-Z0-9]+/g, '-')\n\n// remove hífens duplicados\n  .replace(/-+/g, '-')\n\n// remove hífen no início/fim\n  .replace(/^-|-$/g, '')\n\n// lowercase\n  .toLowerCase();\n\nreturn [{\n  json: {\n    slug,\n    fileName: `${slug}.webp`\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        672
+      ],
+      "id": "5ca94362-deef-48ae-b8a7-79cd90d16f21",
+      "name": "GERA SLUG"
+    },
+    {
+      "parameters": {
+        "content": "## POSTAR WP",
+        "height": 272,
+        "width": 672,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -240,
+        592
+      ],
+      "typeVersion": 1,
+      "id": "956cba72-1f33-4816-915e-a241898cb97e",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "resize",
+        "width": 1200,
+        "height": -1,
+        "resizeOption": "ignoreAspectRatio",
+        "options": {
+          "fileName": "={{ $json.slug }}.jpg",
+          "format": "jpeg"
+        }
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        928
+      ],
+      "id": "b9a82696-b316-4bd8-b0ef-df281fb11c24",
+      "name": "Resize IMG",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "387a3fa5-a0f5-4709-8dd7-b29f3ce07162",
+              "name": "external_attachment_id",
+              "value": "={{ $json.attachment_id }}",
+              "type": "string"
+            },
+            {
+              "id": "8524b2ee-2be7-40d2-97cf-fa62e59180e6",
+              "name": "m360_featured_caption_pt_br",
+              "value": "={{ $('POST METADADOS').first().json.TITULO }} | {{ $('POST METADADOS').first().json.IMG_LEG }}",
+              "type": "string"
+            },
+            {
+              "id": "f93f4b40-27b8-4c6b-851d-f7a44952c023",
+              "name": "m360_featured_alt_pt_br",
+              "value": "={{ $('POST METADADOS').first().json.TITULO }}",
+              "type": "string"
+            },
+            {
+              "id": "86d70dec-8217-40ce-b11f-8f3c60c810c4",
+              "name": "m360_featured_title_pt_br",
+              "value": "={{ $('POST METADADOS').first().json.TITULO }}",
+              "type": "string"
+            },
+            {
+              "id": "9e2aeae6-8f31-4db3-ad07-8ad98bdd457f",
+              "name": "m360_featured_description_pt_br",
+              "value": "={{ $('POST METADADOS').first().json.TITULO }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -176,
+        1472
+      ],
+      "id": "30b9b8ff-6853-4581-93b9-b06a8eba5a71",
+      "name": "Metadados Featured IMG"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "45e691a0-8e5d-44f3-9758-22c1a68a4d17",
+              "name": "data",
+              "value": "=data",
+              "type": "binary"
+            },
+            {
+              "id": "2c921394-e953-4110-b10c-4088d5ce5a93",
+              "name": "ind-api-folder",
+              "value": "m360/featured",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        -192,
+        1216
+      ],
+      "id": "c5c2e13d-4ae7-4c3e-a682-4f237298ae85",
+      "name": "INFO IMG"
+    },
+    {
+      "parameters": {
+        "content": "## MIDIA STORAGE",
+        "height": 496,
+        "width": 816,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -240,
+        1152
+      ],
+      "typeVersion": 1,
+      "id": "ba94fd69-afc6-40a3-a464-7e39460df12d",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "Ixviv1yQvRHLDYH6",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/Ixviv1yQvRHLDYH6",
+          "cachedResultName": "SUB - M360 | Categoria | Autor | Tags"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "contexto": "={{ $json.CONTEUDO.split(\"<h3><i>\")[1].split(\"</i></h3>\")[0] }}",
+            "titulo": "={{ $json.TITULO }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "titulo",
+              "displayName": "titulo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "contexto",
+              "displayName": "contexto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        672
+      ],
+      "id": "02958070-e6d9-4f37-b1de-973e2cfeaea0",
+      "name": "M360 Categoria e Tags"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "Título"
+            },
+            {
+              "name": "Link"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -960,
+        672
+      ],
+      "id": "c309756c-8f1a-48dc-9fa7-bd0e676b77b3",
+      "name": "Start Editorial"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "iygo3LNuUYwHEGkQ",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/iygo3LNuUYwHEGkQ",
+          "cachedResultName": "SUB1 - AI Reescreve Conteudo v0.2 [ Core Editorial ]"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "link": "={{ $json.Link }}"
+          },
+          "matchingColumns": [
+            "link"
+          ],
+          "schema": [
+            {
+              "id": "link",
+              "displayName": "link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -720,
+        672
+      ],
+      "id": "8e6e0309-9e09-4134-bf96-1fae06e9cfa5",
+      "name": "Chamar Reescrever v0.2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "01f13776-c421-48d6-a365-b20fd3866186",
+              "name": "TITULO",
+              "value": "={{ $json.titulo }}",
+              "type": "string"
+            },
+            {
+              "id": "0e6b20ae-6458-48f2-aaa3-fbbd0bf9c93b",
+              "name": "CONTEUDO",
+              "value": "={{ $json.conteudo }}",
+              "type": "string"
+            },
+            {
+              "id": "0a3906b5-6073-44ca-bb2b-307397385376",
+              "name": "IMG_URL",
+              "value": "={{ $json.imagem_url }}",
+              "type": "string"
+            },
+            {
+              "id": "3ffce769-8f31-4b96-a86c-ff23f349a679",
+              "name": "IMG_LEG",
+              "value": "={{ $json.imagem_leg }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        -496,
+        672
+      ],
+      "id": "b90d941d-c4c3-4b19-9383-a801e6d6fdf3",
+      "name": "POST METADADOS"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://n8n-m360-proxy.core360.workers.dev/m360/wp-json/wp/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "specifyHeaders": "json",
+        "jsonHeaders": "={\n  \"Content-Type\": \"application/json\"\n}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"title\": {{ JSON.stringify($('POST METADADOS').item.json.TITULO) }},\n  \"content\":{{ JSON.stringify($('POST METADADOS').item.json.CONTEUDO) }},\n  \"categories\": {{ JSON.stringify($json.categories[0]) }},\n  \"tags\": {{ JSON.stringify($json.tags) }},\n  \"status\": \"draft\",\n  \"date\": \"{{ $now.format('yyyy-MM-dd HH:mm:ss') }}\",\n  \"author\": {{ JSON.stringify($json.autor[0]) }}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        64,
+        672
+      ],
+      "id": "8b1a3ffa-7231-4a44-86d3-51e00ccc5516",
+      "name": "Publicar WP Draft",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://n8n-m360-proxy.core360.workers.dev/m360/wp-json/wp/v2/posts/{{ $json.post_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "specifyHeaders": "json",
+        "jsonHeaders": "={\n  \"Content-Type\": \"application/json\"\n}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"status\": \"publish\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        416,
+        1472
+      ],
+      "id": "084b25f8-0ae8-4404-afcf-ab443dcd05f1",
+      "name": "HTTP WP Publish",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://n8n-media-download-proxy.core360.workers.dev/download",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Proxy-Key",
+              "value": "Paulinh01972#"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $('Chamar Reescrever v0.2').item.json.imagem_url }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -720,
+        944
+      ],
+      "id": "ddfdf601-87b7-4c53-b480-2fcb6a1a1094",
+      "name": "Download IMG - Proxy",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 2,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "pwucJhWgCjagvOPL",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/pwucJhWgCjagvOPL",
+          "cachedResultName": "SUB4 - AI GERAR IMAGEM API [Cross]"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Prompt_text": "={{ $json.text }}",
+            "txt_Tema": "={{ $('Publicar WP Draft').item.json.title.raw }}",
+            "Txt_Contexto": "={{ $('Publicar WP Draft').item.json.excerpt.rendered.removeTags() }}"
+          },
+          "matchingColumns": [
+            "Prompt_text"
+          ],
+          "schema": [
+            {
+              "id": "Prompt_text",
+              "displayName": "Prompt_text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "txt_Tema",
+              "displayName": "txt_Tema",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Txt_Contexto",
+              "displayName": "Txt_Contexto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -720,
+        1216
+      ],
+      "id": "17c40b6a-7880-4bb0-88ea-8fc71265f260",
+      "name": "Chamada IA IMG"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "6aoIy9HMAyghM4e9",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/6aoIy9HMAyghM4e9",
+          "cachedResultName": "SUB3 - AI PROMPT DE IMG"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "txt_Tema": "={{ $('Chamar Reescrever v0.2').item.json.titulo }}",
+            "dsc_Contexto": "={{ $('Publicar WP Draft').item.json.excerpt.rendered.removeTags() }}"
+          },
+          "matchingColumns": [
+            "txt_Tema"
+          ],
+          "schema": [
+            {
+              "id": "txt_Tema",
+              "displayName": "txt_Tema",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "dsc_Contexto",
+              "displayName": "dsc_Contexto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -960,
+        1216
+      ],
+      "id": "6de27428-4d9e-4ec1-957b-1e34f3430f02",
+      "name": "Chamada Prompt"
+    },
+    {
+      "parameters": {
+        "content": "## IMAGEM GERADA IA",
+        "height": 220,
+        "width": 452,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1008,
+        1152
+      ],
+      "id": "efa54be1-301a-41b6-9925-cc75ddb9ac5f",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        416,
+        1216
+      ],
+      "id": "f9e905a0-1e22-4861-9bf6-bb2c61ee4e0b",
+      "name": "Wait 20s",
+      "webhookId": "f6cd2973-d553-4a4f-8c83-d3384ff8d860"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://n8n-m360-proxy.core360.workers.dev/m360",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "rest_route",
+              "value": "/m360/v1/external-featured-media/assign"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "post_id",
+              "value": "={{ $('Publicar WP Draft').first().json.id }}"
+            },
+            {
+              "name": "attachment_id",
+              "value": "={{ $('Metadados Featured IMG').item.json.external_attachment_id }}"
+            },
+            {
+              "name": "alt",
+              "value": "={{ $('Metadados Featured IMG').item.json.m360_featured_alt_pt_br }}"
+            },
+            {
+              "name": "title",
+              "value": "={{ $('Metadados Featured IMG').item.json.m360_featured_title_pt_br }}"
+            },
+            {
+              "name": "description",
+              "value": "={{ $('Metadados Featured IMG').item.json.m360_featured_description_pt_br }}"
+            },
+            {
+              "name": "caption",
+              "value": "={{ $('Metadados Featured IMG').item.json.m360_featured_caption_pt_br }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        32,
+        1472
+      ],
+      "id": "9a557444-1638-48fb-92ba-71401502bee9",
+      "name": "Associar Featured Media Virtual",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "OjCXtFjGHqBsQ7lL",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/OjCXtFjGHqBsQ7lL",
+          "cachedResultName": "SUB | Storage Media External"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        32,
+        1216
+      ],
+      "id": "2937fc98-a3da-443a-b3e7-1d39f2be92d0",
+      "name": "CALL | Maneger Storage Provider"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        1472
+      ],
+      "id": "a11702a7-4151-40c1-bda2-87bb3f5b66a6",
+      "name": "Wait 21s",
+      "webhookId": "f6cd2973-d553-4a4f-8c83-d3384ff8d860"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://n8n-m360-proxy.core360.workers.dev/m360",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "rest_route",
+              "value": "/m360/v1/external-featured-media"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "sha256",
+              "value": "={{ $json.sha256 }}"
+            },
+            {
+              "name": "asset_id",
+              "value": "={{ $json.asset_id }}"
+            },
+            {
+              "name": "public_id",
+              "value": "={{ $json.public_id }}"
+            },
+            {
+              "name": "secure_url",
+              "value": "={{ $json.secure_url }}"
+            },
+            {
+              "name": "width",
+              "value": "={{ Number($json.width) }}"
+            },
+            {
+              "name": "height",
+              "value": "={{ Number($json.height) }}"
+            },
+            {
+              "name": "mime_type",
+              "value": "={{ $json.mime_type }}"
+            },
+            {
+              "name": "original_filename",
+              "value": "={{ $json.original_filename }}.jpg"
+            },
+            {
+              "name": "provider",
+              "value": "={{ $json.provider }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        240,
+        1216
+      ],
+      "id": "58815a01-5d97-4ec1-9f7a-98d4db6a8921",
+      "name": "Registrar Provider Mídia Virtual WP"
+    }
+  ],
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Download IMG - Proxy",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Edit Crop IMG": {
+      "main": [
+        [
+          {
+            "node": "INFO IMG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add YOAST Focus KW": {
+      "main": [
+        [
+          {
+            "node": "GERA SLUG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GERA SLUG": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resize IMG": {
+      "main": [
+        [
+          {
+            "node": "Edit Crop IMG",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Metadados Featured IMG": {
+      "main": [
+        [
+          {
+            "node": "Associar Featured Media Virtual",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "INFO IMG": {
+      "main": [
+        [
+          {
+            "node": "CALL | Maneger Storage Provider",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "M360 Categoria e Tags": {
+      "main": [
+        [
+          {
+            "node": "Publicar WP Draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Editorial": {
+      "main": [
+        [
+          {
+            "node": "Chamar Reescrever v0.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chamar Reescrever v0.2": {
+      "main": [
+        [
+          {
+            "node": "POST METADADOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST METADADOS": {
+      "main": [
+        [
+          {
+            "node": "M360 Categoria e Tags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publicar WP Draft": {
+      "main": [
+        [
+          {
+            "node": "Add YOAST Focus KW",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP WP Publish": {
+      "main": [
+        []
+      ]
+    },
+    "Download IMG - Proxy": {
+      "main": [
+        [
+          {
+            "node": "Resize IMG",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Chamada Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chamada Prompt": {
+      "main": [
+        [
+          {
+            "node": "Chamada IA IMG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chamada IA IMG": {
+      "main": [
+        [
+          {
+            "node": "INFO IMG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 20s": {
+      "main": [
+        [
+          {
+            "node": "Metadados Featured IMG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Associar Featured Media Virtual": {
+      "main": [
+        [
+          {
+            "node": "Wait 21s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CALL | Maneger Storage Provider": {
+      "main": [
+        [
+          {
+            "node": "Registrar Provider Mídia Virtual WP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 21s": {
+      "main": [
+        [
+          {
+            "node": "HTTP WP Publish",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registrar Provider Mídia Virtual WP": {
+      "main": [
+        [
+          {
+            "node": "Wait 20s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "62a84812-936c-4339-bc11-467f8cf62c43",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9f769af33e9c8cdfc44e726022a0e6b9f585fd6f2577f3c000a6028827d25ddd"
+  },
+  "nodeGroups": [],
+  "id": "POajHQJdYYpMQCBQ",
+  "tags": [
+    {
+      "updatedAt": "2026-01-08T05:33:35.319Z",
+      "createdAt": "2026-01-08T05:33:35.319Z",
+      "id": "scdXaMrsek706mLc",
+      "name": "Scraper"
+    },
+    {
+      "updatedAt": "2026-04-13T19:30:58.690Z",
+      "createdAt": "2026-04-13T19:30:58.690Z",
+      "id": "xUMH9dKmnUhw1C2j",
+      "name": "Esportes"
+    }
+  ]
+}

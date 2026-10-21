@@ -16,6 +16,17 @@
       "consenso": "0.1.0"
     }
   },
+  "extractor_workflow": {
+    "path": "workflows/m360-extrator-detalhes-v0.3.json",
+    "sha256": "fd98f486baf9133a9192424a56b0308f6dfd41b8a0cbd1030565d2cb2c4d73d6",
+    "name": "SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]",
+    "active": false,
+    "node_count": 24,
+    "code_node": {
+      "path": "codes/m360-extrator/gera-slug.js",
+      "sha256": "c2d1a50f875e549d8c8d24e06fc9449fbb8fba355708585cbf12acae91ad3d22"
+    }
+  },
   "code_nodes": [
     {
       "path": "codes/m360/normaliza-deduplica-editorial-v0.2.2.js",
@@ -82,14 +93,30 @@
         "Link"
       ],
       "wait_for_completion": true,
-      "output_contract": null
+      "output_contract": "IMPLICIT_HTTP_WP_PUBLISH_RESPONSE_UNCONFIRMED",
+      "nested_workflows": [
+        "SUB1 - AI Reescreve Conteudo v0.2 [ Core Editorial ]",
+        "SUB - M360 | Categoria | Autor | Tags",
+        "SUB3 - AI PROMPT DE IMG",
+        "SUB4 - AI GERAR IMAGEM API [Cross]",
+        "SUB | Storage Media External"
+      ],
+      "observed_side_effects": [
+        "CREATE_WORDPRESS_DRAFT",
+        "INSERT_YOAST_FOCUS_KEYWORD",
+        "DOWNLOAD_OR_GENERATE_IMAGE",
+        "STORE_EXTERNAL_MEDIA",
+        "REGISTER_EXTERNAL_MEDIA",
+        "ASSIGN_FEATURED_MEDIA",
+        "PUBLISH_WORDPRESS_POST"
+      ]
     }
   },
   "open_dependencies": [
     "DDL de SP_DEDUPLICA_EDITORIAL",
     "DDL de SP_DEDUPLICA_EDITORIAL_FINALIZA",
-    "export sanitizado do Extrator Editorial",
-    "contrato de saída e efeitos do Extrator Editorial",
+    "snapshot da saída real do Extrator Editorial",
+    "exports sanitizados dos cinco subfluxos dependentes do Extrator",
     "snapshots sanitizados dos ramos"
   ],
   "production_changes": false

@@ -7,8 +7,10 @@ Este repositório registra artefatos de referência recebidos para a funcionalid
 | Caminho | Origem | Escopo |
 | --- | --- | --- |
 | `workflows/m360-deduplicacao-semantica.json` | Export do subfluxo M360 | Deduplicação e semântica editorial |
+| `workflows/m360-extrator-detalhes-v0.3.json` | Export do Extrator Editorial M360 | Reescrita, classificação, mídia e publicação editorial |
 | `workflows/pel-deduplicacao-semantica.json` | Export do subfluxo PEL | Deduplicação e semântica editorial |
 | `codes/m360/` | Code nodes extraídos do export M360 | Tratamento de dados organizado por node e versão |
+| `codes/m360-extrator/` | Code node extraído do Extrator M360 | Geração de slug e nome do arquivo de mídia |
 | `codes/pel/` | Code nodes extraídos do export PEL | Tratamento de dados organizado por node e versão |
 | `sql/README.md` | Inventário SQL | Disponibilidade e relação das SPs com os fluxos |
 | `sql/storage/SP_Core_Storage_Reserva.sql` | `SP_Core_Storage_Reserva.txt` | Reserva de provedor de storage |
@@ -17,6 +19,8 @@ Este repositório registra artefatos de referência recebidos para a funcionalid
 As duas procedures de storage são separadas da deduplicação editorial. As definições de `SP_DEDUPLICA_EDITORIAL` e `SP_DEDUPLICA_EDITORIAL_FINALIZA` não foram fornecidas; os workflows contêm apenas chamadas a elas. Por isso, as versões dessas SPs e o filtro de fontes internas do PEL não podem ser confirmados neste repositório.
 
 O export M360 foi reconciliado em 20/10/2026 com o anexo mais recente: o ramo `NOVO` chama `Chamar Extrator Editorial`, e o retorno final preserva o campo `resultado`. A cópia no Git permanece desativada e sem credenciais ou `pinData`.
+
+O [contrato observado do Extrator M360 v0.3](docs/arquitetura/m360-extrator-v0.3.md) registra seus subfluxos, transformações e efeitos externos. O export público também permanece desativado e sanitizado.
 
 ## Governança e planejamento
 

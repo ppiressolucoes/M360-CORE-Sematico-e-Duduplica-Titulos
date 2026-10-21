@@ -21,15 +21,17 @@ Esta abertura não consulta MySQL, não importa workflows no n8n e não altera p
 - [x] Documentar a chamada e o retorno esperado da `SP_DEDUPLICA_EDITORIAL` a partir do workflow.
 - [x] Documentar roteamentos e saída final observáveis.
 - [x] Documentar a chamada observável do Extrator Editorial.
+- [x] Incorporar o export sanitizado do `SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]`.
+- [x] Mapear os subfluxos, transformações e efeitos externos observáveis do Extrator.
 - [ ] Incorporar a definição vigente de `SP_DEDUPLICA_EDITORIAL`.
 - [ ] Incorporar a definição vigente de `SP_DEDUPLICA_EDITORIAL_FINALIZA`.
-- [ ] Incorporar o export sanitizado do `SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]`.
-- [ ] Confirmar o contrato de saída e os efeitos do Extrator Editorial.
+- [ ] Confirmar com snapshot o contrato de saída real do Extrator Editorial.
+- [ ] Incorporar os exports sanitizados dos cinco subfluxos chamados pelo Extrator.
 - [ ] Registrar snapshots sanitizados de entrada e saída para cada ramo do fluxo.
 
 ## Manifesto
 
-O manifesto estruturado está em [`docs/baselines/2026-10-21-m360-s20-01.json`](../baselines/2026-10-21-m360-s20-01.json). Os hashes representam os arquivos no commit de origem `112ceee22fd07ecaf4aa6dd32c356149765441bb`.
+O manifesto estruturado está em [`docs/baselines/2026-10-21-m360-s20-01.json`](../baselines/2026-10-21-m360-s20-01.json). Os hashes do Core de deduplicação representam os arquivos no commit de origem `112ceee22fd07ecaf4aa6dd32c356149765441bb`; o Extrator foi acrescentado a partir do export recebido em 21/10/2026.
 
 ## Versões observadas
 
@@ -125,7 +127,9 @@ O node chama `SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]` uma vez 
 | `Título` | `candidato.titulo` |
 | `Link` | `candidato.link` |
 
-O export do Extrator não está no repositório. Sua saída, gravações, chamadas externas e comportamento de erro continuam desconhecidos. Depois dele, o fluxo atual chama a finalização com `PUBLICADO` e insere o título, mas não é possível atribuir esses efeitos ao Extrator sem o export correspondente.
+O export sanitizado está em [`workflows/m360-extrator-detalhes-v0.3.json`](../../workflows/m360-extrator-detalhes-v0.3.json), com hash SHA-256 `fd98f486baf9133a9192424a56b0308f6dfd41b8a0cbd1030565d2cb2c4d73d6`. O mapeamento detalhado está em [Contrato do Extrator M360 v0.3](../arquitetura/m360-extrator-v0.3.md).
+
+O Extrator possui efeitos funcionais: cria rascunho, grava foco SEO no MySQL, trata ou gera imagem, registra storage, associa mídia e publica o post. Ele não pode ser chamado pelo modo sombra. Sua saída final é a resposta implícita do request de publicação, sem um node que normalize o contrato; o formato real continua pendente de snapshot.
 
 ## Evidência de dados disponível
 
@@ -144,9 +148,17 @@ SHOW CREATE PROCEDURE SP_DEDUPLICA_EDITORIAL_FINALIZA;
 
 O processo de sanitização está em [`sql/editorial/README.md`](../../sql/editorial/README.md).
 
-### Extrator Editorial
+### Dependências do Extrator Editorial
 
-Obter export JSON do subfluxo `SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]`, remover credenciais e `pinData`, definir `active: false` e documentar entradas, saídas, efeitos e erros.
+Obter os exports sanitizados dos subfluxos chamados:
+
+- `SUB1 - AI Reescreve Conteudo v0.2 [ Core Editorial ]`;
+- `SUB - M360 | Categoria | Autor | Tags`;
+- `SUB3 - AI PROMPT DE IMG`;
+- `SUB4 - AI GERAR IMAGEM API [Cross]`;
+- `SUB | Storage Media External`.
+
+Registrar também um snapshot sanitizado da resposta final de `HTTP WP Publish`. Os efeitos externos já estão mapeados, mas a forma concreta da saída permanece não confirmada.
 
 ### Snapshots
 
@@ -154,4 +166,4 @@ Registrar amostras sanitizadas para `ALREADY_PROCESSING`, `EXACT_DUPLICATE`, `CH
 
 ## Critério de encerramento
 
-A S20-01 poderá ser concluída quando as duas SPs, o contrato completo do Extrator e os snapshots dos ramos estiverem versionados ou quando uma decisão formal de escopo aceitar explicitamente alguma ausência. Até lá, o baseline permanece `EM ANDAMENTO`.
+A S20-01 poderá ser concluída quando as duas SPs, a saída real do Extrator, os subfluxos dependentes e os snapshots dos ramos estiverem versionados ou quando uma decisão formal de escopo aceitar explicitamente alguma ausência. Até lá, o baseline permanece `EM ANDAMENTO`.
