@@ -2,6 +2,14 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 21/10/2026 — Abertura da S20-01
+
+- Alterado o estado da história S20-01 para `EM ANDAMENTO`.
+- Congelados hashes do workflow M360, Code nodes, índice de telemetria e três datasets de alertas.
+- Documentados os contratos observáveis de entrada, retorno da SP, roteamentos, similaridade e chamada do Extrator Editorial.
+- Mantidas como pendências as definições das SPs editoriais e o contrato completo do subfluxo Extrator.
+- Nenhuma consulta foi executada no MySQL e nenhum workflow foi importado ou ativado.
+
 ## 20/10/2026 — Sprint Editorial v0.2.0
 
 - Consolidado o roteiro da Sprint para criação do modo sombra M360.

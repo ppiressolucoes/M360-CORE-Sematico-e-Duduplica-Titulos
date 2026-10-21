@@ -19,6 +19,7 @@ sql/
 docs/
   arquitetura/
   analises/
+  baselines/
   planejamento/
   sprints/
   telemetria/
@@ -57,6 +58,7 @@ A entrega atualiza, conforme aplicável:
 
 - backlog e estado da iniciativa;
 - roteiro da Sprint, histórias e critérios de aceite;
+- manifesto de baseline com versões e hashes;
 - histórico de mudanças;
 - decisão arquitetural;
 - análise e telemetria;

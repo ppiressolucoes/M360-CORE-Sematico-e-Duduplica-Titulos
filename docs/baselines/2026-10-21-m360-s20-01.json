@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "story": "S20-01",
+  "status": "EM_ANDAMENTO",
+  "captured_on": "2026-10-21",
+  "source_commit": "112ceee22fd07ecaf4aa6dd32c356149765441bb",
+  "scope": "M360",
+  "workflow": {
+    "path": "workflows/m360-deduplicacao-semantica.json",
+    "sha256": "282b73f1b9a8b38700bab84de1ae220553f9973cc7866b59c9cead276e0ead10",
+    "name": "SUB | Deduplicação e Semântica - M360 [ Core Editorial ]",
+    "active": false,
+    "versions": {
+      "normalizacao": "0.2.2",
+      "similaridade": "0.4.0",
+      "consenso": "0.1.0"
+    }
+  },
+  "code_nodes": [
+    {
+      "path": "codes/m360/normaliza-deduplica-editorial-v0.2.2.js",
+      "sha256": "0e6346ad07ca57ff11246875af2559d5331b3a2bb08fa45e7bf784738473747c"
+    },
+    {
+      "path": "codes/m360/similaridade-editorial-v0.4.0.js",
+      "sha256": "9ffddda9301ed1216cc9d25224376eb2ce0c8db95025ad8e48ce5878ac220102"
+    },
+    {
+      "path": "codes/m360/consenso-editorial-v0.1.0.js",
+      "sha256": "93414266cf6ef385410cdc60494aa06a86ec7aa2fadaa1c49f2b5f9d35d499c0"
+    },
+    {
+      "path": "codes/m360/retorno-final.js",
+      "sha256": "590520461278cd7fc0e4117e7046aaf01506484dd62508a02aa54b28368828e0"
+    }
+  ],
+  "evidence": {
+    "index": {
+      "path": "docs/telemetria/m360-indice.json",
+      "sha256": "8d3b39420443cd90bfa0ae0daf7b30f0314c5c8109465b74f02588ae965e912c"
+    },
+    "datasets": [
+      {
+        "path": "docs/analises/2026-10-14-m360-alertas-casos.json",
+        "sha256": "bf7ee541425fc36e20b68f7c159c6b6c61be33a8f32428e1ff758c385c29a2eb"
+      },
+      {
+        "path": "docs/analises/2026-10-16-m360-alertas-casos.json",
+        "sha256": "2dd925dc6bb628e38882ced551931a52ffb8286c0704a1e16927f64c58987568"
+      },
+      {
+        "path": "docs/analises/2026-10-20-m360-alertas-casos.json",
+        "sha256": "51212a6e2354a02bfdb076727f2dee6a1936df4bf23045abcddae99cc5be31fb"
+      }
+    ],
+    "candidate_count": 51,
+    "pair_count": 153,
+    "human_labels": 0
+  },
+  "observed_contract": {
+    "required_candidate_fields": [
+      "titulo|title",
+      "link|url"
+    ],
+    "sp_entry": "SP_DEDUPLICA_EDITORIAL",
+    "sp_finalization": "SP_DEDUPLICA_EDITORIAL_FINALIZA",
+    "sp_window_days": 7,
+    "entry_results": [
+      "ALREADY_PROCESSING",
+      "EXACT_DUPLICATE",
+      "CHECK_SIMILARITY"
+    ],
+    "similarity_results": [
+      "DUPLICADO",
+      "SUSPEITO",
+      "NOVO"
+    ],
+    "extractor": {
+      "name": "SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]",
+      "inputs": [
+        "Título",
+        "Link"
+      ],
+      "wait_for_completion": true,
+      "output_contract": null
+    }
+  },
+  "open_dependencies": [
+    "DDL de SP_DEDUPLICA_EDITORIAL",
+    "DDL de SP_DEDUPLICA_EDITORIAL_FINALIZA",
+    "export sanitizado do Extrator Editorial",
+    "contrato de saída e efeitos do Extrator Editorial",
+    "snapshots sanitizados dos ramos"
+  ],
+  "production_changes": false
+}

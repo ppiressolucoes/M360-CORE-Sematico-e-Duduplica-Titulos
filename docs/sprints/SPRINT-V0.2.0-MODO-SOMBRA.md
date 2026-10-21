@@ -125,6 +125,8 @@ A incompatibilidade de um par não autoriza `NOVO`; os demais comparáveis preci
 
 ### S20-01 — Congelar o baseline
 
+Status: **EM ANDAMENTO**. Evidências e pendências estão no [registro da S20-01](S20-01-BASELINE.md).
+
 Mapeia: `CORE-003`, `CORE-004`.
 
 Tarefas:

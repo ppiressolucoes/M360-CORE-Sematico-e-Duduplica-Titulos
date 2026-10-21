@@ -13,6 +13,7 @@ O [índice acumulado de evidências](../telemetria/m360-indice.json) contém 51 
 | Estado | Significado |
 | --- | --- |
 | `CONCLUÍDO` | Evidência e artefato foram incorporados ao repositório |
+| `EM ANDAMENTO` | Execução iniciada, com evidências e pendências registradas |
 | `PRONTO` | Escopo definido e sem dependência conhecida para iniciar |
 | `DEPENDÊNCIA` | Requer artefato, acesso ou decisão ainda não disponível |
 | `PLANEJADO` | Depende de itens anteriores |
@@ -22,6 +23,10 @@ Prioridade `P0` protege rastreabilidade ou operação; `P1` entrega a nova capac
 ## Sprint selecionada
 
 A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0-MODO-SOMBRA.md) agrupa `CORE-005` a `CORE-014`. O resultado esperado é um piloto M360 em modo sombra, capaz de sugerir decisões explicáveis e aprender com rótulos editoriais sem alterar o status funcional. Operação com tráfego real e automação permanecem nos gates `CORE-015` a `CORE-019`.
+
+| História | Estado | Registro | Pendências para conclusão |
+| --- | --- | --- | --- |
+| S20-01 — Congelar o baseline | EM ANDAMENTO | [Baseline e contratos observados](../sprints/S20-01-BASELINE.md) | Definições das SPs editoriais; export e contrato de saída do Extrator Editorial; snapshots completos de entrada/saída |
 
 ## Agora — referência e contratos
 
