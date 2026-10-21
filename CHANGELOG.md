@@ -2,6 +2,14 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 20/10/2026 — Artefatos gerais das sprints
+
+- Organizados os Code nodes existentes em `codes/m360` e `codes/pel`.
+- Mantidos os exports JSON completos em `workflows` como referência dos fluxos.
+- Criado inventário das SPs presentes e das definições editoriais ainda pendentes.
+- Definido o padrão mínimo de artefatos para as próximas sprints.
+- Nenhum código, query, regra ou comportamento dos fluxos foi modificado nessa extração.
+
 ## 20/10/2026 — Governança do repositório
 
 - Formalizada a branch `main` remota como fonte oficial compartilhada.

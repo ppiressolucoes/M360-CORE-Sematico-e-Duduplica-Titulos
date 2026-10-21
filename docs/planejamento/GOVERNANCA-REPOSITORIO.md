@@ -20,6 +20,7 @@ Cada iniciativa relevante deve atualizar, na mesma entrega, os registros aplicá
 | `docs/arquitetura/` | Decisão ou contrato que afeta n8n, MySQL ou o processo editorial |
 | `docs/analises/` e `docs/telemetria/` | Nova evidência, lote de alertas, reprodução ou métrica |
 | `workflows/` | Novo export de referência, sempre sanitizado e desativado |
+| `codes/` | Code nodes extraídos e organizados por fluxo sempre que um export mudar |
 | `sql/` | Nova definição de SP ou DDL, sem `DEFINER` ou dados de conexão |
 
 Discussões e hipóteses que ainda não geraram uma decisão podem permanecer na análise correspondente. Quando virarem iniciativa, recebem um ID `CORE-NNN` no backlog.

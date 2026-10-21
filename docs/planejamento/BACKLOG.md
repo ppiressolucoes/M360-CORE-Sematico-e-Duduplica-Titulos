@@ -26,6 +26,7 @@ Prioridade `P0` protege rastreabilidade ou operação; `P1` entrega a nova capac
 | CORE-001 | P0 | CONCLUÍDO | Consolidar os três lotes de alertas M360 | 51 candidatos, 153 pares, hashes e análises disponíveis no índice acumulado |
 | CORE-002 | P0 | CONCLUÍDO | Reconciliar o export M360 mais recente | Cópia pública desativada e sanitizada; ramo `NOVO` aponta para `Chamar Extrator Editorial`; retorno inclui `resultado` |
 | CORE-020 | P0 | CONCLUÍDO | Formalizar governança e sincronização do repositório | Política versionada; backlog e histórico obrigatórios na mesma entrega; commit publicado e HEAD remoto verificado |
+| CORE-021 | P0 | CONCLUÍDO | Organizar artefatos gerais das sprints | Exports JSON preservados; oito Code nodes extraídos e organizados por fluxo; inventário SQL identifica SPs presentes e ausentes |
 | CORE-003 | P0 | DEPENDÊNCIA | Incorporar as SPs editoriais vigentes | Obter `SHOW CREATE PROCEDURE` ou scripts versionados de `SP_DEDUPLICA_EDITORIAL` e `SP_DEDUPLICA_EDITORIAL_FINALIZA`; remover `DEFINER` antes do Git público |
 | CORE-004 | P0 | DEPENDÊNCIA | Confirmar o contrato do subfluxo chamado pelo ramo `NOVO` | Registrar ID, nome e contrato de entrada/saída do `Chamar Extrator Editorial` na instância n8n, sem publicar credenciais |
 | CORE-005 | P1 | PRONTO | Definir o contrato semântico v0.1 | Especificar evento principal, participantes e papéis, competição/divisão, data, faceta, estado factual, modalidade, confiança e campos desconhecidos |

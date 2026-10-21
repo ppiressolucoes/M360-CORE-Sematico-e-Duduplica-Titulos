@@ -8,6 +8,9 @@ Este repositório registra artefatos de referência recebidos para a funcionalid
 | --- | --- | --- |
 | `workflows/m360-deduplicacao-semantica.json` | Export do subfluxo M360 | Deduplicação e semântica editorial |
 | `workflows/pel-deduplicacao-semantica.json` | Export do subfluxo PEL | Deduplicação e semântica editorial |
+| `codes/m360/` | Code nodes extraídos do export M360 | Tratamento de dados organizado por node e versão |
+| `codes/pel/` | Code nodes extraídos do export PEL | Tratamento de dados organizado por node e versão |
+| `sql/README.md` | Inventário SQL | Disponibilidade e relação das SPs com os fluxos |
 | `sql/storage/SP_Core_Storage_Reserva.sql` | `SP_Core_Storage_Reserva.txt` | Reserva de provedor de storage |
 | `sql/storage/SP_Core_Storage_Finaliza.sql` | `SP_Core_Storage_Finaliza.txt` | Finalização de reserva de storage |
 
@@ -18,6 +21,7 @@ O export M360 foi reconciliado em 20/10/2026 com o anexo mais recente: o ramo `N
 ## Governança e planejamento
 
 - [Backlog consolidado](docs/planejamento/BACKLOG.md): prioridades, dependências, critérios de aceite e ordem de implantação.
+- [Padrão de artefatos das sprints](docs/planejamento/ARTEFATOS-SPRINT.md): estrutura obrigatória para workflows, Code nodes e SQL.
 - [Estratégia de evolução: evento, faceta e estado factual](docs/arquitetura/evolucao-evento-faceta-estado.md): arquitetura sombra e promoção gradual sem impacto no fluxo atual.
 - [Governança e sincronização do repositório](docs/planejamento/GOVERNANCA-REPOSITORIO.md): fonte oficial, entregáveis obrigatórios e definição de concluído.
 - [Histórico de mudanças](CHANGELOG.md): registro cronológico dos artefatos e análises incorporados ao repositório.
