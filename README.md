@@ -19,9 +19,10 @@ O export M360 foi reconciliado em 20/10/2026 com o anexo mais recente: o ramo `N
 
 - [Backlog consolidado](docs/planejamento/BACKLOG.md): prioridades, dependências, critérios de aceite e ordem de implantação.
 - [Estratégia de evolução: evento, faceta e estado factual](docs/arquitetura/evolucao-evento-faceta-estado.md): arquitetura sombra e promoção gradual sem impacto no fluxo atual.
+- [Governança e sincronização do repositório](docs/planejamento/GOVERNANCA-REPOSITORIO.md): fonte oficial, entregáveis obrigatórios e definição de concluído.
 - [Histórico de mudanças](CHANGELOG.md): registro cronológico dos artefatos e análises incorporados ao repositório.
 
-O backlog é a referência compartilhada para o estado das iniciativas. Alterações de fluxo, SP, regra ou telemetria devem atualizar o item correspondente e o histórico na mesma entrega.
+O backlog é a referência compartilhada para o estado das iniciativas. Alterações de fluxo, SP, regra ou telemetria devem atualizar o item correspondente e o histórico na mesma entrega. Uma ação relevante só é considerada consolidada depois que o commit está publicado e o HEAD remoto de `main` foi confirmado.
 
 ## Análises editoriais
 

@@ -2,6 +2,13 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 20/10/2026 — Governança do repositório
+
+- Formalizada a branch `main` remota como fonte oficial compartilhada.
+- Definida a atualização conjunta de backlog, histórico e artefatos afetados.
+- Estabelecida a verificação do HEAD remoto como parte da conclusão de cada entrega.
+- Documentadas regras para não publicar credenciais, `pinData`, cabeçalhos de e-mail ou anexos brutos com dados pessoais.
+
 ## 20/10/2026 — Planejamento e sincronização da referência M360
 
 - Reconciliado o export sanitizado M360 com o anexo mais recente.
