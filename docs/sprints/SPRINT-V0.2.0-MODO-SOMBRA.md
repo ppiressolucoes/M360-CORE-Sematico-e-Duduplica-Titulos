@@ -1,8 +1,11 @@
 # Sprint: Deduplicação e Semântica Editorial v0.2.0
 
-Status: **PLANEJADA — pronta para refinamento e execução**  
-Piloto: **M360**  
-Janela: **a definir conforme capacidade da equipe**  
+Status: **PLANEJADA — pronta para refinamento e execução**
+
+Piloto: **M360**
+
+Janela: **a definir conforme capacidade da equipe**
+
 Atualização: **20/10/2026**
 
 ## Objetivo
