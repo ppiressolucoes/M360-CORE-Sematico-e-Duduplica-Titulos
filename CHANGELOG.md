@@ -10,7 +10,10 @@ As datas registram a incorporação ao repositório e não comprovam a data de e
 - Incorporado o export sanitizado e inativo do Extrator Editorial M360 v0.3.
 - Extraído o Code node `GERA SLUG` para revisão independente.
 - Documentados reescrita, classificação, publicação WordPress, metadados SEO, tratamento/geração de imagem, storage e associação de mídia.
-- Mantidas como pendências as definições das SPs editoriais, a saída real do Extrator e os exports dos subfluxos dependentes.
+- Incorporadas as definições M360 de `SP_DEDUPLICA_EDITORIAL` v0.2.2 e `SP_DEDUPLICA_EDITORIAL_FINALIZA`, sem `DEFINER`.
+- Confirmada a compatibilidade das assinaturas com o workflow M360 e documentados estados, comparáveis e concorrência.
+- Registrado que o retorno `ERROR` da SP principal não possui rota no switch atual.
+- Mantidas como pendências o DDL das tabelas, a saída real do Extrator e os exports dos subfluxos dependentes.
 - Nenhuma consulta foi executada no MySQL e nenhum workflow foi importado ou ativado.
 
 ## 20/10/2026 — Sprint Editorial v0.2.0

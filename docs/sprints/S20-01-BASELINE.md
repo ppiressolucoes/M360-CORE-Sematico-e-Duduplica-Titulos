@@ -23,15 +23,17 @@ Esta abertura não consulta MySQL, não importa workflows no n8n e não altera p
 - [x] Documentar a chamada observável do Extrator Editorial.
 - [x] Incorporar o export sanitizado do `SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]`.
 - [x] Mapear os subfluxos, transformações e efeitos externos observáveis do Extrator.
-- [ ] Incorporar a definição vigente de `SP_DEDUPLICA_EDITORIAL`.
-- [ ] Incorporar a definição vigente de `SP_DEDUPLICA_EDITORIAL_FINALIZA`.
+- [x] Incorporar a definição vigente de `SP_DEDUPLICA_EDITORIAL` para M360.
+- [x] Incorporar a definição vigente de `SP_DEDUPLICA_EDITORIAL_FINALIZA` para M360.
+- [x] Confirmar compatibilidade entre assinaturas, retornos e nodes MySQL do M360.
+- [ ] Incorporar o DDL e os índices de `ADM_deduplica_editorial` e `titulos_deduplica`.
 - [ ] Confirmar com snapshot o contrato de saída real do Extrator Editorial.
 - [ ] Incorporar os exports sanitizados dos cinco subfluxos chamados pelo Extrator.
 - [ ] Registrar snapshots sanitizados de entrada e saída para cada ramo do fluxo.
 
 ## Manifesto
 
-O manifesto estruturado está em [`docs/baselines/2026-10-21-m360-s20-01.json`](../baselines/2026-10-21-m360-s20-01.json). Os hashes do Core de deduplicação representam os arquivos no commit de origem `112ceee22fd07ecaf4aa6dd32c356149765441bb`; o Extrator foi acrescentado a partir do export recebido em 21/10/2026.
+O manifesto estruturado está em [`docs/baselines/2026-10-21-m360-s20-01.json`](../baselines/2026-10-21-m360-s20-01.json). Os hashes do Core de deduplicação representam os arquivos no commit de origem `112ceee22fd07ecaf4aa6dd32c356149765441bb`; o Extrator e as duas SPs foram acrescentados a partir dos exports recebidos em 21/10/2026.
 
 ## Versões observadas
 
@@ -135,18 +137,20 @@ O Extrator possui efeitos funcionais: cria rascunho, grava foco SEO no MySQL, tr
 
 O baseline possui 51 candidatos e 153 pares provenientes de três lotes do ramo `SUSPEITO`. Todos os rótulos humanos continuam ausentes. Essa base serve para regressão do caminho analítico e não demonstra desempenho global do fluxo.
 
+## Stored Procedures editoriais
+
+As duas definições M360 foram incorporadas sem `DEFINER`:
+
+- [`SP_DEDUPLICA_EDITORIAL.sql`](../../sql/editorial/SP_DEDUPLICA_EDITORIAL.sql), versão interna 0.2.2;
+- [`SP_DEDUPLICA_EDITORIAL_FINALIZA.sql`](../../sql/editorial/SP_DEDUPLICA_EDITORIAL_FINALIZA.sql).
+
+As assinaturas correspondem às chamadas do workflow. A SP principal retorna também `ERROR`, resultado que não possui regra no `SWITCH | Resultado`. A finalização permite status `ERROR`, mas o fluxo atual não apresenta um caminho que o utilize. A análise completa está em [SPs editoriais M360 v0.2.2](../arquitetura/sp-deduplicacao-editorial-m360-v0.2.2.md).
+
 ## Pendências bloqueadoras
 
-### SPs editoriais
+### Tabelas editoriais
 
-Obter em ambiente autorizado:
-
-```sql
-SHOW CREATE PROCEDURE SP_DEDUPLICA_EDITORIAL;
-SHOW CREATE PROCEDURE SP_DEDUPLICA_EDITORIAL_FINALIZA;
-```
-
-O processo de sanitização está em [`sql/editorial/README.md`](../../sql/editorial/README.md).
+Obter o DDL de `ADM_deduplica_editorial` e `titulos_deduplica`, incluindo índices e constraints. A reserva atômica da SP depende de unicidade de `dsc_chave_dedup`, ainda não comprovada no repositório.
 
 ### Dependências do Extrator Editorial
 
@@ -166,4 +170,4 @@ Registrar amostras sanitizadas para `ALREADY_PROCESSING`, `EXACT_DUPLICATE`, `CH
 
 ## Critério de encerramento
 
-A S20-01 poderá ser concluída quando as duas SPs, a saída real do Extrator, os subfluxos dependentes e os snapshots dos ramos estiverem versionados ou quando uma decisão formal de escopo aceitar explicitamente alguma ausência. Até lá, o baseline permanece `EM ANDAMENTO`.
+A S20-01 poderá ser concluída quando o DDL das tabelas, a saída real do Extrator, os subfluxos dependentes e os snapshots dos ramos estiverem versionados ou quando uma decisão formal de escopo aceitar explicitamente alguma ausência. Até lá, o baseline permanece `EM ANDAMENTO`.

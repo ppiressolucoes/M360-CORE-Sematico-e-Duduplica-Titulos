@@ -27,6 +27,21 @@
       "sha256": "c2d1a50f875e549d8c8d24e06fc9449fbb8fba355708585cbf12acae91ad3d22"
     }
   },
+  "stored_procedures": [
+    {
+      "name": "SP_DEDUPLICA_EDITORIAL",
+      "path": "sql/editorial/SP_DEDUPLICA_EDITORIAL.sql",
+      "sha256": "a583fcc92c4917014c6187ad37efa03d212ec51c67871ab489ee02d314efde53",
+      "internal_version": "0.2.2",
+      "portal": "M360"
+    },
+    {
+      "name": "SP_DEDUPLICA_EDITORIAL_FINALIZA",
+      "path": "sql/editorial/SP_DEDUPLICA_EDITORIAL_FINALIZA.sql",
+      "sha256": "0396db414505f4f9762ac77f77bb95c70eea897add9219c18b31c0bc77c40790",
+      "portal": "M360"
+    }
+  ],
   "code_nodes": [
     {
       "path": "codes/m360/normaliza-deduplica-editorial-v0.2.2.js",
@@ -79,12 +94,19 @@
     "entry_results": [
       "ALREADY_PROCESSING",
       "EXACT_DUPLICATE",
-      "CHECK_SIMILARITY"
+      "CHECK_SIMILARITY",
+      "ERROR"
     ],
     "similarity_results": [
       "DUPLICADO",
       "SUSPEITO",
       "NOVO"
+    ],
+    "finalization_statuses": [
+      "PUBLICADO",
+      "DUPLICADO",
+      "SUSPEITO",
+      "ERROR"
     ],
     "extractor": {
       "name": "SUB | WEB Extrator Detalhes M360 v0.3 [ Core Editorial ]",
@@ -113,8 +135,8 @@
     }
   },
   "open_dependencies": [
-    "DDL de SP_DEDUPLICA_EDITORIAL",
-    "DDL de SP_DEDUPLICA_EDITORIAL_FINALIZA",
+    "DDL e índices de ADM_deduplica_editorial",
+    "DDL e índices de titulos_deduplica",
     "snapshot da saída real do Extrator Editorial",
     "exports sanitizados dos cinco subfluxos dependentes do Extrator",
     "snapshots sanitizados dos ramos"

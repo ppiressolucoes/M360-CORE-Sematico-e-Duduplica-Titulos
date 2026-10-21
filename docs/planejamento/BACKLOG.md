@@ -26,7 +26,7 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 
 | História | Estado | Registro | Pendências para conclusão |
 | --- | --- | --- | --- |
-| S20-01 — Congelar o baseline | EM ANDAMENTO | [Baseline e contratos observados](../sprints/S20-01-BASELINE.md) | Definições das SPs editoriais; saída real do Extrator; exports dos subfluxos dependentes; snapshots completos dos ramos |
+| S20-01 — Congelar o baseline | EM ANDAMENTO | [Baseline e contratos observados](../sprints/S20-01-BASELINE.md) | DDL das tabelas dependentes; saída real do Extrator; exports dos subfluxos dependentes; snapshots completos dos ramos |
 
 ## Agora — referência e contratos
 
@@ -37,8 +37,9 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 | CORE-020 | P0 | CONCLUÍDO | Formalizar governança e sincronização do repositório | Política versionada; backlog e histórico obrigatórios na mesma entrega; commit publicado e HEAD remoto verificado |
 | CORE-021 | P0 | CONCLUÍDO | Organizar artefatos gerais das sprints | Exports JSON preservados; oito Code nodes extraídos e organizados por fluxo; inventário SQL identifica SPs presentes e ausentes |
 | CORE-022 | P0 | CONCLUÍDO | Consolidar a Sprint Editorial v0.2.0 | Escopo, histórias, dependências, critérios de aceite, telemetria e gates do modo sombra versionados no repositório |
-| CORE-003 | P0 | DEPENDÊNCIA | Incorporar as SPs editoriais vigentes | Obter `SHOW CREATE PROCEDURE` ou scripts versionados de `SP_DEDUPLICA_EDITORIAL` e `SP_DEDUPLICA_EDITORIAL_FINALIZA`; remover `DEFINER` antes do Git público |
-| CORE-004 | P0 | DEPENDÊNCIA | Confirmar o contrato do subfluxo chamado pelo ramo `NOVO` | Registrar ID, nome e contrato de entrada/saída do `Chamar Extrator Editorial` na instância n8n, sem publicar credenciais |
+| CORE-003 | P0 | CONCLUÍDO | Incorporar as SPs editoriais vigentes do M360 | Definições recebidas em 21/10/2026, sem `DEFINER`, com assinaturas compatíveis com o workflow M360 e análise estática versionada |
+| CORE-004 | P0 | EM ANDAMENTO | Confirmar o contrato do subfluxo chamado pelo ramo `NOVO` | Export principal incorporado; ainda faltam snapshot da saída e exports dos cinco subfluxos dependentes |
+| CORE-024 | P0 | DEPENDÊNCIA | Versionar o DDL das tabelas editoriais | Obter estrutura e índices de `ADM_deduplica_editorial` e `titulos_deduplica`; confirmar unicidade de `dsc_chave_dedup` e compatibilidade de tipos |
 | CORE-005 | P1 | PRONTO | Definir o contrato semântico v0.1 | Especificar evento principal, participantes e papéis, competição/divisão, data, faceta, estado factual, modalidade, confiança e campos desconhecidos |
 | CORE-006 | P1 | PRONTO | Definir taxonomia editorial | Aprovar `DUPLICADO`, `NOVO`, `RELACIONADO`, `ATUALIZAÇÃO` e `INDETERMINADO`, com exemplos e regras para cada classe |
 
@@ -54,6 +55,8 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 | CORE-012 | P1 | PLANEJADO | Calcular similaridade contextual | Manter score v0.4.0 como baseline e registrar novo score somente em pares compatíveis; explicar diferenças por regra e versão |
 | CORE-013 | P1 | PLANEJADO | Reprocessar a base histórica | Executar 51 candidatos e 153 pares sem acesso de escrita à produção; comparar decisões antiga e sombra com relatório reproduzível |
 | CORE-014 | P1 | PRONTO | Criar coleta de decisão humana | Registrar classe, par determinante, motivo, observação, responsável e data; não reutilizar a sugestão automática como rótulo humano |
+| CORE-023 | P1 | PRONTO | Tratar retorno `ERROR` da SP principal | Criar rota explícita, observabilidade e finalização `ERROR`; impedir encerramento silencioso fora do switch atual |
+| CORE-025 | P1 | PLANEJADO | Validar propriedade e concorrência da reserva | Testar lease, retomada e finalização concorrente; decidir validação de `p_execucao_id` antes de alterar o estado |
 
 ## Depois — promoção controlada
 

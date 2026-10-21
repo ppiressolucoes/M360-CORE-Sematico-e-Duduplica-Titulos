@@ -4,12 +4,12 @@
 
 | Stored Procedure | Utilização observada | Definição no repositório |
 | --- | --- | --- |
-| `SP_DEDUPLICA_EDITORIAL` | Reserva/consulta do candidato e comparáveis nos fluxos M360 e PEL | Pendente |
-| `SP_DEDUPLICA_EDITORIAL_FINALIZA` | Finalização como `DUPLICADO`, `SUSPEITO` ou `PUBLICADO` nos fluxos M360 e PEL | Pendente |
+| `SP_DEDUPLICA_EDITORIAL` | Reserva/consulta do candidato e comparáveis no M360 | [`editorial/SP_DEDUPLICA_EDITORIAL.sql`](editorial/SP_DEDUPLICA_EDITORIAL.sql), versão interna 0.2.2 recebida em 21/10/2026 |
+| `SP_DEDUPLICA_EDITORIAL_FINALIZA` | Finalização como `DUPLICADO`, `SUSPEITO`, `PUBLICADO` ou `ERROR` | [`editorial/SP_DEDUPLICA_EDITORIAL_FINALIZA.sql`](editorial/SP_DEDUPLICA_EDITORIAL_FINALIZA.sql), recebida em 21/10/2026 |
 
-Os exports contêm somente chamadas a essas procedures. A assinatura aparente foi documentada a partir dos nodes MySQL, mas a implementação, permissões, filtros internos e versão instalada não podem ser confirmados sem o DDL original.
+As assinaturas recebidas são compatíveis com as chamadas do workflow M360. Os arquivos foram versionados sem a cláusula `DEFINER`; nenhuma procedure foi executada ou instalada. O ambiente exato de onde o DDL foi exportado foi informado como Mengão 360, mas a versão efetivamente instalada não foi consultada por este repositório.
 
-O procedimento para obter e incorporar essas definições está em [`editorial/README.md`](editorial/README.md).
+O inventário técnico e as dependências de schema estão em [`editorial/README.md`](editorial/README.md).
 
 ## Storage
 
