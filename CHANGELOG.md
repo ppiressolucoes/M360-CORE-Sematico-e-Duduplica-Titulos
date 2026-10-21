@@ -2,6 +2,14 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 20/10/2026 — Sprint Editorial v0.2.0
+
+- Consolidado o roteiro da Sprint para criação do modo sombra M360.
+- Agrupadas as iniciativas `CORE-005` a `CORE-014` em histórias executáveis.
+- Definidos contrato de contexto, compatibilidade por par, similaridade contextual, decisão sombra, telemetria e feedback editorial.
+- Estabelecido aprendizado supervisionado e versionado, sem autoalteração das regras em execução.
+- Separada a conclusão da Sprint dos gates posteriores de ativação e automação em produção.
+
 ## 20/10/2026 — Artefatos gerais das sprints
 
 - Organizados os Code nodes existentes em `codes/m360` e `codes/pel`.

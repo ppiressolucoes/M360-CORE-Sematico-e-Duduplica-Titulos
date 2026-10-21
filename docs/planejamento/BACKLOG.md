@@ -19,6 +19,10 @@ O [índice acumulado de evidências](../telemetria/m360-indice.json) contém 51 
 
 Prioridade `P0` protege rastreabilidade ou operação; `P1` entrega a nova capacidade analítica; `P2` promove a capacidade depois de validada.
 
+## Sprint selecionada
+
+A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0-MODO-SOMBRA.md) agrupa `CORE-005` a `CORE-014`. O resultado esperado é um piloto M360 em modo sombra, capaz de sugerir decisões explicáveis e aprender com rótulos editoriais sem alterar o status funcional. Operação com tráfego real e automação permanecem nos gates `CORE-015` a `CORE-019`.
+
 ## Agora — referência e contratos
 
 | ID | Prioridade | Estado | Iniciativa | Critério de aceite / dependência |
@@ -27,6 +31,7 @@ Prioridade `P0` protege rastreabilidade ou operação; `P1` entrega a nova capac
 | CORE-002 | P0 | CONCLUÍDO | Reconciliar o export M360 mais recente | Cópia pública desativada e sanitizada; ramo `NOVO` aponta para `Chamar Extrator Editorial`; retorno inclui `resultado` |
 | CORE-020 | P0 | CONCLUÍDO | Formalizar governança e sincronização do repositório | Política versionada; backlog e histórico obrigatórios na mesma entrega; commit publicado e HEAD remoto verificado |
 | CORE-021 | P0 | CONCLUÍDO | Organizar artefatos gerais das sprints | Exports JSON preservados; oito Code nodes extraídos e organizados por fluxo; inventário SQL identifica SPs presentes e ausentes |
+| CORE-022 | P0 | CONCLUÍDO | Consolidar a Sprint Editorial v0.2.0 | Escopo, histórias, dependências, critérios de aceite, telemetria e gates do modo sombra versionados no repositório |
 | CORE-003 | P0 | DEPENDÊNCIA | Incorporar as SPs editoriais vigentes | Obter `SHOW CREATE PROCEDURE` ou scripts versionados de `SP_DEDUPLICA_EDITORIAL` e `SP_DEDUPLICA_EDITORIAL_FINALIZA`; remover `DEFINER` antes do Git público |
 | CORE-004 | P0 | DEPENDÊNCIA | Confirmar o contrato do subfluxo chamado pelo ramo `NOVO` | Registrar ID, nome e contrato de entrada/saída do `Chamar Extrator Editorial` na instância n8n, sem publicar credenciais |
 | CORE-005 | P1 | PRONTO | Definir o contrato semântico v0.1 | Especificar evento principal, participantes e papéis, competição/divisão, data, faceta, estado factual, modalidade, confiança e campos desconhecidos |

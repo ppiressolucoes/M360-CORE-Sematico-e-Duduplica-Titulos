@@ -20,6 +20,7 @@ docs/
   arquitetura/
   analises/
   planejamento/
+  sprints/
   telemetria/
 ```
 
@@ -55,6 +56,7 @@ O arquivo deve omitir `DEFINER` e dados de conexão. Quando a implementação ai
 A entrega atualiza, conforme aplicável:
 
 - backlog e estado da iniciativa;
+- roteiro da Sprint, histórias e critérios de aceite;
 - histórico de mudanças;
 - decisão arquitetural;
 - análise e telemetria;

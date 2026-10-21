@@ -21,6 +21,7 @@ O export M360 foi reconciliado em 20/10/2026 com o anexo mais recente: o ramo `N
 ## Governança e planejamento
 
 - [Backlog consolidado](docs/planejamento/BACKLOG.md): prioridades, dependências, critérios de aceite e ordem de implantação.
+- [Sprint Deduplicação e Semântica Editorial v0.2.0](docs/sprints/SPRINT-V0.2.0-MODO-SOMBRA.md): roteiro para o modo sombra com evento, faceta, estado factual e aprendizado supervisionado.
 - [Padrão de artefatos das sprints](docs/planejamento/ARTEFATOS-SPRINT.md): estrutura obrigatória para workflows, Code nodes e SQL.
 - [Estratégia de evolução: evento, faceta e estado factual](docs/arquitetura/evolucao-evento-faceta-estado.md): arquitetura sombra e promoção gradual sem impacto no fluxo atual.
 - [Governança e sincronização do repositório](docs/planejamento/GOVERNANCA-REPOSITORIO.md): fonte oficial, entregáveis obrigatórios e definição de concluído.
