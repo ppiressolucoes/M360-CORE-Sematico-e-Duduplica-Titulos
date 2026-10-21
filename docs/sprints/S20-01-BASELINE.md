@@ -26,7 +26,7 @@ Esta abertura não consulta MySQL, não importa workflows no n8n e não altera p
 - [x] Incorporar a definição vigente de `SP_DEDUPLICA_EDITORIAL` para M360.
 - [x] Incorporar a definição vigente de `SP_DEDUPLICA_EDITORIAL_FINALIZA` para M360.
 - [x] Confirmar compatibilidade entre assinaturas, retornos e nodes MySQL do M360.
-- [ ] Incorporar o DDL e os índices de `ADM_deduplica_editorial` e `titulos_deduplica`.
+- [x] Incorporar o DDL e os índices de `ADM_deduplica_editorial` e `titulos_deduplica`.
 - [ ] Confirmar com snapshot o contrato de saída real do Extrator Editorial.
 - [ ] Incorporar os exports sanitizados dos cinco subfluxos chamados pelo Extrator.
 - [ ] Registrar snapshots sanitizados de entrada e saída para cada ramo do fluxo.
@@ -76,7 +76,7 @@ O node MySQL chama `SP_DEDUPLICA_EDITORIAL` com sete argumentos, nesta ordem:
 6. janela de 7 dias;
 7. ID da execução n8n.
 
-A implementação da SP não está disponível. Portanto, tipos, transações, filtros e garantias internas permanecem não confirmados.
+A implementação versionada confirma a assinatura, as transações, os filtros e os result sets. A análise está em [SPs editoriais M360 v0.2.2](../arquitetura/sp-deduplicacao-editorial-m360-v0.2.2.md).
 
 ## Retorno da SP consumido pela normalização
 
@@ -146,11 +146,16 @@ As duas definições M360 foram incorporadas sem `DEFINER`:
 
 As assinaturas correspondem às chamadas do workflow. A SP principal retorna também `ERROR`, resultado que não possui regra no `SWITCH | Resultado`. A finalização permite status `ERROR`, mas o fluxo atual não apresenta um caminho que o utilize. A análise completa está em [SPs editoriais M360 v0.2.2](../arquitetura/sp-deduplicacao-editorial-m360-v0.2.2.md).
 
+## Estruturas das tabelas editoriais
+
+Os DDLs recebidos do Mengão 360 foram incorporados como baseline:
+
+- [`ADM_deduplica_editorial.sql`](../../sql/editorial/tables/ADM_deduplica_editorial.sql);
+- [`titulos_deduplica.sql`](../../sql/editorial/tables/titulos_deduplica.sql).
+
+A tabela administrativa usa InnoDB, chave primária `BIGINT UNSIGNED` e chave única em `dsc_chave_dedup`; isso confirma a compatibilidade com as SPs e a garantia necessária ao `INSERT IGNORE`. A tabela histórica também usa InnoDB, mas não declara chave primária nem índice em `dth_executado`. Seus limites de categoria e URL são menores que os parâmetros equivalentes da SP. Esses riscos foram registrados no documento de arquitetura; nenhuma migração foi aplicada.
+
 ## Pendências bloqueadoras
-
-### Tabelas editoriais
-
-Obter o DDL de `ADM_deduplica_editorial` e `titulos_deduplica`, incluindo índices e constraints. A reserva atômica da SP depende de unicidade de `dsc_chave_dedup`, ainda não comprovada no repositório.
 
 ### Dependências do Extrator Editorial
 
@@ -170,4 +175,4 @@ Registrar amostras sanitizadas para `ALREADY_PROCESSING`, `EXACT_DUPLICATE`, `CH
 
 ## Critério de encerramento
 
-A S20-01 poderá ser concluída quando o DDL das tabelas, a saída real do Extrator, os subfluxos dependentes e os snapshots dos ramos estiverem versionados ou quando uma decisão formal de escopo aceitar explicitamente alguma ausência. Até lá, o baseline permanece `EM ANDAMENTO`.
+A S20-01 poderá ser concluída quando a saída real do Extrator, os subfluxos dependentes e os snapshots dos ramos estiverem versionados ou quando uma decisão formal de escopo aceitar explicitamente alguma ausência. Até lá, o baseline permanece `EM ANDAMENTO`.

@@ -1,6 +1,6 @@
 # Backlog consolidado — Core Semântico e Deduplicação de Títulos
 
-Última atualização: 20/10/2026.
+Última atualização: 21/10/2026.
 
 ## Objetivo e escopo
 
@@ -26,7 +26,7 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 
 | História | Estado | Registro | Pendências para conclusão |
 | --- | --- | --- | --- |
-| S20-01 — Congelar o baseline | EM ANDAMENTO | [Baseline e contratos observados](../sprints/S20-01-BASELINE.md) | DDL das tabelas dependentes; saída real do Extrator; exports dos subfluxos dependentes; snapshots completos dos ramos |
+| S20-01 — Congelar o baseline | EM ANDAMENTO | [Baseline e contratos observados](../sprints/S20-01-BASELINE.md) | Saída real do Extrator; exports dos subfluxos dependentes; snapshots completos dos ramos |
 
 ## Agora — referência e contratos
 
@@ -39,7 +39,7 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 | CORE-022 | P0 | CONCLUÍDO | Consolidar a Sprint Editorial v0.2.0 | Escopo, histórias, dependências, critérios de aceite, telemetria e gates do modo sombra versionados no repositório |
 | CORE-003 | P0 | CONCLUÍDO | Incorporar as SPs editoriais vigentes do M360 | Definições recebidas em 21/10/2026, sem `DEFINER`, com assinaturas compatíveis com o workflow M360 e análise estática versionada |
 | CORE-004 | P0 | EM ANDAMENTO | Confirmar o contrato do subfluxo chamado pelo ramo `NOVO` | Export principal incorporado; ainda faltam snapshot da saída e exports dos cinco subfluxos dependentes |
-| CORE-024 | P0 | DEPENDÊNCIA | Versionar o DDL das tabelas editoriais | Obter estrutura e índices de `ADM_deduplica_editorial` e `titulos_deduplica`; confirmar unicidade de `dsc_chave_dedup` e compatibilidade de tipos |
+| CORE-024 | P0 | CONCLUÍDO | Versionar o DDL das tabelas editoriais | Estruturas recebidas em 21/10/2026; unicidade de `dsc_chave_dedup`, tipos, engine e índices analisados e registrados no baseline |
 | CORE-005 | P1 | PRONTO | Definir o contrato semântico v0.1 | Especificar evento principal, participantes e papéis, competição/divisão, data, faceta, estado factual, modalidade, confiança e campos desconhecidos |
 | CORE-006 | P1 | PRONTO | Definir taxonomia editorial | Aprovar `DUPLICADO`, `NOVO`, `RELACIONADO`, `ATUALIZAÇÃO` e `INDETERMINADO`, com exemplos e regras para cada classe |
 
@@ -57,6 +57,8 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 | CORE-014 | P1 | PRONTO | Criar coleta de decisão humana | Registrar classe, par determinante, motivo, observação, responsável e data; não reutilizar a sugestão automática como rótulo humano |
 | CORE-023 | P1 | PRONTO | Tratar retorno `ERROR` da SP principal | Criar rota explícita, observabilidade e finalização `ERROR`; impedir encerramento silencioso fora do switch atual |
 | CORE-025 | P1 | PLANEJADO | Validar propriedade e concorrência da reserva | Testar lease, retomada e finalização concorrente; decidir validação de `p_execucao_id` antes de alterar o estado |
+| CORE-026 | P1 | PRONTO | Otimizar acesso ao histórico legado | Medir `EXPLAIN` e volume; desenhar migração reversível para `PRIMARY KEY`, índice de janela e identidade normalizada sem bloquear a ingestão |
+| CORE-027 | P1 | PRONTO | Alinhar limites do histórico legado | Mapear o processo que grava `titulos_deduplica`; decidir validação ou ampliação de categoria 45→100 e URL 255→500; comprovar ausência de truncamento |
 
 ## Depois — promoção controlada
 
@@ -92,4 +94,4 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 
 ## Próxima entrega recomendada
 
-Executar CORE-003 a CORE-006: versionar as SPs editoriais vigentes, confirmar o contrato do Extrator Editorial e aprovar os contratos de contexto e de decisão. Esses artefatos permitem desenhar o DDL e o fluxo sombra sem adivinhar o comportamento da produção.
+Concluir CORE-004 e executar CORE-005 e CORE-006: confirmar a saída e os subfluxos do Extrator Editorial e aprovar os contratos de contexto e de decisão. Em paralelo, CORE-026 e CORE-027 tratam os riscos de performance e limites encontrados no DDL histórico antes de qualquer migração funcional.

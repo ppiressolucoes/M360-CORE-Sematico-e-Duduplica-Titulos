@@ -13,12 +13,13 @@ Este repositório registra artefatos de referência recebidos para a funcionalid
 | `codes/m360-extrator/` | Code node extraído do Extrator M360 | Geração de slug e nome do arquivo de mídia |
 | `codes/pel/` | Code nodes extraídos do export PEL | Tratamento de dados organizado por node e versão |
 | `sql/README.md` | Inventário SQL | Disponibilidade e relação das SPs com os fluxos |
+| `sql/editorial/tables/` | DDLs recebidos do Mengão 360 | Estruturas operacionais de reserva e histórico de títulos |
 | `sql/storage/SP_Core_Storage_Reserva.sql` | `SP_Core_Storage_Reserva.txt` | Reserva de provedor de storage |
 | `sql/storage/SP_Core_Storage_Finaliza.sql` | `SP_Core_Storage_Finaliza.txt` | Finalização de reserva de storage |
 
 As duas procedures de storage são separadas da deduplicação editorial. As definições M360 de `SP_DEDUPLICA_EDITORIAL` e `SP_DEDUPLICA_EDITORIAL_FINALIZA` foram incorporadas em 21/10/2026 e estão no [inventário SQL](sql/README.md). A SP principal recebida aceita apenas o portal `M360`; portanto, ela não confirma a implementação homônima nem os filtros internos usados pelo PEL.
 
-A [análise estática das SPs editoriais M360 v0.2.2](docs/arquitetura/sp-deduplicacao-editorial-m360-v0.2.2.md) documenta assinaturas, estados, comparáveis e pontos de atenção. O DDL das tabelas dependentes ainda não foi fornecido.
+A [análise estática das SPs editoriais M360 v0.2.2](docs/arquitetura/sp-deduplicacao-editorial-m360-v0.2.2.md) documenta assinaturas, estados, comparáveis, estruturas das tabelas e pontos de atenção.
 
 O export M360 foi reconciliado em 20/10/2026 com o anexo mais recente: o ramo `NOVO` chama `Chamar Extrator Editorial`, e o retorno final preserva o campo `resultado`. A cópia no Git permanece desativada e sem credenciais ou `pinData`.
 
@@ -47,6 +48,6 @@ O backlog é a referência compartilhada para o estado das iniciativas. Alteraç
 
 As cópias dos exports preservam nodes, parâmetros, conexões e código JavaScript. Antes de adicioná-las ao Git, foram removidas as referências a IDs de credenciais n8n e os dados fixados em `pinData`; `active` foi definido como `false` para impedir ativação involuntária após importação. As credenciais devem ser configuradas na instância de destino.
 
-Nos scripts SQL, apenas a cláusula `DEFINER` foi removida para não publicar o nome da conta do servidor. Nenhuma procedure foi executada ou instalada. A identidade de execução e as permissões precisam ser revisadas antes de qualquer aplicação.
+Nos scripts das procedures, apenas a cláusula `DEFINER` foi removida para não publicar o nome da conta do servidor. Nos DDLs, somente os próximos valores de `AUTO_INCREMENT` foram retirados por representarem estado mutável da instância. Nenhum SQL foi executado ou instalado. A identidade de execução e as permissões precisam ser revisadas antes de qualquer aplicação.
 
 Os exports ainda contêm chamadas a workflows, envio de alerta e operações de escrita. Uma importação ou execução manual pode ter efeitos externos se as credenciais forem vinculadas. Valide os IDs de workflows chamados, o SQL efetivamente instalado, o destino dos alertas e o ambiente antes de ativar qualquer fluxo.

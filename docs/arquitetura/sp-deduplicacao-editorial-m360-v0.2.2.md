@@ -8,8 +8,10 @@ Origem informada: ambiente Mengão 360.
 
 - [`SP_DEDUPLICA_EDITORIAL.sql`](../../sql/editorial/SP_DEDUPLICA_EDITORIAL.sql)
 - [`SP_DEDUPLICA_EDITORIAL_FINALIZA.sql`](../../sql/editorial/SP_DEDUPLICA_EDITORIAL_FINALIZA.sql)
+- [`ADM_deduplica_editorial.sql`](../../sql/editorial/tables/ADM_deduplica_editorial.sql)
+- [`titulos_deduplica.sql`](../../sql/editorial/tables/titulos_deduplica.sql)
 
-Os corpos foram preservados e somente a cláusula `DEFINER` foi removida. A análise é estática; nenhuma query foi executada.
+Os corpos das procedures foram preservados e somente a cláusula `DEFINER` foi removida. Nos DDLs, somente os próximos valores de `AUTO_INCREMENT` foram removidos. A análise é estática; nenhuma query foi executada.
 
 ## SP_DEDUPLICA_EDITORIAL
 
@@ -55,7 +57,7 @@ flowchart TD
     F -->|Outro estado| I[ERROR]
 ```
 
-A reserva usa `INSERT IGNORE` e depende de unicidade de `dsc_chave_dedup` na tabela `ADM_deduplica_editorial`. O DDL que comprova essa restrição ainda não foi fornecido.
+A reserva usa `INSERT IGNORE`. O DDL recebido confirma a chave única `uq_adm_dedup_editorial_chave (dsc_chave_dedup)`, que serializa a criação de uma identidade técnica e sustenta o comportamento atômico pretendido.
 
 ### Histórico e comparáveis
 
@@ -71,6 +73,36 @@ O histórico é lido de `titulos_deduplica` dentro da janela editorial. A consul
 - não possui limite explícito de quantidade.
 
 O resultado usa uma linha `CONTROL` seguida de zero ou mais linhas `COMPARABLE` nos caminhos `CHECK_SIMILARITY`.
+
+## Compatibilidade das estruturas recebidas
+
+### ADM_deduplica_editorial
+
+| Verificação | Resultado |
+| --- | --- |
+| Engine transacional | `InnoDB` |
+| Identificador | `BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY`, compatível com `registro_id` |
+| Chave técnica | `CHAR(64) NOT NULL` e `UNIQUE`, compatível com SHA-256 hexadecimal |
+| Estado | `VARCHAR(30)`, compatível com as procedures |
+| Título, categoria, URL, host e post ID | Mesmos limites usados pela SP principal |
+| Execução e observação | Mesmos limites usados pela finalização |
+| Índices auxiliares | portal/estado, portal/host/reserva e estado/reserva |
+
+A estrutura confirma a compatibilidade de tipos e a restrição exigida pela reserva. O `DEFAULT current_timestamp()` e o `ON UPDATE current_timestamp()` usam o relógio da sessão do banco; as procedures gravam explicitamente `UTC_TIMESTAMP() - 3 horas`. A configuração de timezone da instância deve ser validada para que gravações externas às SPs não misturem referências temporais.
+
+### titulos_deduplica
+
+| Verificação | Resultado |
+| --- | --- |
+| Engine | `InnoDB` |
+| Identificador | `INT AUTO_INCREMENT` com chave única, sem `PRIMARY KEY` declarada |
+| Título | `VARCHAR(500)`, compatível |
+| Categoria | `VARCHAR(45)`, menor que o limite de 100 da entrada |
+| URL de origem | `VARCHAR(255)`, menor que o limite de 500 da entrada |
+| Post ID | `VARCHAR(555)`, compatível |
+| Índice de janela | Ausente em `dth_executado` |
+
+A procedure apenas lê `titulos_deduplica`; portanto, as diferenças de tamanho não quebram diretamente sua chamada. O processo que alimenta o histórico pode truncar ou rejeitar categoria e URL maiores, conforme o SQL mode. A consulta de comparáveis filtra por `dth_executado` e pode fazer varredura integral. A busca exata normaliza URL e post ID com funções, de modo que índices simples nesses campos também não seriam suficientes para essa expressão. A eventual evolução deve considerar uma chave primária, índice de janela e campos normalizados ou gerados, após `EXPLAIN` e medição em homologação.
 
 ### Resultados
 
@@ -122,13 +154,15 @@ O export PEL chama uma procedure homônima com `PEL`. A implementação recebida
 
 ## Pontos de atenção versionados
 
-1. **DDL ausente:** índices, tipos e unicidade das tabelas dependentes não foram confirmados.
-2. **Fallback sem rota:** `ERROR` não possui saída no switch do workflow M360.
-3. **Finalização de erro ausente:** a SP aceita `ERROR`, mas o fluxo não apresenta um caminho correspondente.
-4. **Propriedade da lease:** a finalização atualiza `dsc_execucao_id`, mas não exige que o chamador seja o dono da reserva original.
-5. **Comparáveis sem limite:** até 30 dias de histórico podem ser retornados sem `LIMIT` explícito.
-6. **Relógio fixo:** as procedures calculam horário com `UTC_TIMESTAMP() - 3 horas`.
-7. **Estado suspeito:** uma identidade ADM já finalizada como `SUSPEITO` retorna depois como `EXACT_DUPLICATE` para a mesma fonte e post ID.
+1. **Histórico sem índice de janela:** `titulos_deduplica` não possui índice em `dth_executado`, embora esse seja o filtro seletivo dos comparáveis.
+2. **Histórico sem chave primária declarada:** `id` é único e auto incremental, mas não foi definido como `PRIMARY KEY`.
+3. **Limites distintos no histórico:** categoria aceita 45 caracteres e URL 255, abaixo dos 100 e 500 aceitos na entrada da SP.
+4. **Fallback sem rota:** `ERROR` não possui saída no switch do workflow M360.
+5. **Finalização de erro ausente:** a SP aceita `ERROR`, mas o fluxo não apresenta um caminho correspondente.
+6. **Propriedade da lease:** a finalização atualiza `dsc_execucao_id`, mas não exige que o chamador seja o dono da reserva original.
+7. **Comparáveis sem limite:** até 30 dias de histórico podem ser retornados sem `LIMIT` explícito.
+8. **Relógio fixo:** as procedures calculam horário com `UTC_TIMESTAMP() - 3 horas`; defaults das tabelas dependem do timezone da sessão.
+9. **Estado suspeito:** uma identidade ADM já finalizada como `SUSPEITO` retorna depois como `EXACT_DUPLICATE` para a mesma fonte e post ID.
 
 Esses pontos não foram alterados nesta incorporação. Correções devem ser implementadas em versão posterior, acompanhadas de testes de concorrência e regressão.
 

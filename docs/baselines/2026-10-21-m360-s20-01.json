@@ -42,6 +42,32 @@
       "portal": "M360"
     }
   ],
+  "table_ddls": [
+    {
+      "name": "ADM_deduplica_editorial",
+      "path": "sql/editorial/tables/ADM_deduplica_editorial.sql",
+      "sha256": "f19a86dde7ebb2626306f348bbdf0e062df1fd43eddbb2f07295260fa8df4566",
+      "source_sha256": "5bfc8f2326091f03697aedf55b2dbf9189ff350accd09b73d364e7a653501a82",
+      "engine": "InnoDB",
+      "primary_key": [
+        "id"
+      ],
+      "unique_keys": [
+        "dsc_chave_dedup"
+      ]
+    },
+    {
+      "name": "titulos_deduplica",
+      "path": "sql/editorial/tables/titulos_deduplica.sql",
+      "sha256": "574f7828f4259b5918796de5e94ab0307b29e60a98f51463765da136a3146e18",
+      "source_sha256": "3ce175f8ef554e95ddd6f185994a0724f610d6c63a21ac4fbaa73d3a58a40aab",
+      "engine": "InnoDB",
+      "primary_key": [],
+      "unique_keys": [
+        "id"
+      ]
+    }
+  ],
   "code_nodes": [
     {
       "path": "codes/m360/normaliza-deduplica-editorial-v0.2.2.js",
@@ -134,9 +160,13 @@
       ]
     }
   },
+  "schema_findings": [
+    "A chave unica ADM_deduplica_editorial.dsc_chave_dedup confirma o pre-requisito da reserva atomica",
+    "titulos_deduplica nao declara PRIMARY KEY nem indice em dth_executado",
+    "titulos_deduplica.txt_categoria tem limite 45, abaixo do parametro de entrada 100",
+    "titulos_deduplica.dsc_URL_origem tem limite 255, abaixo do parametro de entrada 500"
+  ],
   "open_dependencies": [
-    "DDL e índices de ADM_deduplica_editorial",
-    "DDL e índices de titulos_deduplica",
     "snapshot da saída real do Extrator Editorial",
     "exports sanitizados dos cinco subfluxos dependentes do Extrator",
     "snapshots sanitizados dos ramos"

@@ -13,7 +13,10 @@ As datas registram a incorporação ao repositório e não comprovam a data de e
 - Incorporadas as definições M360 de `SP_DEDUPLICA_EDITORIAL` v0.2.2 e `SP_DEDUPLICA_EDITORIAL_FINALIZA`, sem `DEFINER`.
 - Confirmada a compatibilidade das assinaturas com o workflow M360 e documentados estados, comparáveis e concorrência.
 - Registrado que o retorno `ERROR` da SP principal não possui rota no switch atual.
-- Mantidas como pendências o DDL das tabelas, a saída real do Extrator e os exports dos subfluxos dependentes.
+- Incorporados os DDLs de `ADM_deduplica_editorial` e `titulos_deduplica`, removendo apenas os próximos valores mutáveis de `AUTO_INCREMENT`.
+- Confirmada a chave única de `dsc_chave_dedup`, necessária à reserva atômica da SP.
+- Registrados como backlog a ausência de chave primária e índice de janela no histórico, além dos limites menores de categoria e URL.
+- Mantidas como pendências da S20-01 a saída real do Extrator, os exports dos subfluxos dependentes e os snapshots dos ramos.
 - Nenhuma consulta foi executada no MySQL e nenhum workflow foi importado ou ativado.
 
 ## 20/10/2026 — Sprint Editorial v0.2.0
