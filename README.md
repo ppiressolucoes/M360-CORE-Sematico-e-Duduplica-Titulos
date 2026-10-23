@@ -31,6 +31,7 @@ O [contrato observado do Extrator M360 v0.3](docs/arquitetura/m360-extrator-v0.3
 - [Sprint Deduplicação e Semântica Editorial v0.2.0](docs/sprints/SPRINT-V0.2.0-MODO-SOMBRA.md): roteiro para o modo sombra com evento, faceta, estado factual e aprendizado supervisionado.
 - [Padrão de artefatos das sprints](docs/planejamento/ARTEFATOS-SPRINT.md): estrutura obrigatória para workflows, Code nodes e SQL.
 - [Estratégia de evolução: evento, faceta e estado factual](docs/arquitetura/evolucao-evento-faceta-estado.md): arquitetura sombra e promoção gradual sem impacto no fluxo atual.
+- [Validade temporal antes da publicação](docs/arquitetura/validade-temporal-publicacao.md): gate proposto para impedir publicação de conteúdo de serviço cujo evento já ocorreu.
 - [Governança e sincronização do repositório](docs/planejamento/GOVERNANCA-REPOSITORIO.md): fonte oficial, entregáveis obrigatórios e definição de concluído.
 - [Histórico de mudanças](CHANGELOG.md): registro cronológico dos artefatos e análises incorporados ao repositório.
 

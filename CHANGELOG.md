@@ -2,6 +2,15 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 23/10/2026 — Proposta de validade temporal antes da publicação
+
+- Criada a iniciativa `CORE-028` para identificar conteúdo de serviço cujo evento já ocorreu antes de chamar o Extrator Editorial.
+- Documentada a separação entre data original do conteúdo, data do evento e instante de avaliação no fuso `America/Sao_Paulo`.
+- Definido que expressões relativas, como `hoje`, sejam ancoradas na data original do conteúdo e não reinterpretadas no processamento tardio.
+- Propostos os estados `VALIDO`, `EXPIRADO` e `INDETERMINADO`, com bloqueio seguro, auditoria e casos de regressão VT-01 a VT-06.
+- Registrada implantação gradual por replay, observação, feature flag e rollback antes de qualquer efeito funcional.
+- Nenhum workflow foi modificado, importado ou executado e nenhuma alteração produtiva foi realizada.
+
 ## 23/10/2026 — Continuidade das conversas no repositório
 
 - Determinado que avanços, alinhamentos, decisões, ações, evidências e aprendizados relevantes das conversas de trabalho sejam registrados no repositório remoto.

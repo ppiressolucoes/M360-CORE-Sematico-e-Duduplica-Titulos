@@ -24,6 +24,8 @@ Prioridade `P0` protege rastreabilidade ou operação; `P1` entrega a nova capac
 
 A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0-MODO-SOMBRA.md) agrupa `CORE-005` a `CORE-014`. O resultado esperado é um piloto M360 em modo sombra, capaz de sugerir decisões explicáveis e aprender com rótulos editoriais sem alterar o status funcional. Operação com tráfego real e automação permanecem nos gates `CORE-015` a `CORE-019`.
 
+A proteção temporal `CORE-028` é uma frente paralela no Core atual. Ela não faz parte do aprendizado sombra: seu objetivo é impedir que conteúdo de serviço já vencido chegue ao Extrator Editorial, após validação em observação e promoção controlada.
+
 | História | Estado | Registro | Pendências para conclusão |
 | --- | --- | --- | --- |
 | S20-01 — Congelar o baseline | EM ANDAMENTO | [Baseline e contratos observados](../sprints/S20-01-BASELINE.md) | Saída real do Extrator; exports dos subfluxos dependentes; snapshots completos dos ramos |
@@ -40,6 +42,7 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 | CORE-003 | P0 | CONCLUÍDO | Incorporar as SPs editoriais vigentes do M360 | Definições recebidas em 21/10/2026, sem `DEFINER`, com assinaturas compatíveis com o workflow M360 e análise estática versionada |
 | CORE-004 | P0 | EM ANDAMENTO | Confirmar o contrato do subfluxo chamado pelo ramo `NOVO` | Export principal incorporado; ainda faltam snapshot da saída e exports dos cinco subfluxos dependentes |
 | CORE-024 | P0 | CONCLUÍDO | Versionar o DDL das tabelas editoriais | Estruturas recebidas em 21/10/2026; unicidade de `dsc_chave_dedup`, tipos, engine e índices analisados e registrados no baseline |
+| CORE-028 | P0 | PRONTO | Validar temporalidade do evento antes da publicação | Resolver referências como `hoje` e dias da semana a partir da data original no fuso `America/Sao_Paulo`; retornar `EXPIRADO` sem chamar o Extrator; encaminhar `INDETERMINADO` com segurança; validar replay, observação, feature flag e rollback conforme a [proposta arquitetural](../arquitetura/validade-temporal-publicacao.md) |
 | CORE-005 | P1 | PRONTO | Definir o contrato semântico v0.1 | Especificar evento principal, participantes e papéis, competição/divisão, data, faceta, estado factual, modalidade, confiança e campos desconhecidos |
 | CORE-006 | P1 | PRONTO | Definir taxonomia editorial | Aprovar `DUPLICADO`, `NOVO`, `RELACIONADO`, `ATUALIZAÇÃO` e `INDETERMINADO`, com exemplos e regras para cada classe |
 
@@ -81,6 +84,7 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 | Competição e divisão | C17 | Série A e Série B permanecem distintas antes da tokenização |
 | Identidade temporal | A04, C19, C21 | Data do evento e edição da informação recorrente participam da identidade |
 | Modalidade e fase factual | C12, C22 | Pré-jogo, resultado, hipótese e decisão confirmada não são canonizados como o mesmo fato |
+| Validade temporal da pauta | VT-01 a VT-06 | Conteúdo pré-evento vencido não chega ao Extrator; resultado/retrospectiva não sofre falso bloqueio; ausência de âncora resulta em revisão segura |
 
 ## Critérios de segurança para qualquer promoção
 
@@ -94,4 +98,4 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 
 ## Próxima entrega recomendada
 
-Concluir CORE-004 e executar CORE-005 e CORE-006: confirmar a saída e os subfluxos do Extrator Editorial e aprovar os contratos de contexto e de decisão. Em paralelo, CORE-026 e CORE-027 tratam os riscos de performance e limites encontrados no DDL histórico antes de qualquer migração funcional.
+Concluir CORE-004 e executar CORE-005 e CORE-006: confirmar a saída e os subfluxos do Extrator Editorial e aprovar os contratos de contexto e de decisão. Em paralelo, iniciar CORE-028 em observação com snapshots temporais, sem efeito funcional, e executar CORE-026 e CORE-027 para tratar os riscos de performance e limites do DDL histórico antes de qualquer migração funcional.
