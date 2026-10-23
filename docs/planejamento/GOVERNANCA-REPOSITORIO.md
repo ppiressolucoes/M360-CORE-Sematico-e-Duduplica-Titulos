@@ -1,12 +1,18 @@
 # Governança e sincronização do repositório
 
-Vigência: 20/10/2026.
+Vigência: 20/10/2026. Atualização: 23/10/2026.
 
 ## Fonte oficial
 
 O repositório `ppiressolucoes/M360-CORE-Sematico-e-Duduplica-Titulos`, na branch remota `main`, é a fonte compartilhada para o Core Semântico e Deduplicação de Títulos.
 
 Arquivos existentes apenas no workspace, em anexos do chat ou em exports locais não representam uma entrega consolidada. Uma entrega passa a ser compartilhável quando está versionada, publicada em `main` e com o HEAD remoto verificado.
+
+## Continuidade entre conversas
+
+Todo avanço, alinhamento, decisão, ação executada, evidência ou aprendizado relevante produzido nas conversas de trabalho deve ser consolidado no registro aplicável deste repositório e publicado na branch remota `main`. O chat pode apoiar a execução, mas não substitui o registro versionado.
+
+Quando uma ação não puder ser concluída, o bloqueio, a evidência disponível e o próximo passo também devem ser registrados. Nenhuma entrega deve ser apresentada como consolidada enquanto existir apenas na conversa ou no workspace local.
 
 ## Registros obrigatórios
 

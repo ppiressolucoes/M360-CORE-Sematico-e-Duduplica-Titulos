@@ -1,6 +1,6 @@
 # Backlog consolidado — Core Semântico e Deduplicação de Títulos
 
-Última atualização: 21/10/2026.
+Última atualização: 23/10/2026.
 
 ## Objetivo e escopo
 
@@ -34,7 +34,7 @@ A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0
 | --- | --- | --- | --- | --- |
 | CORE-001 | P0 | CONCLUÍDO | Consolidar os três lotes de alertas M360 | 51 candidatos, 153 pares, hashes e análises disponíveis no índice acumulado |
 | CORE-002 | P0 | CONCLUÍDO | Reconciliar o export M360 mais recente | Cópia pública desativada e sanitizada; ramo `NOVO` aponta para `Chamar Extrator Editorial`; retorno inclui `resultado` |
-| CORE-020 | P0 | CONCLUÍDO | Formalizar governança e sincronização do repositório | Política versionada; backlog e histórico obrigatórios na mesma entrega; commit publicado e HEAD remoto verificado |
+| CORE-020 | P0 | CONCLUÍDO | Formalizar governança e sincronização do repositório | Política versionada; avanços, alinhamentos, decisões, ações, evidências e aprendizados das conversas registrados no repositório; backlog e histórico atualizados na mesma entrega; commit publicado e HEAD remoto verificado |
 | CORE-021 | P0 | CONCLUÍDO | Organizar artefatos gerais das sprints | Exports JSON preservados; oito Code nodes extraídos e organizados por fluxo; inventário SQL identifica SPs presentes e ausentes |
 | CORE-022 | P0 | CONCLUÍDO | Consolidar a Sprint Editorial v0.2.0 | Escopo, histórias, dependências, critérios de aceite, telemetria e gates do modo sombra versionados no repositório |
 | CORE-003 | P0 | CONCLUÍDO | Incorporar as SPs editoriais vigentes do M360 | Definições recebidas em 21/10/2026, sem `DEFINER`, com assinaturas compatíveis com o workflow M360 e análise estática versionada |

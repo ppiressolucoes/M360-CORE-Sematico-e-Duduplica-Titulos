@@ -2,6 +2,13 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 23/10/2026 — Continuidade das conversas no repositório
+
+- Determinado que avanços, alinhamentos, decisões, ações, evidências e aprendizados relevantes das conversas de trabalho sejam registrados no repositório remoto.
+- Reforçado que o chat e o workspace local não substituem a consolidação versionada na branch `main`.
+- Estabelecido que bloqueios e próximos passos também sejam documentados quando uma ação não puder ser concluída.
+- Atualizado o critério de aceite de `CORE-020` para refletir essa regra permanente de governança.
+
 ## 21/10/2026 — Abertura da S20-01
 
 - Alterado o estado da história S20-01 para `EM ANDAMENTO`.
