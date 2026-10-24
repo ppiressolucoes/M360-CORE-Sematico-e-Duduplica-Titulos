@@ -1,6 +1,6 @@
 # Validade temporal antes da publicação
 
-Data da proposta: 23/10/2026.
+Data da proposta: 23/10/2026. Atualização: 24/10/2026.
 
 Iniciativa: `CORE-028`.
 
@@ -172,5 +172,11 @@ O contrato de retorno ao fluxo pai precisa aceitar `EVENTO_EXPIRADO` e `TEMPORAL
 - definir o destino operacional de `TEMPORAL_INDETERMINADO`;
 - confirmar que o fluxo pai aceita novos códigos de retorno;
 - decidir onde persistir a auditoria sem criar escrita funcional indevida.
+
+## Evidência executável
+
+O [protótipo v0.1](../../prototypes/validade-temporal/README.md) implementa o contrato como função pura, sem dependências externas ou integrações. Os seis casos VT e cinco controles adicionais estão automatizados e passaram em 24/10/2026.
+
+O [replay observacional dos 51 candidatos](../analises/2026-10-24-replay-validade-temporal-v0.1.md) encontrou 10 títulos com expressão temporal e 17 com intenção pré-evento, mas nenhum candidato preserva a data original da fonte. O resultado confirma que snapshots com `iso_date`/`data` são pré-requisito para medir vencimento sem inferência indevida.
 
 Nenhuma alteração produtiva foi executada nesta proposta.

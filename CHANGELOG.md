@@ -2,6 +2,16 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 24/10/2026 — Protótipo e replay da validade temporal
+
+- Implementada uma especificação executável pura para `CORE-028`, sem dependências externas ou integração com serviços.
+- Automatizados VT-01 a VT-06 e cinco controles adicionais; 11 testes foram aprovados sem falhas.
+- Adicionado suporte a expressões relativas, dias da semana, datas numéricas e datas por extenso em português.
+- Executado replay observacional dos 51 candidatos: 10 possuem expressão temporal, 17 têm intenção pré-evento e 21 resultam `INDETERMINADO`.
+- Confirmado que nenhum candidato histórico preserva `data`, `iso_date` ou `isoDate`; nenhum vencimento foi inferido artificialmente.
+- Alterado `CORE-028` para `EM ANDAMENTO` e mantida a promoção funcional bloqueada até existirem snapshots temporais e contrato do fluxo pai.
+- Nenhum workflow foi modificado, importado ou executado e nenhum efeito externo foi produzido.
+
 ## 23/10/2026 — Proposta de validade temporal antes da publicação
 
 - Criada a iniciativa `CORE-028` para identificar conteúdo de serviço cujo evento já ocorreu antes de chamar o Extrator Editorial.
