@@ -2,6 +2,15 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 27/10/2026 — Checkpoint M360-T0 concluído
+
+- Recebido e verificado o export vigente do workflow M360 com 15 nodes, ativo, contendo `pinData` e referências de credenciais.
+- Mantido o arquivo bruto fora do Git; publicado somente snapshot sanitizado, inativo, sem `pinData` e sem credenciais.
+- Confirmada a topologia `Start Dedup → SP DEDUPLICA EDITORIAL → Normaliza v0.2.2`, ainda sem node temporal.
+- Comprovada equivalência lógica com a baseline de 21/10, desconsiderando apenas ordem do array de nodes e `versionId`.
+- Aprovado o validador automatizado para `M360-T0`; `M360-T1` está pronto para adicionar o node temporal desconectado em cópia inativa.
+- Nenhuma alteração foi aplicada à instância n8n ou à produção.
+
 ## 27/10/2026 — Rollout M360 node a node
 
 - Restringida a primeira aplicação da validade temporal ao workflow `SUB | Deduplicação e Semântica - M360 [ Core Editorial ]`; PEL permanece fora do escopo.

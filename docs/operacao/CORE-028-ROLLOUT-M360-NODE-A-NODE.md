@@ -12,6 +12,17 @@ A validação temporal será aplicada primeiro no M360, onde se concentra a maio
 
 O [export Core v0.5.0](../../workflows/m360-deduplicacao-semantica.json) é o alvo técnico consolidado, não uma instrução para substituição integral do workflow ativo. A aplicação operacional deve avançar pelos checkpoints abaixo, um node por vez.
 
+## Progresso
+
+| Checkpoint | Estado | Evidência / dependência |
+| --- | --- | --- |
+| `M360-T0` | CONCLUÍDO | [Baseline produtivo sanitizado e validado em 27/10/2026](2026-10-27-CORE-028-M360-T0.md) |
+| `M360-T1` | PRONTO | Executar em cópia inativa; node temporal permanece desconectado |
+| `M360-T2` | PLANEJADO | Depende do aceite de T1 |
+| `M360-T3` | PLANEJADO | Depende do aceite de T2 |
+| `M360-T4` | DEPENDÊNCIA | Requer contrato do fluxo pai |
+| `M360-T5` | PLANEJADO | Depende do aceite de T0–T4 e janela operacional |
+
 ## Invariantes de segurança
 
 - Trabalhar primeiro em uma cópia inativa do workflow M360.

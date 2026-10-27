@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "checkpoint": "M360-T0",
+  "captured_on": "2026-10-27",
+  "timezone": "America/Sao_Paulo",
+  "source_file": "SUB _ Deduplicação e Semântica - M360 [ Core Editorial ] 27-10-2026.json",
+  "source_sha256": "e98d64c3c003e77fd8186b4d86c61c7466ee6a5537eaf1cc1614d0fabb68a4c3",
+  "source_observation": {
+    "active": true,
+    "node_count": 15,
+    "pin_data_present": true,
+    "credential_node_count": 6
+  },
+  "sanitization": {
+    "active_forced_to_false": true,
+    "pin_data_removed": true,
+    "credential_references_removed": true,
+    "raw_file_published": false
+  },
+  "snapshot": {
+    "path": "docs/baselines/2026-10-27-m360-t0-producao-sanitizado.json",
+    "sha256": "ff7342ffe49fe0358360f3fd994b31837c77e503cb6bd2926b49d85f77ce5edc",
+    "name": "SUB | Deduplicação e Semântica - M360 [ Core Editorial ]",
+    "active": false,
+    "node_count": 15,
+    "normalizer_version": "0.2.2",
+    "temporal_node_present": false,
+    "entry_topology": [
+      "Start Dedup",
+      "SP DEDUPLICA EDITORIAL | M360",
+      "Normaliza Deduplica Editorial v0.2.2"
+    ]
+  },
+  "comparison": {
+    "reference_path": "docs/baselines/2026-10-21-m360-deduplicacao-semantica.json",
+    "result": "LOGICALLY_IDENTICAL",
+    "ignored_non_behavioral_differences": [
+      "node array order",
+      "versionId"
+    ],
+    "normalized_sha256": "eede76f7d09508d8698968133d0102e24380ad53b8e7fa6db3e8f991c0cd0e3"
+  },
+  "validation": {
+    "command": "node prototypes/validade-temporal/validate-rollout-checkpoint.js M360-T0 docs/baselines/2026-10-27-m360-t0-producao-sanitizado.json",
+    "result": "PASS"
+  },
+  "next_checkpoint": "M360-T1",
+  "production_changes": false
+}
