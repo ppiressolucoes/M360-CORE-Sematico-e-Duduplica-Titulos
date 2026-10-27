@@ -6,7 +6,7 @@ Piloto: **M360**
 
 Janela: **a definir conforme capacidade da equipe**
 
-Atualização: **20/10/2026**
+Atualização: **27/10/2026**
 
 ## Objetivo
 
@@ -26,7 +26,7 @@ Ao final da v0.2.0, o repositório deverá conter:
 - score lexical atual e score contextual lado a lado;
 - decisão sombra com motivos e evidências;
 - mecanismo de coleta de rótulo editorial;
-- replay dos 51 candidatos e 153 pares já catalogados;
+- replay dos 98 candidatos e 294 pares já catalogados;
 - relatório de divergências entre baseline, sombra e validação humana;
 - runbook de execução, observabilidade e desligamento.
 
@@ -256,7 +256,7 @@ Mapeia: `CORE-013`.
 
 Tarefas:
 
-- executar os 51 candidatos e 153 pares acumulados;
+- executar os 98 candidatos e 294 pares acumulados;
 - aplicar regressões prioritárias C07, C10–C17, C19, C21, C22 e A04;
 - comparar baseline, sombra e rótulos disponíveis;
 - registrar falhas, desconhecidos e divergências por regra.
@@ -318,7 +318,7 @@ Não haverá aprendizado online que altere pesos, taxonomias ou thresholds duran
 | --- | --- | --- |
 | G0 — desenho | Contratos, taxonomias e baseline revisados | Implementação analítica |
 | G1 — isolamento | DDL/SPs analíticas e workflow sem efeitos funcionais | Replay histórico |
-| G2 — regressão | 51 candidatos e 153 pares rastreados; casos prioritários explicáveis | Homologação do modo sombra |
+| G2 — regressão | 98 candidatos e 294 pares rastreados; casos prioritários explicáveis | Homologação do modo sombra |
 | G3 — feedback | Rótulos humanos e métricas por classe disponíveis | Tráfego real em sombra, mediante implantação autorizada |
 | G4 — qualidade | Meta editorial de erro definida e atingida em amostra representativa | Decisão assistida ou veto conservador |
 | G5 — autonomia | Canário, feature flag, observabilidade e rollback aprovados | Automação restrita por classe |

@@ -1,12 +1,12 @@
 # Backlog consolidado — Core Semântico e Deduplicação de Títulos
 
-Última atualização: 24/10/2026.
+Última atualização: 27/10/2026.
 
 ## Objetivo e escopo
 
 Este backlog coordena a evolução dos fluxos n8n e das Stored Procedures MySQL do Core Editorial. A etapa atual é de desenho, telemetria e validação. Nenhuma iniciativa abaixo autoriza alteração direta de produção, publicação de conteúdo ou aplicação automática de uma hipótese analítica.
 
-O [índice acumulado de evidências](../telemetria/m360-indice.json) contém 51 candidatos e 153 pares provenientes de alertas do ramo `SUSPEITO`. Os casos não possuem validação humana completa e não representam os ramos `NOVO` e `DUPLICADO`; por isso, ainda não permitem medir precisão ou recall do Core.
+O [índice acumulado de evidências](../telemetria/m360-indice.json) contém 98 candidatos e 294 pares provenientes de alertas do ramo `SUSPEITO`. Os casos não possuem validação humana completa e não representam os ramos `NOVO` e `DUPLICADO`; por isso, ainda não permitem medir precisão ou recall do Core.
 
 ## Convenções
 
@@ -34,7 +34,7 @@ A proteção temporal `CORE-028` é uma frente paralela no Core atual. Ela não 
 
 | ID | Prioridade | Estado | Iniciativa | Critério de aceite / dependência |
 | --- | --- | --- | --- | --- |
-| CORE-001 | P0 | CONCLUÍDO | Consolidar os três lotes de alertas M360 | 51 candidatos, 153 pares, hashes e análises disponíveis no índice acumulado |
+| CORE-001 | P0 | CONCLUÍDO | Consolidar os quatro lotes de alertas M360 | 98 candidatos, 294 pares, hashes, reprodução offline e análises disponíveis no índice acumulado |
 | CORE-002 | P0 | CONCLUÍDO | Reconciliar o export M360 mais recente | Cópia pública desativada e sanitizada; ramo `NOVO` aponta para `Chamar Extrator Editorial`; retorno inclui `resultado` |
 | CORE-020 | P0 | CONCLUÍDO | Formalizar governança e sincronização do repositório | Política versionada; avanços, alinhamentos, decisões, ações, evidências e aprendizados das conversas registrados no repositório; backlog e histórico atualizados na mesma entrega; commit publicado e HEAD remoto verificado |
 | CORE-021 | P0 | CONCLUÍDO | Organizar artefatos gerais das sprints | Exports JSON preservados; oito Code nodes extraídos e organizados por fluxo; inventário SQL identifica SPs presentes e ausentes |
@@ -42,7 +42,7 @@ A proteção temporal `CORE-028` é uma frente paralela no Core atual. Ela não 
 | CORE-003 | P0 | CONCLUÍDO | Incorporar as SPs editoriais vigentes do M360 | Definições recebidas em 21/10/2026, sem `DEFINER`, com assinaturas compatíveis com o workflow M360 e análise estática versionada |
 | CORE-004 | P0 | EM ANDAMENTO | Confirmar o contrato do subfluxo chamado pelo ramo `NOVO` | Export principal incorporado; ainda faltam snapshot da saída e exports dos cinco subfluxos dependentes |
 | CORE-024 | P0 | CONCLUÍDO | Versionar o DDL das tabelas editoriais | Estruturas recebidas em 21/10/2026; unicidade de `dsc_chave_dedup`, tipos, engine e índices analisados e registrados no baseline |
-| CORE-028 | P0 | EM ANDAMENTO | Validar temporalidade do evento antes da publicação | [Protótipo v0.1](../../prototypes/validade-temporal/README.md) com 11 testes aprovados; [replay](../analises/2026-10-24-replay-validade-temporal-v0.1.md) executado nos 51 candidatos, dos quais nenhum contém data original e 21 resultam `INDETERMINADO`; faltam snapshots temporais, contrato do fluxo pai, observação com tráfego representativo, feature flag e rollback |
+| CORE-028 | P0 | EM ANDAMENTO | Validar temporalidade do evento antes da publicação | [Protótipo v0.1](../../prototypes/validade-temporal/README.md) com 14 testes aprovados; [replay](../analises/2026-10-24-replay-validade-temporal-v0.1.md) executado nos 98 candidatos, dos quais nenhum contém data original e 38 resultam `INDETERMINADO`; faltam snapshots temporais, contrato do fluxo pai, observação com tráfego representativo, feature flag e rollback |
 | CORE-005 | P1 | PRONTO | Definir o contrato semântico v0.1 | Especificar evento principal, participantes e papéis, competição/divisão, data, faceta, estado factual, modalidade, confiança e campos desconhecidos |
 | CORE-006 | P1 | PRONTO | Definir taxonomia editorial | Aprovar `DUPLICADO`, `NOVO`, `RELACIONADO`, `ATUALIZAÇÃO` e `INDETERMINADO`, com exemplos e regras para cada classe |
 
@@ -56,7 +56,7 @@ A proteção temporal `CORE-028` é uma frente paralela no Core atual. Ela não 
 | CORE-010 | P1 | PLANEJADO | Extrair evento, faceta e estado factual antes da similaridade | Produzir contrato v0.1 para candidato e comparáveis; valor ausente permanece `DESCONHECIDO` |
 | CORE-011 | P1 | PLANEJADO | Implementar compatibilidade por par | Registrar bloqueadores e relações editoriais antes do score: adversário, pessoa, competição, rodada/data, objeto, faceta e estágio factual |
 | CORE-012 | P1 | PLANEJADO | Calcular similaridade contextual | Manter score v0.4.0 como baseline e registrar novo score somente em pares compatíveis; explicar diferenças por regra e versão |
-| CORE-013 | P1 | PLANEJADO | Reprocessar a base histórica | Executar 51 candidatos e 153 pares sem acesso de escrita à produção; comparar decisões antiga e sombra com relatório reproduzível |
+| CORE-013 | P1 | PLANEJADO | Reprocessar a base histórica | Executar 98 candidatos e 294 pares sem acesso de escrita à produção; comparar decisões antiga e sombra com relatório reproduzível |
 | CORE-014 | P1 | PRONTO | Criar coleta de decisão humana | Registrar classe, par determinante, motivo, observação, responsável e data; não reutilizar a sugestão automática como rótulo humano |
 | CORE-023 | P1 | PRONTO | Tratar retorno `ERROR` da SP principal | Criar rota explícita, observabilidade e finalização `ERROR`; impedir encerramento silencioso fora do switch atual |
 | CORE-025 | P1 | PLANEJADO | Validar propriedade e concorrência da reserva | Testar lease, retomada e finalização concorrente; decidir validação de `p_execucao_id` antes de alterar o estado |
@@ -85,6 +85,8 @@ A proteção temporal `CORE-028` é uma frente paralela no Core atual. Ela não 
 | Identidade temporal | A04, C19, C21 | Data do evento e edição da informação recorrente participam da identidade |
 | Modalidade e fase factual | C12, C22 | Pré-jogo, resultado, hipótese e decisão confirmada não são canonizados como o mesmo fato |
 | Validade temporal da pauta | VT-01 a VT-06 | Conteúdo pré-evento vencido não chega ao Extrator; resultado/retrospectiva não sofre falso bloqueio; ausência de âncora resulta em revisão segura |
+| Edições recorrentes com score máximo | D05, D06 | Rodada e data explícitas distinguem edições mesmo quando o score lexical é 100% |
+| Fase factual no mesmo evento | D17, D23, D30, D35, D38, D39, D42 | Pré-jogo, ao vivo, resultado, eliminação e melhores momentos permanecem estados editoriais distintos |
 
 ## Critérios de segurança para qualquer promoção
 

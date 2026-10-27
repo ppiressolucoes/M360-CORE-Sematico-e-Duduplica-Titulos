@@ -1,6 +1,6 @@
 {
-  "versao_indice": "1.1",
-  "data_atualizacao": "2026-10-20",
+  "versao_indice": "1.2",
+  "data_atualizacao": "2026-10-27",
   "portal": "M360",
   "natureza": "Catálogo observacional de alertas recebidos manualmente, armazenado no Git. Não é uma integração com a telemetria em execução.",
   "rotulos_humanos": "Nenhum rótulo humano confirmado registrado nos datasets. Hipóteses do assistente não são decisões do Core.",
@@ -27,7 +27,7 @@
       "validacao_offline": {
         "casos_reproduzidos": 13,
         "pares_reproduzidos": 39,
-        "diferenca_maxima_percentual_exibida": 0.0
+        "diferenca_maxima_percentual_exibida": 0
       }
     },
     {
@@ -48,7 +48,7 @@
       "validacao_offline": {
         "casos_reproduzidos": 16,
         "pares_reproduzidos": 48,
-        "diferenca_maxima_percentual_exibida": 0.0
+        "diferenca_maxima_percentual_exibida": 0
       }
     },
     {
@@ -69,6 +69,27 @@
       "validacao_offline": {
         "casos_reproduzidos": 22,
         "pares_reproduzidos": 66,
+        "diferenca_maxima_percentual_exibida": 0
+      }
+    },
+    {
+      "data_analise": "2026-10-27",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_dataset": "94c7e3c4a5c728cade904f7dee30c73fbc332f3080ee4398ce9527ac15aff797",
+      "alertas": 47,
+      "pares_exibidos": 141,
+      "baseline_workflow": {
+        "workflow": "workflows/m360-deduplicacao-semantica.json",
+        "commit_conteudo_observado": "9a32c93d3ddbe5cfcd40474f7e1daa6c5c3f6566",
+        "commit_checkout_analisado": "adfa474cc57ee69103b11ff0a99633207c1c7fef",
+        "sha256": "282b73f1b9a8b38700bab84de1ae220553f9973cc7866b59c9cead276e0ead10"
+      },
+      "modo_observado": {
+        "HOMOLOGACAO": 47
+      },
+      "validacao_offline": {
+        "casos_reproduzidos": 47,
+        "pares_reproduzidos": 141,
         "diferenca_maxima_percentual_exibida": 0
       }
     }
@@ -430,6 +451,335 @@
       "sha256_arquivo_fonte": "d8dde7837f77cebfccf5df11f2388f18f77b7212bfdfc6892493abb7f68a352d",
       "sha256_url_exata": "a8e1efebebffbb287ebdcb309bd3f6cb5481d8961039333ba7423daba53a2a80",
       "sha256_observacao": "768d6e63ae79719fe69423d782a9077ebb0cd974d66e6e47b96435813ae4d76f"
+    },
+    {
+      "caso_id": "M360-D01",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "de6bf1315241c7fc40785c6894aba27216ca53999b6ef056c5d1e5d7d336e36c",
+      "sha256_url_exata": "5f6f5ce14f563c33257666b4a4580263e3373ed5d3595a476b5ffded73471cec",
+      "sha256_observacao": "4890d2716f42a1d81d206692238325573c3a3b11e4578d28a3343d6823e9a0a5"
+    },
+    {
+      "caso_id": "M360-D02",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "8f3a3985e8e8d648c2c9841e8ad7c54915397baf9e58ff033046ce007a879f16",
+      "sha256_url_exata": "51c7e75fcb298b52b873ad47e4310ef3c6f6e7d17bfb4bbdb12e121a6b663abe",
+      "sha256_observacao": "a2f04a72e86f193145ba8c5e6ffa34994360fc912f620cae09ccba034e2a4e1a"
+    },
+    {
+      "caso_id": "M360-D03",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "de713c1e18f1c7c627d932b84cfb1356e56c1112672d893f72035513f056d28d",
+      "sha256_url_exata": "cf945bae497a64ba2ab21cf2513c3dd6800e6080569f7cd0c75a1f8d14acf57d",
+      "sha256_observacao": "c0841ad17a7e9700508aacb47405903905dd6cebfada5ca8d9c83db3cf247f77"
+    },
+    {
+      "caso_id": "M360-D04",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "12244f2f3fc5cd580034d53ca1ecbb5c0effeb76bbc9f1458180787d519ddde6",
+      "sha256_url_exata": "b15c1d0f7f18e739cf5387464526d9878580a0246e8f7d5b42ab54d50bbcb22d",
+      "sha256_observacao": "6b68ae6ffe981348357fa67bb44d93e2f693a404cebe487e046766ae29d5e145"
+    },
+    {
+      "caso_id": "M360-D05",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "1c86a97f4a1559a69a5b461c94e390024cb141c0d8d8009ffce693fa67bca549",
+      "sha256_url_exata": "e606d8e80b34f77a804f8fce2052478d56b73bd85653e4a3a24e279615cf2a54",
+      "sha256_observacao": "ce84b24e82ccf2d93b328dfb6946a2e3d0f3043922cc871d2a4655189ece2db2"
+    },
+    {
+      "caso_id": "M360-D06",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "1b839872a3090b5c58b12e7f628b436c0d51eca8fa32bd2cbf3d689e5d12edce",
+      "sha256_url_exata": "4bf7d6b1b4a968a99a1c9f6d7ac8837e7857c6f0134f8ef88d06fce08856d942",
+      "sha256_observacao": "9b3e9f9382d86ddb2d585136b7b00a9da840c7ce7736acede468c17394c1ea42"
+    },
+    {
+      "caso_id": "M360-D07",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "fa145a28c1dff08cf4f70638b529f23df71226f52eff6cf3feda8393c098ac03",
+      "sha256_url_exata": "af4b01095195b5655eb76d26e2788ed3de31f7c609d5b0e303ab92482f4b4994",
+      "sha256_observacao": "f9c79df69aca1b7f2e5e3c91a3936e6fdaa6dc0cfd47b5a2bf5bb4d4604696b5"
+    },
+    {
+      "caso_id": "M360-D08",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "44b477bc53749abb636ac9be6025eeedfeae6adacf94b79990a87dac2ce1ef0e",
+      "sha256_url_exata": "66a92527e4da144220b7de2fc4d25dade246bc2a3c01c1e6fc835d92968a5c08",
+      "sha256_observacao": "9aec08851438880b327baff3e403f7fc457eb9039ae12cc662c259a44241381b"
+    },
+    {
+      "caso_id": "M360-D09",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "ee024824f3a072967b09dcd3756ea8b795bcebed1b4b241d842f222f78c7d5cf",
+      "sha256_url_exata": "6af46e1ae711f780368ba715e2cfaf61c98ce1bf00d10c3fba13c21d52062984",
+      "sha256_observacao": "42748b355c3c1445b34432979b0e1d4db9083445b7f3953b9c60fec34674e891"
+    },
+    {
+      "caso_id": "M360-D10",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "c39df21193eab0ad49293d38b59a51eae8de6ff77f603a31a8174ae68e2776c3",
+      "sha256_url_exata": "7852985eb8604de7fe11bd89d4d13e252b52ee2ee6c704fc558278de1388e0fa",
+      "sha256_observacao": "7f710a097de88e7e81b42fc475856e34bdf8592c23a6690fd3069eddce3acff6"
+    },
+    {
+      "caso_id": "M360-D11",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "5b5d245bc317465df7b0e405b4160a4d52b2be259411801056e528a91815e9fa",
+      "sha256_url_exata": "60748c2e24adce9229ebcba0ac4c8594344c717b8ae23a0cc0adccac198e6215",
+      "sha256_observacao": "c24aeec6c53b3f4df3c9fe03ef190d564f581caf00ffd8698055faec2a79e65e"
+    },
+    {
+      "caso_id": "M360-D12",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "caf84ad08b3b4051df0bebe22f20d3ba955b2d584ff4b35ecedbea70b4d5b6ce",
+      "sha256_url_exata": "1d2c3ea9552af83af31a898126afb72b76a69713aad16d95777ad303db7350db",
+      "sha256_observacao": "f61f099d91019169c703a67b242d8896aa9c8404e1df45d91e24151211c199f4"
+    },
+    {
+      "caso_id": "M360-D13",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "49b4948a27089aa04898a1f61b5ba46fc55c8b04bf99a13f9bf060ef60139fe1",
+      "sha256_url_exata": "050be44db2cbb37032e34f68c77099b53324230e6b4a492ff38ff4e0f807228b",
+      "sha256_observacao": "0a6d869f03062def14b42a002d9ee66f21edfaf381eca81ef21fb2efe1cc2bf2"
+    },
+    {
+      "caso_id": "M360-D14",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "69ea011637d1510262b5cef48d9e11eca66d06028b69a736dd7692a542fc39ea",
+      "sha256_url_exata": "2b7b993e8bc01da92f97b2aeca21d4c84fce4204e6937b22e5005127081452e5",
+      "sha256_observacao": "105bf06fc5ccaf45d95ddd2971bc7183165d76f333bd90bb72de8a143a9f9154"
+    },
+    {
+      "caso_id": "M360-D15",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "024e6c267f838f44051267fa1db1a5dc243777ee153da9a53dfcba5002773578",
+      "sha256_url_exata": "607a3d609f1fb2aed21e319435e453dae2986dac36931017e6aadeb1621b57fb",
+      "sha256_observacao": "0916c21629f8aa5d12c730ffff727c7b663d2a55f2e38c87c95a109f2b5395a6"
+    },
+    {
+      "caso_id": "M360-D16",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "7507e93c8af1ea9dd9e7d6da12d6a61227ae78fc17f83ceabc6593748f80dcec",
+      "sha256_url_exata": "36aefc80c059998bac8f568437c45cede0ce1285fbea7a72b05986c1c9c395cb",
+      "sha256_observacao": "9a23f6327499d6455d0c2074673e3ad770fbc71acc62fa901bd6c2264b38a946"
+    },
+    {
+      "caso_id": "M360-D17",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "748affdb602b30750ee11ba5347a3c8ebf02ec736d3e02c9792d3ccf3c15f316",
+      "sha256_url_exata": "5d0a22cd7dc9e886abec2d6f59b78a68864215faaefea0362e99b3ea474bd421",
+      "sha256_observacao": "03aa9e2aa3cb8e7978493df5a090674066fd82c4c76cfbd8cc964d47222d6412"
+    },
+    {
+      "caso_id": "M360-D18",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "851c0a45a5247db0d2f2733f00670a40485c47ba2842021b0b1ba82376f38367",
+      "sha256_url_exata": "e6e886d0c2778044971a255277a2ca7f139a9efbff597491a98fc9dfd7ce8abb",
+      "sha256_observacao": "67b399afd45ace105ad53dae74a4e41d7fd1613c5825ab50ba8fb0f257abbbae"
+    },
+    {
+      "caso_id": "M360-D19",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "1bd923e5084694d38d17d108a62a00f53bb79bef7a6b81290a94f5c736a7c63a",
+      "sha256_url_exata": "7825350adf52b9db44d65016a3edf96e765a81044f0ca946f2e9c008da82ea06",
+      "sha256_observacao": "98061816aa934a07207e8f5252139ddb4c07b8690726b387e6bec9e5620eaf1d"
+    },
+    {
+      "caso_id": "M360-D20",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "3d7422473bfcf21e5678846a7e7f58bafacfe6dc7445fb08e96c476b2c25f390",
+      "sha256_url_exata": "009755f1115d921f62316d26b703c56c6c94d3c14b65c05bfaf8027b47834fce",
+      "sha256_observacao": "db05c3a26c1383333355cd8f39eff4cbaffc60d3ffd75b97f2f1684cf0c93687"
+    },
+    {
+      "caso_id": "M360-D21",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "72f37867497e8247e1bf3ea1c5c6f7b1ff42b40d4386252f9ff4757c1b1e01db",
+      "sha256_url_exata": "f16c48669fbd89cedba09766c9d2ef8703deaf7e5c3f8c84cf4c580d583841c4",
+      "sha256_observacao": "4baf950bd2973d24a0eb13fe0dd7a92d1bc36278296cb276ce2f029285555329"
+    },
+    {
+      "caso_id": "M360-D22",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "6fbfe6bee88ec8173df1d0e3430ab25ae6cb36ddd7f0a4708b13955c49f10a37",
+      "sha256_url_exata": "d498debc3d794ce6b5f3e2af209f8bdd46d9bba6ea629ec2eb2b032eca9f283a",
+      "sha256_observacao": "da3c732062a53e014e10ab7e66a202b784b2152f1b168a13c004bf1e9c5ac295"
+    },
+    {
+      "caso_id": "M360-D23",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "3bf6207b626e3fd8bf830ace41f8f05be5ca86ee3421ea054fdbea76a44bf838",
+      "sha256_url_exata": "e2d589759c22daa2a828799f640c467412934a50af6549d1a50f4ebbf638f50d",
+      "sha256_observacao": "2857b670d6379a726349d65f67c3cacdb8b9cbfa31186003a83d63e4c1f5f471"
+    },
+    {
+      "caso_id": "M360-D24",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "487312baff76913170470ec084cefcaeeb5e07cd4858c524735db1ad31a05044",
+      "sha256_url_exata": "2ae4fcc1af69f5df7dc46894dfa1f63a72085fa5b1001c10b28b7e8f9450e931",
+      "sha256_observacao": "65baf12fbfb83fbfc8a6f307eb37b77ec37352b599b6b9cbf85b7be10fc30d71"
+    },
+    {
+      "caso_id": "M360-D25",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "144e235cf48ead437fc02d82622e2b9dc192d96e89153d44d5e18dfe720753ab",
+      "sha256_url_exata": "959012f64f0b50b4fe92d7b76725136b5888e45e83b7743f875ebbfa4eb35ea7",
+      "sha256_observacao": "7f9048c9d0094bccc291f872995a43c8bab55404a164178da6e06160e804c7dc"
+    },
+    {
+      "caso_id": "M360-D26",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "4791edad67f3a9f26b3df16160993dba99a721cd5aa4ca1fefa622705f685c8c",
+      "sha256_url_exata": "6372af3c10729ea54c532d7c202a9bde0ba6406cf85669f9ed376daeb6fadca3",
+      "sha256_observacao": "2701e101a8e8e3eb37e1ef61b85f5d777eb71e855055f97187fa133aa1443be6"
+    },
+    {
+      "caso_id": "M360-D27",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "f32a531c1af36a0e963f9964340caa944ffd9ee746b67734b693bb489360daef",
+      "sha256_url_exata": "7097262bcc67df2e0b534ff4cc20b3e0d1cbb0e9983683bdafdedbe29a333828",
+      "sha256_observacao": "553b00c5cdb977e91614b8d2ccdf6bc90270af776e128444c45e300e4c8cf4ab"
+    },
+    {
+      "caso_id": "M360-D28",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "b6e4220d5df7c13a85d0bb9a334578bc5f67afdcff7b39a9382e5493d80ccbed",
+      "sha256_url_exata": "fad155bbe36e3726294f4b3f4b15f87b702e01f508e89c07007bb85a87592c8a",
+      "sha256_observacao": "d0ab087a883fa5848143bb20181475bc51bafa3d0569c5a1653d42c5824b24bc"
+    },
+    {
+      "caso_id": "M360-D29",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "e2b8570fe905623d4312aab912d45326d20cc099b9fb4253b52a0dfeabdcef9f",
+      "sha256_url_exata": "a7546fa991c99695d44604e17db6b9550800a537ec36a837fa678684d3bc04ef",
+      "sha256_observacao": "9cf6f10627c72784c1186a757649f6cf4a72058d3682751521bf98d58a0edf6e"
+    },
+    {
+      "caso_id": "M360-D30",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "d2001b755c5005fba43ae438b6dad1e5bfdb1fbcbf1106e3841e9b54cd85a037",
+      "sha256_url_exata": "5aa239d4d86f6e207247305bf2e1f64e044715f76f905dcd235379c9470eb229",
+      "sha256_observacao": "e649982a6a31f25b3e769f9f19b801e8c9feef82f867e1a859541a2cc8b8c6e0"
+    },
+    {
+      "caso_id": "M360-D31",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "9e6e74b598c33c386810f433bab75dd3c7653c8d2eafd614f331ad7be3261e75",
+      "sha256_url_exata": "0545f8a0506062723d27e75d46d617da1ca38c29025fe7f730f5039837fe0ad0",
+      "sha256_observacao": "21c4a929d8555c4ba2f77265cda8532b5bb9ffbd140a79f1f749df6610ded8c4"
+    },
+    {
+      "caso_id": "M360-D32",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "ec392e992c2e30481b6ff2c5e199d3d0bf5cee9f5ee13c31e87f7cbb23c7b399",
+      "sha256_url_exata": "6388df1ba166e15b9583df467dfb83ba36b4b88cc74be51b09595674fb2d5137",
+      "sha256_observacao": "6d7b9b36f7c92c76eef07e9abae798cf566e580544398f55bec86b646ba51c6f"
+    },
+    {
+      "caso_id": "M360-D33",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "552a7f273fe0fcfd1c076d5dd9f81d2bababbbc1e61ca84558b33ea20c951192",
+      "sha256_url_exata": "280ed4a73d00164ab11c254763a8f9703f71e032f58f106e4afa67a12f39976d",
+      "sha256_observacao": "7b208ad94fbff2f5cb85ab941b9e7cce1a34f957e2d9122f9e7743ed0c3758ea"
+    },
+    {
+      "caso_id": "M360-D34",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "895164e3859db4dd26c1c291d24cfea28b38482f1324350fbc2f2ced88d6d415",
+      "sha256_url_exata": "858c9287ee35abc6c31340bf2d84251290da98bc169e180aa3191a84384b662c",
+      "sha256_observacao": "c2711fed0a30e70236af8b13d80a0c89af5e150900a2971780ed0e36d81615b6"
+    },
+    {
+      "caso_id": "M360-D35",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "924af64c32419268dd94c9da16103d88b292653b1ac7b15c1d65f9f277ac638e",
+      "sha256_url_exata": "2f53891d423e07c06db8166d8dc0e06f85967cc257c0c60a44a757a98b64f635",
+      "sha256_observacao": "1aefb74eabcb49dd5d909220116708a7caef36d241dac45b7e0a856995898a79"
+    },
+    {
+      "caso_id": "M360-D36",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "0f8591a261e8b8982a74997544be1da14325a856cabfc41fd0d19128644119f6",
+      "sha256_url_exata": "8b20cdc8d54ac71db66699f1edc484d60842c749762b013902550dfbfbfe2a3b",
+      "sha256_observacao": "d72effca639130557e4d10311c91e4659b2e696ba06294e327a0e85d29b9f3da"
+    },
+    {
+      "caso_id": "M360-D37",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "61f13dda31d2fea6861efa26f849dc80155e9a1c12e600757314a19cdc9d5408",
+      "sha256_url_exata": "26e8669cfda8cede2ddb412a325402e14830ebcd5ac7775f619070d5b7b0aaa7",
+      "sha256_observacao": "f8f975ee86c1c5e33dd7fe5364ef29d1ee24a60745f02af0239f39cc6292ff07"
+    },
+    {
+      "caso_id": "M360-D38",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "a17258a62fe535bc4f735cafb6e4d157396d6878c5750df15ad9d9ce50829b0c",
+      "sha256_url_exata": "f10ad59ac9318b480d99ec1debb11b7bc39e0eedcaa4e29b8e16ba2e2b51819d",
+      "sha256_observacao": "e8a446726c8565a7248d03c4bcff55b1587c856a6cbdd5f35d02608b281e42ea"
+    },
+    {
+      "caso_id": "M360-D39",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "af99292acc0893ece8a9925ebb8d3d23c6c8f34b84eb24d3e8b31c5feb720f9e",
+      "sha256_url_exata": "19b52982468aa3f989e600eaf7cc3169b203bae9e27a1d8da6f3fcf6f574c0ed",
+      "sha256_observacao": "ad779ea231ff3111c6251717542efb01b79e9c4fe573155807b126caf05a2b09"
+    },
+    {
+      "caso_id": "M360-D40",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "b151e044d8f1675ae65088359ba2c24d6073f12fbb0acd0823de6ea10aef755d",
+      "sha256_url_exata": "b37129d807c2f63a2dba67677f4581265e67094938ea1af195a6d3d84197d3e5",
+      "sha256_observacao": "39d2fdaf16be1548b7ab55babacb1d349757e68db94e4b21c0b95c879feb0469"
+    },
+    {
+      "caso_id": "M360-D41",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "8ff16c4a7c7f8882f91cbb1ec0620f4e5afbedc8ffd62e06b0886a5d4a5ca74a",
+      "sha256_url_exata": "ce34a5876f5d9bf3e37993f169ca7cc2d984a670d526ec6d73fbfbb0b3632d05",
+      "sha256_observacao": "b4f768debd15093dd3684cc5e5d434d393b8a9ff85c262afe4350afbfdf7b9e6"
+    },
+    {
+      "caso_id": "M360-D42",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "fa98b0d8e86dd8089065b35145eee4a93c1c781a9241fffda37517aef627faa5",
+      "sha256_url_exata": "68ffdc35901d40c455a432f4fbbdc8ae5548fd71b0e32ad93747b64630e12dee",
+      "sha256_observacao": "5389a1fbc9467b61a32214be15cfcd791710b1baa41afeb1ae0d169f018a019b"
+    },
+    {
+      "caso_id": "M360-D43",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "4274e01f4441f400f0f68aa11f77850af3e0e65e4949bdcfa13375a081a6e1c3",
+      "sha256_url_exata": "d78cd4f0b5680381a99a4b4eacceaab270384c65c931fbb6ec1d4530660e61be",
+      "sha256_observacao": "9d74b600a78743a49e453f090dca60ca9fb15037414954257c2a78af983ea465"
+    },
+    {
+      "caso_id": "M360-D44",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "5b3583ec4806fbff986b5d8905060071c198ff9738ed6ee9826f5dc8d0665a39",
+      "sha256_url_exata": "9e56ca10340a5e31325cecf85f829b97de54ae2260972e1db48e6956db6ff089",
+      "sha256_observacao": "027779b635e1d3b228416247f87c38dd045a678f8bab2f7c4c53e4e5c88a5cab"
+    },
+    {
+      "caso_id": "M360-D45",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "17e842cf687c99986de390398588ef479400a462af21f4e4bbb7a22e92699e69",
+      "sha256_url_exata": "cc35454c51f40dc1cdc89b472f0e1fae879a78e13e13099051d99381e3122f41",
+      "sha256_observacao": "56a4c325e6d423e2c207f0f3702180f6a7b61e18a5f6cc4a5bbed7926f5ae215"
+    },
+    {
+      "caso_id": "M360-D46",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "02406c0ab9cdb66dae5c10644010c5d2999077a91a020044de10453775affb28",
+      "sha256_url_exata": "9128db72a93e6fb90dd0fd238b528d6ba83bcf24f438e0bc05219d7d62dff6fa",
+      "sha256_observacao": "9e826b01f61df07cfd9e4015683bd8620ea5377ff79aa07a687c3d3a96e9d7ac"
+    },
+    {
+      "caso_id": "M360-D47",
+      "dataset": "../analises/2026-10-27-m360-alertas-casos.json",
+      "sha256_arquivo_fonte": "51d5e07e8597a9c5f5e8ebd3706cc59d79ebaf9bdc27f51f69ad217f61e9fb31",
+      "sha256_url_exata": "4fe6ae9c0a3a75bd29fe8964696f6f8c909f332e7e9a47aed63e5970a2700c22",
+      "sha256_observacao": "ad021239f8249db1bcb68f8f9fce757b59f7f24e79013b887f83e042fac08523"
     }
   ],
   "checagem_entre_lotes": {
@@ -448,30 +798,57 @@
     ]
   },
   "resumo": {
-    "lotes": 3,
-    "alertas": 51,
-    "candidatos_com_url_exata_distinta": 51,
-    "observacoes_com_fingerprint_distinto": 51,
-    "pares_exibidos": 153,
+    "lotes": 4,
+    "alertas": 98,
+    "candidatos_com_url_exata_distinta": 98,
+    "observacoes_com_fingerprint_distinto": 98,
+    "pares_exibidos": 294,
     "status_oficial": {
-      "SUSPEITO": 51
+      "SUSPEITO": 98
     },
     "niveis_consenso": {
-      "BAIXO": 44,
-      "MODERADO": 7
+      "BAIXO": 85,
+      "MODERADO": 13
     },
-    "multifonte_sim_exibido": 44,
+    "multifonte_sim_exibido": 81,
     "modo_exibido": {
-      "HOMOLOGACAO": 51
+      "HOMOLOGACAO": 98
     },
     "casos_score_top1_pelo_menos_78": [
       "M360-B09",
       "M360-B11",
-      "M360-C10"
+      "M360-C10",
+      "M360-D01",
+      "M360-D02",
+      "M360-D03",
+      "M360-D04",
+      "M360-D05",
+      "M360-D06",
+      "M360-D43",
+      "M360-D44",
+      "M360-D45",
+      "M360-D46",
+      "M360-D47"
+    ],
+    "casos_score_top1_pelo_menos_78_sem_quatro_tokens": [
+      "M360-B09",
+      "M360-B11",
+      "M360-C10",
+      "M360-D01",
+      "M360-D02",
+      "M360-D03",
+      "M360-D04",
+      "M360-D05",
+      "M360-D06",
+      "M360-D43",
+      "M360-D44",
+      "M360-D45",
+      "M360-D46",
+      "M360-D47"
     ],
     "rotulos_humanos_confirmados_registrados": 0,
-    "pares_reproduzidos_offline": 153,
-    "decisoes_reproduzidas_offline": 51
+    "pares_reproduzidos_offline": 294,
+    "decisoes_reproduzidas_offline": 98
   },
   "revisoes_prioritarias": [
     {
@@ -572,27 +949,84 @@
         "M360-C12"
       ],
       "tema": "Resultado do NBB versus serviço pré-jogo; modalidade e fase factual."
+    },
+    {
+      "casos": [
+        "M360-D01",
+        "M360-D02",
+        "M360-D03",
+        "M360-D04",
+        "M360-D05",
+        "M360-D06"
+      ],
+      "tema": "Score de 100%/alta cobertura em títulos curtos: paráfrases prováveis versus rodada e data explicitamente diferentes."
+    },
+    {
+      "casos": [
+        "M360-D17",
+        "M360-D23",
+        "M360-D30",
+        "M360-D35",
+        "M360-D38",
+        "M360-D39",
+        "M360-D42"
+      ],
+      "tema": "Pré-jogo, ao vivo, resultado, eliminação e melhores momentos do mesmo evento."
+    },
+    {
+      "casos": [
+        "M360-D10",
+        "M360-D13",
+        "M360-D28",
+        "M360-D32",
+        "M360-D34",
+        "M360-D41"
+      ],
+      "tema": "Mesmo template com adversário, equipe enfocada, rodada ou data diferentes."
+    },
+    {
+      "casos": [
+        "M360-D11",
+        "M360-D31",
+        "M360-D40"
+      ],
+      "tema": "Possível progressão factual: plano/pergunta/recurso versus explicação, confirmação ou resposta."
+    },
+    {
+      "casos": [
+        "M360-D07",
+        "M360-D15",
+        "M360-D26",
+        "M360-D44",
+        "M360-D45",
+        "M360-D47"
+      ],
+      "tema": "Paráfrases fortes a rotular, incluindo incidente, entrevista, escalação e serviço de partida."
     }
   ],
   "limites": [
     "Amostra selecionada apenas do ramo SUSPEITO, sem taxa de erro ou recall estimáveis.",
     "Datas dos lotes são datas de análise; não comprovam o momento de emissão de cada alerta.",
     "URLs e títulos distintos não comprovam independência das notícias ou dos eventos.",
-    "153 pares exibidos incluem comparáveis repetidos e não equivalem a 87 eventos independentes.",
-    "Origem de produção declarada pelo usuário para o novo lote; rodapés exibem HOMOLOGACAO e ambiente real não foi consultado.",
+    "294 pares exibidos incluem comparáveis repetidos e não equivalem a eventos independentes.",
+    "Os rodapés exibem HOMOLOGACAO; o ambiente real não foi consultado.",
     "Sem conteúdo integral, histórico completo, consulta MySQL ou verificação do estado atual do n8n."
   ],
   "checagem_novo_lote": {
-    "data_lote": "2026-10-20",
-    "base_anterior_alertas": 29,
+    "data_lote": "2026-10-27",
+    "base_anterior_alertas": 51,
     "criterios": "Igualdade exata de hash de anexo, URL e título; sem presumir independência editorial por URLs distintas.",
     "arquivos_com_sha256_repetido": 0,
     "urls_de_candidato_repetidas": 0,
-    "titulos_de_candidato_repetidos": 0,
-    "nomes_de_arquivo_iguais_para_casos_distintos": [
-      "CORE Editorial M360 - SUSPEITO  65%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg",
-      "CORE Editorial M360 - SUSPEITO  80.5%  Consenso BAIXO → SUSPEITO  colunadofla.com.msg"
+    "titulos_de_candidato_repetidos": 1,
+    "titulos_repetidos": [
+      {
+        "caso_novo": "M360-D02",
+        "caso_anterior": "M360-B09",
+        "observacao": "Mesmo título em URL nova com sufixo -2; preservado como nova ocorrência, sem assumir notícia independente."
+      }
     ],
-    "acao": "Os 22 anexos foram registrados como novas observações; nomes iguais não foram usados como chave."
+    "nomes_de_arquivo_iguais_para_casos_distintos": [],
+    "acao": "Os 47 anexos foram registrados como novas observações; a repetição exata de título foi ligada ao caso anterior."
   }
 }

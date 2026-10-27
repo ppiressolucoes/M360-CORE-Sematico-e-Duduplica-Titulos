@@ -147,3 +147,34 @@ test('usa data como fallback auditável quando iso_date não existe', () => {
   assert.equal(resultado.referencia_conteudo.origem, 'data');
   assert.equal(resultado.referencia_conteudo.confianca, 0.8);
 });
+
+test('reconhece vitória e vaga como resultado pós-evento', () => {
+  const resultado = avaliar({
+    titulo: 'Flamengo vence Criciúma e garante vaga nas quartas de final',
+    instante_avaliacao: '2026-10-27T12:00:00-03:00'
+  });
+
+  assert.equal(resultado.status, 'VALIDO');
+  assert.equal(resultado.intencao, 'RESULTADO');
+  assert.ok(resultado.motivos.includes('CONTEUDO_POS_EVENTO'));
+});
+
+test('reconhece eliminação nos pênaltis como resultado pós-evento', () => {
+  const resultado = avaliar({
+    titulo: 'Flamengo é eliminado nos pênaltis na semifinal da Libertadores',
+    instante_avaliacao: '2026-10-27T12:00:00-03:00'
+  });
+
+  assert.equal(resultado.status, 'VALIDO');
+  assert.equal(resultado.intencao, 'RESULTADO');
+});
+
+test('reconhece resultado em título editorial em inglês', () => {
+  const resultado = avaliar({
+    titulo: 'Flamengo ousted by Estudiantes on penalties in Libertadores semi-final',
+    instante_avaliacao: '2026-10-27T12:00:00-03:00'
+  });
+
+  assert.equal(resultado.status, 'VALIDO');
+  assert.equal(resultado.intencao, 'RESULTADO');
+});

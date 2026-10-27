@@ -35,6 +35,8 @@ Esta abertura não consulta MySQL, não importa workflows no n8n e não altera p
 
 O manifesto estruturado está em [`docs/baselines/2026-10-21-m360-s20-01.json`](../baselines/2026-10-21-m360-s20-01.json). Os hashes do Core de deduplicação representam os arquivos no commit de origem `112ceee22fd07ecaf4aa6dd32c356149765441bb`; o Extrator e as duas SPs foram acrescentados a partir dos exports recebidos em 21/10/2026.
 
+O índice acumulado usado nesse baseline foi preservado em [`docs/baselines/2026-10-21-m360-indice.json`](../baselines/2026-10-21-m360-indice.json). O arquivo vivo em `docs/telemetria/` continua evoluindo com os lotes posteriores sem alterar o hash histórico da S20-01.
+
 ## Versões observadas
 
 | Componente | Versão / configuração |

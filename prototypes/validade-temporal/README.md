@@ -20,6 +20,7 @@ O protótipo:
 - recebe título, contexto, `iso_date`/`data`, instante de avaliação e timezone;
 - resolve `hoje`, `amanhã`, `ontem`, dias da semana, datas `dd/mm[/aaaa]` e datas por extenso em português;
 - separa conteúdo de serviço pré-evento de resultado pós-evento;
+- reconhece sinais de resultado em português e inglês, como vitória, eliminação, vaga, pênaltis e melhores momentos;
 - retorna `VALIDO`, `EXPIRADO` ou `INDETERMINADO` com evidências auditáveis;
 - exige instante de avaliação explícito para que o replay seja determinístico;
 - mantém `aplicado_automaticamente: false`.

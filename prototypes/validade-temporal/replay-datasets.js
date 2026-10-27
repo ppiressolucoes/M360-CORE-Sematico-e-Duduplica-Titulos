@@ -7,7 +7,8 @@ const { avaliarValidadeTemporal } = require('./validade-temporal');
 const ARQUIVOS_PADRAO = [
   'docs/analises/2026-10-14-m360-alertas-casos.json',
   'docs/analises/2026-10-16-m360-alertas-casos.json',
-  'docs/analises/2026-10-20-m360-alertas-casos.json'
+  'docs/analises/2026-10-20-m360-alertas-casos.json',
+  'docs/analises/2026-10-27-m360-alertas-casos.json'
 ];
 
 const arquivos = process.argv.slice(2).length > 0

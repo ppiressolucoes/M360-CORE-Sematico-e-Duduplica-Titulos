@@ -43,8 +43,9 @@ O backlog é a referência compartilhada para o estado das iniciativas. Alteraç
 - [13 alertas M360: evidências e proposta de evolução do Core Semântico (14/10/2026)](docs/analises/2026-10-14-m360-alertas.md), com [dataset dos casos e métricas](docs/analises/2026-10-14-m360-alertas-casos.json). As classificações analíticas são provisórias e não foram aplicadas ao fluxo.
 - [16 novos alertas M360: contrastes e atualização da base de evidências (16/10/2026)](docs/analises/2026-10-16-m360-alertas.md), com [dataset do segundo lote](docs/analises/2026-10-16-m360-alertas-casos.json).
 - [22 alertas M360: entidades, evento principal e fases factuais (20/10/2026)](docs/analises/2026-10-20-m360-alertas.md), com [dataset do terceiro lote](docs/analises/2026-10-20-m360-alertas-casos.json).
-- [Índice acumulado de evidências M360](docs/telemetria/m360-indice.json): 51 candidatos e 153 pares exibidos nos três lotes. O catálogo está no Git; nenhuma recomendação analítica foi aplicada ao n8n ou ao MySQL.
-- [Replay observacional da validade temporal v0.1](docs/analises/2026-10-24-replay-validade-temporal-v0.1.md): 51 candidatos avaliados, cobertura temporal medida e ausência de datas originais confirmada.
+- [47 alertas M360: edições temporais, fase factual e escopo editorial (27/10/2026)](docs/analises/2026-10-27-m360-alertas.md), com [dataset do quarto lote](docs/analises/2026-10-27-m360-alertas-casos.json).
+- [Índice acumulado de evidências M360](docs/telemetria/m360-indice.json): 98 candidatos e 294 pares exibidos nos quatro lotes. O catálogo está no Git; nenhuma recomendação analítica foi aplicada ao n8n ou ao MySQL.
+- [Replay observacional da validade temporal v0.1](docs/analises/2026-10-24-replay-validade-temporal-v0.1.md): 98 candidatos avaliados, cobertura temporal medida e ausência de datas originais confirmada.
 - [Pasta de upload de alertas de referência](alertas/2026-10-20/README.md), com instruções para adicionar arquivos e compartilhar o link pelo GitHub.
 
 ## Preparação para controle de versão público

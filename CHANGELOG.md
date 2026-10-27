@@ -2,6 +2,19 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 27/10/2026 — Quarto lote de alertas M360
+
+- Incorporados 47 candidatos e 141 pares sanitizados, elevando o acumulado a 98 candidatos e 294 pares.
+- Reproduzidos offline os 141 scores e as 47 decisões de Similaridade v0.4.0 e Consenso v0.1.0, sem diferença percentual.
+- Registrado um título repetido em URL nova, sem repetição de hash ou URL entre lotes.
+- Documentados seis casos com score de 100%: quatro paráfrases/escopos prováveis e duas edições claramente diferentes por rodada ou data.
+- Confirmado que todos os 14 TOP1 acumulados com score de pelo menos 78% têm menos de quatro tokens comuns.
+- Acrescentados contrastes de pré-jogo, ao vivo, resultado, eliminação, atualização factual, equipe enfocada e evento diferente.
+- Ampliado o protótipo temporal para sinais de resultado em português e inglês; 14 testes estão aprovados.
+- Atualizado o replay temporal para 98 candidatos, com 38 saídas `INDETERMINADO` e nenhuma data original preservada.
+- Preservado o índice de três lotes usado pela S20-01 em snapshot imutável, mantendo seu hash histórico.
+- Nenhum workflow, threshold, SP ou roteamento produtivo foi alterado e nenhum `.msg` bruto foi publicado.
+
 ## 24/10/2026 — Protótipo e replay da validade temporal
 
 - Implementada uma especificação executável pura para `CORE-028`, sem dependências externas ou integração com serviços.

@@ -80,3 +80,9 @@ O protótipo pode continuar em desenvolvimento e observação, mas o bloqueio fu
 Também permanecem necessários o contrato do fluxo pai para `EVENTO_EXPIRADO` e `TEMPORAL_INDETERMINADO`, o destino de revisão e a política para agendas mistas ou eventos sem horário.
 
 Nenhum workflow foi importado, ativado ou executado e nenhum efeito externo foi produzido.
+
+## Atualização de 27/10/2026
+
+O quarto lote ampliou o replay para 98 candidatos. O acumulado contém 18 títulos com expressão temporal, 33 intenções pré-evento, 9 resultados reconhecidos e 38 saídas `INDETERMINADO`. Nenhum dos 98 candidatos preserva data original em `data`, `iso_date` ou `isoDate`.
+
+Os novos alertas acrescentaram regressões para vitória, vaga, eliminação, pênaltis, melhores momentos e títulos de resultado em inglês. O protótipo possui agora 14 testes aprovados. A conclusão de segurança permanece: sem a data original da fonte, a observação pode detectar sinais, mas não promover bloqueio por vencimento.

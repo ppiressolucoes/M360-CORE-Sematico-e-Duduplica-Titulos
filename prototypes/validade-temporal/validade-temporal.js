@@ -175,7 +175,7 @@ function resolverDiaSemana(dataReferencia, indiceAlvo) {
 }
 
 function detectarIntencao(texto) {
-  const resultado = /\b(resultado|placar|venceu|derrotou|goleou|empatou|pos jogo|repercussao|apos o jogo|depois do jogo)\b/;
+  const resultado = /\b(resultado|placar|vence|venceu|derrotado|derrotou|goleado|goleou|empatou|eliminado|eliminada|classificado|classificada|garante vaga|melhores momentos|penaltis|pos jogo|repercussao|apos o jogo|depois do jogo|ousted|eliminated|wins|won|highlights|penalties)\b/;
   const servico = /\b(onde assistir|horarios?|agenda|pre jogo|provaveis? escalacoes?|jogos? de hoje|transmissao|joga|enfrenta|duelo|partida)\b/;
 
   if (resultado.test(texto)) {
