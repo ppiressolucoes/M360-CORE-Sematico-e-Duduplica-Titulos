@@ -6,7 +6,7 @@
   "source_commit": "112ceee22fd07ecaf4aa6dd32c356149765441bb",
   "scope": "M360",
   "workflow": {
-    "path": "workflows/m360-deduplicacao-semantica.json",
+    "path": "docs/baselines/2026-10-21-m360-deduplicacao-semantica.json",
     "sha256": "282b73f1b9a8b38700bab84de1ae220553f9973cc7866b59c9cead276e0ead10",
     "name": "SUB | Deduplicação e Semântica - M360 [ Core Editorial ]",
     "active": false,
@@ -82,7 +82,7 @@
       "sha256": "93414266cf6ef385410cdc60494aa06a86ec7aa2fadaa1c49f2b5f9d35d499c0"
     },
     {
-      "path": "codes/m360/retorno-final.js",
+      "path": "docs/baselines/2026-10-21-retorno-final.js",
       "sha256": "590520461278cd7fc0e4117e7046aaf01506484dd62508a02aa54b28368828e0"
     }
   ],

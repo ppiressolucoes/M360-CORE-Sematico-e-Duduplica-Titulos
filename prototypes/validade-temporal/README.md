@@ -1,6 +1,6 @@
 # Protótipo de validade temporal
 
-Especificação executável da iniciativa `CORE-028`. O código é puro, não usa dependências externas e não possui integração com n8n, MySQL, WordPress ou qualquer outro serviço.
+Especificação executável da iniciativa `CORE-028`. A regra central é pura e não usa dependências externas. O Core v0.5.0 inclui um adaptador para Code node n8n em modo `OBSERVACAO`; o export permanece inativo e não foi importado nem executado em serviços.
 
 ## Executar
 
@@ -8,6 +8,7 @@ Na raiz do repositório:
 
 ```bash
 node --test prototypes/validade-temporal/validade-temporal.test.js
+node --test prototypes/validade-temporal/workflow-integration.test.js
 node prototypes/validade-temporal/replay-datasets.js
 ```
 
@@ -25,13 +26,23 @@ O protótipo:
 - exige instante de avaliação explícito para que o replay seja determinístico;
 - mantém `aplicado_automaticamente: false`.
 
+## Integração de referência — Core v0.5.0
+
+Os geradores reproduzíveis criam e sincronizam os artefatos revisáveis:
+
+```bash
+node prototypes/validade-temporal/build-n8n-code.js
+node prototypes/validade-temporal/build-workflow.js
+```
+
+O workflow resultante executa `Start Dedup → Validade Temporal v0.1.0 → SP_DEDUPLICA_EDITORIAL`. O normalizador v0.3.0 e o retorno final preservam `core_versao: 0.5.0` e `validade_temporal`. `VALIDO`, `EXPIRADO` e `INDETERMINADO` seguem pela mesma saída para a SP: a integração mede o diagnóstico, mas ainda não altera a decisão funcional.
+
 Ele ainda não:
 
-- altera o workflow exportado;
-- roteia ou bloqueia itens reais;
+- roteia ou bloqueia itens por estado temporal;
 - valida o contrato do fluxo pai;
 - consulta calendários ou horários externos;
 - resolve eventos que atravessam a meia-noite;
 - define a política final para agendas com datas mistas.
 
-Antes de adaptação para um Code node n8n, a semântica real dos campos `data` e `iso_date` precisa ser confirmada com snapshots sanitizados.
+Antes da promoção para bloqueio, a semântica real dos campos `data` e `iso_date` precisa ser confirmada com snapshots sanitizados e tráfego representativo.

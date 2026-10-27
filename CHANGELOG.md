@@ -2,6 +2,16 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 27/10/2026 — Core v0.5.0 com validade temporal em observação
+
+- Inserido `Validade Temporal v0.1.0` entre `Start Dedup` e `SP_DEDUPLICA_EDITORIAL` no export M360 de referência.
+- Evoluído o normalizador M360 para v0.3.0, preservando `validade_temporal` e `core_versao` no contrato; a v0.2.2 histórica foi mantida para reprodução da baseline.
+- Ampliado o retorno final com `core_versao: 0.5.0` e o diagnóstico temporal, sem alterar o valor funcional de `resultado`.
+- Mantido `modo: OBSERVACAO` e `aplicado_automaticamente: false`: `VALIDO`, `EXPIRADO` e `INDETERMINADO` seguem para a SP sem desvio ou bloqueio.
+- Adicionados geradores reproduzíveis do Code node e do workflow, além de seis testes de integração; 20 testes temporais e de contrato foram aprovados.
+- Preservados snapshots imutáveis do workflow e do retorno da S20-01 para manter os hashes históricos verificáveis.
+- O export permanece `active: false`, sem credenciais e sem `pinData`; nenhum workflow foi importado ou executado e nenhum serviço externo foi alterado.
+
 ## 27/10/2026 — Quarto lote de alertas M360
 
 - Incorporados 47 candidatos e 141 pares sanitizados, elevando o acumulado a 98 candidatos e 294 pares.

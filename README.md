@@ -6,13 +6,13 @@ Este repositório registra artefatos de referência recebidos para a funcionalid
 
 | Caminho | Origem | Escopo |
 | --- | --- | --- |
-| `workflows/m360-deduplicacao-semantica.json` | Export do subfluxo M360 | Deduplicação e semântica editorial |
+| `workflows/m360-deduplicacao-semantica.json` | Export de referência do subfluxo M360 | Core v0.5.0 com validade temporal em observação, deduplicação e semântica editorial |
 | `workflows/m360-extrator-detalhes-v0.3.json` | Export do Extrator Editorial M360 | Reescrita, classificação, mídia e publicação editorial |
 | `workflows/pel-deduplicacao-semantica.json` | Export do subfluxo PEL | Deduplicação e semântica editorial |
 | `codes/m360/` | Code nodes extraídos do export M360 | Tratamento de dados organizado por node e versão |
 | `codes/m360-extrator/` | Code node extraído do Extrator M360 | Geração de slug e nome do arquivo de mídia |
 | `codes/pel/` | Code nodes extraídos do export PEL | Tratamento de dados organizado por node e versão |
-| `prototypes/validade-temporal/` | Especificação executável de `CORE-028` | Validador puro, testes e replay sem integração ou efeitos externos |
+| `prototypes/validade-temporal/` | Especificação executável de `CORE-028` | Validador puro, geradores dos artefatos n8n, testes de integração e replay sem efeitos externos |
 | `sql/README.md` | Inventário SQL | Disponibilidade e relação das SPs com os fluxos |
 | `sql/editorial/tables/` | DDLs recebidos do Mengão 360 | Estruturas operacionais de reserva e histórico de títulos |
 | `sql/storage/SP_Core_Storage_Reserva.sql` | `SP_Core_Storage_Reserva.txt` | Reserva de provedor de storage |
@@ -22,7 +22,7 @@ As duas procedures de storage são separadas da deduplicação editorial. As def
 
 A [análise estática das SPs editoriais M360 v0.2.2](docs/arquitetura/sp-deduplicacao-editorial-m360-v0.2.2.md) documenta assinaturas, estados, comparáveis, estruturas das tabelas e pontos de atenção.
 
-O export M360 foi reconciliado em 20/10/2026 com o anexo mais recente: o ramo `NOVO` chama `Chamar Extrator Editorial`, e o retorno final preserva o campo `resultado`. A cópia no Git permanece desativada e sem credenciais ou `pinData`.
+O export M360 foi evoluído em 27/10/2026 para o Core v0.5.0: `Validade Temporal v0.1.0` executa antes da SP principal, o normalizador v0.3.0 preserva a auditoria e o retorno informa `core_versao` e `validade_temporal`. A avaliação está em `OBSERVACAO`; todos os estados seguem pelo roteamento anterior e nenhum bloqueio foi habilitado. A cópia no Git permanece desativada e sem credenciais ou `pinData`.
 
 O [contrato observado do Extrator M360 v0.3](docs/arquitetura/m360-extrator-v0.3.md) registra seus subfluxos, transformações e efeitos externos. O export público também permanece desativado e sanitizado.
 

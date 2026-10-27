@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "core_version": "0.5.0",
+  "temporal_version": "0.1.0",
+  "captured_on": "2026-10-27",
+  "source_commit": "ffacda9a3136186d486f1fdd70d35e67c441516c",
+  "scope": "M360",
+  "status": "REFERENCIA_INATIVA",
+  "mode": "OBSERVACAO",
+  "automatic_application": false,
+  "workflow": {
+    "path": "workflows/m360-deduplicacao-semantica.json",
+    "sha256": "2d5ce41fce473554007be48924981cccbfbe35f8ed2cc747772ec113d12c6caa",
+    "active": false,
+    "node_count": 16,
+    "topology": [
+      "Start Dedup",
+      "Validade Temporal v0.1.0",
+      "SP DEDUPLICA EDITORIAL | M360",
+      "Normaliza Deduplica Editorial v0.3.0"
+    ]
+  },
+  "code_nodes": [
+    {
+      "path": "codes/m360/validade-temporal-v0.1.0.js",
+      "sha256": "202ebe49494f4128ed547879aebb8203a295a0001e3ab66c21aa9cd210672993"
+    },
+    {
+      "path": "codes/m360/normaliza-deduplica-editorial-v0.3.0.js",
+      "sha256": "80659439a52b8194fad7a28ee2d4aa3e310109407f689b66d799e9981f544d88"
+    },
+    {
+      "path": "codes/m360/retorno-final.js",
+      "sha256": "8c6fc55e8b064faa62d9bffda5d2242cf5436da4604763ec1f8eef3fdc431377"
+    }
+  ],
+  "specification": {
+    "path": "prototypes/validade-temporal/validade-temporal.js",
+    "sha256": "9cb925f6794d58367f4c1f1f7f836f5a81c50c6eed42c291574667ffd883ef2c"
+  },
+  "integration_test": {
+    "path": "prototypes/validade-temporal/workflow-integration.test.js",
+    "sha256": "25f446345f0c9f2fe4624606c932abfdd947af670b98913a54fb54f786cb6427",
+    "test_count": 6
+  },
+  "validation": {
+    "total_tests": 20,
+    "passed": 20,
+    "failed": 0,
+    "historical_candidates": 98,
+    "historical_indeterminate": 38,
+    "historical_candidates_with_source_date": 0
+  },
+  "production_changes": false,
+  "open_dependencies": [
+    "snapshots temporais sanitizados com data original",
+    "contrato de retorno do fluxo pai",
+    "observação com tráfego representativo",
+    "feature flag e rollback antes de bloqueio"
+  ]
+}

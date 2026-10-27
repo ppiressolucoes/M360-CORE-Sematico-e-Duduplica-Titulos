@@ -8,7 +8,8 @@ Os códigos usam objetos e helpers fornecidos pelo n8n, como `$input`, `$json`, 
 
 | Fluxo | Node | Arquivo |
 | --- | --- | --- |
-| M360 | `Normaliza Deduplica Editorial v0.2.2` | `m360/normaliza-deduplica-editorial-v0.2.2.js` |
+| M360 | `Validade Temporal v0.1.0` | `m360/validade-temporal-v0.1.0.js` |
+| M360 | `Normaliza Deduplica Editorial v0.3.0` | `m360/normaliza-deduplica-editorial-v0.3.0.js` |
 | M360 | `Similaridade Editorial v0.4.0` | `m360/similaridade-editorial-v0.4.0.js` |
 | M360 | `Consenso Editorial v0.1.0` | `m360/consenso-editorial-v0.1.0.js` |
 | M360 | `Retorno Final` | `m360/retorno-final.js` |
@@ -28,4 +29,4 @@ Quando um Code node mudar no n8n:
 4. comparar o arquivo extraído com o campo do JSON;
 5. atualizar backlog e histórico na mesma entrega.
 
-Os arquivos atuais foram extraídos sem alteração lógica dos exports versionados. Oito Code nodes vieram dos fluxos de deduplicação M360/PEL em 20/10/2026; o `GERA SLUG` veio do Extrator M360 v0.3 em 21/10/2026.
+O Core M360 v0.5.0 usa o adaptador temporal v0.1.0 e o normalizador v0.3.0. O arquivo `m360/normaliza-deduplica-editorial-v0.2.2.js` foi preservado como artefato histórico da baseline S20-01. O gerador em `prototypes/validade-temporal/build-n8n-code.js` mantém a regra pura e o Code node temporal sincronizados.

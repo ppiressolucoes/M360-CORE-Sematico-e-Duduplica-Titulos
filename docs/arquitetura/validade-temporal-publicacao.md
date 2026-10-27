@@ -10,11 +10,29 @@ Evoluir o Core produtivo atual para reconhecer referências temporais no título
 
 Essa proteção é independente do fluxo sombra de aprendizado. O modo sombra aprende relações entre evento, faceta e estado factual; a validação temporal atua como um gate operacional anterior ao Extrator Editorial.
 
-## Risco observado no baseline
+## Risco observado no baseline histórico
 
 O candidato normalizado já preserva `data`, `iso_date` e `idade_horas`, mas o fluxo atual não transforma esses campos em validade editorial. Na similaridade v0.4.0, o termo `hoje` é removido como stopword e não participa de uma decisão temporal.
 
-Quando o resultado lexical é `NOVO`, o workflow chama diretamente o `Chamar Extrator Editorial`. O Extrator cria rascunho, grava metadados, trata mídia e publica no WordPress. Portanto, deduplicação bem-sucedida não impede que uma pauta temporalmente vencida seja publicada.
+Quando o resultado lexical é `NOVO`, o workflow chama `Chamar Extrator Editorial`. O Extrator cria rascunho, grava metadados, trata mídia e publica no WordPress. Portanto, deduplicação bem-sucedida não impede que uma pauta temporalmente vencida seja publicada.
+
+## Estado integrado de referência — Core v0.5.0
+
+Em 27/10/2026, o export M360 versionado foi evoluído para observar essa condição antes da SP principal:
+
+```mermaid
+flowchart LR
+    A[Start Dedup] --> B[Validade Temporal v0.1.0]
+    B --> C[SP_DEDUPLICA_EDITORIAL]
+    C --> D[Normaliza v0.3.0]
+    D --> E[Fluxo anterior]
+```
+
+O Code node usa `America/Sao_Paulo`, emite `VALIDO`, `EXPIRADO` ou `INDETERMINADO` e preserva a evidência no normalizador e no retorno final. A versão comportamental é exposta como `core_versao: 0.5.0`.
+
+Esta é uma integração exclusivamente observacional: existe uma única saída de `Validade Temporal v0.1.0` para a SP, `aplicado_automaticamente` permanece `false` e nenhum estado altera o roteamento. Isso evita um falso bloqueio enquanto 38 dos 98 candidatos históricos continuam indeterminados por falta de data original. O export está inativo, sanitizado e não representa implantação na instância n8n.
+
+O [manifesto do Core v0.5.0](../baselines/2026-10-27-m360-core-v0.5.0.json) fixa versões, hashes, topologia, modo operacional, validações e dependências abertas.
 
 ## Exemplo de referência
 
@@ -114,9 +132,9 @@ Estados mínimos:
 | `EXPIRADO` | Conteúdo pré-evento com ocorrência encerrada | Encerrar sem chamar o Extrator e registrar evidência |
 | `INDETERMINADO` | Âncora, intenção ou janela insuficiente/conflitante | Não publicar automaticamente; encaminhar para revisão ou fila segura |
 
-## Posição no fluxo atual
+## Posição-alvo após promoção controlada
 
-A posição recomendada é antes de `SP_DEDUPLICA_EDITORIAL`:
+A posição permanece antes de `SP_DEDUPLICA_EDITORIAL`, mas a promoção funcional acrescentará as saídas seguras:
 
 ```mermaid
 flowchart LR
@@ -175,8 +193,8 @@ O contrato de retorno ao fluxo pai precisa aceitar `EVENTO_EXPIRADO` e `TEMPORAL
 
 ## Evidência executável
 
-O [protótipo v0.1](../../prototypes/validade-temporal/README.md) implementa o contrato como função pura, sem dependências externas ou integrações. Os seis casos VT e oito controles adicionais estão automatizados e passaram em 27/10/2026.
+O [protótipo v0.1](../../prototypes/validade-temporal/README.md) implementa o contrato como função pura, sem dependências externas. Os seis casos VT e oito controles adicionais estão automatizados. Seis testes adicionais validam o adaptador n8n, a topologia em observação, a preservação do diagnóstico no normalizador e o retorno final. Os 20 testes passaram em 27/10/2026.
 
 O [replay observacional acumulado](../analises/2026-10-24-replay-validade-temporal-v0.1.md) cobre 98 candidatos: 18 títulos têm expressão temporal, 33 possuem intenção pré-evento e 38 resultam `INDETERMINADO`. Nenhum candidato preserva a data original da fonte. O resultado confirma que snapshots com `iso_date`/`data` são pré-requisito para medir vencimento sem inferência indevida.
 
-Nenhuma alteração produtiva foi executada nesta proposta.
+O export de referência foi alterado, mas nenhuma alteração produtiva foi executada: não houve importação, ativação, execução no n8n ou chamada a MySQL, WordPress, storage ou e-mail.
