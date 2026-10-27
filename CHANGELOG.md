@@ -2,6 +2,14 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 27/10/2026 — Rollout M360 node a node
+
+- Restringida a primeira aplicação da validade temporal ao workflow `SUB | Deduplicação e Semântica - M360 [ Core Editorial ]`; PEL permanece fora do escopo.
+- Definidos checkpoints `M360-T0` a `M360-T5`, começando por baseline e node desconectado, seguidos de conexão observacional, normalizador, retorno e observação controlada.
+- Registrados gates, critérios de parada, rollback por checkpoint e evidência sanitizada obrigatória.
+- Adicionado validador automatizado dos exports intermediários, com sete testes para topologia, contrato observacional e sanitização.
+- O alvo continua em `OBSERVACAO`, sem bloqueio temporal; nenhuma alteração foi aplicada à instância n8n ou à produção.
+
 ## 27/10/2026 — Core v0.5.0 com validade temporal em observação
 
 - Inserido `Validade Temporal v0.1.0` entre `Start Dedup` e `SP_DEDUPLICA_EDITORIAL` no export M360 de referência.

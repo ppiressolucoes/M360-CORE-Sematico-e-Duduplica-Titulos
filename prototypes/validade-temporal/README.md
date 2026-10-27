@@ -9,6 +9,7 @@ Na raiz do repositório:
 ```bash
 node --test prototypes/validade-temporal/validade-temporal.test.js
 node --test prototypes/validade-temporal/workflow-integration.test.js
+node --test prototypes/validade-temporal/validate-rollout-checkpoint.test.js
 node prototypes/validade-temporal/replay-datasets.js
 ```
 
@@ -36,6 +37,8 @@ node prototypes/validade-temporal/build-workflow.js
 ```
 
 O workflow resultante executa `Start Dedup → Validade Temporal v0.1.0 → SP_DEDUPLICA_EDITORIAL`. O normalizador v0.3.0 e o retorno final preservam `core_versao: 0.5.0` e `validade_temporal`. `VALIDO`, `EXPIRADO` e `INDETERMINADO` seguem pela mesma saída para a SP: a integração mede o diagnóstico, mas ainda não altera a decisão funcional.
+
+Para aplicação operacional, o [runbook M360 node a node](../../docs/operacao/CORE-028-ROLLOUT-M360-NODE-A-NODE.md) divide o alvo nos checkpoints `M360-T0` a `M360-T5`. `validate-rollout-checkpoint.js` verifica os exports sanitizados de T0 a T4 antes do avanço.
 
 Ele ainda não:
 
