@@ -2,6 +2,13 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 27/10/2026 — Checkpoint M360-T1 iniciado
+
+- Registrado o relato operacional de criação do node `Validade Temporal v0.1.0` junto ao workflow M360.
+- Alterado T1 para `EM ANDAMENTO`, sem marcá-lo como concluído por ainda faltar o export atualizado e a execução dos testes isolados.
+- Reforçado que o node deve permanecer sem conexões e em `OBSERVACAO` até a validação automatizada do checkpoint.
+- Nenhuma conexão com a SP ou alteração produtiva foi validada por este registro.
+
 ## 27/10/2026 — Checkpoint M360-T0 concluído
 
 - Recebido e verificado o export vigente do workflow M360 com 15 nodes, ativo, contendo `pinData` e referências de credenciais.

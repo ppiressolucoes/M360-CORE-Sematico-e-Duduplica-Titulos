@@ -17,7 +17,7 @@ O [export Core v0.5.0](../../workflows/m360-deduplicacao-semantica.json) é o al
 | Checkpoint | Estado | Evidência / dependência |
 | --- | --- | --- |
 | `M360-T0` | CONCLUÍDO | [Baseline produtivo sanitizado e validado em 27/10/2026](2026-10-27-CORE-028-M360-T0.md) |
-| `M360-T1` | PRONTO | Executar em cópia inativa; node temporal permanece desconectado |
+| `M360-T1` | EM ANDAMENTO | [Node criado conforme relato operacional](2026-10-27-CORE-028-M360-T1-INICIO.md); aguardando export sanitizado e testes isolados; deve permanecer desconectado |
 | `M360-T2` | PLANEJADO | Depende do aceite de T1 |
 | `M360-T3` | PLANEJADO | Depende do aceite de T2 |
 | `M360-T4` | DEPENDÊNCIA | Requer contrato do fluxo pai |
