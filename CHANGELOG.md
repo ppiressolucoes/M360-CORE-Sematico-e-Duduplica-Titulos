@@ -4,8 +4,9 @@ As datas registram a incorporação ao repositório e não comprovam a data de e
 
 ## 29/10/2026 — Retomada da migração de vocabulário M360
 
+- Confirmada pelo operador a ativação das facetas 73/74: tabela em APROVADA/1, 74 regras ativas e 2 facetas. Falta validação da leitura pelo workflow após ativação; evidência sanitizada registrada.
 - Corrigido SQL de ativação 73/74 após tentativa sem alterações: guarda de sessão retornou 1, mas UPDATE afetou zero linhas; regras continuam PROPOSTA/0, total ativo 72. O UPDATE agora valida diretamente os dois IDs e seus atributos, sem depender de variável de sessão; teste de regressão adicionado.
-- Confirmadas pelo operador as propostas inativas 73 e 74 da faceta financeira; preparados SQLs de ativação e desativação restritas, ainda não executados, com verificação esperada de 74 regras ativas após ativação.
+- Confirmadas pelo operador as propostas inativas 73 e 74 da faceta financeira; preparados SQLs de ativação e desativação restritas, ainda não executados naquele momento, com verificação esperada de 74 regras ativas após ativação.
 - Preparado SQL idempotente de duas propostas inativas `FACETA_EDITORIAL` para o caso 1347. A proposta não altera `LISTAR`, o fluxo n8n nem a decisão lexical; execução e eventual ativação continuam pendentes.
 - Registradas saídas dos nodes Normaliza v0.2.1 e Similaridade interna v0.5.3 no registro 1347: 72 regras, fonte BANCO e equivalência com a v0.5.2 na mesma entrada (`NOVO`, 51,5%, mesmo melhor match e contexto). Sem retorno terminal novo nem faceta adicional ativa nessa evidência.
 - Preparados Normaliza v0.2.1 e Similaridade interna v0.5.3 para facetas opcionais do banco em observação, com aplicação manual node a node; as 72 regras atuais preservam as saídas e nenhuma regra nova foi ativada. Suíte completa: 113 testes aprovados.

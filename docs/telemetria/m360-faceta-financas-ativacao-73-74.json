@@ -1,0 +1,25 @@
+{
+  "origem": "Capturas do grid MariaDB apresentadas pelo operador no chat apos o SQL de ativacao corrigido",
+  "escopo": {"dominio": "ESPORTE", "consumidor": "M360", "versao_vocabulario": "0.1.0"},
+  "regras": [
+    {
+      "regra_id": 73,
+      "tipo": "FACETA_EDITORIAL",
+      "expressao": "postura ultraconservadora",
+      "valor_canonico": "PLANEJAMENTO_FINANCEIRO",
+      "situacao": "APROVADA",
+      "ativo": 1
+    },
+    {
+      "regra_id": 74,
+      "tipo": "FACETA_EDITORIAL",
+      "expressao": "deficit",
+      "valor_canonico": "PLANEJAMENTO_FINANCEIRO",
+      "situacao": "APROVADA",
+      "ativo": 1
+    }
+  ],
+  "regras_ativas": 74,
+  "facetas_ativas": 2,
+  "limite": "Confirma estado da tabela, ainda sem saida nova da SP LISTAR, Normaliza, Similaridade ou Retorno Final apos ativacao."
+}
