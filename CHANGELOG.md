@@ -4,6 +4,7 @@ As datas registram a incorporação ao repositório e não comprovam a data de e
 
 ## 29/10/2026 — Retomada da migração de vocabulário M360
 
+- Operador aplicou a Similaridade v0.5.2 e apresentou execução do registro 1347: fonte BANCO, 72 regras, resultado lexical NOVO (51,5%) e Retorno Final com origem `similaridade_editorial_v0.5.2`. A sugestão contextual RELACIONADO ficou em observação; evidência e limite de validação registrados.
 - Registrados Retorno Final v0.2.2 e evidência do registro 1341: versão interna v0.5.1, fonte BANCO, 72 regras e zero divergências em 243 comparáveis; retorno NOVO com origem dinâmica informado pelo operador.
 - Preparada Similaridade v0.5.2 com aliases exclusivamente do banco, sem cadastro estático de fallback. Vocabulário ausente/inválido resulta em contexto indisponível, sem sugestão relacional, preservando a decisão lexical.
 - Preservadas regras lexicais e facetas/estados contextuais ainda em código; nenhuma regra adicional, SP ou workflow produtivo alterado automaticamente.

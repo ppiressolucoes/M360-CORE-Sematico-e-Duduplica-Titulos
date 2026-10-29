@@ -1,0 +1,47 @@
+{
+  "registro_id": 1347,
+  "origem": "Anexo da execucao da Similaridade e Retorno Final apresentado pelo operador no chat; resumo sanitizado",
+  "candidato": "Bap projeta 2027 difícil e anuncia postura ultraconservadora do Flamengo",
+  "similaridade_versao": "0.5.2",
+  "status_lexical": "NOVO",
+  "percentual_lexical": 51.5,
+  "baseline": {
+    "versao": "0.4.0",
+    "status": "NOVO",
+    "preservado": true
+  },
+  "melhor_match": {
+    "id": 3686,
+    "titulo": "Flamengo projeta déficit de R$ 40 milhões em 2026, e Bap prevê 2027 ainda mais difícil",
+    "percentual_lexical": 51.5
+  },
+  "analise_contextual": {
+    "status_sugerido": "RELACIONADO",
+    "diverge_do_baseline": true,
+    "relacao_melhor_match": "COMPATIVEL_PARCIAL",
+    "percentual_contextual_melhor_match": 65.5
+  },
+  "auditoria_vocabulario": {
+    "versao": "0.1.0",
+    "modo": "OBSERVACAO",
+    "aplicado_automaticamente": false,
+    "aplicado_no_contexto": true,
+    "aplicado_na_decisao": false,
+    "fonte_contextual": "BANCO",
+    "status": "CARREGADO_COMO_FONTE_CONTEXTUAL",
+    "total_regras": 72,
+    "ids_regras_acionadas_candidato": [1],
+    "comparacao_estatica_disponivel": false,
+    "total_comparaveis_auditados": 243
+  },
+  "retorno_final_v0_2_2": {
+    "concluido": true,
+    "resultado": "NOVO",
+    "resultado_origem": "similaridade_editorial_v0.5.2",
+    "resultado_bruto": "CHECK_SIMILARITY",
+    "core_versao": "0.5.0",
+    "temporal_versao": "0.1.2",
+    "instante_avaliacao": "2026-10-29T16:30:40.199-03:00"
+  },
+  "limite": "O anexo comprova a saida do node e o operador informou o retorno terminal; nao comprova sozinho publicacao final, nem equivalencia lexical entre versoes na mesma entrada."
+}
