@@ -6,7 +6,7 @@ Os códigos usam objetos e helpers fornecidos pelo n8n, como `$input`, `$json`, 
 
 ## Inventário
 
-Artefatos posteriores ao export: [Retorno Final v0.2.2](m360/retorno-final-v0.2.2.js) e [Similaridade v0.5.2](m360/similaridade-editorial-v0.5.2-vocab-banco.js) foram aplicados e validados pelo operador. A próxima aplicação manual está em [Normaliza v0.2.1](m360/normaliza-vocabulario-editorial-v0.2.1.js) e [Similaridade interna v0.5.3](m360/similaridade-editorial-v0.5.3-facetas-banco.js), com [ordem e critérios de validação](../docs/operacao/2026-10-29-M360-FACETAS-BANCO.md). O export de referência não foi atualizado sem um novo export operacional.
+Artefatos posteriores ao export: [Retorno Final v0.2.2](m360/retorno-final-v0.2.2.js) e [Similaridade v0.5.2](m360/similaridade-editorial-v0.5.2-vocab-banco.js) foram aplicados e validados pelo operador. [Normaliza v0.2.1](m360/normaliza-vocabulario-editorial-v0.2.1.js) e [Similaridade interna v0.5.3](m360/similaridade-editorial-v0.5.3-facetas-banco.js) também foram aplicados e tiveram saídas anexadas; [validação e pendências](../docs/operacao/2026-10-29-M360-FACETAS-BANCO.md). O export de referência não foi atualizado sem um novo export operacional.
 
 | Fluxo | Node | Arquivo |
 | --- | --- | --- |

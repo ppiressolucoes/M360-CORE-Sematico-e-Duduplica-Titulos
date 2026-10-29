@@ -1,0 +1,45 @@
+{
+  "registro_id": 1347,
+  "origem": "Dois anexos apresentados pelo operador: saida do Normaliza v0.2.1 e saida da Similaridade v0.5.3; comparacao com anexo anterior v0.5.2 da mesma entrada",
+  "normaliza_vocabulario": {
+    "itens_saida": 1,
+    "versao_vocabulario": "0.1.0",
+    "dominio": "ESPORTE",
+    "consumidor": "M360",
+    "modo": "OBSERVACAO",
+    "total_regras": 72,
+    "quantidades_por_tipo": {
+      "ALIAS_CLUBE": 30,
+      "ALIAS_COMPETICAO": 15,
+      "ALIAS_ORGANIZACAO": 6,
+      "ALIAS_PESSOA": 20,
+      "BLOQUEIO_PESSOA": 1
+    },
+    "faceta_editorial_ativa": 0
+  },
+  "similaridade": {
+    "versao": "0.5.3",
+    "status_lexical": "NOVO",
+    "percentual_lexical": 51.5,
+    "melhor_match_id": 3686,
+    "status_contextual_sugerido": "RELACIONADO",
+    "auditoria_vocabulario": {
+      "fonte_contextual": "BANCO",
+      "status": "CARREGADO_COMO_FONTE_CONTEXTUAL",
+      "total_regras": 72,
+      "ids_regras_acionadas_candidato": [1],
+      "aplicado_no_contexto": true,
+      "aplicado_na_decisao": false,
+      "total_comparaveis_auditados": 243
+    }
+  },
+  "comparacao_com_v0_5_2": {
+    "mesmo_candidato": true,
+    "mesmos_comparaveis": true,
+    "mesmo_resultado_lexical": true,
+    "mesmo_melhor_match": true,
+    "mesma_assinatura_contextual_candidato": true,
+    "mesma_analise_contextual_exceto_versao": true
+  },
+  "limite": "Nao foi anexada saida nova do Retorno Final; ainda nao ha FACETA_EDITORIAL ativa para validar enriquecimento real do banco."
+}
