@@ -2,6 +2,14 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 29/10/2026 — Retomada da migração de vocabulário M360
+
+- Registrados Retorno Final v0.2.2 e evidência do registro 1341: versão interna v0.5.1, fonte BANCO, 72 regras e zero divergências em 243 comparáveis; retorno NOVO com origem dinâmica informado pelo operador.
+- Preparada Similaridade v0.5.2 com aliases exclusivamente do banco, sem cadastro estático de fallback. Vocabulário ausente/inválido resulta em contexto indisponível, sem sugestão relacional, preservando a decisão lexical.
+- Preservadas regras lexicais e facetas/estados contextuais ainda em código; nenhuma regra adicional, SP ou workflow produtivo alterado automaticamente.
+- Adicionados replay offline dos 98 casos em três condições de carga e testes do retorno; plano manual e limitações documentados em `docs/operacao/2026-10-29-M360-VOCAB-BANCO.md`.
+- Recuperado acesso ao executor deste chat após falhas de inicialização; nenhuma configuração do ambiente alterada nesta entrega.
+
 ## 27/10/2026 — Checkpoint M360-T1 iniciado
 
 - Registrado o relato operacional de criação do node `Validade Temporal v0.1.0` junto ao workflow M360.

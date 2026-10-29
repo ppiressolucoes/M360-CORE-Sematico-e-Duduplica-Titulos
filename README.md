@@ -1,5 +1,7 @@
 # Core Editorial: fluxos n8n e procedures MySQL
 
+Retomada de 29/10: [migração do vocabulário para banco e Retorno Final v0.2.2](docs/operacao/2026-10-29-M360-VOCAB-BANCO.md). A Similaridade v0.5.2 está preparada para implantação manual, ainda sem evidência produtiva.
+
 Este repositório registra artefatos de referência recebidos para a funcionalidade de deduplicação editorial. Nesta fase, o trabalho cobre os fluxos de automação e as Stored Procedures MySQL. Os arquivos não são uma implantação nem comprovam o estado atual da instância de produção.
 
 ## Artefatos

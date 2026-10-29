@@ -1,0 +1,32 @@
+{
+  "registro_id": 1341,
+  "origem": "Anexo e retorno terminal apresentados pelo operador no chat; resumo sem payload operacional integral",
+  "candidato": "Abertura do Processo de Credenciamiento de Imprensa (NRH) Final CONMEBOL Libertadores 2026",
+  "similaridade_versao": "0.5.1",
+  "status": "NOVO",
+  "percentual": 53.58,
+  "auditoria_vocabulario": {
+    "versao": "0.1.0",
+    "modo": "OBSERVACAO",
+    "aplicado_automaticamente": false,
+    "aplicado_no_contexto": true,
+    "aplicado_na_decisao": false,
+    "fonte_contextual": "BANCO",
+    "status": "CARREGADO_COMO_FONTE_CONTEXTUAL",
+    "total_regras": 72,
+    "ids_regras_acionadas_candidato": [52, 66],
+    "campos_divergentes_candidato": [],
+    "total_comparaveis_auditados": 243,
+    "total_comparaveis_divergentes": 0
+  },
+  "retorno_final_v0_2_2": {
+    "concluido": true,
+    "resultado": "NOVO",
+    "resultado_origem": "similaridade_editorial_v0.5.1",
+    "resultado_bruto": "CHECK_SIMILARITY",
+    "core_versao": "0.5.0",
+    "temporal_versao": "0.1.2",
+    "instante_avaliacao": "2026-10-29T15:02:47.921-03:00"
+  },
+  "limite": "Mesmo instante de avaliação anterior; não comprova nova execução completa do PAI nem implantação da Similaridade v0.5.2."
+}

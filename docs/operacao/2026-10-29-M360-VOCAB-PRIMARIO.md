@@ -1,5 +1,7 @@
 # Próximo passo CORE-029 — aliases do banco na análise contextual
 
+Registro histórico da preparação da v0.5.1. A execução do registro 1341 e a etapa posterior estão consolidadas em [migração para fonte exclusiva no banco](2026-10-29-M360-VOCAB-BANCO.md). O teste de uma 73ª regra deixou de ser pré-requisito para avançar, por alinhamento com o operador.
+
 Artefato preparado em 29/10/2026: [Similaridade Editorial v0.5.1](../../codes/m360/similaridade-editorial-v0.5.1-vocab-primario.js). **Não há evidência de implantação deste código no n8n.** O fluxo publicado relatado pelo operador ainda usa a v0.5.0.
 
 ## Limite da mudança

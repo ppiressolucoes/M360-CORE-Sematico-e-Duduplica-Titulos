@@ -6,6 +6,8 @@ Os códigos usam objetos e helpers fornecidos pelo n8n, como `$input`, `$json`, 
 
 ## Inventário
 
+Artefatos posteriores ao export: [Retorno Final v0.2.2](m360/retorno-final-v0.2.2.js) (validação informada pelo operador) e [Similaridade v0.5.2](m360/similaridade-editorial-v0.5.2-vocab-banco.js) (candidata, não implantada automaticamente). [Procedimento e limites](../docs/operacao/2026-10-29-M360-VOCAB-BANCO.md). O export de referência não foi atualizado sem um novo export operacional.
+
 | Fluxo | Node | Arquivo |
 | --- | --- | --- |
 | M360 | `Validade Temporal v0.1.0` | `m360/validade-temporal-v0.1.0.js` |
