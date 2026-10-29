@@ -12,6 +12,9 @@ const similaridadeAnterior = ler('codes/m360/similaridade-editorial-v0.5.2-vocab
 const similaridadeNova = ler('codes/m360/similaridade-editorial-v0.5.3-facetas-banco.js');
 const seed = JSON.parse(ler('sql/editorial/seeds/M360-vocabulario-v0.1.0-propor.sql')
   .match(/'(\[\s*\{[\s\S]*?\}\s*\])'/)[1]);
+const propostasFaceta = JSON.parse(ler(
+  'sql/editorial/seeds/M360-vocabulario-v0.1.0-faceta-financas-propor.sql'
+).match(/'(\[\s*\{[\s\S]*?\}\s*\])'/)[1]);
 
 function rowsBase() {
   return seed.map((regra, indice) => ({
@@ -39,14 +42,13 @@ function similaridade(codigo, entrada) {
 }
 
 function faceta(regraId, expressao) {
+  const proposta = propostasFaceta.find(item => item.expressao === expressao);
+  assert.ok(proposta, `expressao nao encontrada na proposta SQL: ${expressao}`);
   return {
     ...rowsBase()[0],
+    ...proposta,
     regra_id: regraId,
-    tipo: 'FACETA_EDITORIAL',
-    expressao,
-    valor_canonico: 'PLANEJAMENTO_FINANCEIRO',
-    prioridade: 50,
-    confianca: 0.85
+    expressao
   };
 }
 
@@ -58,6 +60,11 @@ test('Normaliza v0.2.1 preserva a saida das 72 regras atuais', () => {
 });
 
 test('tipo FACETA_EDITORIAL e opcional e validado; os demais tipos mantem minimo', () => {
+  assert.equal(propostasFaceta.length, 2);
+  assert.deepEqual(propostasFaceta.map(item => item.expressao),
+    ['postura ultraconservadora', 'deficit']);
+  assert.ok(propostasFaceta.every(item => item.tipo === 'FACETA_EDITORIAL' &&
+    item.tipo_expressao === 'LITERAL' && item.valor_canonico === 'PLANEJAMENTO_FINANCEIRO'));
   const vocabulario = normalizar(normalizaNovo, [
     ...rowsBase(), faceta(73, 'postura ultraconservadora'), faceta(74, 'deficit')
   ]);

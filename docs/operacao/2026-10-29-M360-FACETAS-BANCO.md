@@ -12,6 +12,10 @@ O primeiro passo pode ser aplicado isoladamente com as 72 regras atuais. O segun
 
 Os anexos foram conferidos com a execução anterior da v0.5.2 sobre o mesmo candidato e os mesmos 244 comparáveis recebidos. A v0.5.3 preservou `NOVO` (51,5%), melhor match ID 3686, assinatura contextual do candidato e a análise contextual inteira, exceto o número da versão. O vocabulário segue com 72 regras e nenhuma `FACETA_EDITORIAL` ativa; por isso essa execução valida a compatibilidade, ainda não a nova capacidade com regra financeira real. [Resumo sanitizado](../telemetria/m360-registro-1347-facetas-banco-v0.5.3.json).
 
+## Próxima ação no banco
+
+Executar o [SQL de proposta da faceta financeira](../../sql/editorial/seeds/M360-vocabulario-v0.1.0-faceta-financas-propor.sql) e conferir que a consulta final retorna duas linhas `FACETA_EDITORIAL` com `situacao: PROPOSTA` e `ativo: 0`. As expressões `postura ultraconservadora` e `deficit` são hipóteses contextuais para o registro 1347 e recebem o mesmo canônico `PLANEJAMENTO_FINANCEIRO`; não são rótulo humano de duplicação. O `LISTAR` continua em 72 regras até aprovação e ativação específicas. Após revisar as duas propostas, preparar ativação restrita a esses IDs e comparar uma execução em observação. O SQL não modifica o fluxo n8n nem a decisão lexical.
+
 Em caso de divergência inesperada, restaurar o JavaScript anterior do node alterado. Nenhum workflow n8n foi modificado por este repositório.
 
 ## Verificação local
