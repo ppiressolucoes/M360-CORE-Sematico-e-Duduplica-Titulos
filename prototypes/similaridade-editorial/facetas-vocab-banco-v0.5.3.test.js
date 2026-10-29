@@ -141,3 +141,13 @@ test('sem vocabulario valido a v0.5.3 preserva o lexical e nao recomenda context
     assert.equal(atual.analise_contextual.auditoria_vocabulario.fonte_contextual, 'INDISPONIVEL');
   }
 });
+
+test('SQL de ativacao valida as duas regras sem depender de variavel de sessao', () => {
+  const sql = ler('sql/editorial/seeds/M360-vocabulario-v0.1.0-faceta-financas-ativar.sql');
+  assert.doesNotMatch(sql, /@[a-z_]/i);
+  assert.match(sql, /`regra_id` = 73 AND `expressao` = 'postura ultraconservadora'/);
+  assert.match(sql, /`regra_id` = 74 AND `expressao` = 'deficit'/);
+  assert.match(sql, /`situacao` = 'PROPOSTA'/);
+  assert.match(sql, /`ativo` = 0/);
+  assert.match(sql, /`dsc_execucao_origem` = 'm360-core-029-1347-faceta-financas-v0\.1\.0'/);
+});

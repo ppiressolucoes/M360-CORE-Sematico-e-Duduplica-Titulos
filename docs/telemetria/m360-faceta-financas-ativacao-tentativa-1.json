@@ -1,0 +1,14 @@
+{
+  "origem": "Retorno do cliente SQL e capturas do grid apresentados pelo operador no chat",
+  "regra_ids": [73, 74],
+  "duas_propostas_conferidas": 1,
+  "update_linhas_afetadas": 0,
+  "regras_ativadas_nesta_execucao": 0,
+  "situacao_final": [
+    {"regra_id": 73, "situacao": "PROPOSTA", "ativo": 0},
+    {"regra_id": 74, "situacao": "PROPOSTA", "ativo": 0}
+  ],
+  "regras_ativas": 72,
+  "facetas_ativas": 0,
+  "diagnostico": "A consulta de preflight encontrou as duas linhas, mas o UPDATE dependia de variavel de sessao. A evidencia nao identifica por que a condicao nao valeu no momento do UPDATE; nenhum dado foi ativado."
+}
