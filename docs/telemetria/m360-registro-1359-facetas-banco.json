@@ -1,0 +1,48 @@
+{
+  "origem": "Anexos do operador: Consulta Vocabulário Editorial v0.1.0 e Similaridade Editorial (código interno v0.5.3); Retorno Final informado no chat",
+  "registro_id": 1359,
+  "consulta_vocabulario": {
+    "total_regras": 74,
+    "regras_ativas": 74,
+    "facetas_financeiras_ativas": [73, 74]
+  },
+  "candidato": "Com 18 gols pelo Flamengo em 2026, atacante ganha nova oportunidade no time de Leonardo Jardim",
+  "similaridade": {
+    "resultado_bruto": "CHECK_SIMILARITY",
+    "versao_interna": "0.5.3",
+    "status_lexical": "NOVO",
+    "percentual_lexical": 32.02,
+    "melhor_match_lexical_id": 3426,
+    "total_comparaveis": 244,
+    "facetas_candidato": ["ESTATISTICAS_DESEMPENHO"],
+    "ids_regras_acionadas_candidato": [1, 50],
+    "analise_contextual": {
+      "status_sugerido": "SUSPEITO",
+      "percentual_contextual": 65.63,
+      "melhor_match_id": 3662,
+      "facetas_compartilhadas": ["ESTATISTICAS_DESEMPENHO"],
+      "periodos_compartilhados": ["2026"],
+      "aplicado_automaticamente": false
+    },
+    "auditoria_vocabulario": {
+      "fonte_contextual": "BANCO",
+      "total_regras": 74,
+      "aplicado_no_contexto": true,
+      "aplicado_na_decisao": false,
+      "total_comparaveis_auditados": 243
+    }
+  },
+  "retorno_final": {
+    "resultado": "NOVO",
+    "resultado_bruto": "CHECK_SIMILARITY",
+    "resultado_origem": "similaridade_editorial_v0.5.3"
+  },
+  "validade_temporal": {
+    "versao": "0.1.2",
+    "status": "VALIDO",
+    "intencao": "INDETERMINADA",
+    "referencia_conteudo": null,
+    "aplicado_automaticamente": false
+  },
+  "limite": "Nao houve acionamento das facetas financeiras 73/74. A sugestao SUSPEITO decorreu de faceta estatistica e periodo compartilhados com outro assunto; nao prova duplicidade. Retorno Final veio no chat, nao em anexo."
+}

@@ -26,6 +26,12 @@ Os três outputs anexados mostraram 74 rows na SP `LISTAR`, um item do Normaliza
 
 Essa execução comprova o carregamento e a passagem das duas regras pelo fluxo, mas ainda não demonstra a detecção de `PLANEJAMENTO_FINANCEIRO` em um novo candidato ou comparável. Também não veio saída terminal do Retorno Final. Observar o próximo candidato financeiro pertinente, sem reprocessar conteúdo já publicado. A divergência contextual do registro 1353 deve ser analisada antes de qualquer promoção da sugestão para decisão funcional.
 
+### Nova execução: registro 1359
+
+A consulta anexada retornou as 74 regras ativas, incluindo as facetas 73/74. Na Similaridade interna v0.5.3, o candidato “Com 18 gols pelo Flamengo em 2026, atacante ganha nova oportunidade no time de Leonardo Jardim” acionou apenas as regras 1 (`FLAMENGO`) e 50 (`LEONARDO_JARDIM`); sua faceta `ESTATISTICAS_DESEMPENHO` não veio das duas novas expressões financeiras. A decisão lexical foi `NOVO` (32,02%, melhor match ID 3426). O Retorno Final informado pelo operador confirmou `resultado: NOVO`, `resultado_bruto: CHECK_SIMILARITY` e `resultado_origem: similaridade_editorial_v0.5.3`. [Resumo sanitizado](../telemetria/m360-registro-1359-facetas-banco.json).
+
+A sugestão contextual, somente em observação, foi `SUSPEITO` (65,63%, outro melhor match: ID 3662), por compartilhar `ESTATISTICAS_DESEMPENHO`, o período 2026 e a menção ao Flamengo com uma matéria sobre tabela/resultado do Brasileirão. Os títulos descrevem assuntos distintos; isso é sinal de possível excesso de associação contextual, não confirmação editorial de duplicidade. `aplicado_na_decisao: false` preservou a rota `NOVO`. Não promover a sugestão contextual a decisão sem avaliação e rótulos humanos; tampouco ajustar pesos a partir de um único caso. A detecção da faceta financeira em tráfego novo continua pendente. A saída do Retorno Final foi apresentada no chat, não em arquivo anexado.
+
 Em caso de divergência inesperada, restaurar o JavaScript anterior do node alterado. Nenhum workflow n8n foi modificado por este repositório.
 
 ## Verificação local
