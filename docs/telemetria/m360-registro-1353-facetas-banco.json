@@ -1,0 +1,43 @@
+{
+  "origem": "Tres anexos apresentados pelo operador: Consulta Vocabulário, Normaliza v0.2.1 e Similaridade interna v0.5.3",
+  "consulta_vocabulario": {
+    "rows": 74,
+    "regra_73": {"tipo": "FACETA_EDITORIAL", "expressao": "postura ultraconservadora", "valor_canonico": "PLANEJAMENTO_FINANCEIRO", "ativo": 1},
+    "regra_74": {"tipo": "FACETA_EDITORIAL", "expressao": "deficit", "valor_canonico": "PLANEJAMENTO_FINANCEIRO", "ativo": 1}
+  },
+  "normaliza_vocabulario": {
+    "itens_saida": 1,
+    "versao_vocabulario": "0.1.0",
+    "total_regras": 74,
+    "quantidades_por_tipo": {
+      "ALIAS_CLUBE": 30,
+      "ALIAS_COMPETICAO": 15,
+      "ALIAS_ORGANIZACAO": 6,
+      "ALIAS_PESSOA": 20,
+      "BLOQUEIO_PESSOA": 1,
+      "FACETA_EDITORIAL": 2
+    },
+    "modo": "OBSERVACAO",
+    "aplicado_automaticamente": false
+  },
+  "registro_id": 1353,
+  "candidato": "Flamengo precisa de 3 vitórias em 6 jogos para igualar pontuação do Brasileirão 2025",
+  "similaridade": {
+    "versao": "0.5.3",
+    "resultado_bruto": "CHECK_SIMILARITY",
+    "status_lexical": "NOVO",
+    "percentual_lexical": 46.17,
+    "melhor_match_id": 3597,
+    "facetas_candidato": [],
+    "status_contextual_sugerido": "RELACIONADO",
+    "auditoria_vocabulario": {
+      "fonte_contextual": "BANCO",
+      "total_regras": 74,
+      "ids_regras_acionadas_candidato": [1, 64],
+      "aplicado_no_contexto": true,
+      "aplicado_na_decisao": false,
+      "total_comparaveis_auditados": 245
+    }
+  },
+  "limite": "Comprova leitura das 74 regras, mas o candidato nao acionou as novas facetas; nao foi anexada saida do Retorno Final. Sem mesma entrada anterior, nao ha comparacao de score entre versoes."
+}
