@@ -4,6 +4,7 @@ As datas registram a incorporação ao repositório e não comprovam a data de e
 
 ## 29/10/2026 — Retomada da migração de vocabulário M360
 
+- Confirmadas pelo operador as propostas inativas 73 e 74 da faceta financeira; preparados SQLs de ativação e desativação restritas, ainda não executados, com verificação esperada de 74 regras ativas após ativação.
 - Preparado SQL idempotente de duas propostas inativas `FACETA_EDITORIAL` para o caso 1347. A proposta não altera `LISTAR`, o fluxo n8n nem a decisão lexical; execução e eventual ativação continuam pendentes.
 - Registradas saídas dos nodes Normaliza v0.2.1 e Similaridade interna v0.5.3 no registro 1347: 72 regras, fonte BANCO e equivalência com a v0.5.2 na mesma entrada (`NOVO`, 51,5%, mesmo melhor match e contexto). Sem retorno terminal novo nem faceta adicional ativa nessa evidência.
 - Preparados Normaliza v0.2.1 e Similaridade interna v0.5.3 para facetas opcionais do banco em observação, com aplicação manual node a node; as 72 regras atuais preservam as saídas e nenhuma regra nova foi ativada. Suíte completa: 113 testes aprovados.

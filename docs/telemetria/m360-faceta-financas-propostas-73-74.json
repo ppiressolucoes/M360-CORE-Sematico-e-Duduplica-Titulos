@@ -1,0 +1,27 @@
+{
+  "origem": "Resultado da SP e captura do grid apresentados pelo operador no chat",
+  "resultado_sp": "PROPOSTAS_REGISTRADAS",
+  "dominio": "ESPORTE",
+  "consumidor": "M360",
+  "versao_vocabulario": "0.1.0",
+  "propostas_recebidas": 2,
+  "regras": [
+    {
+      "regra_id": 73,
+      "tipo": "FACETA_EDITORIAL",
+      "expressao": "postura ultraconservadora",
+      "valor_canonico": "PLANEJAMENTO_FINANCEIRO",
+      "situacao": "PROPOSTA",
+      "ativo": 0
+    },
+    {
+      "regra_id": 74,
+      "tipo": "FACETA_EDITORIAL",
+      "expressao": "deficit",
+      "valor_canonico": "PLANEJAMENTO_FINANCEIRO",
+      "situacao": "PROPOSTA",
+      "ativo": 0
+    }
+  ],
+  "limite": "Proposta registrada, mas ainda nao ativada; nao comprova leitura pelo fluxo n8n."
+}
