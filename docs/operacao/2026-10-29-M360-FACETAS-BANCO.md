@@ -32,6 +32,12 @@ A consulta anexada retornou as 74 regras ativas, incluindo as facetas 73/74. Na 
 
 A sugestão contextual, somente em observação, foi `SUSPEITO` (65,63%, outro melhor match: ID 3662), por compartilhar `ESTATISTICAS_DESEMPENHO`, o período 2026 e a menção ao Flamengo com uma matéria sobre tabela/resultado do Brasileirão. Os títulos descrevem assuntos distintos; isso é sinal de possível excesso de associação contextual, não confirmação editorial de duplicidade. `aplicado_na_decisao: false` preservou a rota `NOVO`. Não promover a sugestão contextual a decisão sem avaliação e rótulos humanos; tampouco ajustar pesos a partir de um único caso. A detecção da faceta financeira em tráfego novo continua pendente. A saída do Retorno Final foi apresentada no chat, não em arquivo anexado.
 
+### Nova execução: registro 1361
+
+O Normaliza v0.2.1 voltou a fornecer 74 regras. O candidato “Flamengo tem mudança na defesa para jogo contra o Vasco” acionou as regras 1 (`FLAMENGO`) e 4 (`VASCO`), sem faceta editorial identificada. A Similaridade v0.5.3 decidiu lexicalmente `NOVO` (54,86%, abaixo do limite `SUSPEITO` de 58%) e sugeriu contextualmente `RELACIONADO` (66,86%), sem aplicação à decisão. O melhor match nos dois caminhos foi ID 3593, “Veja a programação do Flamengo para clássico contra o Vasco”; apenas os participantes coincidiram no contexto. O Retorno Final informado no chat manteve `NOVO`, com origem v0.5.3. [Resumo sanitizado](../telemetria/m360-registro-1361-facetas-banco.json).
+
+Também existem manchetes de escalação entre os 246 comparáveis, mas o título do candidato não identifica o defensor nem a alteração concreta. Não há evidência suficiente para declarar duplicidade ou falha de roteamento. A faceta vazia em uma manchete sobre mudança na defesa pode indicar cobertura incompleta da extração contextual; tratar como hipótese de melhoria, sem alterar pesos ou promover recomendações a partir deste caso isolado. As regras financeiras 73/74 continuam sem acionamento observado em candidato novo.
+
 Em caso de divergência inesperada, restaurar o JavaScript anterior do node alterado. Nenhum workflow n8n foi modificado por este repositório.
 
 ## Verificação local

@@ -1,0 +1,50 @@
+{
+  "origem": "Anexo do operador: Normaliza Vocabulário Editorial v0.2.1 e Similaridade Editorial interna v0.5.3; Retorno Final informado no chat",
+  "registro_id": 1361,
+  "candidato": "Flamengo tem mudança na defesa para jogo contra o Vasco",
+  "vocabulario": {
+    "versao": "0.1.0",
+    "fonte": "SP_VOCABULARIO_EDITORIAL/LISTAR",
+    "total_regras": 74,
+    "facetas_financeiras_disponiveis": [73, 74]
+  },
+  "similaridade": {
+    "versao_interna": "0.5.3",
+    "resultado_bruto": "CHECK_SIMILARITY",
+    "status_lexical": "NOVO",
+    "percentual_lexical": 54.86,
+    "limite_suspeito": 58,
+    "melhor_match_lexical": {
+      "id": 3593,
+      "titulo": "Veja a programação do Flamengo para clássico contra o Vasco"
+    },
+    "total_comparaveis": 246,
+    "facetas_candidato": [],
+    "ids_regras_acionadas_candidato": [1, 4],
+    "analise_contextual": {
+      "status_sugerido": "RELACIONADO",
+      "percentual_contextual": 66.86,
+      "melhor_match_id": 3593,
+      "atributos_confirmados": ["participantes"],
+      "aplicado_automaticamente": false
+    },
+    "auditoria_vocabulario": {
+      "fonte_contextual": "BANCO",
+      "total_regras": 74,
+      "aplicado_no_contexto": true,
+      "aplicado_na_decisao": false,
+      "total_comparaveis_auditados": 245
+    }
+  },
+  "retorno_final": {
+    "resultado": "NOVO",
+    "resultado_bruto": "CHECK_SIMILARITY",
+    "resultado_origem": "similaridade_editorial_v0.5.3"
+  },
+  "validade_temporal": {
+    "versao": "0.1.2",
+    "status": "VALIDO",
+    "referencia_conteudo": null
+  },
+  "limite": "Os titulos do candidato e melhor match compartilham Flamengo e Vasco, mas a mudanca defensiva e a programacao do classico nao sao o mesmo fato demonstrado. Outras manchetes de escalacao constam entre os comparaveis, sem detalhes suficientes no titulo candidato para confirmar duplicidade. Facetas financeiras 73/74 nao foram acionadas."
+}
