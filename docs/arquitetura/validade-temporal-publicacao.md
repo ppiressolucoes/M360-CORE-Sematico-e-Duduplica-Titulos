@@ -2,6 +2,11 @@
 
 Data da proposta: 23/10/2026. Atualização: 27/10/2026.
 
+> Este documento preserva o desenho e os gates propostos em 23–27/10. O estado
+> operacional relatado em 29/10 está no [checkpoint M360](../operacao/2026-10-29-M360-CHECKPOINT.md);
+> as afirmações históricas abaixo sobre export inativo não descrevem a
+> implantação posterior.
+
 Iniciativa: `CORE-028`.
 
 ## Objetivo

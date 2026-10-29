@@ -2,6 +2,8 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const { avaliarValidadeTemporal } = require('./validade-temporal');
 
 const TIMEZONE = 'America/Sao_Paulo';
@@ -148,6 +150,23 @@ test('usa data como fallback auditável quando iso_date não existe', () => {
   assert.equal(resultado.referencia_conteudo.confianca, 0.8);
 });
 
+test('usa data_publicacao e resumo do contrato real para expirar pauta passada', () => {
+  const resultado = avaliar({
+    titulo: 'Flamengo enfrenta o Atlético-MG no Maracanã pelo Brasileirão',
+    data_publicacao: '2026-10-26',
+    resumo: 'Rubro-Negro recebe a equipe mineira nesta segunda-feira (26), às 20h.',
+    instante_avaliacao: '2026-10-27T19:36:53.538-03:00'
+  });
+
+  assert.equal(resultado.versao, '0.1.2');
+  assert.equal(resultado.status, 'EXPIRADO');
+  assert.equal(resultado.intencao, 'SERVICO_PRE_EVENTO');
+  assert.equal(resultado.referencia_conteudo.origem, 'data_publicacao');
+  assert.equal(resultado.referencia_conteudo.data, '2026-10-26');
+  assert.equal(resultado.evento.inicio, '2026-10-26T00:00:00-03:00');
+  assert.ok(resultado.motivos.includes('EVENTO_ANTES_DA_AVALIACAO'));
+});
+
 test('reconhece vitória e vaga como resultado pós-evento', () => {
   const resultado = avaliar({
     titulo: 'Flamengo vence Criciúma e garante vaga nas quartas de final',
@@ -177,4 +196,66 @@ test('reconhece resultado em título editorial em inglês', () => {
 
   assert.equal(resultado.status, 'VALIDO');
   assert.equal(resultado.intencao, 'RESULTADO');
+});
+
+test('reconhece empate concluído no título observado em produção', () => {
+  const resultado = avaliar({
+    titulo: 'Palmeiras empata com o Santos e garante liderança do Flamengo por mais uma rodada do Brasileirão',
+    instante_avaliacao: '2026-10-28T21:36:39.804-03:00'
+  });
+
+  assert.equal(resultado.versao, '0.1.2');
+  assert.equal(resultado.intencao, 'RESULTADO');
+  assert.equal(resultado.status, 'VALIDO');
+  assert.equal(resultado.confianca, 0.9);
+  assert.ok(resultado.motivos.includes('CONTEUDO_POS_EVENTO'));
+  assert.equal(resultado.aplicado_automaticamente, false);
+});
+
+test('reconhece empate como fato concluído sem prever resultado futuro', () => {
+  const concluido = avaliar({
+    titulo: 'Empate entre Palmeiras e Santos mantém Flamengo na liderança',
+    instante_avaliacao: '2026-10-28T22:00:00-03:00'
+  });
+  const hipotetico = avaliar({
+    titulo: 'Flamengo precisa de empate para seguir líder',
+    instante_avaliacao: '2026-10-28T12:00:00-03:00'
+  });
+
+  assert.equal(concluido.intencao, 'RESULTADO');
+  assert.equal(hipotetico.intencao, 'INDETERMINADA');
+});
+
+test('artefato n8n v0.1.2 preserva contrato e classifica empate', () => {
+  const codigo = fs.readFileSync(
+    path.resolve(__dirname, '../../codes/m360/validade-temporal-v0.1.2.js'),
+    'utf8'
+  );
+  const executarNode = new Function('$input', '$now', codigo);
+  const entrada = {
+    titulo: 'Palmeiras empata com o Santos e garante liderança do Flamengo por mais uma rodada do Brasileirão',
+    link: 'https://exemplo.com/palmeiras-empata-santos',
+    instante_avaliacao: '2026-10-28T21:36:39.804-03:00'
+  };
+  const saida = executarNode({ first: () => ({ json: entrada }) }, null);
+
+  assert.equal(saida.length, 1);
+  assert.equal(saida[0].json.titulo, entrada.titulo);
+  assert.equal(saida[0].json.link, entrada.link);
+  assert.equal(saida[0].json.core_versao, '0.5.0');
+  assert.equal(saida[0].json.validade_temporal.versao, '0.1.2');
+  assert.equal(saida[0].json.validade_temporal.intencao, 'RESULTADO');
+  assert.equal(saida[0].json.validade_temporal.status, 'VALIDO');
+  assert.equal(saida[0].json.validade_temporal.aplicado_automaticamente, false);
+});
+
+test('não reclassifica pauta financeira após eliminações como placar de jogo', () => {
+  const resultado = avaliar({
+    titulo: 'Conselho Deliberativo do Flamengo aprova mudança de projeções financeiras após eliminações no ano',
+    instante_avaliacao: '2026-10-28T22:11:40.853-03:00'
+  });
+
+  assert.equal(resultado.intencao, 'INDETERMINADA');
+  assert.equal(resultado.status, 'VALIDO');
+  assert.ok(resultado.motivos.includes('SEM_RESTRICAO_TEMPORAL_DETECTADA'));
 });

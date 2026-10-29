@@ -1,10 +1,10 @@
 # Backlog consolidado — Core Semântico e Deduplicação de Títulos
 
-Última atualização: 27/10/2026.
+Última atualização: 29/10/2026.
 
 ## Objetivo e escopo
 
-Este backlog coordena a evolução dos fluxos n8n e das Stored Procedures MySQL do Core Editorial. A etapa atual é de desenho, telemetria e validação. Nenhuma iniciativa abaixo autoriza alteração direta de produção, publicação de conteúdo ou aplicação automática de uma hipótese analítica.
+Este backlog coordena a evolução dos fluxos n8n e das Stored Procedures MySQL do Core Editorial. A implantação M360 relatada pelo operador está registrada no [checkpoint de 29/10](../operacao/2026-10-29-M360-CHECKPOINT.md). Este documento não autoriza novas alterações diretas de produção nem aplicação automática de hipóteses analíticas.
 
 O [índice acumulado de evidências](../telemetria/m360-indice.json) contém 98 candidatos e 294 pares provenientes de alertas do ramo `SUSPEITO`. Os casos não possuem validação humana completa e não representam os ramos `NOVO` e `DUPLICADO`; por isso, ainda não permitem medir precisão ou recall do Core.
 
@@ -42,7 +42,8 @@ A proteção temporal `CORE-028` é uma frente paralela no Core atual. Ela não 
 | CORE-003 | P0 | CONCLUÍDO | Incorporar as SPs editoriais vigentes do M360 | Definições recebidas em 21/10/2026, sem `DEFINER`, com assinaturas compatíveis com o workflow M360 e análise estática versionada |
 | CORE-004 | P0 | EM ANDAMENTO | Confirmar o contrato do subfluxo chamado pelo ramo `NOVO` | Export principal incorporado; ainda faltam snapshot da saída e exports dos cinco subfluxos dependentes |
 | CORE-024 | P0 | CONCLUÍDO | Versionar o DDL das tabelas editoriais | Estruturas recebidas em 21/10/2026; unicidade de `dsc_chave_dedup`, tipos, engine e índices analisados e registrados no baseline |
-| CORE-028 | P0 | EM ANDAMENTO | Validar temporalidade do evento antes da publicação | [M360-T0 concluído](../operacao/2026-10-27-CORE-028-M360-T0.md); [M360-T1 iniciado](../operacao/2026-10-27-CORE-028-M360-T1-INICIO.md) após relato de criação do node `Validade Temporal v0.1.0`, ainda sem export ou testes que comprovem conclusão; o node deve permanecer desconectado; aplicação limitada ao M360, PEL fora do escopo; 27 testes locais aprovados; faltam validar T1, executar T2–T5, obter snapshots temporais, confirmar contrato do fluxo pai e comprovar observação, feature flag e rollback |
+| CORE-028 | P0 | EM ANDAMENTO | Validar temporalidade do evento antes da publicação | [Checkpoint M360 de 29/10](../operacao/2026-10-29-M360-CHECKPOINT.md): Validade Temporal v0.1.2, gate e retorno terminal informados como implantados; desvio bloqueado testado no SUB e caminho `SEGUIR` testado pelo PAI. Falta comprovar `BLOQUEAR` no PAI e monitorar rollback/efeitos externos; PEL fora do escopo. |
+| CORE-029 | P1 | EM ANDAMENTO | Migrar vocabulário editorial M360 para banco | 72 regras `ESPORTE/M360` ativas; SP `LISTAR`/`PROPOR`, normalizador v0.2.0 e auditoria da Similaridade v0.5.0. A decisão ainda usa aliases estáticos; faltam fonte efetiva no banco, versionamento expansível, governança das propostas e teste controlado de novas regras. |
 | CORE-005 | P1 | PRONTO | Definir o contrato semântico v0.1 | Especificar evento principal, participantes e papéis, competição/divisão, data, faceta, estado factual, modalidade, confiança e campos desconhecidos |
 | CORE-006 | P1 | PRONTO | Definir taxonomia editorial | Aprovar `DUPLICADO`, `NOVO`, `RELACIONADO`, `ATUALIZAÇÃO` e `INDETERMINADO`, com exemplos e regras para cada classe |
 
@@ -100,4 +101,4 @@ A proteção temporal `CORE-028` é uma frente paralela no Core atual. Ela não 
 
 ## Próxima entrega recomendada
 
-Concluir CORE-004 e executar CORE-005 e CORE-006: confirmar a saída e os subfluxos do Extrator Editorial e aprovar os contratos de contexto e de decisão. Em paralelo, obter snapshots temporais sanitizados para CORE-028, validar o contrato de retorno ao fluxo pai e preparar a observação com tráfego representativo antes de qualquer bloqueio; executar CORE-026 e CORE-027 para tratar os riscos de performance e limites do DDL histórico antes de qualquer migração funcional.
+Concluir CORE-004 e executar CORE-005 e CORE-006: confirmar a saída e os subfluxos do Extrator Editorial e aprovar os contratos de contexto e de decisão. Em paralelo, observar o primeiro bloqueio temporal do CORE-028 no PAI, comprovar ausência de efeitos externos no ramo bloqueado e preparar a migração controlada do CORE-029; executar CORE-026 e CORE-027 para tratar performance e limites do DDL histórico antes de outra migração funcional.

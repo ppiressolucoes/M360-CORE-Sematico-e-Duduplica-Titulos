@@ -1,6 +1,6 @@
 'use strict';
 
-const VERSAO = '0.1.0';
+const VERSAO = '0.1.2';
 const TIMEZONE_PADRAO = 'America/Sao_Paulo';
 
 const MESES = new Map([
@@ -137,6 +137,11 @@ function interpretarData(valor, timezone) {
 function obterReferenciaConteudo(entrada, timezone) {
   const fontes = [
     { origem: 'iso_date', valor: entrada.iso_date ?? entrada.isoDate, confianca: 1 },
+    {
+      origem: 'data_publicacao',
+      valor: entrada.data_publicacao ?? entrada.dataPublicacao,
+      confianca: 0.95
+    },
     { origem: 'data', valor: entrada.data, confianca: 0.8 }
   ];
 
@@ -175,10 +180,11 @@ function resolverDiaSemana(dataReferencia, indiceAlvo) {
 }
 
 function detectarIntencao(texto) {
-  const resultado = /\b(resultado|placar|vence|venceu|derrotado|derrotou|goleado|goleou|empatou|eliminado|eliminada|classificado|classificada|garante vaga|melhores momentos|penaltis|pos jogo|repercussao|apos o jogo|depois do jogo|ousted|eliminated|wins|won|highlights|penalties)\b/;
+  const resultado = /\b(resultado|placar|vence|venceu|derrotado|derrotou|goleado|goleou|empata|empatou|empataram|eliminado|eliminada|classificado|classificada|garante vaga|melhores momentos|penaltis|pos jogo|repercussao|apos o jogo|depois do jogo|ousted|eliminated|wins|won|highlights|penalties)\b/;
+  const empateConcluido = /\b(?:empate (?:entre|de|do|da|com|no|na)|apos (?:o )?empate|com o empate|terminou empatado|terminaram empatados)\b/;
   const servico = /\b(onde assistir|horarios?|agenda|pre jogo|provaveis? escalacoes?|jogos? de hoje|transmissao|joga|enfrenta|duelo|partida)\b/;
 
-  if (resultado.test(texto)) {
+  if (resultado.test(texto) || empateConcluido.test(texto)) {
     return 'RESULTADO';
   }
 
@@ -348,7 +354,13 @@ function avaliarValidadeTemporal(entrada = {}) {
     ? dataNoTimezone(instanteAvaliacao, timezone)
     : null;
   const referencia = obterReferenciaConteudo(entrada, timezone);
-  const texto = normalizarTexto(`${entrada.titulo ?? entrada.title ?? ''} ${entrada.contexto ?? ''}`);
+  const texto = normalizarTexto(
+    [
+      entrada.titulo ?? entrada.title ?? '',
+      entrada.contexto ?? '',
+      entrada.resumo ?? ''
+    ].join(' ')
+  );
   const intencao = detectarIntencao(texto);
   const deteccao = detectarExpressoes(texto, referencia);
   const datas = [...new Set(
