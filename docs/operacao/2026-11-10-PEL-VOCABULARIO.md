@@ -1,0 +1,9 @@
+# PEL: vocabulario em observacao
+
+Os dez registros 1 a 10 foram recebidos como PROPOSTA/0. O SQL de ativacao e preparado para aplicacao manual no banco PEL, restrito a escopo, origem, IDs e pares expressao/canonico. Ele pode produzir ativacao parcial; conferir as dez linhas APROVADA/1. Nenhuma execucao no banco e feita pelo repositorio.
+
+No ramo CHECK do SWITCH | Resultado, dividir em dois caminhos: (1) entrada 1 do Merge; (2) consulta MySQL `CALL SP_VOCABULARIO_EDITORIAL('LISTAR', 'ENERGIA_LIMPA', 'PEL', '0.1.0', NULL, NULL);`, normalizador PEL e entrada 2 do Merge. Configurar Combine / Position e garantir um item por ramo e por candidato. Habilitar Always Output Data na consulta para o caso de zero rows; uma falha SQL requer rota de erro propria e nao e equivalente a lista vazia.
+
+Saida do Merge -> Contexto Vocabulário Editorial PEL v0.1.0 -> Similaridade Editorial v0.4.0 existente -> switch existente. Ambos os novos Code nodes usam Run Once for All Items. Nao renomear o node de Similaridade: outros nodes podem referenciá-lo pelo nome. O contexto identifica facetas no candidato e comparaveis e registra IDs de regras, sem produzir sugestao nem alterar status, score, SPs ou retorno final. Com lista vazia ou invalida, contexto indisponivel e lexical existente preservado. A consulta precisa executar com sucesso para o ramo chegar ao Merge.
+
+Em teste manual isolado, verificar: dez regras carregadas; titulo com `biometano` aciona a regra 8; titulo sem termo nao aciona faceta; ausencia de regras deixa contexto indisponivel; para as mesmas entradas a saida lexical permanece igual a v0.4.0. Testar os formatos reais de retorno da SP e o Merge antes de publicar. A auditoria fica na saida da Similaridade via `contexto_vocabulario_pel`, nao necessariamente no Retorno Final. Os alertas historicos nao sao rotulos humanos e nenhuma proposta nova e criada automaticamente.
