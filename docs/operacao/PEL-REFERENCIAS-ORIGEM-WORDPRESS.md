@@ -1,5 +1,7 @@
 # PEL — referências de origem e WordPress
 
+**Rota atualizada:** a tabela auxiliar proposta neste documento nao sera aplicada nesta etapa. A evolucao usara a tabela existente `ADM_analise_editorial_observacao`, conforme [migracao incremental](../../sql/editorial/migrations/PEL_analise_observacao_referencias_wp.sql). O conteudo abaixo documenta a proposta anterior e nao e instrucao de implantacao.
+
 Tabela auxiliar preparada para aplicacao manual: `sql/editorial/tables/PEL_referencia_publicacao.sql`. Nao foi criada no banco nem ligada ao fluxo. Um registro por portal e reserva editorial; sem FK para nao assumir constraints ou relacao de bancos ainda nao verificadas.
 
 ## Contrato

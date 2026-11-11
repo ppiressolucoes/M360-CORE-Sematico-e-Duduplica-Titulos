@@ -1,4 +1,5 @@
--- Executar manualmente no banco PEL apos revisao. Nao altera tabelas legadas.
+-- PROPOSTA SUPERADA: nao aplicar. Preferir PEL_analise_observacao_referencias_wp.sql.
+-- Mantida apenas como historico; nao foi criada segundo as evidencias recebidas.
 -- O id do WordPress pertence ao site PEL; nao confundir com dsc_post_id da origem.
 CREATE TABLE IF NOT EXISTS ADM_referencia_publicacao_editorial (
   referencia_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
