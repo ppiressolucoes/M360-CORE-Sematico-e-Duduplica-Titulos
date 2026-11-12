@@ -2,6 +2,12 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 12/11/2026 — Consolidação da evolução PEL
+
+- Registrados vocabulário PEL, adaptação de entrada e consulta parametrizada; a Similaridade v0.4.0 permanece responsável pela decisão lexical.
+- Consolidadas evidências da análise v0.5.1 e persistência em observação, além do vínculo WordPress de novos candidatos 1417 e 1420, informado e consultado pelo operador.
+- Documentados os limites: validação de falhas, revisão humana e decisão automática permanecem pendentes. Ver [checkpoint PEL](docs/operacao/2026-11-12-PEL-CHECKPOINT.md).
+
 ## 29/10/2026 — Retomada da migração de vocabulário M360
 
 - Registro 1353 confirmou o percurso `LISTAR → Normaliza v0.2.1 → Similaridade v0.5.3` com 74 regras, 2 facetas e fonte BANCO. O candidato não continha expressão financeira; nenhuma faceta nova foi acionada. Resultado lexical NOVO 46,17%, sugestão contextual RELACIONADO apenas observacional.

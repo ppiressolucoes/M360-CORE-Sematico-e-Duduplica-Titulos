@@ -1,5 +1,7 @@
 # PEL: registrar referencia WordPress em NOVO
 
+Atualizacao: o operador informou a publicacao do fluxo e apresentou linhas de referencia para os registros 1417 e 1420. Ver [checkpoint PEL](2026-11-12-PEL-CHECKPOINT.md). Falhas, conflitos e pareamento em cenarios adicionais continuam pendentes de teste isolado.
+
 ## Ajuste de posicao: v0.2.0
 
 O desenho do operador foi alterado para `Chamar Publicar Editorial -> SP DEDUPLICA EDITORIAL FINALIZA -> Prepara Referência Publicada PEL -> SQL | Persiste Referência Publicada -> Inserir Título BD PEL`. Substituir o Code pelo arquivo `codes/pel/prepara-referencia-publicada-v0.2.0.js` em **Run Once for All Items**. Ele le a resposta do publicador e a analise por nome, agrega rows e metadados da SP em uma saida e exige exatamente um candidato/publicador, finalizacao `PUBLICADO` e o mesmo registro. Preserva os campos esperados pela query abaixo. Sem pareamento inequivoco ou retorno valido, lanca erro; nao utilizar `.first()` como fallback para multiplos candidatos. Os nomes dos nodes devem coincidir exatamente.
