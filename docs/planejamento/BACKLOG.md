@@ -1,6 +1,6 @@
 # Backlog consolidado — Core Semântico e Deduplicação de Títulos
 
-Última atualização: 29/10/2026.
+Última atualização: 17/11/2026.
 
 ## Objetivo e escopo
 
@@ -25,6 +25,8 @@ Prioridade `P0` protege rastreabilidade ou operação; `P1` entrega a nova capac
 A [Sprint Deduplicação e Semântica Editorial v0.2.0](../sprints/SPRINT-V0.2.0-MODO-SOMBRA.md) agrupa `CORE-005` a `CORE-014`. O resultado esperado é um piloto M360 em modo sombra, capaz de sugerir decisões explicáveis e aprender com rótulos editoriais sem alterar o status funcional. Operação com tráfego real e automação permanecem nos gates `CORE-015` a `CORE-019`.
 
 A proteção temporal `CORE-028` é uma frente paralela no Core atual. Ela não faz parte do aprendizado sombra: seu objetivo é impedir que conteúdo de serviço já vencido chegue ao Extrator Editorial, após validação em observação e promoção controlada.
+
+A consolidação mais recente de M360 e PEL está no [checkpoint de 17/11/2026](../operacao/2026-11-17-CONSOLIDACAO.md); os registros operacionais de cada frente continuam sendo a fonte detalhada das evidências.
 
 | História | Estado | Registro | Pendências para conclusão |
 | --- | --- | --- | --- |

@@ -2,6 +2,15 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 17/11/2026 — Consolidação das atividades desde 21/10
+
+- Sincronizada a referência local com a `main` remota até o commit `a0c4d8a`.
+- Reunidos em [checkpoint de consolidação](docs/operacao/2026-11-17-CONSOLIDACAO.md) e no backlog os checkpoints recentes de M360 (`CORE-028` e `CORE-029`) e PEL (`CORE-030`), mantendo separados artefatos versionados, evidências informadas pelo operador e pendências de validação.
+- Atualizado o índice M360 para 98 candidatos e 294 pares de alertas SUSPEITO; os dados continuam sem rótulos humanos completos e não medem precisão ou recall.
+- Registradas como frentes pendentes a comprovação do caminho de bloqueio temporal pelo fluxo pai, revisão humana e avaliação contextual, tratamento de falhas/conflitos da observação PEL e validação do status WordPress antes de finalização automática.
+- O último checkpoint PEL disponível é de 12/11; não há nesta consolidação nova evidência operacional posterior a essa data.
+- Nenhuma alteração foi aplicada ao n8n ou ao MySQL nesta consolidação.
+
 ## 12/11/2026 — Consolidação da evolução PEL
 
 - Registrados vocabulário PEL, adaptação de entrada e consulta parametrizada; a Similaridade v0.4.0 permanece responsável pela decisão lexical.
