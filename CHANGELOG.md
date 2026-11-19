@@ -4,6 +4,7 @@ As datas registram a incorporação ao repositório, não a data de execução. 
 
 ## 19/11/2026 — Decisor observacional PEL aplicado em produção
 
+- Registradas [quatro novas saídas observacionais](docs/operacao/2026-11-19-PEL-DECISAO-LOTE-1855-1858.md): todas `INDETERMINADO` no decisor; três relações contextuais entre anúncios de vagas exigem revisão humana. Persistência e rota final não foram demonstradas pelos snapshots.
 - O operador confirmou a aplicação manual de `Decisão Autônoma Editorial PEL v0.1.0` no fluxo PEL em produção.
 - Primeira saída do node recebida: vocabulário BANCO carregado, 310 comparáveis, análise contextual e recomendação `INDETERMINADO`; as flags observacionais permaneceram falsas.
 - `CORE-031` permanece EM ANDAMENTO: faltam confirmação da persistência e do roteamento final. Dois pares contextuais não tinham score lexical no TOP 3. Detalhes e limites no [checkpoint de aplicação](docs/operacao/2026-11-19-PEL-DECISAO-AUTONOMA-APLICACAO.md); ainda não há export posterior para verificação independente.
