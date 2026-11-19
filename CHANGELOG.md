@@ -2,6 +2,13 @@
 
 As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
 
+## 18/11/2026 — Alinhamento para decisão autônoma PEL
+
+- Registrado o ponto proposto para a recomendação editorial: após `Análise Editorial PEL v0.5.1` e antes de `SWITCH | Similaridade Editorial`.
+- Documentado que o contexto vocabular e a análise PEL permanecem observacionais e que o consenso atual só roda depois da finalização do ramo `SUSPEITO`.
+- Adicionado `CORE-031` para desenvolver a recomendação em modo sombra, sujeita a baseline sanitizado, rótulos humanos e gates pendentes do `CORE-030`.
+- Nenhum node, workflow, roteamento ou sistema produtivo foi alterado nesta entrega. Ver [alinhamento PEL de 18/11](docs/operacao/2026-11-18-PEL-DECISAO-AUTONOMA-ALINHAMENTO.md).
+
 ## 17/11/2026 — Consolidação das atividades desde 21/10
 
 - Sincronizada a referência local com a `main` remota até o commit `a0c4d8a`.
