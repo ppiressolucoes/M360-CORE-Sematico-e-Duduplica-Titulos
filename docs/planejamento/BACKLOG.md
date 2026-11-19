@@ -61,6 +61,8 @@ Os [candidatos 1852 e 1853](../operacao/2026-11-19-PEL-DECISAO-CASOS-1852-1853.m
 
 No [registro 1863](../operacao/2026-11-19-PEL-ANALISE-V060-1863.md), a análise v0.6.0 foi observada após aplicação informada. A extração literal não reconheceu empregador, cargo e local do candidato; permanecem pendentes decisão posterior, gravação e rota final.
 
+No [registro 1864](../operacao/2026-11-19-PEL-VALIDACAO-1864.md), a saída do decisor confirmou a passagem após a análise v0.6.0 e preservou o status lexical `NOVO`. Operador informou ausência de saída no SQL e no retorno final; consultar a linha pela execução e inspecionar os nodes seguintes para distinguir ausência de item, gravação e execução do ramo.
+
 ## Próximo — telemetria e execução sombra
 
 | ID | Prioridade | Estado | Iniciativa | Critério de aceite / dependência |
