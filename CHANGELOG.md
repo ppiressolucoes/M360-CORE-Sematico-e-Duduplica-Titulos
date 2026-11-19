@@ -5,7 +5,8 @@ As datas registram a incorporação ao repositório e não comprovam a data de e
 ## 19/11/2026 — Aplicação manual do decisor PEL informada
 
 - O operador informou que aplicou `Decisão Autônoma Editorial PEL v0.1.0` ao fluxo e aguarda a passagem de novo candidato para validação.
-- `CORE-031` permanece EM ANDAMENTO até confirmar saída, preservação do roteamento lexical e persistência em execução. O relato está no [checkpoint de aplicação](docs/operacao/2026-11-19-PEL-DECISAO-AUTONOMA-APLICACAO.md); ainda não há export ou execução posterior para verificação independente.
+- Primeira saída do node recebida: vocabulário BANCO carregado, 310 comparáveis, análise contextual e recomendação `INDETERMINADO`; as flags observacionais permaneceram falsas.
+- `CORE-031` permanece EM ANDAMENTO: faltam confirmação da persistência e do roteamento final. Dois pares contextuais não tinham score lexical no TOP 3. Detalhes e limites no [checkpoint de aplicação](docs/operacao/2026-11-19-PEL-DECISAO-AUTONOMA-APLICACAO.md); ainda não há export posterior para verificação independente.
 
 ## 18/11/2026 — Alinhamento para decisão autônoma PEL
 
