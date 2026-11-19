@@ -4,6 +4,7 @@ As datas registram a incorporação ao repositório, não a data de execução. 
 
 ## 19/11/2026 — Decisor observacional PEL aplicado em produção
 
+- Consolidada a [evolução semântica PEL](docs/operacao/2026-11-19-PEL-CONSOLIDACAO-SEMANTICA.md), distinguindo aplicação informada, saídas observadas e export versionado anterior à v0.6.0; backlog e inventário de código alinhados.
 - Operador informou aplicação da análise v0.6.0 e forneceu [saída do registro 1863](docs/operacao/2026-11-19-PEL-ANALISE-V060-1863.md): novos campos emitidos, com limites de extração de empregador, cargo e local; decisor, SQL e rota final não apresentados.
 - Registrados [casos 1852 e 1853](docs/operacao/2026-11-19-PEL-DECISAO-CASOS-1852-1853.md), com possíveis vínculos editoriais não reconhecidos e pendentes de revisão humana; nenhuma alteração de limiar ou decisão funcional.
 - Registradas [quatro novas saídas observacionais](docs/operacao/2026-11-19-PEL-DECISAO-LOTE-1855-1858.md): todas `INDETERMINADO` no decisor; três relações contextuais entre anúncios de vagas exigem revisão humana. Persistência e rota final não foram demonstradas pelos snapshots.

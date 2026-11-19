@@ -8,6 +8,8 @@ Os códigos usam objetos e helpers fornecidos pelo n8n, como `$input`, `$json`, 
 
 Artefatos posteriores ao export: [Retorno Final v0.2.2](m360/retorno-final-v0.2.2.js) e [Similaridade v0.5.2](m360/similaridade-editorial-v0.5.2-vocab-banco.js) foram aplicados e validados pelo operador. [Normaliza v0.2.1](m360/normaliza-vocabulario-editorial-v0.2.1.js) e [Similaridade interna v0.5.3](m360/similaridade-editorial-v0.5.3-facetas-banco.js) também foram aplicados e tiveram saídas anexadas; [validação e pendências](../docs/operacao/2026-10-29-M360-FACETAS-BANCO.md). O export de referência não foi atualizado sem um novo export operacional.
 
+PEL: a [Análise Editorial v0.6.0](pel/analise-editorial-observacao-v0.6.0.js) é posterior ao export versionado; aplicação manual informada e saída observada no registro 1863. Falta export posterior para comprovar equivalência. O [decisor v0.1.0](pel/decisao-autonoma-editorial-v0.1.0.js) e as pendências estão na [consolidação PEL](../docs/operacao/2026-11-19-PEL-CONSOLIDACAO-SEMANTICA.md).
+
 | Fluxo | Node | Arquivo |
 | --- | --- | --- |
 | M360 | `Validade Temporal v0.1.0` | `m360/validade-temporal-v0.1.0.js` |
