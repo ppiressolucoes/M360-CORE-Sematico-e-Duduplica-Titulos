@@ -27,9 +27,9 @@ As heurísticas da análise v0.5.1 incluem igualdade de títulos normalizados, t
 
 ## Alinhamento
 
-O ponto proposto para um decisor editorial é **após `Análise Editorial PEL v0.5.1` e antes de `SWITCH | Similaridade Editorial`**. Nesse ponto estão disponíveis a comparação lexical, os comparáveis históricos e o contexto vocabular. O decisor deverá inicialmente produzir apenas uma recomendação explicável em modo sombra.
+O ponto definido para um decisor editorial é **após `Análise Editorial PEL v0.5.1` e antes de `SWITCH | Similaridade Editorial`**, encaminhando a recomendação também à persistência analítica. Nesse ponto estão disponíveis a comparação lexical, os comparáveis históricos e o contexto vocabular. A implementação v0.1.0 foi preparada no repositório; detalhes e limitações estão no [registro de implementação](2026-11-18-PEL-DECISAO-AUTONOMA-IMPLEMENTACAO.md).
 
-O switch e as finalizações produtivas permanecem inalterados durante a avaliação. A recomendação não será tratada como rótulo humano, e nenhuma classe será promovida por limiar lexical ou consenso de fontes isoladamente.
+O switch e as finalizações produtivas permanecem inalterados durante a avaliação. A recomendação não será tratada como rótulo humano, e nenhuma classe será promovida por limiar lexical ou consenso de fontes isoladamente. O artefato local segue inativo; observação em produção depende da aplicação controlada no n8n.
 
 ## Plano passo a passo
 

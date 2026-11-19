@@ -8,7 +8,7 @@
           "value": "wyGVvxzdQ1nFBVL8",
           "mode": "list",
           "cachedResultUrl": "/workflow/wyGVvxzdQ1nFBVL8",
-          "cachedResultName": "SUB | WEB Extrator Detalhes PEL v0.3 [ Core Editorial ]"
+          "cachedResultName": "SUB | WEB Edição Detalhes PEL v0.3 [ Core Editorial ]"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -48,8 +48,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        192,
-        688
+        -64,
+        800
       ],
       "id": "8b2d6995-7df8-46d9-b52d-d752a9f6de53",
       "name": "Chamar Publicar Editorial"
@@ -57,14 +57,14 @@
     {
       "parameters": {
         "content": "## GESTÃO EDITORIAL DE TITULOS: \n- Core Deduplicação e Semântica Editorial",
-        "height": 912,
-        "width": 1456,
+        "height": 288,
+        "width": 1040,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -432,
-        -32
+        -704,
+        -128
       ],
       "typeVersion": 1,
       "id": "05cb0193-08d8-4c8e-baf8-a72759525f2d",
@@ -155,8 +155,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        496,
-        32
+        192,
+        -32
       ],
       "id": "c51db776-da14-4bda-af5b-eef924cd6eb1",
       "name": "SWITCH | Resultado"
@@ -246,8 +246,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        -176,
-        448
+        -64,
+        512
       ],
       "id": "5b409f29-7a09-4150-8272-c9cba237cf54",
       "name": "SWITCH | Similaridade Editorial"
@@ -261,8 +261,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.5,
       "position": [
-        480,
-        688
+        192,
+        800
       ],
       "id": "e678fd39-a7fe-44d0-98a1-190c50d244cd",
       "name": "SP DEDUPLICA EDITORIAL FINALIZA"
@@ -270,14 +270,16 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "CALL SP_DEDUPLICA_EDITORIAL(\n    'PEL',\n    '{{ $json.titulo.replace(/'/g, \"''\") }}',\n    'extracao-WEB',\n    '{{ $json.link.replace(/'/g, \"''\") }}',\n    '{{ \"/\" + $json.link.split(\"://\")[1].split(\"/\").slice(1).join(\"/\").replace(/^\\/+|\\/+$/g, \"\") + \"/\" }}',\n    7,\n    '{{ $execution.id }}'\n);",
-        "options": {}
+        "query": "CALL SP_DEDUPLICA_EDITORIAL($1, $2, $3, $4, $5, $6, $7);",
+        "options": {
+          "queryReplacement": "={{ [\n  'PEL',\n  $json.titulo,\n  'extracao-WEB',\n  $json.link,\n  '/' + $json.link.split('://')[1]\n    .split('/')\n    .slice(1)\n    .join('/')\n    .replace(/^\\/+|\\/+$/g, '') + '/',\n  7,\n  $execution.id\n] }}"
+        }
       },
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.5,
       "position": [
-        -128,
-        48
+        -464,
+        -16
       ],
       "id": "f86e0055-6826-4530-b424-f86ea9fcef46",
       "name": "SP DEDUPLICA EDITORIAL",
@@ -293,7 +295,7 @@
       "typeVersion": 2.5,
       "position": [
         192,
-        272
+        336
       ],
       "id": "4fcb1c4b-f864-4261-9fc3-bab46d7a3cef",
       "name": "SP | Finaliza DUPLICADO"
@@ -308,7 +310,7 @@
       "typeVersion": 2.5,
       "position": [
         192,
-        464
+        528
       ],
       "id": "e7fa7eb9-0700-4029-b328-470bba391165",
       "name": "SP | Finaliza SUSPEITO"
@@ -320,8 +322,8 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.2,
       "position": [
-        -400,
-        96
+        -864,
+        -16
       ],
       "id": "ed3811a2-1f17-46a9-be4a-d21d2b90d494",
       "name": "Start Dedup"
@@ -333,8 +335,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1056,
-        272
+        1376,
+        336
       ],
       "id": "1d74a7a3-2f0c-4016-a883-ec3a4981d9b9",
       "name": "Retorno Final"
@@ -352,19 +354,19 @@
           "values": [
             {
               "column": "txt_Titulo",
-              "value": "={{ $('Similaridade Editorial v0.4.0').item.json.candidato.titulo }}"
+              "value": "={{ $('Similaridade Editorial v0.4.0').first().json.candidato.titulo }}"
             },
             {
               "column": "ind_PostID",
-              "value": "={{ $('Similaridade Editorial v0.4.0').item.json.candidato.link.extractUrlPath() }}"
+              "value": "={{ $('Similaridade Editorial v0.4.0').first().json.candidato.link.extractUrlPath() }}"
             },
             {
               "column": "txt_Categoria",
-              "value": "=extrator-{{ $('Chamar Publicar Editorial').item.json.yoast_head_json.schema['@graph'][0].articleSection[0] }}"
+              "value": "=extrator-{{ $('Chamar Publicar Editorial').first().json.yoast_head_json.schema['@graph'][0].articleSection[0] }}"
             },
             {
               "column": "dsc_URL_origem",
-              "value": "={{ $('Similaridade Editorial v0.4.0').item.json.candidato.link.extractDomain() }}"
+              "value": "={{ $('Similaridade Editorial v0.4.0').first().json.candidato.link.extractDomain() }}"
             },
             {
               "column": "dth_Executado",
@@ -377,8 +379,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.5,
       "position": [
-        720,
-        688
+        912,
+        816
       ],
       "id": "912ca824-b61d-481e-b3e4-baa7316b1804",
       "name": "Inserir Titulo BD PEL",
@@ -391,8 +393,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        208,
-        48
+        -48,
+        -16
       ],
       "id": "633ab02e-2eb6-4ae3-a560-01fe3a9800a1",
       "name": "Normaliza Deduplica Editorial v0.2.2"
@@ -404,8 +406,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -384,
-        464
+        -480,
+        528
       ],
       "id": "996d0ab0-1873-4b58-9632-7bd1df66c40a",
       "name": "Similaridade Editorial v0.4.0"
@@ -420,8 +422,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.2,
       "position": [
-        720,
-        464
+        816,
+        528
       ],
       "id": "dc117508-4d48-4dab-b479-e4724c8e3d17",
       "name": "Alerta! SUSPEITO",
@@ -435,11 +437,176 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        480,
-        464
+        384,
+        528
       ],
       "id": "6aa3b4fa-930c-4b2e-9e90-42d743f1b436",
       "name": "Consenso Editorial v0.1.0"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT\n  registro_id,\n  JSON_UNQUOTE(JSON_EXTRACT(\n    dados_json, '$.candidato.titulo'\n  )) AS titulo_candidato,\n  JSON_UNQUOTE(JSON_EXTRACT(\n    dados_json, '$.analise.comparavel.titulo'\n  )) AS titulo_comparavel,\n  JSON_UNQUOTE(JSON_EXTRACT(\n    dados_json, '$.analise.relacao_sugerida'\n  )) AS relacao_sugerida,\n  JSON_UNQUOTE(JSON_EXTRACT(\n    dados_json, '$.decisao_lexical.status'\n  )) AS decisao_lexical,\n  JSON_EXTRACT(\n    dados_json, '$.analise.comparavel.evidencias'\n  ) AS evidencias\nFROM ADM_analise_editorial_observacao\nWHERE dsc_portal = 'PEL'\n  AND registro_id = 1401\nORDER BY analise_id DESC\nLIMIT 1;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1696,
+        704
+      ],
+      "id": "9b027f2b-33eb-4545-b168-d51bbde65786",
+      "name": "SQL - Validações",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL SP_VOCABULARIO_EDITORIAL(\n  'LISTAR',\n  'ENERGIA_LIMPA',\n  'PEL',\n  '0.1.0',\n  NULL,\n  NULL\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -656,
+        272
+      ],
+      "id": "63ca784d-2df3-4e9d-bc13-0def27b7586d",
+      "name": "Consulta Vocabulário Editorial v0.1.0",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n: Run Once for All Items. Uma saida mesmo sem regras.\nconst rows = [];\nconst vistos = new WeakSet();\nfunction coletar(valor) {\n  if (!valor || typeof valor !== 'object' || vistos.has(valor)) return;\n  vistos.add(valor);\n  if (Array.isArray(valor)) return valor.forEach(coletar);\n  if (Object.prototype.hasOwnProperty.call(valor, 'regra_id')) { rows.push(valor); return; }\n  Object.values(valor).forEach(coletar);\n}\nfor (const item of $input.all()) coletar(item.json);\nconst ids = new Set();\nconst expressoes = new Set();\nlet erro = null;\nconst regras = [];\nfor (const r of rows) {\n  const id = Number(r.regra_id), prioridade = Number(r.prioridade), confianca = Number(r.confianca);\n  const expressao = String(r.expressao ?? '').trim();\n  const canonico = String(r.valor_canonico ?? '').trim();\n  const chave = expressao.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();\n  if (r.dsc_dominio !== 'ENERGIA_LIMPA' || r.dsc_consumidor !== 'PEL' ||\n      r.versao_vocabulario !== '0.1.0' || r.tipo !== 'FACETA_EDITORIAL' ||\n      r.tipo_expressao !== 'LITERAL' || Number(r.ativo) !== 1 ||\n      !Number.isSafeInteger(id) || id <= 0 || ids.has(id) || expressoes.has(chave) ||\n      !expressao || !/^[A-Z][A-Z0-9_]*$/.test(canonico) ||\n      !Number.isInteger(prioridade) || prioridade < 0 || prioridade > 100 ||\n      !Number.isFinite(confianca) || confianca < 0 || confianca > 1) {\n    erro = 'REGRA_INVALIDA_OU_AMBIGUA'; break;\n  }\n  ids.add(id); expressoes.add(chave);\n  regras.push({regra_id: id, expressao, valor_canonico: canonico, prioridade, confianca});\n}\nif (rows.length > 500) erro = 'LIMITE_DE_REGRAS_EXCEDIDO';\nreturn [{json: {vocabulario_editorial: {\n  dominio: 'ENERGIA_LIMPA', consumidor: 'PEL', versao: '0.1.0',\n  status: erro || (regras.length ? 'CARREGADO' : 'VAZIO'),\n  modo: 'OBSERVACAO', total_regras: erro ? 0 : regras.length,\n  regras: erro ? [] : regras\n}}}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        272
+      ],
+      "id": "ab3a8f03-4ebe-480f-9800-d2d154eca068",
+      "name": "Normaliza Vocabulário Editorial PEL v0.1.0"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -256,
+        256
+      ],
+      "id": "e189272c-448b-4408-a42b-c67ac5157a7c",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n: Run Once for All Items. Colocar entre Merge e Similaridade PEL v0.4.0.\n// Somente auditoria: nao altera candidato, comparaveis ou decisao lexical.\nconst entrada = $input.first()?.json ?? {};\nconst vocab = entrada.vocabulario_editorial;\nconst valido = vocab?.dominio === 'ENERGIA_LIMPA' && vocab?.consumidor === 'PEL' &&\n  vocab?.versao === '0.1.0' && vocab?.status === 'CARREGADO' && Array.isArray(vocab.regras);\nfunction normalizar(v) {\n  return String(v ?? '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')\n    .toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().replace(/\\s+/g, ' ');\n}\nfunction detectar(titulo) {\n  const texto = ` ${normalizar(titulo)} `;\n  const matches = (valido ? vocab.regras : []).filter(r => {\n    const termo = normalizar(r.expressao);\n    return termo && texto.includes(` ${termo} `);\n  });\n  return {facetas: [...new Set(matches.map(r => r.valor_canonico))],\n    ids_regras: matches.map(r => r.regra_id)};\n}\nconst candidato = entrada.candidato ?? {};\nconst comparaveis = Array.isArray(entrada.comparaveis) ? entrada.comparaveis : [];\nreturn [{json: {...entrada, contexto_vocabulario_pel: {\n  versao: '0.1.0', modo: 'OBSERVACAO', fonte: valido ? 'BANCO' : 'INDISPONIVEL',\n  status: vocab?.status ?? 'AUSENTE', aplicado_na_decisao: false,\n  total_regras: valido ? vocab.regras.length : 0,\n  candidato: detectar(candidato.titulo),\n  comparaveis: comparaveis.map(c => ({id: c.legacy_id ?? c.registro_id ?? c.id ?? null,\n    ...detectar(c.titulo)}))\n}}}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        528
+      ],
+      "id": "96a601d8-28c2-464e-9c2c-9d8116aa22ba",
+      "name": "Contexto Vocabulário Editorial PEL v0.1.0"
+    },
+    {
+      "parameters": {
+        "jsCode": "// PEL | Antes da SP DEDUPLICA EDITORIAL | Run Once for All Items\n// Rejeita entrada invalida antes de criar uma reserva. Preserva campos originais.\nreturn $input.all().map((item, index) => {\n  const entrada = item.json ?? {};\n  function escolher(principal, alternativo, nome) {\n    // O normalizador posterior usa ?? sobre Start Dedup: nao permitir que\n    // campo presente e vazio seja interpretado de forma diferente aqui.\n    const valor = entrada[principal] ?? entrada[alternativo];\n    if (typeof valor !== 'string' || !valor.trim()) {\n      throw new Error(`Entrada PEL invalida: ${nome} ausente ou nao textual (item ${index}).`);\n    }\n    return valor.trim();\n  }\n  const titulo = escolher('titulo', 'title', 'titulo/title');\n  const link = escolher('link', 'url', 'link/url');\n  if (titulo.length > 500) throw new Error(`Entrada PEL invalida: titulo excede 500 caracteres (item ${index}).`);\n  if (link.length > 500 || !/^https?:\\/\\/[^\\s/?#]+(?:[/?#][^\\s]*)?$/i.test(link)) {\n    throw new Error(`Entrada PEL invalida: link deve ser URL HTTP(S) de ate 500 caracteres (item ${index}).`);\n  }\n  return {json: {...entrada, titulo, link}, pairedItem: {item: index}};\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -640,
+        -16
+      ],
+      "id": "253beedd-4d60-45dc-ad92-47cdaee01c48",
+      "name": "Normaliza Entrada Deduplicação PEL"
+    },
+    {
+      "parameters": {
+        "jsCode": "// PEL v0.5.1 observacao. Executar APOS Similaridade Editorial v0.4.0.\n// Nao altera duplicidade_editorial, roteamento, banco ou WordPress.\nconst entrada = $input.first()?.json ?? {};\nconst titulo = String(entrada.candidato?.titulo ?? '').trim();\nconst comparaveis = Array.isArray(entrada.comparaveis) ? entrada.comparaveis : [];\nconst contexto = entrada.contexto_vocabulario_pel;\nfunction normalizar(texto) {\n  return String(texto ?? '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')\n    .toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().replace(/\\s+/g, ' ');\n}\nconst comuns = new Set(['que','para','com','uma','por','dos','das','uma','sobre','mais','apos','pelo','pela','ano','anos','brasil']);\nfunction tokens(t) { return [...new Set(normalizar(t).split(' ').filter(x => x.length >= 4 && !comuns.has(x)))]; }\nfunction fase(t) {\n  const s = ` ${normalizar(t)} `;\n  // Negacao ou multiplos sinais nao sao resolvidos por esta heuristica.\n  if (/\\b(nao|nem|nega|negou)\\b/.test(s)) return null;\n  const abertura = /\\b(abre|abriu|abertura)\\b/.test(s);\n  const cancelamento = /\\b(cancela|cancelou|cancelamento|cancelada|cancelado)\\b/.test(s);\n  if (abertura && cancelamento) return null;\n  if (abertura) return 'ABERTURA';\n  if (cancelamento) return 'CANCELAMENTO';\n  if (/\\b(aprovou|aprova|aprovado|aprovada)\\b/.test(s)) return 'APROVACAO';\n  if (/\\b(discute|discussao|debate|debater)\\b/.test(s)) return 'DISCUSSAO';\n  return null;\n}\nconst assinatura = tokens(titulo);\nconst resultados = comparaveis.filter(c => c && typeof c.titulo === 'string' && c.titulo.trim()).map(c => {\n  const outros = tokens(c.titulo);\n  const compartilhados = assinatura.filter(x => outros.includes(x));\n  const iguais = titulo && normalizar(titulo) === normalizar(c.titulo);\n  const faseCandidato = fase(titulo), faseComparavel = fase(c.titulo);\n  let relacao = 'INDETERMINADO';\n  const evidencias = [];\n  if (iguais) { evidencias.push('TITULOS_NORMALIZADOS_IGUAIS'); }\n  else if (compartilhados.length >= 4 && faseCandidato && faseComparavel && faseCandidato !== faseComparavel) {\n    // Diferenca de fase nao prova mesmo objeto, nem ordem temporal.\n    relacao = 'RELACIONADO'; evidencias.push('FASES_DISTINTAS_REQUEREM_REVISAO');\n  } else if (compartilhados.length >= 4) {\n    relacao = 'RELACIONADO'; evidencias.push('TOKENS_COMPARTILHADOS');\n  }\n  return {comparavel_id: c.legacy_id ?? c.registro_id ?? c.id ?? null, titulo: c.titulo,\n    relacao_sugerida: relacao, evidencias, tokens_compartilhados: compartilhados,\n    fase_candidato: faseCandidato, fase_comparavel: faseComparavel,\n    ausencias: ['ENTIDADES_NAO_RESOLVIDAS','OBJETO_NAO_RESOLVIDO','DATA_EVENTO_NAO_RESOLVIDA'],\n    _prioridade: iguais ? 3 : evidencias.includes('FASES_DISTINTAS_REQUEREM_REVISAO') ? 2 : relacao === 'RELACIONADO' ? 1 : 0};\n});\nresultados.sort((a,b) => b._prioridade - a._prioridade || b.tokens_compartilhados.length - a.tokens_compartilhados.length);\nconst top = resultados.slice(0, 3).map(({_prioridade, ...resto}) => resto);\nreturn [{json: {...entrada, analise_editorial_pel: {\n  versao: '0.5.1', modo: 'OBSERVACAO', aplicado_na_decisao: false,\n  status: titulo ? 'ANALISADO' : 'TITULO_AUSENTE', total_comparados: resultados.length,\n  vocabulario_status: contexto?.status ?? 'AUSENTE',\n  relacao_sugerida: top[0]?.relacao_sugerida ?? 'INDETERMINADO', comparavel: top[0] ?? null,\n  top_comparaveis: top,\n  limitacoes: ['HEURISTICA_NAO_VALIDA_DUPLICIDADE', 'SEM_RESOLUCAO_DE_ENTIDADES_OU_OBJETO', 'DISTINTO_NAO_AUTOMATIZADO']\n}}}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -272,
+        528
+      ],
+      "id": "710e652f-db2c-42cb-bcc3-748b059644e2",
+      "name": "Análise Editorial PEL v0.5.1"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO ADM_analise_editorial_observacao\n  (dsc_portal, registro_id, dsc_execucao_id, versao_analise, dados_json, criado_utc)\nVALUES ($1, $2, $3, $4, $5, UTC_TIMESTAMP())\nON DUPLICATE KEY UPDATE analise_id = analise_id;",
+        "options": {
+          "queryReplacement": "={{ [\n  'PEL',\n  $json.registro_id,\n  String($execution.id),\n  $json.analise_editorial_pel.versao,\n  JSON.stringify({\n    candidato: $json.candidato,\n    decisao_lexical: $json.duplicidade_editorial,\n    analise: $json.analise_editorial_pel,\n    decisao_autonoma_pel: $json.decisao_autonoma_pel,\n    vocabulario: {\n      versao: $json.vocabulario_editorial?.versao ?? null,\n      total_regras: $json.contexto_vocabulario_pel?.total_regras ?? null,\n      status: $json.contexto_vocabulario_pel?.status ?? null\n    }\n  })\n] }}"
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -48,
+        320
+      ],
+      "id": "7f967af1-2169-41fa-a16b-57b540186a2c",
+      "name": "SQL | Persiste Observação",
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// PEL v0.2.0: Run Once for All Items, apos SP FINALIZA.\n// Contrato: um candidato por chamada; a SP pode emitir rows e metadados.\n// Nao chama WordPress nem grava no banco. Uma saida ligada ao node SQL.\nconst posts = $('Chamar Publicar Editorial').all();\nconst origens = $('Análise Editorial PEL v0.5.1').all();\nif (posts.length !== 1 || origens.length !== 1) {\n  throw new Error('Referencia PEL exige uma publicacao e uma analise por execucao.');\n}\nconst post = posts[0].json;\nconst origem = origens[0].json;\nconst finalizacoes = [];\nfunction coletar(valor) {\n  if (!valor || typeof valor !== 'object') return;\n  if (Array.isArray(valor)) return valor.forEach(coletar);\n  if (valor.resultado === 'FINALIZED' || valor.resultado === 'ALREADY_FINALIZED') {\n    finalizacoes.push(valor); return;\n  }\n  Object.values(valor).forEach(coletar);\n}\nfor (const item of $input.all()) coletar(item.json);\nconst id = Number(post?.id);\nconst registro = Number(origem?.registro_id);\nconst url = typeof post?.link === 'string' ? post.link.trim() : '';\nconst versao = origem?.analise_editorial_pel?.versao;\nif (!Number.isSafeInteger(id) || id <= 0 || post?.status !== 'publish' ||\n    !/^https:\\/\\/energialimpa\\.live\\//i.test(url) || url.length > 2048 ||\n    !Number.isSafeInteger(registro) || registro <= 0 ||\n    typeof versao !== 'string' || !versao.trim() || versao.length > 32 ||\n    !origem?.candidato || !origem?.duplicidade_editorial || !origem?.analise_editorial_pel ||\n    finalizacoes.length !== 1 || Number(finalizacoes[0].registro_id) !== registro ||\n    finalizacoes[0].status_final !== 'PUBLICADO') {\n  throw new Error('Referencia PEL invalida: publicacao ou dados da analise nao confirmados.');\n}\nconst execucao = String($execution.id ?? '');\nif (!execucao || execucao.length > 100) throw new Error('ID de execucao PEL invalido.');\nreturn [{json: {\n  portal: 'PEL', registro_id: registro, execucao_id: execucao,\n  versao_analise: versao, wp_post_id: id, wp_url: url, wp_status: 'publish',\n  dados_json: JSON.stringify({\n    candidato: origem.candidato,\n    decisao_lexical: origem.duplicidade_editorial,\n    analise: origem.analise_editorial_pel,\n    vocabulario: {\n      versao: origem.vocabulario_editorial?.versao ?? null,\n      total_regras: origem.contexto_vocabulario_pel?.total_regras ?? null,\n      status: origem.contexto_vocabulario_pel?.status ?? null\n    }\n  })\n}}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        384,
+        800
+      ],
+      "id": "38f4688d-8e01-40e2-b8bb-7a1e76143f11",
+      "name": "Prepara Referência Publicada PEL",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO ADM_analise_editorial_observacao\n (dsc_portal, registro_id, dsc_execucao_id, versao_analise, dados_json, criado_utc,\n  wp_post_id, wp_url, wp_status, wp_confirmado_utc)\nVALUES ($1, $2, $3, $4, $5, UTC_TIMESTAMP(), $6, $7, $8, UTC_TIMESTAMP())\nON DUPLICATE KEY UPDATE\n wp_url = IF(wp_post_id IS NULL OR wp_post_id = VALUES(wp_post_id), VALUES(wp_url), wp_url),\n wp_status = IF(wp_post_id IS NULL OR wp_post_id = VALUES(wp_post_id), VALUES(wp_status), wp_status),\n wp_confirmado_utc = IF(wp_post_id IS NULL OR wp_post_id = VALUES(wp_post_id), UTC_TIMESTAMP(), wp_confirmado_utc),\n wp_post_id = IF(wp_post_id IS NULL OR wp_post_id = VALUES(wp_post_id), VALUES(wp_post_id), wp_post_id);",
+        "options": {
+          "queryReplacement": "={{ [ $json.portal, $json.registro_id, $json.execucao_id,\n     $json.versao_analise, $json.dados_json,\n     $json.wp_post_id, $json.wp_url, $json.wp_status ] }}"
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        624,
+        688
+      ],
+      "id": "e793a685-55f3-41b5-80a9-4f1b3fa35b56",
+      "name": "SQL | Persiste Referência Publicada",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// PEL v0.1.0 — recomendação observacional após análise lexical/contextual.\n// Nunca altera status, roteamento, finalização, publicação ou alertas.\n// n8n Code node: Run Once for All Items.\n\nconst entrada = $input.first()?.json ?? {};\nconst lexical = entrada.duplicidade_editorial ?? {};\nconst analise = entrada.analise_editorial_pel ?? {};\nconst contexto = entrada.contexto_vocabulario_pel ?? {};\nconst candidato = entrada.candidato ?? {};\nconst comparaveis = Array.isArray(entrada.comparaveis) ? entrada.comparaveis : [];\n\nfunction normalizar(valor) {\n  return String(valor ?? '')\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, ' ')\n    .trim()\n    .replace(/\\s+/g, ' ');\n}\n\nfunction numero(valor, fallback = 0) {\n  if (valor === null || valor === undefined || valor === '') return fallback;\n  const convertido = Number(valor);\n  return Number.isFinite(convertido) ? convertido : fallback;\n}\n\nfunction facetas(valor) {\n  return Array.isArray(valor) ? [...new Set(valor.filter(v => typeof v === 'string' && v.trim()).map(v => v.trim()))] : [];\n}\n\nconst candidatoFacetas = facetas(contexto.candidato?.facetas);\nconst contextoPorId = new Map();\nfor (const registro of Array.isArray(contexto.comparaveis) ? contexto.comparaveis : []) {\n  if (registro?.id !== null && registro?.id !== undefined) {\n    contextoPorId.set(String(registro.id), registro);\n  }\n}\n\nconst candidatosContextuais = Array.isArray(analise.top_comparaveis)\n  ? analise.top_comparaveis\n  : [];\nconst matchesLexicais = Array.isArray(lexical.top_matches) ? lexical.top_matches : [];\nconst fonteMatches = candidatosContextuais.length ? candidatosContextuais : matchesLexicais;\nconst evidencias = [];\n\nfor (const item of fonteMatches.slice(0, 3)) {\n  const id = item?.comparavel_id ?? item?.legacy_id ?? item?.id ?? null;\n  const contextoPar = id === null ? null : contextoPorId.get(String(id));\n  const titulo = String(item?.titulo ?? '').trim();\n  const matchLexical = matchesLexicais.find(match =>\n    (id !== null && String(match?.id ?? match?.legacy_id ?? '') === String(id)) ||\n    (titulo && normalizar(match?.titulo) === normalizar(titulo))\n  ) ?? null;\n  const facetasPar = facetas(contextoPar?.facetas);\n  const compartilhadas = candidatoFacetas.filter(faceta => facetasPar.includes(faceta));\n  const distintas = candidatoFacetas.filter(faceta => !facetasPar.includes(faceta));\n  const relacao = String(item?.relacao_sugerida ?? '').toUpperCase();\n  const faseCandidato = item?.fase_candidato ?? null;\n  const faseComparavel = item?.fase_comparavel ?? null;\n  const faseDivergente = Boolean(faseCandidato && faseComparavel && faseCandidato !== faseComparavel);\n  const titulosIguais = Boolean(titulo && normalizar(candidato.titulo) === normalizar(titulo));\n\n  evidencias.push({\n    comparavel_id: id,\n    relacao_contextual: relacao || 'AUSENTE',\n    score_lexical: numero(matchLexical?.metricas?.score_composto, null),\n    tokens_comuns: numero(matchLexical?.metricas?.tokens_comuns, null),\n    titulo_normalizado_igual: titulosIguais,\n    facetas_candidato: candidatoFacetas,\n    facetas_comparavel: facetasPar,\n    facetas_compartilhadas: compartilhadas,\n    facetas_distintas: distintas,\n    fase_candidato: faseCandidato,\n    fase_comparavel: faseComparavel,\n    fase_divergente: faseDivergente\n  });\n}\n\nconst lexicalStatus = String(lexical.status ?? 'AUSENTE').toUpperCase();\nconst vocabCarregado = contexto.status === 'CARREGADO' && contexto.fonte === 'BANCO';\nconst comparavelDeterminante = evidencias.find(item =>\n  item.relacao_contextual === 'RELACIONADO' ||\n  item.titulo_normalizado_igual ||\n  item.facetas_compartilhadas.length ||\n  item.facetas_distintas.length\n) ?? evidencias[0] ?? null;\n\nlet sugestao = 'INDETERMINADO';\nlet confianca = 'BAIXA';\nlet motivo = 'EVIDENCIA_INSUFICIENTE_PARA_CLASSIFICAR';\n\nif (\n  vocabCarregado &&\n  lexicalStatus === 'DUPLICADO' &&\n  comparavelDeterminante?.titulo_normalizado_igual &&\n  comparavelDeterminante.facetas_compartilhadas.length > 0\n) {\n  sugestao = 'DUPLICADO';\n  confianca = 'MODERADA';\n  motivo = 'TITULO_EQUIVALENTE_E_FACETA_COMPARTILHADA';\n} else if (\n  vocabCarregado &&\n  comparavelDeterminante?.relacao_contextual === 'RELACIONADO' &&\n  comparavelDeterminante.facetas_distintas.length > 0\n) {\n  sugestao = 'RELACIONADO';\n  confianca = 'MODERADA';\n  motivo = 'RELACAO_CONTEXTUAL_COM_FACETAS_DISTINTAS';\n} else if (\n  comparavelDeterminante?.relacao_contextual === 'RELACIONADO' &&\n  comparavelDeterminante.fase_divergente\n) {\n  sugestao = 'RELACIONADO';\n  confianca = 'BAIXA';\n  motivo = 'FASES_FACTUAIS_DIVERGENTES_REQUEREM_REVISAO';\n} else if (lexicalStatus === 'DUPLICADO') {\n  motivo = vocabCarregado\n    ? 'DUPLICIDADE_LEXICAL_SEM_COMPATIBILIDADE_CONTEXTUAL_CONFIRMADA'\n    : 'DUPLICIDADE_LEXICAL_COM_VOCABULARIO_INDISPONIVEL';\n} else if (lexicalStatus === 'ERRO' || lexicalStatus === 'AUSENTE') {\n  motivo = 'DECISAO_LEXICAL_INDISPONIVEL';\n}\n\nconst decisao = {\n  versao: '0.1.0',\n  modo: 'OBSERVACAO_PRODUCAO',\n  aplicado_automaticamente: false,\n  altera_status_core: false,\n  altera_roteamento: false,\n  publica_ou_finaliza: false,\n  status_lexical_original: lexicalStatus,\n  status_contextual_original: String(analise.relacao_sugerida ?? 'AUSENTE').toUpperCase(),\n  status_sugerido: sugestao,\n  confianca,\n  motivo,\n  vocabulario: {\n    status: contexto.status ?? 'AUSENTE',\n    fonte: contexto.fonte ?? 'INDISPONIVEL',\n    versao: entrada.vocabulario_editorial?.versao ?? null,\n    facetas_candidato: candidatoFacetas\n  },\n  cobertura: {\n    total_comparaveis_recebidos: comparaveis.length,\n    total_comparaveis_avaliados: evidencias.length,\n    comparaveis_na_analise_contextual: numero(analise.total_comparados, 0),\n    historico_completo_comprovado: false\n  },\n  comparavel_determinante: comparavelDeterminante,\n  evidencias,\n  limitacoes: [\n    'ENTIDADES_E_OBJETO_NAO_RESOLVIDOS',\n    'COMPLETUDE_DO_HISTORICO_NAO_COMPROVADA',\n    'SEM_ROTULOS_HUMANOS_PARA_CALIBRAR_CONFIANCA',\n    'ATUALIZACAO_E_NOVO_NAO_AUTOMATIZADOS_NESTA_VERSAO'\n  ],\n  revisao_humana_necessaria: true\n};\n\nreturn [{ json: { ...entrada, decisao_autonoma_pel: decisao } }];\n"
+      },
+      "id": "0c4114cd-7935-4e86-94fd-4f07ee65d55d",
+      "name": "Decisão Autônoma Editorial PEL v0.1.0",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        688
+      ]
     }
   ],
   "connections": {
@@ -472,7 +639,12 @@
         ],
         [
           {
-            "node": "Similaridade Editorial v0.4.0",
+            "node": "Consulta Vocabulário Editorial v0.1.0",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
             "type": "main",
             "index": 0
           }
@@ -508,7 +680,7 @@
       "main": [
         [
           {
-            "node": "Inserir Titulo BD PEL",
+            "node": "Prepara Referência Publicada PEL",
             "type": "main",
             "index": 0
           }
@@ -541,7 +713,7 @@
       "main": [
         [
           {
-            "node": "SP DEDUPLICA EDITORIAL",
+            "node": "Normaliza Entrada Deduplicação PEL",
             "type": "main",
             "index": 0
           }
@@ -585,7 +757,7 @@
       "main": [
         [
           {
-            "node": "SWITCH | Similaridade Editorial",
+            "node": "Análise Editorial PEL v0.5.1",
             "type": "main",
             "index": 0
           }
@@ -613,6 +785,124 @@
           }
         ]
       ]
+    },
+    "Consulta Vocabulário Editorial v0.1.0": {
+      "main": [
+        [
+          {
+            "node": "Normaliza Vocabulário Editorial PEL v0.1.0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normaliza Vocabulário Editorial PEL v0.1.0": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Contexto Vocabulário Editorial PEL v0.1.0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contexto Vocabulário Editorial PEL v0.1.0": {
+      "main": [
+        [
+          {
+            "node": "Similaridade Editorial v0.4.0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normaliza Entrada Deduplicação PEL": {
+      "main": [
+        [
+          {
+            "node": "SP DEDUPLICA EDITORIAL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Análise Editorial PEL v0.5.1": {
+      "main": [
+        [
+          {
+            "node": "Decisão Autônoma Editorial PEL v0.1.0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Referência Publicada PEL": {
+      "main": [
+        [
+          {
+            "node": "SQL | Persiste Referência Publicada",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Inserir Titulo BD PEL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SQL | Persiste Referência Publicada": {
+      "main": [
+        [
+          {
+            "node": "Inserir Titulo BD PEL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Inserir Titulo BD PEL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decisão Autônoma Editorial PEL v0.1.0": {
+      "main": [
+        [
+          {
+            "node": "SWITCH | Similaridade Editorial",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SQL | Persiste Observação",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -620,11 +910,6 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "53716869-36b6-42df-8139-2855c837be53",
-  "meta": {
-    "instanceId": "9f769af33e9c8cdfc44e726022a0e6b9f585fd6f2577f3c000a6028827d25ddd"
-  },
   "nodeGroups": [],
-  "id": "Rp6oR7dkxQpRf14L",
   "tags": []
 }
