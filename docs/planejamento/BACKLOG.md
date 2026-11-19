@@ -52,6 +52,8 @@ A consolidação mais recente de M360 e PEL está no [checkpoint de 17/11/2026](
 Observação adicional do CORE-031: [quatro candidatos 1855–1858](../operacao/2026-11-19-PEL-DECISAO-LOTE-1855-1858.md) mantiveram recomendação `INDETERMINADO`; três sugeriram `RELACIONADO` na análise contextual, com títulos de vagas de cargos ou empresas diferentes. Persistência e roteamento final não estão nos snapshots.
 
 Os [candidatos 1852 e 1853](../operacao/2026-11-19-PEL-DECISAO-CASOS-1852-1853.md) também retornaram `INDETERMINADO`, mas contêm pares de possível mesma pauta sobre postes e ação judicial referente a baterias; priorizar revisão humana de evento, objeto e estágio factual.
+
+No [registro 1863](../operacao/2026-11-19-PEL-ANALISE-V060-1863.md), a análise v0.6.0 foi observada após aplicação informada. A extração literal não reconheceu empregador, cargo e local do candidato; permanecem pendentes decisão posterior, gravação e rota final.
 | CORE-005 | P1 | PRONTO | Definir o contrato semântico v0.1 | Especificar evento principal, participantes e papéis, competição/divisão, data, faceta, estado factual, modalidade, confiança e campos desconhecidos |
 | CORE-006 | P1 | PRONTO | Definir taxonomia editorial | Aprovar `DUPLICADO`, `NOVO`, `RELACIONADO`, `ATUALIZAÇÃO` e `INDETERMINADO`, com exemplos e regras para cada classe |
 
