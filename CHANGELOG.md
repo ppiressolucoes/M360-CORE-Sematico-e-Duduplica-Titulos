@@ -1,10 +1,10 @@
 # Histórico de mudanças
 
-As datas registram a incorporação ao repositório e não comprovam a data de emissão dos alertas nem uma implantação em produção.
+As datas registram a incorporação ao repositório, não a data de execução. Relatos de produção são identificados como confirmação do operador e não como verificação independente.
 
-## 19/11/2026 — Aplicação manual do decisor PEL informada
+## 19/11/2026 — Decisor observacional PEL aplicado em produção
 
-- O operador informou que aplicou `Decisão Autônoma Editorial PEL v0.1.0` ao fluxo e aguarda a passagem de novo candidato para validação.
+- O operador confirmou a aplicação manual de `Decisão Autônoma Editorial PEL v0.1.0` no fluxo PEL em produção.
 - Primeira saída do node recebida: vocabulário BANCO carregado, 310 comparáveis, análise contextual e recomendação `INDETERMINADO`; as flags observacionais permaneceram falsas.
 - `CORE-031` permanece EM ANDAMENTO: faltam confirmação da persistência e do roteamento final. Dois pares contextuais não tinham score lexical no TOP 3. Detalhes e limites no [checkpoint de aplicação](docs/operacao/2026-11-19-PEL-DECISAO-AUTONOMA-APLICACAO.md); ainda não há export posterior para verificação independente.
 
@@ -13,7 +13,7 @@ As datas registram a incorporação ao repositório e não comprovam a data de e
 - Registrado o ponto da recomendação editorial: após `Análise Editorial PEL v0.5.1` e antes de `SWITCH | Similaridade Editorial`.
 - Documentado que o contexto vocabular e a análise PEL permanecem observacionais e que o consenso atual só roda depois da finalização do ramo `SUSPEITO`.
 - Preparado `Decisão Autônoma Editorial PEL v0.1.0` antes do switch e incluída sua saída na persistência analítica; o switch continua avaliando somente o status lexical.
-- Atualizado `CORE-031` para EM ANDAMENTO. O artefato do repositório está inativo e sanitizado; a aplicação na instância foi informada pelo operador no dia 19/11.
+- Atualizado `CORE-031` para EM ANDAMENTO. O artefato do repositório está inativo e sanitizado; a aplicação manual em produção foi confirmada pelo operador em 19/11.
 - Nenhuma alteração foi aplicada ao n8n, MySQL ou WordPress. Ver [alinhamento](docs/operacao/2026-11-18-PEL-DECISAO-AUTONOMA-ALINHAMENTO.md) e [implementação](docs/operacao/2026-11-18-PEL-DECISAO-AUTONOMA-IMPLEMENTACAO.md).
 
 ## 17/11/2026 — Consolidação das atividades desde 21/10

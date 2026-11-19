@@ -25,7 +25,7 @@ A recomendação persistida inclui o status lexical e contextual observados, reg
 
 ## Estado de implantação
 
-O workflow no repositório está inativo e sanitizado. Em 19/11, o operador informou que aplicou manualmente o node à instância n8n; a próxima passagem de candidato aguarda validação de execução e persistência. Ainda não foi apresentado export posterior à aplicação nem evidência da nova saída em execução. O relato está registrado no [checkpoint de aplicação](2026-11-19-PEL-DECISAO-AUTONOMA-APLICACAO.md).
+O workflow no repositório está inativo e sanitizado. Em 19/11, o operador confirmou a aplicação manual do node no fluxo PEL em produção. A primeira saída observacional foi recebida; ainda não foi apresentado export posterior à aplicação nem evidência da persistência e da rota final. O estado está registrado no [checkpoint de aplicação](2026-11-19-PEL-DECISAO-AUTONOMA-APLICACAO.md).
 
 Antes da promoção de qualquer recomendação, permanecem necessários os gates do `CORE-030`: validação de falhas e conflitos de persistência, vínculo com histórico, amostra de decisões humanas e validação do status WordPress. O tráfego observado não deve ser usado como rótulo humano implícito.
 

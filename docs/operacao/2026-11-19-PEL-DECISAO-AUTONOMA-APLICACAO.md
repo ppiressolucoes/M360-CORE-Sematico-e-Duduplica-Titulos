@@ -2,7 +2,7 @@
 
 Data do registro: 19/11/2026.
 
-O operador informou que aplicou manualmente o node `Decisão Autônoma Editorial PEL v0.1.0` ao fluxo n8n PEL. Uma primeira saída foi recebida; a confirmação da persistência e do roteamento final continua pendente.
+O operador confirmou que aplicou manualmente o node `Decisão Autônoma Editorial PEL v0.1.0` ao fluxo PEL em produção. Uma primeira saída foi recebida; a confirmação da persistência e do roteamento final continua pendente.
 
 Este registro documenta o relato do operador e o JSON de execução fornecido; não é verificação independente da instância n8n. Ainda não foi fornecido export posterior à aplicação nem a execução completa dos nodes seguintes.
 
@@ -35,6 +35,6 @@ Validação parcial: execução e contrato observacional confirmados neste snaps
 
 ## Estado
 
-`CORE-031` permanece EM ANDAMENTO. Esta amostra confirma a emissão da recomendação pelo node; persistência, roteamento final e qualidade editorial aguardam evidências adicionais.
+`CORE-031` permanece EM ANDAMENTO. A implantação do node em produção foi confirmada pelo operador, e esta amostra confirma a emissão da recomendação. Persistência, roteamento final e qualidade editorial aguardam evidências adicionais.
 
 Referências: [implementação v0.1.0](2026-11-18-PEL-DECISAO-AUTONOMA-IMPLEMENTACAO.md), [alinhamento](2026-11-18-PEL-DECISAO-AUTONOMA-ALINHAMENTO.md) e [backlog](../planejamento/BACKLOG.md).
